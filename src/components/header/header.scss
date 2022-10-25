@@ -1,0 +1,13 @@
+@import '../../variables/variables.scss';
+
+.header {
+  width: 100%;
+  padding: 20px;
+  background-color: $white-bg-color;
+}
+
+.header__wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
