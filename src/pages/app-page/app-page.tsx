@@ -8,7 +8,9 @@ const AppPage = (): JSX.Element => {
   return (
     <div className='appPage'>
       <Header />
-      <Outlet />
+      <main className='appPage__main'>
+        <Outlet />
+      </main>
     </div>
   )
 }

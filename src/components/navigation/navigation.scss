@@ -1,18 +1,19 @@
+@import '../../variables/variables.scss';
+
 .navigation {
-  width: min-content;
+  width: 100%;
   height: min-content;
 }
 
 .navigation__list {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 10px;
-  list-style: none;
 }
 
 .navigation__item {
-
+  list-style: none;
 }
 
 .navigation__link {
@@ -20,19 +21,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
-  text-decoration: none;
+
+  width: $navigation-link-size;
+  height: $navigation-link-size;
+
   cursor: pointer;
-  opacity: 0.9;
-  transition: all .2s ease-in-out;
+  text-decoration: none;
   background-color: transparent;
   border: none;
+
+  & path {
+    transition: all .1s ease-in-out;
+    fill: $navigation-link-color;
+  }
 
   &:hover {
     opacity: 1;
     & path {
-      fill: #fff;
+      fill: $navigation-link-hover-color;
     }
   }
 
@@ -40,22 +46,13 @@
     opacity: 0.8;
   }
 
+  //for active navigation links
   &--active {
-    opacity: 1;
-    & path {
-      fill: #fff;
-    }
+    pointer-events: none;
+    cursor: default;
 
-    &::after {
-      position: absolute;
-      content: '';
-      bottom: -5px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: #fff;
-      opacity: 0.7;
-      border-radius: 2px;
+    & path {
+      fill: #3d4584;
     }
   }
 }
