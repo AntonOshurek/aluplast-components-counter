@@ -1,0 +1,15 @@
+@import '../../variables/variables.scss';
+
+.header {
+  width: 100%;
+  padding: 20px;
+  background-color: $white-bg-color;
+
+  grid-row-start: 2;
+}
+
+.header__wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

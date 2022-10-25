@@ -1,0 +1,59 @@
+@import '../../variables/variables.scss';
+
+.navigation {
+  width: 100%;
+  height: min-content;
+}
+
+.navigation__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.navigation__item {
+  list-style: none;
+}
+
+.navigation__link {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: $navigation-link-size;
+  height: $navigation-link-size;
+
+  cursor: pointer;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  transition: all .1s ease-in-out;
+
+  & path {
+    transition: all .1s ease-in-out;
+    fill: $navigation-link-color;
+  }
+
+  &:hover {
+    opacity: 1;
+    & path {
+      fill: $navigation-link-hover-color;
+    }
+  }
+
+  &:active path {
+    fill: $main-color;
+  }
+
+  //for active navigation links
+  &--active {
+    pointer-events: none;
+    cursor: default;
+
+    & path {
+      fill: $main-color;
+    }
+  }
+}
