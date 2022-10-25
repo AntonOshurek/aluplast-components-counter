@@ -29,6 +29,7 @@
   text-decoration: none;
   background-color: transparent;
   border: none;
+  transition: all .1s ease-in-out;
 
   & path {
     transition: all .1s ease-in-out;
@@ -43,7 +44,7 @@
   }
 
   &:active path {
-    opacity: 0.8;
+    fill: $main-color;
   }
 
   //for active navigation links
@@ -52,7 +53,7 @@
     cursor: default;
 
     & path {
-      fill: #3d4584;
+      fill: $main-color;
     }
   }
 }

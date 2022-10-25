@@ -7,15 +7,32 @@ $desctope-width: 1200px;
 $tablet-width: 900px;
 $mobile-width: 600px;
 
-//sizes
+//SIZES--------------
 $navigation-link-size: 40px;
+$granulates-list-image-size: 80px;
+
+//FONT SIZES-------------
+$main-title-text-size: 28px;
+$standart-title-text-size: 17px;
+$standart-subtext-size: 11px;
+
+//FONT WEIGHT-------------
+$main-title-font-weight: 700;
+$standart-title-font-weight: 500;
+$standart-subtext-font-weight: 400;
+
+//FONT COLOR----------------
+$standart-text-color: #020202;
+$standart-subtext-color: #9a9a9a;
 
 //COLORS--------------
-
-//background colors
+$main-color: #3d4584;
+$standart-white: #ffffff;
 $white-bg-color: #f0f4fd;
-
-//icons colors
+//navigation icons colors
 $navigation-link-color: #2b2b2b;
 $navigation-link-hover-color: #101010;
-$navigation-link-active-color: #3d4584;
+
+//SHADOWS--------------------
+$standart-box-shadow: 5px 5px 16px #c7cbeb, -5px -5px 16px #ffffff;
+$standart-hover-box-shadow: 9px 9px 25px #abafd1, -9px -9px 25px rgb(231, 237, 250);

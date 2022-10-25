@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: end;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 .overview__header {
@@ -20,13 +20,21 @@
 
 .overview__title {
   font-family: $basic-font;
-  color: #3d4584;
-  font-size: 28px;
-  font-weight: 600;
+  color: $main-color;
+  font-size: $main-title-text-size;
+  font-weight: $main-title-font-weight;
 }
 
 .overview__date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
   font-family: $basic-font;
+  color: $main-color;
+  font-size: $standart-title-text-size;
+  font-weight: $standart-title-font-weight;
 }
 
 .granulates-list {
@@ -46,20 +54,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 
-  background-color: #fff;
+  background-color: $standart-white;
   border-radius: 30px;
   padding: 10px;
 
+  cursor: pointer;
+
   transition: all .4s ease;
 
-  box-shadow:  5px 5px 16px #c7cbeb,
-             -5px -5px 16px #ffffff;
+  box-shadow:  $standart-box-shadow;
 
   &:hover {
-    box-shadow:  9px 9px 25px #abafd1,
-    -9px -9px 25px rgb(231, 237, 250);
+    box-shadow:  $standart-hover-box-shadow;
 
     & .granulates-list__image {
       scale: 1;
@@ -68,16 +76,17 @@
 }
 
 .granulates-list__image-wrap {
-  width: 100px;
-  height: 100px;
+  width: $granulates-list-image-size;
+  height: $granulates-list-image-size;
+  min-width: $granulates-list-image-size;
   overflow: hidden;
   border-radius: 25%;
 }
 
 .granulates-list__image {
   border-radius: 25%;
-  width: 100px;
-  height: 100px;
+  width: $granulates-list-image-size;
+  height: $granulates-list-image-size;
 
   transition: all .4s ease;
   scale: 1.1;
@@ -85,22 +94,38 @@
 }
 
 .granulates-list__info-block {
-  flex-grow: 2;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
 }
 
 .granulates-list__granulate-name {
   font-family: $basic-font;
+  color: $standart-text-color;
+  font-size: $standart-title-text-size;
+  font-weight: $standart-title-font-weight;
 }
 
 .granulates-list__granulate-description {
   font-family: $basic-font;
+  color: $standart-subtext-color;
+  font-size: $standart-subtext-size;
+  font-weight: $standart-subtext-font-weight;
 }
 
 .granulates-list__granulates-amount {
-  // width: min-content;
-  flex-grow: 1;
+  min-width: max-content;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  font-family: $basic-font;
+  color: $standart-text-color;
+  font-size: $standart-title-text-size;
+  font-weight: $standart-title-font-weight;
 }
