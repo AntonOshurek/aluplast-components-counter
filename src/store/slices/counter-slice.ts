@@ -1,19 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AppThunk } from '../../types/store-types';
 import { selectCount } from '../selectors/selectors';
-
-export interface CounterState {
-  value: number;
-}
-
-const initialState: CounterState = {
-  value: 0,
-};
-
+import { counterState } from '../state/counter-state';
 
 export const counterSlice = createSlice({
   name: 'counter',
-  initialState,
+  initialState: counterState,
 
   reducers: {
     increment: (state) => {
