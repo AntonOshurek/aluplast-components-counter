@@ -1,5 +1,6 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
+import RootPage from '../pages/root-page/root-page';
 import GranulatesPage from '../pages/granulates-page/granulates-page';
 import GranulatesCounterPage from '../pages/granulates-counter-page/granulates-counter-page';
 
@@ -22,7 +23,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={AppRoute.ROOT} element={<GranulatesPage/>}/>
+        <Route path={AppRoute.ROOT} element={<RootPage/>}/>
+        <Route path={AppRoute.GRANULATES_PAGE} element={<GranulatesPage/>}/>
         <Route path={AppRoute.GRANULATES_COUNTER} element={<GranulatesCounterPage/>}>
           <Route index element={<GranulatesCounter/>} />
           <Route path={AppRoute.GRANULATES_COUNTER_CONTAINER} element={<GranulatesCounterContainer/>}/>
