@@ -1,0 +1,27 @@
+@import '../../../variables/variables.scss';
+
+.overview-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.overview-header__title {
+  font-family: $basic-font;
+  color: $main-color;
+  font-size: $main-title-text-size;
+  font-weight: $main-title-font-weight;
+}
+
+.overview-header__date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  font-family: $basic-font;
+  color: $main-color;
+  font-size: $standart-subtext-size;
+  font-weight: $standart-subtext-font-weight;
+}

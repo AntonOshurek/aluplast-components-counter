@@ -1,14 +1,14 @@
 import Header from '../../components/header/header';
-import GranulatesOverview from '../../components/granulates-overview/granulates-overview';
+import Overview from '../../components/overview/overview';
 
 import './granulates-page.scss';
 
 const GranulatesPage = (): JSX.Element => {
   return (
-    <div className='granulates'>
+    <div className='granulates-page'>
       <Header />
-      <main className='granulates__main'>
-        <GranulatesOverview/>
+      <main className='granulates-page__main'>
+        <Overview/>
       </main>
     </div>
   )

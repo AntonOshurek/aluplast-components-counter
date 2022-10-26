@@ -1,12 +1,13 @@
-import './granulates-overview.scss';
+import OverviewHeader from './overview-header/overview-header';
 
-const GranulatesOverview = (): JSX.Element => {
+import './overview.scss';
+
+const Overview = (): JSX.Element => {
   return (
     <section className="overview container">
-      <div className='overview__header'>
-        <h2 className='overview__title'>Overview</h2>
-        <span className='overview__date'>25.10.2022</span>
-      </div>
+
+      <OverviewHeader/>
+
       <ul className='granulates-list'>
         <li className='granulates-list__item'>
           <div className='granulates-list__image-wrap'>
@@ -47,4 +48,4 @@ const GranulatesOverview = (): JSX.Element => {
   )
 }
 
-export default GranulatesOverview;
+export default Overview;
