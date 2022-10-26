@@ -1,0 +1,32 @@
+@import '../../../variables/variables.scss';
+
+.granulates-counter-header {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: $white-bg-color;
+}
+
+.granulates-counter-header__wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.granulates-counter-header__back-link {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.granulates-counter-header__title {
+  font-family: $basic-font;
+  color: $main-color;
+  font-size: $main-title-text-size;
+  font-weight: $main-title-font-weight;
+}
