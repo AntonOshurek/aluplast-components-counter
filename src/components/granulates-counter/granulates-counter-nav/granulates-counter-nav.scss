@@ -1,0 +1,36 @@
+@import '../../../variables/variables.scss';
+
+.granulates-counter-nav {
+  width: 100%;
+}
+
+.granulates-counter-nav__list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+
+  list-style: none;
+}
+
+.granulates-counter-nav__item {
+  padding: 5px 14px;
+  cursor: pointer;
+
+  background-color: #fff;
+  color: $standart-text-color;
+  border-radius: 40px;
+
+  box-shadow: $standart-counter-nav-shadow;
+  transition: all .1s ease-in;
+
+  &:hover {
+    box-shadow: $standart-counter-active-nav-shadow;
+    background-color: $main-color;
+    color: #fff;
+  }
+}
+
+.granulates-counter-nav__link {
+  text-decoration: none;
+}

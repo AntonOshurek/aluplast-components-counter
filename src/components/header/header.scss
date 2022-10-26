@@ -2,7 +2,7 @@
 
 .header {
   width: 100%;
-  padding: 10px 20px;
+  padding: $standart-section-top-padding $standart-section-side-padding;
   background-color: $white-bg-color;
 
   grid-row-start: 2;

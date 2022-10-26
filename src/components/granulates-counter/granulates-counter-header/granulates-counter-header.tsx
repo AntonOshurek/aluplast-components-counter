@@ -1,3 +1,5 @@
+import GranulatesCounterNav from '../granulates-counter-nav/granulates-counter-nav';
+
 import './granulates-counter-header.scss';
 
 const GranulatesCounterHeader = (): JSX.Element => {
@@ -13,7 +15,7 @@ const GranulatesCounterHeader = (): JSX.Element => {
           </a>
 
           <h1 className='granulates-counter-header__title'>Granulates counter</h1>
-
+          <GranulatesCounterNav/>
         </div>
     </header>
   )
