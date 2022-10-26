@@ -4,3 +4,6 @@ export type GranulateItemType = {
 }
 
 export type GranulateDataType = GranulateItemType[]
+
+
+export type ThingItemComponentDataType = GranulateItemType;

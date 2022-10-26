@@ -1,4 +1,4 @@
-import { GranulateDataType } from "../types/granulate-data-types";
+import { GranulateDataType } from "../types/data-types";
 
 export const granulatesData: GranulateDataType = [
   {

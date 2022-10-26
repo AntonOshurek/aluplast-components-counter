@@ -1,6 +1,6 @@
 import OverviewItem from '../overview-item/overview-item';
 
-import { GranulateDataType } from '../../../types/granulate-data-types';
+import { GranulateDataType } from '../../../types/data-types';
 
 import './overview-list.scss';
 

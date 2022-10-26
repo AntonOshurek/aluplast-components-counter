@@ -1,7 +1,7 @@
 import OverviewHeader from './overview-header/overview-header';
 import OverviewList from './overview-list/overview-list';
 
-import { GranulateDataType } from '../../types/granulate-data-types';
+import { GranulateDataType } from '../../types/data-types';
 
 import './overview.scss';
 
