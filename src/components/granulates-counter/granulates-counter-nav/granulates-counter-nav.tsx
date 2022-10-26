@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
+import { getRouteWithUNID } from '../../../utils/utils';
+
 import { SetActiveLink } from '../../../types/other-types';
 
 import './granulates-counter-nav.scss';
@@ -8,6 +10,8 @@ import './granulates-counter-nav.scss';
 const GranulatesCounterNav = (): JSX.Element => {
 
   const {UNID} = useParams();
+
+  console.log(getRouteWithUNID.container(Number(UNID)))
 
   const activeLinkClass = 'granulates-counter-nav__link--active';
   const basicLinkClass = 'granulates-counter-nav__link';
@@ -25,7 +29,7 @@ const GranulatesCounterNav = (): JSX.Element => {
           <NavLink to={`/granulates/${UNID}/vorek`} className={setActiveLink}>Vorek</NavLink>
         </li>
         <li className='granulates-counter-nav__item'>
-          <NavLink to={`/granulates/${UNID}/container`} className={setActiveLink}>container</NavLink>
+          <NavLink to={getRouteWithUNID.container(Number(UNID))} className={setActiveLink}>container</NavLink>
         </li>
       </ul>
     </nav>
