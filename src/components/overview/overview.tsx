@@ -41,6 +41,8 @@ const Overview = (): JSX.Element => {
           </div>
           <span className='granulates-list__granulates-amount'>250 kg</span>
         </li>
+
+
       </ul>
     </section>
   )
