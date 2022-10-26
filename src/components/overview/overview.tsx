@@ -1,4 +1,5 @@
 import OverviewHeader from './overview-header/overview-header';
+import OverviewList from './overview-list/overview-list';
 
 import './overview.scss';
 
@@ -7,43 +8,8 @@ const Overview = (): JSX.Element => {
     <section className="overview container">
 
       <OverviewHeader/>
+      <OverviewList/>
 
-      <ul className='granulates-list'>
-        <li className='granulates-list__item'>
-          <div className='granulates-list__image-wrap'>
-            <img className='granulates-list__image' src="./images/granulat-img.jpg" width='100' height='100' alt="" />
-          </div>
-          <div className='granulates-list__info-block'>
-            <h3 className='granulates-list__granulate-name'>Granulates name</h3>
-            <p className='granulates-list__granulate-description'>granulates description information</p>
-          </div>
-          <span className='granulates-list__granulates-amount'>250 kg</span>
-        </li>
-
-        <li className='granulates-list__item'>
-          <div className='granulates-list__image-wrap'>
-            <img className='granulates-list__image' src="./images/granulat-img.jpg" width='100' height='100' alt="" />
-          </div>
-          <div className='granulates-list__info-block'>
-            <h3 className='granulates-list__granulate-name'>Granulates name</h3>
-            <p className='granulates-list__granulate-description'>granulates description information</p>
-          </div>
-          <span className='granulates-list__granulates-amount'>250 kg</span>
-        </li>
-
-        <li className='granulates-list__item'>
-          <div className='granulates-list__image-wrap'>
-            <img className='granulates-list__image' src="./images/granulat-img.jpg" width='100' height='100' alt="" />
-          </div>
-          <div className='granulates-list__info-block'>
-            <h3 className='granulates-list__granulate-name'>Granulates name</h3>
-            <p className='granulates-list__granulate-description'>granulates description information</p>
-          </div>
-          <span className='granulates-list__granulates-amount'>250 kg</span>
-        </li>
-
-
-      </ul>
     </section>
   )
 }
