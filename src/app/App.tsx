@@ -1,7 +1,6 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
-import AppPage from '../pages/app-page/app-page';
-import Overview from '../components/overview/overview';
+import GranulatesPage from '../pages/granulates-page/granulates-page';
 
 function App() {
 
@@ -16,11 +15,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<AppPage/>}>
-          <Route index element={<Overview/>} />
-          {/* <Route path={AppRoute.ROOT_SETTINGS} element={<SettingsPage/>}/> */}
-          {/* <Route path={AppRoute.ROOT_INFO} element={<InfoPage/>}/> */}
-        </Route>
+        <Route path='/' element={<GranulatesPage/>}></Route>
+        {/* <Route index element={<Overview/>} /> */}
+        {/* <Route path={AppRoute.ROOT_SETTINGS} element={<SettingsPage/>}/> */}
+        {/* <Route path={AppRoute.ROOT_INFO} element={<InfoPage/>}/> */}
       </Routes>
     </BrowserRouter>
   );

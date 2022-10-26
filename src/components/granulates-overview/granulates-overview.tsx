@@ -1,7 +1,6 @@
-import './overview.scss';
+import './granulates-overview.scss';
 
-
-const Overview = (): JSX.Element => {
+const GranulatesOverview = (): JSX.Element => {
   return (
     <section className="overview container">
       <div className='overview__header'>
@@ -48,4 +47,4 @@ const Overview = (): JSX.Element => {
   )
 }
 
-export default Overview;
+export default GranulatesOverview;
