@@ -3,6 +3,10 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import GranulatesPage from '../pages/granulates-page/granulates-page';
 import GranulatesCounterPage from '../pages/granulates-counter-page/granulates-counter-page';
 
+import GranulatesCounter from '../components/granulates-counter/granulates-counter/granulates-counter';
+import GranulatesCounterContainer from '../components/granulates-counter/granulates-counter-container/granulates-counter-container';
+import GranulatesCounterVorek from '../components/granulates-counter/granulates-counter-vorek/granulates-counter-vorek';
+
 import { AppRoute } from '../variables/variables';
 
 function App() {
@@ -18,11 +22,12 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={AppRoute.ROOT} element={<GranulatesPage/>}></Route>
-        <Route path={AppRoute.GRANULATES_COUNTER} element={<GranulatesCounterPage/>}></Route>
-        {/* <Route index element={<Overview/>} /> */}
-        {/* <Route path={AppRoute.ROOT_SETTINGS} element={<SettingsPage/>}/> */}
-        {/* <Route path={AppRoute.ROOT_INFO} element={<InfoPage/>}/> */}
+        <Route path={AppRoute.ROOT} element={<GranulatesPage/>}/>
+        <Route path={AppRoute.GRANULATES_COUNTER} element={<GranulatesCounterPage/>}>
+          <Route index element={<GranulatesCounter/>} />
+          <Route path={AppRoute.GRANULATES_COUNTER_CONTAINER} element={<GranulatesCounterContainer/>}/>
+          <Route path={AppRoute.GRANULATES_COUNTER_VOREK} element={<GranulatesCounterVorek/>}/>
+        </Route>
       </Routes>
     </BrowserRouter>
   );

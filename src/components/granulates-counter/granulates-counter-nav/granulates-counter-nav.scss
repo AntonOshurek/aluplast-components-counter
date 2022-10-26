@@ -23,8 +23,18 @@
 
   box-shadow: $standart-counter-nav-shadow;
   transition: all .1s ease-in;
+  text-decoration: none;
 
   &:hover {
+    box-shadow: $standart-counter-active-nav-shadow;
+  }
+
+  &:active {
+    box-shadow: $standart-counter-active-nav-shadow;
+    opacity: 0.8;
+  }
+
+  &--active {
     box-shadow: $standart-counter-active-nav-shadow;
     background-color: $main-color;
     color: $standart-white;

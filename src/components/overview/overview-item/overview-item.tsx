@@ -16,7 +16,7 @@ const OverviewItem = ({item}: OverviewItemPropsType): JSX.Element => {
 
   return (
       <li className='overview-item'>
-        <Link to={`/granulates/${UNID}`} className='overview-item__link'>
+        <Link to={`/granulates/${UNID}/counter`} className='overview-item__link'>
           <ThingItem item={item}/>
         </Link>
       </li>
