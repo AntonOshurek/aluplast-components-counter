@@ -1,4 +1,5 @@
 export type GranulateItemType = {
+  UNID: number,
   name: string,
 }
 
