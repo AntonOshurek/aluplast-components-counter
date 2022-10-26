@@ -30,12 +30,9 @@
 .body {
   margin: 0;
   padding: 0;
-  height: var(--vh);
-  min-height: var(--vh);
+  height: 100vh;
   background-color: $white-bg-color;
 }
-
-// #484848
 
 #root {
   width: 100%;

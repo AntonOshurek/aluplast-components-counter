@@ -1,0 +1,35 @@
+@import '../../../variables/variables.scss';
+
+.granulates-counter-header {
+  width: 100%;
+  padding: $standart-section-top-padding $standart-section-side-padding;
+  background-color: $white-bg-color;
+}
+
+.granulates-counter-header__wrap {
+  display: grid;
+  grid-template-columns: $counter-back-link-size 1fr;
+  grid-template-rows: repeat(2, min-content);
+  align-items: center;
+  gap: 10px;
+}
+
+.granulates-counter-header__back-link {
+  width: $counter-back-link-size;
+  height: $counter-back-link-size;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.granulates-counter-header__title {
+  font-family: $basic-font;
+  color: $main-color;
+  font-size: $main-title-text-size;
+  font-weight: $main-title-font-weight;
+  text-align: right;
+}

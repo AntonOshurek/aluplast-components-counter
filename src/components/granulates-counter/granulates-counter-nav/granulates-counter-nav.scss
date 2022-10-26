@@ -1,0 +1,53 @@
+@import '../../../variables/variables.scss';
+
+.granulates-counter-nav {
+  width: 100%;
+
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+.granulates-counter-nav__list {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+
+  list-style: none;
+}
+
+.granulates-counter-nav__item {
+  width: min-content;
+  height: min-content;
+}
+
+.granulates-counter-nav__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  cursor: pointer;
+
+  background-color: $standart-white;
+  color: $standart-text-color;
+  border-radius: 40px;
+
+  box-shadow: $standart-counter-nav-shadow;
+  transition: all .1s ease-in;
+  text-decoration: none;
+
+  &:hover {
+    box-shadow: $standart-counter-active-nav-shadow;
+  }
+
+  &:active {
+    box-shadow: $standart-counter-active-nav-shadow;
+    opacity: 0.8;
+  }
+
+  &--active {
+    box-shadow: $standart-counter-active-nav-shadow;
+    background-color: $main-color;
+    color: $standart-white;
+  }
+}
