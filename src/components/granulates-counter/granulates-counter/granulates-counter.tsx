@@ -8,16 +8,17 @@ import './granulates-counter.scss';
 
 const GranulatesCounter = (): JSX.Element => {
   const {UNID} = useParams();
-
-  console.log(UNID)
-
-  console.log(granulatesData.filter(item => item.UNID === Number(UNID))[0])
-
+  const currentItem = granulatesData.filter(item => item.UNID === Number(UNID))[0]
 
   return (
     <section className="granulates-counter container">
-      <h2>Counter</h2>
+      <h2 className='granulates-counter__title'>Counter</h2>
+      <div className='granulates-counter__current-item'>
+        <ThingItem item={currentItem}/>
+      </div>
+      <div>
 
+      </div>
     </section>
   )
 }
