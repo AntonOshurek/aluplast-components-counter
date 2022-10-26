@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom';
 
 import ThingItem from '../../item/thing-item';
 
-import { GranulateItemType } from '../../../types/data-types';
+import { ThingItemComponentDataType } from '../../../types/data-types';
 
 import './overview-item.scss';
 
 type OverviewItemPropsType = {
-  item: GranulateItemType,
+  item: ThingItemComponentDataType,
 }
 
 const OverviewItem = ({item}: OverviewItemPropsType): JSX.Element => {

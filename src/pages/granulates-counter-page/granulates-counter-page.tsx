@@ -2,7 +2,6 @@ import { Outlet } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 import GranulatesCounterHeader from '../../components/granulates-counter/granulates-counter-header/granulates-counter-header';
-// import GranulatesCounter from '../../components/granulates-counter/granulates-counter/granulates-counter';
 import ThingItem from '../../components/item/thing-item';
 
 import { granulatesData } from '../../data/granulates-data';

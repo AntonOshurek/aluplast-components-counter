@@ -1,12 +1,12 @@
 import OverviewHeader from './overview-header/overview-header';
 import OverviewList from './overview-list/overview-list';
 
-import { GranulateDataType } from '../../types/data-types';
+import { OverviewComponentDataType } from '../../types/data-types';
 
 import './overview.scss';
 
 type OverviewPropsType = {
-  data: GranulateDataType
+  data: OverviewComponentDataType
 }
 
 const Overview = ({data}: OverviewPropsType): JSX.Element => {
