@@ -2,6 +2,8 @@ import { NavLink } from 'react-router-dom';
 
 import GranulatesCounterNav from '../granulates-counter-nav/granulates-counter-nav';
 
+import { AppRoute } from '../../../variables/variables';
+
 import './granulates-counter-header.scss';
 
 const GranulatesCounterHeader = (): JSX.Element => {
@@ -9,7 +11,7 @@ const GranulatesCounterHeader = (): JSX.Element => {
     <header className='granulates-counter-header'>
         <div className='granulates-counter-header__wrap container'>
 
-          <NavLink to={'/'} className='granulates-counter-header__back-link'>
+          <NavLink to={AppRoute.GRANULATES_PAGE} className='granulates-counter-header__back-link'>
             <span className='visually-hidden'>return to main page</span>
             <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
               <path d="M9.95 21.475.475 12 9.95 2.525l1.325 1.325L3.125 12l8.15 8.15Z"/>

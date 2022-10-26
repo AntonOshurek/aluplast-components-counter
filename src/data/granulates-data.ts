@@ -21,4 +21,20 @@ export const granulatesData: GranulateDataType = [
     UNID: 104,
     name: 'braun',
   },
+  {
+    UNID: 105,
+    name: 'test 105',
+  },
+  {
+    UNID: 106,
+    name: 'test 106',
+  },
+  {
+    UNID: 107,
+    name: 'test 107',
+  },
+  {
+    UNID: 108,
+    name: 'test 108',
+  },
 ];

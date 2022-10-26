@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
+import { AppRoute } from '../../variables/variables';
+
 import { SetActiveLink } from '../../types/other-types';
 
 import './navigation.scss';
@@ -24,7 +26,7 @@ const Navigation = (): JSX.Element => {
           </NavLink>
         </li>
         <li className='navigation__item'>
-          <NavLink to='' className={setActiveLink}>
+          <NavLink to={AppRoute.ROOT} end className={setActiveLink}>
             <span className='visually-hidden'>Go to home page</span>
             <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40">
               <path fill='#000' d="M5.708 36V14.542l14.334-10.75 14.291 10.75V36H22.417V24.292h-4.834V36Z"/>

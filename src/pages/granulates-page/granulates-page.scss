@@ -15,4 +15,5 @@
   width: 100%;
   height: 100%;
   padding: $standart-section-top-padding $standart-section-side-padding;
+  padding-bottom: $standart-section-top-padding + $standart-section-top-padding + $standart-section-top-padding + $navigation-link-size;
 }
