@@ -9,8 +9,8 @@ const GranulatesCounterNav = (): JSX.Element => {
 
   const {UNID} = useParams();
 
-  const activeLinkClass = 'granulates-counter-nav__item--active';
-  const basicLinkClass = 'granulates-counter-nav__item';
+  const activeLinkClass = 'granulates-counter-nav__link--active';
+  const basicLinkClass = 'granulates-counter-nav__link';
 
   const setActiveLink = ({isActive}: SetActiveLink) => isActive ? `${basicLinkClass}  ${activeLinkClass}` : `${basicLinkClass}`;
 
@@ -18,15 +18,15 @@ const GranulatesCounterNav = (): JSX.Element => {
     <nav className='granulates-counter-nav'>
       <h2 className='visually-hidden'>Granulates counter navigation panel</h2>
       <ul className='granulates-counter-nav__list'>
-        <NavLink to={`/granulates/${UNID}/`} end className={setActiveLink}>
-          <a className='granulates-counter-nav__link'>Counter</a>
-        </NavLink>
-        <NavLink to={`/granulates/${UNID}/vorek`} className={setActiveLink}>
-          <a className='granulates-counter-nav__link'>Vorek</a>
-        </NavLink>
-        <NavLink to={`/granulates/${UNID}/container`} className={setActiveLink}>
-          <a className='granulates-counter-nav__link'>container</a>
-        </NavLink>
+        <li className='granulates-counter-nav__item'>
+          <NavLink to={`/granulates/${UNID}/`} end className={setActiveLink}>Counter</NavLink>
+        </li>
+        <li className='granulates-counter-nav__item'>
+          <NavLink to={`/granulates/${UNID}/vorek`} className={setActiveLink}>Vorek</NavLink>
+        </li>
+        <li className='granulates-counter-nav__item'>
+          <NavLink to={`/granulates/${UNID}/container`} className={setActiveLink}>container</NavLink>
+        </li>
       </ul>
     </nav>
   );
