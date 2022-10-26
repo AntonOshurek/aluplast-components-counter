@@ -1,6 +1,5 @@
 export type GranulateItemType = {
   name: string,
-
 }
 
-export type GranulateDataTypes = GranulateItemType[]
+export type GranulateDataType = GranulateItemType[]

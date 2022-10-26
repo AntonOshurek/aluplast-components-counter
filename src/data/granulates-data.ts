@@ -1,6 +1,6 @@
-import { GranulateDataTypes } from "../types/granulate-data-types";
+import { GranulateDataType } from "../types/granulate-data-types";
 
-export const granulatesData: GranulateDataTypes = [
+export const granulatesData: GranulateDataType = [
   {
     name: 'ochra',
   },
