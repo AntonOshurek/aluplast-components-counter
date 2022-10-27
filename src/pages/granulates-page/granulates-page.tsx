@@ -1,6 +1,5 @@
 import Header from '../../components/header/header';
 import Overview from '../../components/overview/overview';
-
 import { granulatesData } from '../../data/granulates-data';
 
 import './granulates-page.scss';

@@ -2,7 +2,7 @@
 
 .root-page {
   width: 100%;
-  height: 100%;
+  height: var(--vh);
 
   display: grid;
   grid-template-columns: 1fr;

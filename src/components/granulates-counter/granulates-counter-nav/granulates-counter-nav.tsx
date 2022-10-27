@@ -1,17 +1,12 @@
-import { NavLink } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams, generatePath } from 'react-router-dom';
 
-import { getRouteWithUNID } from '../../../utils/utils';
-
+import { AppRoute } from '../../../variables/variables';
 import { SetActiveLink } from '../../../types/other-types';
 
 import './granulates-counter-nav.scss';
 
 const GranulatesCounterNav = (): JSX.Element => {
-
   const {UNID} = useParams();
-
-  console.log(getRouteWithUNID.container(Number(UNID)))
 
   const activeLinkClass = 'granulates-counter-nav__link--active';
   const basicLinkClass = 'granulates-counter-nav__link';
@@ -23,13 +18,23 @@ const GranulatesCounterNav = (): JSX.Element => {
       <h2 className='visually-hidden'>Granulates counter navigation panel</h2>
       <ul className='granulates-counter-nav__list'>
         <li className='granulates-counter-nav__item'>
-          <NavLink to={`/granulates/${UNID}/`} end className={setActiveLink}>Counter</NavLink>
+          <NavLink to={generatePath(AppRoute.GRANULATES_COUNTER, {UNID: (UNID ? UNID : '')})}
+           end
+           className={setActiveLink}>
+            Counter
+          </NavLink>
         </li>
         <li className='granulates-counter-nav__item'>
-          <NavLink to={`/granulates/${UNID}/vorek`} className={setActiveLink}>Vorek</NavLink>
+          <NavLink to={AppRoute.GRANULATES_COUNTER_VOREK}
+            className={setActiveLink}>
+            Vorek
+          </NavLink>
         </li>
         <li className='granulates-counter-nav__item'>
-          <NavLink to={getRouteWithUNID.container(Number(UNID))} className={setActiveLink}>container</NavLink>
+          <NavLink to={AppRoute.GRANULATES_COUNTER_CONTAINER}
+            className={setActiveLink}>
+            container
+          </NavLink>
         </li>
       </ul>
     </nav>
