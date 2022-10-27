@@ -1,6 +1,5 @@
 import OverviewHeader from './overview-header/overview-header';
 import OverviewList from './overview-list/overview-list';
-
 import { OverviewComponentDataType } from '../../types/data-types';
 
 import './overview.scss';

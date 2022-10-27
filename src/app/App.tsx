@@ -10,15 +10,10 @@ import GranulatesCounterVorek from '../components/granulates-counter/granulates-
 
 import { AppRoute } from '../variables/variables';
 
+import { setVhVariable } from '../utils/utils';
+
 function App() {
-
-  // let vh = window.innerHeight;
-  // document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-  // window.addEventListener('resize', () => {
-  //   vh = window.innerHeight;
-  //   document.documentElement.style.setProperty('--vh', `${vh}px`);
-  // })
+  setVhVariable(); //variable VH used in styles for set main height
 
   return (
     <BrowserRouter>
