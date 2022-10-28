@@ -1,6 +1,7 @@
 import './granulates-counter-vorek.scss';
 
 const GranulatesCounterVorek = (): JSX.Element => {
+
   return (
     <section className='granulates-counter-vorek'>
       <h3 className='visually-hidden'>granulates counter vorek</h3>
@@ -8,7 +9,7 @@ const GranulatesCounterVorek = (): JSX.Element => {
       <div className='counter-vorek__set-contols'>
         <label className='counter-vorek__set-val-label'>
           one click =
-          <input className='counter-vorek__set-val-input' value={1} type="number" />
+          <input className='counter-vorek__set-val-input' defaultValue='1' type="number" />
           worek/worków
         </label>
       </div>

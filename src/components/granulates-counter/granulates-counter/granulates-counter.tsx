@@ -6,21 +6,16 @@ const GranulatesCounter = (): JSX.Element => {
     <section className="granulates-counter">
       <h3 className='visually-hidden'>GranulatesCounter</h3>
 
-      <div className='granulates-counter__set-contols'>
-        <label className='granulates-counter__set-val-label'>
-          one click =
-          <input className='granulates-counter__set-val-input' value={1} type="number" />
-           worek/worków
+      <div className='granulates-counter__input-wrap'>
+        <label className='granulates-counter__number-label'>
+          Add
+          <input className='granulates-counter__number-input' defaultValue='77' type="number" />
+          kilos
         </label>
       </div>
 
-      <div className='granulates-counter__counter'>
-        <span className='granulates-counter__counter-value'>0</span>
-      </div>
-
       <div className='granulates-counter__controls'>
-        <button className='granulates-counter__button' type='button'>Minus</button>
-        <button className='granulates-counter__button granulates-counter__button--main' type='button'>Plus</button>
+        <button className='granulates-counter__button granulates-counter__button--main' type='button'>Add value</button>
       </div>
     </section>
   )

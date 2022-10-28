@@ -5,51 +5,46 @@
   height: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: min-content 1fr min-content;
+  grid-template-rows: 1fr min-content;
   gap: 10px;
 }
 
-.granulates-counter__counter {
-  padding: 40px;
-
+.granulates-counter__input-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.granulates-counter__set-contols {
-  width: 100%;
-  padding: 10px 0;
-
+.granulates-counter__number-label {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.granulates-counter__set-val-label {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  gap: 20px;
 
   font-family: $basic-font;
   font-size: $standart-title-text-size;
   font-weight: $standart-title-font-weight;
   color: $standart-subtext-color;
-
-  &:focus-within {
-    color: $standart-text-color;
-  }
 }
 
-.granulates-counter__set-val-input {
-  width: 60px;
+.granulates-counter__number-input {
+  position: relative;
+  width: 300px;
+  height: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 70px;
+  font-weight: bold;
 
   text-align: center;
 
-  padding: 5px 10px;
+  padding: 10px;
   background-color: $standart-white;
-  box-shadow: $standart-counter-nav-shadow;
+  box-shadow: $standart-hover-box-shadow;
   border: none;
   border-radius: 30px;
 
@@ -58,32 +53,6 @@
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
-}
-}
-
-.granulates-counter__counter-value {
-  position: relative;
-  width: 200px;
-  height: 200px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 80px;
-  font-weight: bold;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    border-radius: 50%;
-
-    box-shadow: $standart-hover-box-shadow;
   }
 }
 
@@ -129,26 +98,3 @@
     transition: transform .3s ease, box-shadow .1s ease;
   }
 }
-
-@keyframes Shake {
-  0% {
-    transform: translate(0, 0);
-  }
-  20% {
-    transform: translate(0, 20px);
-  }
-  40% {
-    transform: translate(0, 0);
-  }
-  60% {
-    transform: translate(0, 20px);
-  }
-  80% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(0, 20px);
-  }
-}
-
-
