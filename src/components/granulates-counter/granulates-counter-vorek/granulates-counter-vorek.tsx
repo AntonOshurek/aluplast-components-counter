@@ -1,6 +1,6 @@
 import { useState, ChangeEvent, useEffect } from 'react';
 
-import CounterSetControls from '../../counter/counter-set-controls/counter-set-controls';
+import CounterAddedAmount from '../../counter/counter-added-amount/counter-added-amount';
 import CounterValue from '../../counter/counter-value/counter-value';
 import CounterControlsPlus from '../../counter/counter-controls/counter-controls-plus';
 
@@ -9,26 +9,37 @@ import '../granulates-counter.scss';
 const GranulatesCounterVorek = (): JSX.Element => {
 
   const initialValue: number = 1;
+  const initialAddedAmount: number = 1;
+  const addedAmountTitle: string = '1 click +';
 
   const [value, setValue] = useState<number>(initialValue)
+  const [addedAmount, setAddedAmount] = useState<number>(initialAddedAmount)
 
-  const increment = () => {
-    setValue(() => value + 1)
+  const increment = (): void => {
+    setValue(() => value + addedAmount)
+    // run Dispatch!
+    //Action
   }
 
-  const decrement = () => {
-    setValue(() => value - 1)
+  const decrement = (): void => {
+    setValue(() => value - addedAmount)
+      // run Dispatch!
+      //Action
+  }
+
+  const onAddedAmountChangeHandler = (evt: ChangeEvent<HTMLInputElement>): void => {
+    setAddedAmount(+evt.target.value);
   }
 
   useEffect(() => {
-    console.log(value)
+    setAddedAmount(initialAddedAmount)
   }, [value]);
 
   return (
     <section className='granulates-counter granulates-counter--set-controls'>
       <h3 className='visually-hidden'>granulates counter vorek</h3>
 
-      <CounterSetControls/>
+      <CounterAddedAmount onInputChangeHandler={onAddedAmountChangeHandler} value={addedAmount} title={addedAmountTitle}/>
       <CounterValue value={value}/>
       <CounterControlsPlus onIncButtonClickHandler={increment} onDecButtonClickHandler={decrement}/>
 
