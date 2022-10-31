@@ -1,38 +1,41 @@
 @import '../../../variables/variables.scss';
 
-.counter-set-contols {
-  width: 100%;
-  padding: 10px 0;
-
+.counter-set-value {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.counter-set-contols__label {
+.counter-set-value__label {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 
   font-family: $basic-font;
   font-size: $standart-title-text-size;
   font-weight: $standart-title-font-weight;
   color: $standart-subtext-color;
-
-  &:focus-within {
-    color: $standart-text-color;
-  }
 }
 
-.counter-set-contols__input {
-  width: 60px;
+.counter-set-value__input {
+  position: relative;
+  width: 300px;
+  height: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 70px;
+  font-weight: bold;
 
   text-align: center;
 
-  padding: 5px 10px;
+  padding: 10px;
   background-color: $standart-white;
-  box-shadow: $standart-counter-nav-shadow;
+  box-shadow: $standart-hover-box-shadow;
   border: none;
   border-radius: 30px;
 
@@ -41,5 +44,5 @@
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
-}
+  }
 }

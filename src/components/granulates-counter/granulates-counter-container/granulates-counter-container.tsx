@@ -1,4 +1,6 @@
 import CounterAddControls from '../../counter/counter-add-contols/counter-add-contols';
+import CounterSetValue from '../../counter/counter-set-value/counter-set-value';
+import CounterSetControls from '../../counter/counter-set-controls/counter-set-controls';
 
 import './granulates-counter-container.scss';
 
@@ -7,27 +9,10 @@ const GranulatesCounterContainer = (): JSX.Element => {
     <section className="granulates-counter__container">
       <h3 className='visually-hidden'>GranulatesCounter</h3>
 
-      <div className='counter-container__set-contols'>
-        <label className='counter-container__set-val-label'>
-          adding value -
-          <input className='counter-container__set-val-input' defaultValue='75' type="number" />
-          kg
-        </label>
-      </div>
-
-      <div className='counter-container__input-wrap'>
-        <label className='counter-container__number-label'>
-          Add
-          <input className='counter-container__number-input' defaultValue='500' type="number" />
-          kilos
-        </label>
-      </div>
-
+      <CounterSetControls/>
+      <CounterSetValue/>
       <CounterAddControls/>
 
-      {/* <div className='counter-container__controls'>
-        <button className='counter-container__button counter-container__button--main' type='button'>Add value</button>
-      </div> */}
     </section>
   )
 }

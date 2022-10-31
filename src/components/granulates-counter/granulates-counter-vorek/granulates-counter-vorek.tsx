@@ -1,3 +1,6 @@
+import CounterSetControls from '../../counter/counter-set-controls/counter-set-controls';
+import CounterValue from '../../counter/counter-value/counter-value';
+
 import './granulates-counter-vorek.scss';
 
 const GranulatesCounterVorek = (): JSX.Element => {
@@ -6,17 +9,9 @@ const GranulatesCounterVorek = (): JSX.Element => {
     <section className='granulates-counter-vorek'>
       <h3 className='visually-hidden'>granulates counter vorek</h3>
 
-      <div className='counter-vorek__set-contols'>
-        <label className='counter-vorek__set-val-label'>
-          one click =
-          <input className='counter-vorek__set-val-input' defaultValue='1' type="number" />
-          worek/worków
-        </label>
-      </div>
+      <CounterSetControls/>
+      <CounterValue/>
 
-      <div className='counter-vorek__counter'>
-        <span className='counter-vorek__counter-value'>0</span>
-      </div>
 
       <div className='counter-vorek__controls'>
         <button className='counter-vorek__button' type='button'>Minus</button>
