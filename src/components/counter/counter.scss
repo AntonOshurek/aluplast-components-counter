@@ -1,0 +1,45 @@
+@import '../../variables/variables.scss';
+
+.counter-controls {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+.counter-controls__button {
+  width: 100%;
+  padding: 20px 40px;
+
+  background-color: $main-color;
+  border: none;
+  border-radius: 20px;
+  box-shadow: $standart-box-shadow;
+  transition: transform .3s ease, box-shadow .1s ease;
+  cursor: pointer;
+
+  font-family: $basic-font;
+  font-size: $standart-title-text-size;
+  font-weight: $standart-title-font-weight;
+  color: $standart-white;
+
+  &:hover {
+    box-shadow: $standart-hover-box-shadow;
+  }
+
+  &:active {
+    transform: translate(0, 10px);
+    transition: transform .2s ease, box-shadow .1s ease;
+    box-shadow: $counter-controls-active-shadow;
+  }
+
+  &--second-btn {
+    width: min-content;
+    white-space: nowrap;
+    background-color: $standart-white;
+    color: $standart-text-color;
+    transition: transform .3s ease;
+  }
+}

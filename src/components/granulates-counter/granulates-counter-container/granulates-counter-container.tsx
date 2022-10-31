@@ -1,3 +1,5 @@
+import CounterAddControls from '../../counter/counter-add-contols/counter-add-contols';
+
 import './granulates-counter-container.scss';
 
 const GranulatesCounterContainer = (): JSX.Element => {
@@ -21,9 +23,11 @@ const GranulatesCounterContainer = (): JSX.Element => {
         </label>
       </div>
 
-      <div className='counter-container__controls'>
+      <CounterAddControls/>
+
+      {/* <div className='counter-container__controls'>
         <button className='counter-container__button counter-container__button--main' type='button'>Add value</button>
-      </div>
+      </div> */}
     </section>
   )
 }
