@@ -1,9 +1,10 @@
-export type GranulateItemType = {
+export interface GranulateItemType {
   UNID: number,
   name: string,
 }
 
-export type GranulateDataType = GranulateItemType[]
+export type GranulatesDataType = GranulateItemType[]
 
-export type OverviewComponentDataType = GranulateDataType;
+//for add new data types (guma and another)
+export type OverviewComponentDataType = GranulatesDataType;
 export type ThingItemComponentDataType = GranulateItemType;
