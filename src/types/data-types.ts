@@ -1,6 +1,7 @@
 export interface GranulateItemType {
   UNID: number,
   name: string,
+  amount: number,
 }
 
 export type GranulatesDataType = GranulateItemType[]

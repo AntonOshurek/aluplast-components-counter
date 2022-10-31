@@ -1,5 +1,12 @@
-import { CounterState } from "../../types/state-types";
+import { granulatesData } from "../../data/granulates-data";
 
-export const counterState: CounterState = {
-    value: 0,
-  };
+import { CounterState } from "../../types/state-types";
+import { GranulateItemType } from "../../types/data-types";
+
+export const granulatesState: CounterState = {};
+
+granulatesData.map((item: GranulateItemType) => {
+  granulatesState[item.UNID] = {...item, amount: 0};
+})
+
+console.log(granulatesState)
