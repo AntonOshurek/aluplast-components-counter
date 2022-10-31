@@ -1,0 +1,45 @@
+@import '../../../variables/variables.scss';
+
+.counter-added-amount {
+  width: 100%;
+  padding: 10px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter-added-amount__label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  font-family: $basic-font;
+  font-size: $standart-title-text-size;
+  font-weight: $standart-title-font-weight;
+  color: $standart-subtext-color;
+
+  &:focus-within {
+    color: $standart-text-color;
+  }
+}
+
+.counter-added-amount__input {
+  width: 60px;
+
+  text-align: center;
+
+  padding: 5px 10px;
+  background-color: $standart-white;
+  box-shadow: $standart-counter-nav-shadow;
+  border: none;
+  border-radius: 30px;
+
+  -moz-appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+}

@@ -4,7 +4,7 @@ import { OverviewComponentDataType } from '../../types/data-types';
 
 import './overview.scss';
 
-type OverviewPropsType = {
+interface OverviewPropsType {
   data: OverviewComponentDataType
 }
 

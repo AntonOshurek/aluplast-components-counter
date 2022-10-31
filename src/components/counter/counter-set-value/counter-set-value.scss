@@ -1,0 +1,48 @@
+@import '../../../variables/variables.scss';
+
+.counter-set-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter-set-value__label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  font-family: $basic-font;
+  font-size: $standart-title-text-size;
+  font-weight: $standart-title-font-weight;
+  color: $standart-subtext-color;
+}
+
+.counter-set-value__input {
+  position: relative;
+  width: 300px;
+  height: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 70px;
+  font-weight: bold;
+
+  text-align: center;
+
+  padding: 10px;
+  background-color: $standart-white;
+  box-shadow: $standart-hover-box-shadow;
+  border: none;
+  border-radius: 30px;
+
+  -moz-appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}

@@ -2,17 +2,20 @@ import { Link, generatePath } from 'react-router-dom';
 
 import ThingItem from '../../item/thing-item';
 import { ThingItemComponentDataType } from '../../../types/data-types';
+import { AppRoute } from '../../../variables/variables';
 
 import './overview-item.scss';
 
-type OverviewItemPropsType = {
+export type Routes = AppRoute;
+
+interface OverviewItemPropsType {
   item: ThingItemComponentDataType,
-  path: string,
+  path: AppRoute,
 }
 
 const OverviewItem = ({item, path}: OverviewItemPropsType): JSX.Element => {
 
-  const {UNID} = item;
+  const UNID = item.UNID.toString();
 
   return (
       <li className='overview-item'>

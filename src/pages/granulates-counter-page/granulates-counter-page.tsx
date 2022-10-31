@@ -26,7 +26,6 @@ const GranulatesCounterPage = (): JSX.Element => {
 
           <Outlet/>
         </div>
-        {/* <GranulatesCounter/> */}
       </main>
     </div>
   )

@@ -1,4 +1,4 @@
-export enum AppRoute {
+export const enum AppRoute {
   ROOT = '/',
   GRANULATES_PAGE = '/granulates',
   GRANULATES_COUNTER = '/granulates/:UNID/',
