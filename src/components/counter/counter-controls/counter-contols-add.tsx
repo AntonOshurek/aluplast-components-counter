@@ -1,7 +1,6 @@
-import '../counter.scss';
-import './counter-add-controls.scss';
+import './counter-controls.scss';
 
-const CounterAddControls = (): JSX.Element => {
+const CounterControlsAdd = (): JSX.Element => {
   return (
     <div className='counter-controls'>
       <button className='counter-controls__button' type='button'>Add value</button>
@@ -9,4 +8,4 @@ const CounterAddControls = (): JSX.Element => {
   )
 }
 
-export default CounterAddControls;
+export default CounterControlsAdd;
