@@ -6,13 +6,14 @@ import { OverviewComponentDataType } from '../../../types/data-types';
 
 import './overview-list.scss';
 
-type OverviewListPropsType = {
+interface OverviewListPropsType {
   data: OverviewComponentDataType,
 }
 
 const OverviewList = ({data}: OverviewListPropsType): JSX.Element => {
 
-  let location = '';
+  let location: AppRoute;
+
   switch(useLocation().pathname) {
     case AppRoute.GRANULATES_PAGE:
       location = AppRoute.GRANULATES_COUNTER;
