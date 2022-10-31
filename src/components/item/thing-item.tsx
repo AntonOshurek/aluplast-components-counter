@@ -1,3 +1,6 @@
+import { useAppSelector } from '../../hooks/hooks';
+import { granulatesStateSelector } from '../../store/selectors/selectors';
+
 import { ThingItemComponentDataType } from '../../types/data-types';
 
 import './thing-item.scss';
@@ -8,7 +11,7 @@ interface ThingItemPropsType {
 
 const ThingItem = ({item}: ThingItemPropsType): JSX.Element => {
 
-  const {name} = item
+  const {amount, name} = useAppSelector(granulatesStateSelector)[item.UNID];
 
   return (
     <article className='thing-item'>
@@ -19,7 +22,7 @@ const ThingItem = ({item}: ThingItemPropsType): JSX.Element => {
         <h3 className='thing-item__name'>{name}</h3>
         <p className='thing-item__description'>granulates description information</p>
       </div>
-      <span className='thing-item__amount'>250 kg</span>
+      <span className='thing-item__amount'>{amount} kg</span>
     </article>
   )
 }

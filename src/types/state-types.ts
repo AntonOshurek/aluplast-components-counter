@@ -1,5 +1,5 @@
 import { GranulateItemType } from "./data-types"
 
-export interface CounterState {
+export interface GranulatesState {
   [granulateName: number]: GranulateItemType,
 }
