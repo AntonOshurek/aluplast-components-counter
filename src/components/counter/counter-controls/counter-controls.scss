@@ -35,6 +35,10 @@
     box-shadow: $counter-controls-active-shadow;
   }
 
+  &--error {
+    color: tomato;
+  }
+
   &--second-btn {
     width: min-content;
     white-space: nowrap;

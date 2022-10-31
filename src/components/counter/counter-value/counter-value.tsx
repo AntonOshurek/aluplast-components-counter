@@ -1,9 +1,13 @@
 import './counter-value.scss';
 
-const CounterValue = (): JSX.Element => {
+interface CounterValuePropsType {
+  value: number
+}
+
+const CounterValue = ({value}: CounterValuePropsType): JSX.Element => {
   return (
     <div className='counter-value'>
-      <span className='counter-value__value'>0</span>
+      <span className='counter-value__value'>{value}</span>
     </div>
   )
 }

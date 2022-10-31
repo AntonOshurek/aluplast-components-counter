@@ -1,9 +1,20 @@
 import './counter-controls.scss';
 
-const CounterControlsAdd = (): JSX.Element => {
+interface CounterControlsAddPropsType {
+  onButtonClickHandler: () => void,
+  errorMessage: string,
+}
+
+const CounterControlsAdd = ({onButtonClickHandler, errorMessage}: CounterControlsAddPropsType): JSX.Element => {
+
+  const buttonClasses = errorMessage ? 'counter-controls__button counter-controls__button--error' : 'counter-controls__button'
+
   return (
     <div className='counter-controls'>
-      <button className='counter-controls__button' type='button'>Add value</button>
+      <button className={buttonClasses}
+        type='button'
+        onClick={onButtonClickHandler}
+      >{errorMessage ? errorMessage : 'Add value'}</button>
     </div>
   )
 }
