@@ -11,16 +11,16 @@ import './granulates-counter-page.scss';
 
 const GranulatesCounterPage = (): JSX.Element => {
 
-  const {UNID} = useParams();
+  const {UNID = 100} = useParams();
 
-  let foo: number = 0;
+  let currentItemUNID: number = 0;
   if(UNID) {
-    foo = +UNID;
+    currentItemUNID = +UNID;
   } else {
-    foo = 0;
+    currentItemUNID = 100;
   }
 
-  const currentItem = useAppSelector(getCurrentGranulatesSelector(foo))
+  const currentItem = useAppSelector(getCurrentGranulatesSelector(currentItemUNID))
 
   return (
     <div className='granulates-counter-page'>

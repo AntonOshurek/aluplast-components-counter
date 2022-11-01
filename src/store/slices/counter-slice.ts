@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AppThunk } from '../../types/store-types';
+// import { AppThunk } from '../../types/store-types';
 // import { selectCount } from '../selectors/selectors';
 import { granulatesState } from '../state/granulates-state';
 

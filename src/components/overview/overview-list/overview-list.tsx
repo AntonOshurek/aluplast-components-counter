@@ -2,7 +2,7 @@ import { useLocation } from 'react-router-dom';
 
 import OverviewItem from '../overview-item/overview-item';
 import { AppRoute } from '../../../variables/variables';
-import { OverviewComponentDataType } from '../../../types/data-types';
+import { OverviewComponentDataType, GranulatesDataType } from '../../../types/data-types';
 
 import './overview-list.scss';
 
@@ -14,6 +14,8 @@ const OverviewList = ({data}: OverviewListPropsType): JSX.Element => {
 
   let location: AppRoute;
 
+  //here checked opened page (granulates or guma) and send route for overviewItem component
+  //inside overviewComponent generate link for granulatesCounter or gumaCounter
   switch(useLocation().pathname) {
     case AppRoute.GRANULATES_PAGE:
       location = AppRoute.GRANULATES_COUNTER;
@@ -22,7 +24,8 @@ const OverviewList = ({data}: OverviewListPropsType): JSX.Element => {
       location = AppRoute.GRANULATES_PAGE;
   }
 
-  const allItems = data.map(item => <OverviewItem item={item} key={item.UNID} path={location}/>);
+  const dataArray: GranulatesDataType = [...Object.values(data)]
+  const allItems: JSX.Element[] = dataArray.map(item => <OverviewItem item={item} key={item.UNID} path={location}/>);
 
   return (
     <ul className='overview-list'>

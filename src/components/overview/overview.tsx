@@ -5,7 +5,7 @@ import { OverviewComponentDataType } from '../../types/data-types';
 import './overview.scss';
 
 interface OverviewPropsType {
-  data: OverviewComponentDataType
+  data: OverviewComponentDataType,
 }
 
 const Overview = ({data}: OverviewPropsType): JSX.Element => {
