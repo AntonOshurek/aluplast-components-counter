@@ -31,7 +31,7 @@ const GranulatesCounter = (): JSX.Element => {
   }
 
   const onAddButtonClickHandler = (): void => {
-    if(value <= 0 || value === NaN) {
+    if(value === NaN) {
       setError('You can\'t add zero');
     } else {
       dispatch(increment({UNID: currentItemUNID, value: value}));
