@@ -6,7 +6,7 @@ import CounterSetValue from '../../counter/counter-set-value/counter-set-value';
 import CounterControlsAdd from '../../counter/counter-controls/counter-contols-add';
 
 import { useAppSelector, useAppDispatch } from '../../../hooks/hooks';
-import { granulatesStateSelector } from '../../../store/selectors/selectors';
+import { granulatesStateSelector, getCurrentGranulatesSelector } from '../../../store/selectors/selectors';
 import { increment, decrement } from '../../../store/slices/counter-slice';
 
 // import { GranulateItemType } from '../../../types/data-types';
@@ -24,6 +24,9 @@ const GranulatesCounter = (): JSX.Element => {
 
   const {amount, name} = useAppSelector(granulatesStateSelector)[foo];
   const dispatch = useAppDispatch();
+
+  const test = useAppSelector(getCurrentGranulatesSelector(foo))
+  console.log(test)
 
   // console.log(amount)
   // console.log(name)
