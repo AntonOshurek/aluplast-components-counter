@@ -1,7 +1,7 @@
 {
   "name": "aluplas-granules-counter",
   "version": "0.1.0",
-  "homepage": "https://antonoshurek.github.io/aluplas-granules-counter",
+  "homepage": "https://antonoshurek.github.io/aluplas-granules-counter/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.6",
