@@ -10,11 +10,9 @@ export const granulatesSlice = createSlice({
   reducers: {
     increment: (state, action: PayloadAction<{UNID: number, value: number}>) => {
       state[action.payload.UNID].amount = state[action.payload.UNID].amount + action.payload.value
-      // console.log(state)
     },
     decrement: (state, action: PayloadAction<{UNID: number, value: number}>) => {
-      // state. - action.payload.value
-      // console.log(state)
+      state[action.payload.UNID].amount = state[action.payload.UNID].amount - action.payload.value
     },
     // Use the PayloadAction type to declare the contents of `action.payload`
     // incrementByAmount: (state, action: PayloadAction<number>) => {

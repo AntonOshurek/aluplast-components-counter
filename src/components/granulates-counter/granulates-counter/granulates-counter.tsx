@@ -5,23 +5,18 @@ import { useParams } from 'react-router-dom';
 import CounterSetValue from '../../counter/counter-set-value/counter-set-value';
 import CounterControlsAdd from '../../counter/counter-controls/counter-contols-add';
 
-import { useAppSelector, useAppDispatch } from '../../../hooks/hooks';
-import { getCurrentGranulatesSelector } from '../../../store/selectors/selectors';
-import { increment, decrement } from '../../../store/slices/counter-slice';
-
-import { GranulateItemType } from '../../../types/data-types';
+import { useAppDispatch } from '../../../hooks/hooks';
+import { increment } from '../../../store/slices/counter-slice';
 
 import '../granulates-counter.scss';
 
-
 const GranulatesCounter = (): JSX.Element => {
-
-  const defaultCounterValue: number = 100;
   const {UNID = 100} = useParams();
   const currentItemUNID = +UNID
 
   const dispatch = useAppDispatch();
-  const currentItem: GranulateItemType = useAppSelector(getCurrentGranulatesSelector(currentItemUNID))
+
+  const defaultCounterValue: number = 100;
 
   const [value, setValue] = useState<number>(defaultCounterValue);
   const [valueError, setValueError] = useState<string>('')
@@ -36,11 +31,9 @@ const GranulatesCounter = (): JSX.Element => {
   }
 
   const onAddButtonClickHandler = (): void => {
-    if(value === 0 || value === NaN) {
+    if(value <= 0 || value === NaN) {
       setError('You can\'t add zero');
     } else {
-      console.log(value)
-
       dispatch(increment({UNID: currentItemUNID, value: value}));
     }
   }
