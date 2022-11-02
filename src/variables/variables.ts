@@ -1,5 +1,5 @@
 export const enum AppRoute {
-  ROOT = '/aluplas-granules-counter',
+  ROOT = '/',
   GRANULATES_PAGE = '/granulates',
   GRANULATES_COUNTER = '/granulates/:UNID',
   GRANULATES_COUNTER_CONTAINER = 'container',
