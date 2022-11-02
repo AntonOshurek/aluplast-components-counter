@@ -2,7 +2,7 @@
 
 .granulates-page {
   width: 100%;
-  min-height: 100vh;
+  // min-height: 100vh;
 
   display: grid;
   grid-template-columns: 1fr;
@@ -16,5 +16,5 @@
   height: 100%;
 
   padding: $standart-section-top-padding $standart-section-side-padding;
-  padding-bottom: $standart-section-top-padding + $standart-section-top-padding + $standart-section-top-padding + $navigation-link-size;
+  padding-bottom: calc($standart-section-top-padding * 3)+ $navigation-link-size;
 }
