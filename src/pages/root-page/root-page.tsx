@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../../components/header/header';
 import { AppRoute } from '../../variables/variables';
 
-import granulatesBaner from '../../images/all-granulates.jpg';
+import granulatesBaner from './all-granulates.jpg';
 
 import './root-page.scss';
 
