@@ -1,4 +1,6 @@
 import { ThingItemComponentDataType } from '../../types/data-types';
+import granulatImg from './granulat-img.jpg'
+
 
 import './thing-item.scss';
 
@@ -12,7 +14,7 @@ const ThingItem = ({item}: ThingItemPropsType): JSX.Element => {
   return (
     <article className='thing-item'>
       <div className='thing-item__image-wrap'>
-        <img className='thing-item__image' src="../../images/granulat-img.jpg" width='100' height='100' alt="" />
+        <img className='thing-item__image' src={granulatImg} width='100' height='100' alt="" />
       </div>
       <div className='thing-item__info-block'>
         <h3 className='thing-item__name'>{name}</h3>
