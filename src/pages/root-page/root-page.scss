@@ -2,7 +2,7 @@
 
 .root-page {
   width: 100%;
-  height: var(--vh);
+  min-height: var(--vh);
 
   display: grid;
   grid-template-columns: 1fr;
@@ -15,7 +15,7 @@
   width: 100%;
   height: 100%;
   padding: $standart-section-top-padding $standart-section-side-padding;
-  padding-bottom: $standart-section-top-padding + $standart-section-top-padding + $standart-section-top-padding + $navigation-link-size;
+  padding-bottom: calc($standart-section-top-padding * 3)+ $navigation-link-size;
 }
 
 .root-page__wrap {
@@ -33,8 +33,6 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-
-  padding-bottom: 40px;
 }
 
 .root-page__item {
