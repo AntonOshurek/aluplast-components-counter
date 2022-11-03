@@ -16,7 +16,7 @@ function App() {
   setVhVariable(); //variable VH used in styles for set main height
 
   return (
-    <BrowserRouter  basename="/aluplas-granules-counter">
+    <BrowserRouter  basename="/aluplas-granules-counter/">
       <Routes>
         <Route path={AppRoute.ROOT} element={<RootPage/>}/>
         <Route path={AppRoute.GRANULATES_PAGE} element={<GranulatesPage/>}/>
