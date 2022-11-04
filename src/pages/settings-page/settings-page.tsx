@@ -1,4 +1,4 @@
-import { useEffect, useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent } from 'react';
 //component
 import Header from '../../components/header/header';
 import GranulatesSettings from '../../components/settings/granulates-settings/granulates-settings';
@@ -7,19 +7,21 @@ import ButtonAdd from '../../components/controls/button-add/button-add';
 import { ComponentsTexts, GranulatesSettingsNames } from '../../variables/variables';
 //types
 import { GranulatesSettingsType } from '../../types/data-types';
+//store
+import { setNewSettings } from '../../store/slices/counter-slice';
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
+import { getGranulatesSettings } from '../../store/selectors/selectors';
 //styles
 import './settings-page.scss';
 
 const SettingsPage = (): JSX.Element => {
-
-  const basicGranulatesSettings: GranulatesSettingsType = {
-    basicVorekWeight: 25,
-    basicContainerWeight: 77,
-  }
+  const basicGranulatesSettings = useAppSelector(getGranulatesSettings);
+  const dispatch = useAppDispatch();
 
   const [granulatesSettings, setGranulatesSettings] = useState<GranulatesSettingsType>(basicGranulatesSettings);
 
   const onSettingSubmitButtonClickHandler = (): void => {
+    dispatch(setNewSettings(granulatesSettings));
     console.log('save settings');
   }
 
@@ -38,10 +40,6 @@ const SettingsPage = (): JSX.Element => {
         throw new Error('Required');
     }
   }
-
-  useEffect(() => {
-    console.log(`granulatesSettings - basicVorekWeight: ${granulatesSettings.basicContainerWeight}, basicContainerWeight: ${granulatesSettings.basicVorekWeight}`);
-  }, [granulatesSettings])
 
   return (
     <div className='settings-page'>
