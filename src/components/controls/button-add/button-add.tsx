@@ -1,13 +1,13 @@
+import { ComponentsTexts } from '../../../variables/variables';
 import '../standart-button.scss';
 
 interface ButtonAddPropsType {
   onButtonClickHandler: () => void,
-  buttonText: string,
+  buttonText: ComponentsTexts,
   errorMessage: string,
 }
 
 const ButtonAdd = ({onButtonClickHandler, errorMessage, buttonText}: ButtonAddPropsType): JSX.Element => {
-
   const buttonClasses = errorMessage ? 'standart-button standart-button--error' : 'standart-button'
 
   return (

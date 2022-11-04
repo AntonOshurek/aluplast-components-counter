@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import CounterAddedAmount from '../../counter/counter-added-amount/counter-added-amount';
 import CounterSetValue from '../../counter/counter-set-value/counter-set-value';
 import ButtonAdd from '../../controls/button-add/button-add';
+//consts and variables
+import { ComponentsTexts } from '../../../variables/variables';
 //store
 import { useAppDispatch } from '../../../hooks/hooks';
 import { increment } from '../../../store/slices/counter-slice';
@@ -55,7 +57,7 @@ const GranulatesCounterContainer = (): JSX.Element => {
       <ButtonAdd
         onButtonClickHandler={onAddButtonClickHandler}
         errorMessage={valueError}
-        buttonText={'Add value'}
+        buttonText={ComponentsTexts.GRANULATES_COUNTER_ADD_BUTTON}
       />
 
     </section>

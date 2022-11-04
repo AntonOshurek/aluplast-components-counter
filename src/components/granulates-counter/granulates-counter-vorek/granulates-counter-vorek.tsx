@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import CounterAddedAmount from '../../counter/counter-added-amount/counter-added-amount';
 import CounterValue from '../../counter/counter-value/counter-value';
 import ButtonChoice from '../../controls/button-choice/button-choice';
+//consts and variables
+import { ComponentsTexts } from '../../../variables/variables';
 //store
 import { useAppDispatch } from '../../../hooks/hooks';
 import { increment, decrement } from '../../../store/slices/counter-slice';
@@ -68,7 +70,12 @@ const GranulatesCounterVorek = (): JSX.Element => {
       <ButtonChoice
         onIncButtonClickHandler={incrementHandler}
         onDecButtonClickHandler={decrementHandler}
-        choiseText={{plus: 'plus', minus: 'minus'}}
+        choiseText={
+          {
+            plus: ComponentsTexts.GRANULATES_COUNTER_PLUS_BUTTON,
+            minus: ComponentsTexts.GRANULATES_COUNTER_MINUS_BUTTON
+          }
+        }
       />
 
     </section>

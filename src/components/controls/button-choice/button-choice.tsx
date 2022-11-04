@@ -1,11 +1,12 @@
+import { ComponentsTexts } from '../../../variables/variables';
+
 import '../standart-button.scss';
 
 interface ButtonChoicePropsType {
   onIncButtonClickHandler: () => void,
   onDecButtonClickHandler: () => void,
-  choiseText: {plus: string, minus: string}
+  choiseText: {plus: ComponentsTexts, minus: ComponentsTexts}
 }
-
 
 const ButtonChoice = ({onIncButtonClickHandler, onDecButtonClickHandler, choiseText}: ButtonChoicePropsType): JSX.Element => {
   return (
