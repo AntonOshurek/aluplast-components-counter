@@ -7,8 +7,9 @@ import ButtonAdd from '../../controls/button-add/button-add';
 //consts and variables
 import { ComponentsTexts } from '../../../variables/variables';
 //store
-import { useAppDispatch } from '../../../hooks/hooks';
+import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
 import { increment } from '../../../store/slices/counter-slice';
+import { getGranulatesSettingsContainerWeight } from '../../../store/selectors/selectors';
 //styles
 import '../granulates-counter.scss';
 
@@ -18,11 +19,11 @@ const GranulatesCounterContainer = (): JSX.Element => {
 
   const dispatch = useAppDispatch();
 
-  const initialAddedAmount: number = 77;
+  const basicContainerWeight = useAppSelector(getGranulatesSettingsContainerWeight);
   const initialValue: number = 500;
   const addedAmountTitle: string = 'One container - ';
 
-  const [addedAmount, setAddedAmount] = useState<number>(initialAddedAmount)
+  const [addedAmount, setAddedAmount] = useState<number>(basicContainerWeight)
   const [value, setValue] = useState<number>(initialValue);
   const [valueError, setValueError] = useState<string>('')
 
@@ -44,6 +45,7 @@ const GranulatesCounterContainer = (): JSX.Element => {
       setError('You can\'t add zero');
     } else {
       const recalcValue = value - addedAmount
+      setAddedAmount(basicContainerWeight);
       dispatch(increment({UNID: currentItemUNID, value: recalcValue}));
     }
   }
