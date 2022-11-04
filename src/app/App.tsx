@@ -1,9 +1,12 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
+//pages
 import RootPage from '../pages/root-page/root-page';
 import GranulatesPage from '../pages/granulates-page/granulates-page';
 import GranulatesCounterPage from '../pages/granulates-counter-page/granulates-counter-page';
+import SettingsPage from '../pages/settings-page/settings-page';
 
+//granulates counters components for GRANULATES_COUNTER root
 import GranulatesCounter from '../components/granulates-counter/granulates-counter/granulates-counter';
 import GranulatesCounterContainer from '../components/granulates-counter/granulates-counter-container/granulates-counter-container';
 import GranulatesCounterVorek from '../components/granulates-counter/granulates-counter-vorek/granulates-counter-vorek';
@@ -19,6 +22,7 @@ function App() {
     <BrowserRouter  basename="/aluplas-granules-counter">
       <Routes>
         <Route path={AppRoute.ROOT} element={<RootPage/>}/>
+        <Route path={AppRoute.SETTINGS} element={<SettingsPage/>}/>
         <Route path={AppRoute.GRANULATES_PAGE} element={<GranulatesPage/>}/>
         <Route path={AppRoute.GRANULATES_COUNTER} element={<GranulatesCounterPage/>}>
           <Route index element={<GranulatesCounter/>} />
