@@ -1,5 +1,6 @@
-import { GranulateItemType } from "./data-types"
+import { GranulateItemType, GranulatesSettingsType } from "./data-types"
 
 export interface GranulatesState {
-  [granulateName: number]: GranulateItemType,
+  items: {[granulateName: number]: GranulateItemType},
+  granulatesSettings: GranulatesSettingsType
 }
