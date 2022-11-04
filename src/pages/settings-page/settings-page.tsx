@@ -1,7 +1,8 @@
+//component
 import Header from '../../components/header/header';
 import GranulatesSettings from '../../components/settings/granulates-settings/granulates-settings';
-import SettingButton from '../../components/settings/setting-button/setting-button';
-
+import ButtonAdd from '../../components/controls/button-add/button-add';
+//styles
 import './settings-page.scss';
 
 const SettingsPage = (): JSX.Element => {
@@ -17,9 +18,10 @@ const SettingsPage = (): JSX.Element => {
       <main className='settings-page__main container'>
         <GranulatesSettings/>
 
-        <SettingButton
+        <ButtonAdd
           onButtonClickHandler={onSettingSubmitButtonClickHandler}
           errorMessage={''}
+          buttonText={'Save settings'}
         />
       </main>
     </div>

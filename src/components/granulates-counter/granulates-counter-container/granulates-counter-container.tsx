@@ -1,13 +1,13 @@
 import { useState, ChangeEvent } from 'react';
 import { useParams } from 'react-router-dom';
-
+//components
 import CounterAddedAmount from '../../counter/counter-added-amount/counter-added-amount';
 import CounterSetValue from '../../counter/counter-set-value/counter-set-value';
-import CounterControlsAdd from '../../counter/counter-controls/counter-contols-add';
-
+import ButtonAdd from '../../controls/button-add/button-add';
+//store
 import { useAppDispatch } from '../../../hooks/hooks';
 import { increment } from '../../../store/slices/counter-slice';
-
+//styles
 import '../granulates-counter.scss';
 
 const GranulatesCounterContainer = (): JSX.Element => {
@@ -52,7 +52,11 @@ const GranulatesCounterContainer = (): JSX.Element => {
 
       <CounterAddedAmount onInputChangeHandler={onAddedAmountChangeHandler} value={addedAmount} title={addedAmountTitle}/>
       <CounterSetValue onInputChangeHandler={onInputValueChangeHandler} value={value}/>
-      <CounterControlsAdd onButtonClickHandler={onAddButtonClickHandler} errorMessage={valueError}/>
+      <ButtonAdd
+        onButtonClickHandler={onAddButtonClickHandler}
+        errorMessage={valueError}
+        buttonText={'Add value'}
+      />
 
     </section>
   )
