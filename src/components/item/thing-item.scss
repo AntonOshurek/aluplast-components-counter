@@ -16,10 +16,10 @@
 
   cursor: pointer;
   transition: all .4s ease;
-  box-shadow:  $standart-box-shadow;
+  box-shadow:  $standart-box-shadow--large;
 
   &:hover {
-    box-shadow:  $standart-hover-box-shadow;
+    box-shadow:  $standart-hover-box-shadow--large;
 
     & .overview-item__image {
       scale: 1;
