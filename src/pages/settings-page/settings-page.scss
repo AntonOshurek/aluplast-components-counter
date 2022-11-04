@@ -5,8 +5,8 @@
   min-height: 100vh;
 
   display: grid;
-  // grid-template-columns: 1fr;
-  // grid-template-rows: 1fr min-content;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content;
 
   position: relative;
 }
@@ -17,4 +17,10 @@
 
   padding: $standart-section-top-padding $standart-section-side-padding;
   padding-bottom: calc($standart-section-top-padding * 3)+ $navigation-link-size;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-row-gap: 40px;
+  align-content: end;
 }
