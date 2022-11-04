@@ -13,3 +13,8 @@ export enum ComponentsTexts {
   GRANULATES_COUNTER_PLUS_BUTTON = 'Plus',
   GRANULATES_COUNTER_MINUS_BUTTON = 'Minus',
 }
+
+export enum GranulatesSettingsNames {
+  VOREK_WEIGHT = 'basicVorekWeight',
+  CONTAINER_WEIGHT = 'basicContainerWeight',
+}
