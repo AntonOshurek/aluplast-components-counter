@@ -9,9 +9,10 @@ const basicGranulatesSettings: GranulatesSettingsType = {
 }
 
 export const granulatesState: GranulatesState = {
+  items: {},
   granulatesSettings: basicGranulatesSettings,
 };
 
 granulatesData.map((item: GranulateItemType) => {
-  granulatesState[item.UNID] = {...item, amount: 0};
+  granulatesState.items[item.UNID] = {...item, amount: 0};
 })

@@ -14,7 +14,6 @@ interface OverviewItemPropsType {
 }
 
 const OverviewItem = ({item, path}: OverviewItemPropsType): JSX.Element => {
-
   const UNID = item.UNID.toString();
 
   return (
