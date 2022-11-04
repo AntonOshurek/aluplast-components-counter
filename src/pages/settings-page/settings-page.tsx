@@ -48,7 +48,10 @@ const SettingsPage = (): JSX.Element => {
       <Header/>
 
       <main className='settings-page__main container'>
-        <GranulatesSettings inputsHandler={onSettingsInputsHandler} defaultValue={granulatesSettings}/>
+        <GranulatesSettings
+          inputsHandler={onSettingsInputsHandler}
+          defaultValue={granulatesSettings}
+        />
 
         <ButtonAdd
           onButtonClickHandler={onSettingSubmitButtonClickHandler}
