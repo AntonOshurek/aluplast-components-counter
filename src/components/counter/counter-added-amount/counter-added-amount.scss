@@ -32,14 +32,19 @@
 
   padding: 5px 10px;
   background-color: $standart-white;
-  box-shadow: $standart-counter-nav-shadow;
+  box-shadow: $standart-box-shadow--medium;
   border: none;
   border-radius: 30px;
 
   -moz-appearance: textfield;
 
+  &:hover,
+  &:focus {
+    box-shadow: $standart-hover-box-shadow--medium;
+  }
+
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
-}
+  }
 }

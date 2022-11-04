@@ -32,21 +32,21 @@
   color: $standart-text-color;
   border-radius: 40px;
 
-  box-shadow: $standart-counter-nav-shadow;
+  box-shadow: $standart-box-shadow--medium;
   transition: all .1s ease-in;
   text-decoration: none;
 
   &:hover {
-    box-shadow: $standart-counter-active-nav-shadow;
+    box-shadow: $standart-hover-box-shadow--medium;
   }
 
   &:active {
-    box-shadow: $standart-counter-active-nav-shadow;
+    box-shadow: $standart-hover-box-shadow--medium;
     opacity: 0.8;
   }
 
   &--active {
-    box-shadow: $standart-counter-active-nav-shadow;
+    box-shadow: $standart-hover-box-shadow--medium;
     background-color: $main-color;
     color: $standart-white;
   }

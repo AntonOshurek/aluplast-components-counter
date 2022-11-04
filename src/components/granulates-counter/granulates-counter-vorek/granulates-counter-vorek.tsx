@@ -1,13 +1,15 @@
 import { useState, ChangeEvent, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-
+//components
 import CounterAddedAmount from '../../counter/counter-added-amount/counter-added-amount';
 import CounterValue from '../../counter/counter-value/counter-value';
-import CounterControlsPlus from '../../counter/counter-controls/counter-controls-plus';
-
+import ButtonChoice from '../../controls/button-choice/button-choice';
+//consts and variables
+import { ComponentsTexts } from '../../../variables/variables';
+//store
 import { useAppDispatch } from '../../../hooks/hooks';
 import { increment, decrement } from '../../../store/slices/counter-slice';
-
+//styles
 import '../granulates-counter.scss';
 
 const GranulatesCounterVorek = (): JSX.Element => {
@@ -65,7 +67,16 @@ const GranulatesCounterVorek = (): JSX.Element => {
 
       <CounterAddedAmount onInputChangeHandler={onAddedAmountChangeHandler} value={addedAmount} title={addedAmountTitle}/>
       <CounterValue value={value}/>
-      <CounterControlsPlus onIncButtonClickHandler={incrementHandler} onDecButtonClickHandler={decrementHandler}/>
+      <ButtonChoice
+        onIncButtonClickHandler={incrementHandler}
+        onDecButtonClickHandler={decrementHandler}
+        choiseText={
+          {
+            plus: ComponentsTexts.GRANULATES_COUNTER_PLUS_BUTTON,
+            minus: ComponentsTexts.GRANULATES_COUNTER_MINUS_BUTTON
+          }
+        }
+      />
 
     </section>
   )

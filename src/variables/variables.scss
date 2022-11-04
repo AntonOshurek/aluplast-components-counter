@@ -39,13 +39,12 @@ $navigation-link-color: #2b2b2b;
 $navigation-link-hover-color: #101010;
 
 //SHADOWS--------------------
-$standart-box-shadow: 5px 5px 16px #c7cbeb, -5px -5px 16px #ffffff;
-$standart-hover-box-shadow: 9px 9px 25px #abafd1, -9px -9px 25px rgb(231, 237, 250);
+$standart-box-shadow--large: 5px 5px 16px #c7cbeb, -5px -5px 16px #ffffff;
+$standart-hover-box-shadow--large: 9px 9px 25px #abafd1, -9px -9px 25px rgb(231, 237, 250);
+$standart-active-box-shadow--large: 9px 9px 25px #abafd1, 0px -10px 25px  #abafd1;
 
-$standart-counter-nav-shadow: 3px 3px 10px #c7cbeb, -3px -3px 10px #ffffff;
-$standart-counter-active-nav-shadow: 6px 6px 20px #abafd1, -6px -6px 20px rgb(231, 237, 250);
-
-$counter-controls-active-shadow: 9px 9px 25px #abafd1, 0px -10px 25px  #abafd1;
+$standart-box-shadow--medium: 3px 3px 10px #c7cbeb, -3px -3px 10px #ffffff;
+$standart-hover-box-shadow--medium: 6px 6px 20px #abafd1, -6px -6px 20px rgb(231, 237, 250);
 
 
 //OTHER----------------------
