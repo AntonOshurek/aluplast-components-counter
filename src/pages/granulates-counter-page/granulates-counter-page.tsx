@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
-import GranulatesCounterHeader from '../../components/granulates-counter/granulates-counter-header/granulates-counter-header';
+import { GranulatesCounterHeader } from '../../components/granulates-counter';
 import ThingItem from '../../components/item/thing-item';
 
 import { useAppSelector } from '../../hooks/hooks';

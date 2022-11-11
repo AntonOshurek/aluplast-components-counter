@@ -4,19 +4,16 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import {GranulatesPage, RootPage, SettingsPage, GranulatesCounterPage} from '../pages';
 
 //granulates counters components for GRANULATES_COUNTER root
-import GranulatesCounter from '../components/granulates-counter/granulates-counter/granulates-counter';
-import GranulatesCounterContainer from '../components/granulates-counter/granulates-counter-container/granulates-counter-container';
-import GranulatesCounterVorek from '../components/granulates-counter/granulates-counter-vorek/granulates-counter-vorek';
-
+import {GranulatesCounterContainer, GranulatesCounter, GranulatesCounterVorek} from '../components/granulates-counter';
+//consts and utils functions
 import { AppRoute } from '../variables/variables';
-
 import { setVhVariable } from '../utils/utils';
 
 function App() {
   setVhVariable(); //variable VH used in styles for set main height
 
   return (
-    <BrowserRouter  basename="/aluplas-granules-counter">
+    <BrowserRouter basename="/aluplas-granules-counter">
       <Routes>
         <Route path={AppRoute.ROOT} element={<RootPage/>}/>
         <Route path={AppRoute.SETTINGS} element={<SettingsPage/>}/>
