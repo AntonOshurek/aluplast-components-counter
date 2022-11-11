@@ -7,7 +7,7 @@ import { ButtonChoice } from '../../controls';
 import { ComponentsTexts } from '../../../variables/variables';
 //store
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
-import { increment, decrement } from '../../../store/slices/counter-slice';
+import { increment, decrement, incrementToStore, decrementToStore } from '../../../store/slices/counter-slice';
 import { getGranulatesSettingsVorekWeight } from '../../../store/selectors/selectors';
 //styles
 import '../granulates-counter.scss';
@@ -46,14 +46,16 @@ const GranulatesCounterVorek = (): JSX.Element => {
     setValue(() => value + addedAmount)
 
     let recalcValue: number = addedAmount * basicVorekWeight;
-    dispatch(increment({UNID: currentItemUNID, value: recalcValue}));
+    // dispatch(increment({UNID: currentItemUNID, value: recalcValue}));
+    dispatch(incrementToStore({UNID: currentItemUNID, value: recalcValue}));
   }
 
   const decrementHandler = (): void => {
     setValue(() => value - addedAmount)
 
     const recalcValue: number = addedAmount * basicVorekWeight;
-    dispatch(decrement({UNID: currentItemUNID, value: recalcValue}));
+    // dispatch(decrement({UNID: currentItemUNID, value: recalcValue}));
+    dispatch(decrementToStore({UNID: currentItemUNID, value: recalcValue}));
   }
 
   //CHECK IT!!!!!

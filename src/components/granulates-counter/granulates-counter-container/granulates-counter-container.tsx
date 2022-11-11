@@ -7,7 +7,7 @@ import { ButtonAdd } from '../../controls';
 import { ComponentsTexts } from '../../../variables/variables';
 //store
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
-import { increment } from '../../../store/slices/counter-slice';
+import { increment, incrementToStore } from '../../../store/slices/counter-slice';
 import { getGranulatesSettingsContainerWeight } from '../../../store/selectors/selectors';
 //styles
 import '../granulates-counter.scss';
@@ -45,7 +45,8 @@ const GranulatesCounterContainer = (): JSX.Element => {
     } else {
       const recalcValue = value - addedAmount
       setAddedAmount(basicContainerWeight);
-      dispatch(increment({UNID: currentItemUNID, value: recalcValue}));
+      // dispatch(increment({UNID: currentItemUNID, value: recalcValue}));
+      dispatch(incrementToStore({UNID: currentItemUNID, value: recalcValue}));
     }
   }
 
