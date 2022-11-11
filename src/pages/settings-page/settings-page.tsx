@@ -2,7 +2,7 @@ import { useState, ChangeEvent } from 'react';
 //component
 import Header from '../../components/header/header';
 import GranulatesSettings from '../../components/settings/granulates-settings/granulates-settings';
-import ButtonAdd from '../../components/controls/button-add/button-add';
+import { ButtonAdd } from '../../components/controls';
 //consts and variables
 import { ComponentsTexts, GranulatesSettingsNames } from '../../variables/variables';
 //types

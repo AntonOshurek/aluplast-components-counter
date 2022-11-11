@@ -2,7 +2,7 @@ import { useState, ChangeEvent } from 'react';
 import { useParams } from 'react-router-dom';
 //components
 import { CounterAddedAmount, CounterSetValue } from '../../counter-controls';
-import ButtonAdd from '../../controls/button-add/button-add';
+import { ButtonAdd } from '../../controls';
 //consts and variables
 import { ComponentsTexts } from '../../../variables/variables';
 //store

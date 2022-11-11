@@ -2,7 +2,7 @@ import { useState, ChangeEvent, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 //components
 import { CounterAddedAmount, CounterValue } from '../../counter-controls';
-import ButtonChoice from '../../controls/button-choice/button-choice';
+import { ButtonChoice } from '../../controls';
 //consts and variables
 import { ComponentsTexts } from '../../../variables/variables';
 //store
