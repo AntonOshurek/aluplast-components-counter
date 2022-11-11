@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, useEffect } from 'react';
+import { useState, ChangeEvent, useEffect, useMemo } from 'react';
 //component
 import Header from '../../components/header/header';
 import GranulatesSettings from '../../components/settings/granulates-settings/granulates-settings';
@@ -24,6 +24,10 @@ const SettingsPage = (): JSX.Element => {
     dispatch(setNewSettings(granulatesSettings));
   }
 
+  const onResetSettingsButtonHandler = () => {
+    dispatch(resetSettingsToDefault());
+  }
+
   const onSettingsInputsHandler = (evt: ChangeEvent<HTMLInputElement>): void => {
     const inputName: string | null = evt.target.getAttribute('data-input-name');
     const inputValue: number = +evt.target.value;
@@ -38,11 +42,6 @@ const SettingsPage = (): JSX.Element => {
       default:
         throw new Error('Required');
     }
-  }
-
-  const onResetSettingsButtonHandler = () => {
-    dispatch(resetSettingsToDefault());
-    console.log(basicGranulatesSettings)
   }
 
   useEffect(() => {
