@@ -8,6 +8,14 @@ export const granulatesState: GranulatesState = {
   granulatesSettings: basicGranulatesSettings,
 };
 
-granulatesData.map((item: GranulateItemType) => {
-  granulatesState.items[item.UNID] = {...item, amount: 0};
-})
+const storageData = localStorage.getItem('granulates');
+
+if(storageData) {
+  granulatesState.items = JSON.parse(storageData);
+} else {
+  granulatesData.map((item: GranulateItemType) => {
+    granulatesState.items[item.UNID] = {...item, amount: 0};
+  });
+};
+
+

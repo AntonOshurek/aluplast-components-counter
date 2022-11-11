@@ -31,7 +31,13 @@ export const incrementToStore =
   (dispatch, getState) => {
     dispatch(increment(action));
     localStorage.setItem('granulates', JSON.stringify(getState().granulates.items))
-    console.log(getState())
+  };
+
+export const decrementToStore =
+  (action: {UNID: number, value: number}): AppThunk =>
+  (dispatch, getState) => {
+    dispatch(decrement(action));
+    localStorage.setItem('granulates', JSON.stringify(getState().granulates.items))
   };
 
 export default granulatesSlice.reducer;
