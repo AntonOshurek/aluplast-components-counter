@@ -1,8 +1,7 @@
 import { useState, ChangeEvent, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 //components
-import CounterAddedAmount from '../../counter/counter-added-amount/counter-added-amount';
-import CounterValue from '../../counter/counter-value/counter-value';
+import { CounterAddedAmount, CounterValue } from '../../counter-controls';
 import ButtonChoice from '../../controls/button-choice/button-choice';
 //consts and variables
 import { ComponentsTexts } from '../../../variables/variables';

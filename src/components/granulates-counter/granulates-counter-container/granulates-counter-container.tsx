@@ -1,8 +1,7 @@
 import { useState, ChangeEvent } from 'react';
 import { useParams } from 'react-router-dom';
 //components
-import CounterAddedAmount from '../../counter/counter-added-amount/counter-added-amount';
-import CounterSetValue from '../../counter/counter-set-value/counter-set-value';
+import { CounterAddedAmount, CounterSetValue } from '../../counter-controls';
 import ButtonAdd from '../../controls/button-add/button-add';
 //consts and variables
 import { ComponentsTexts } from '../../../variables/variables';
