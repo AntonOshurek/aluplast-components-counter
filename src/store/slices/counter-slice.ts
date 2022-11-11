@@ -17,6 +17,9 @@ export const granulatesSlice = createSlice({
     },
     setNewSettings: (state, action: PayloadAction<GranulatesSettingsType>) => {
       state.granulatesSettings = action.payload;
+    },
+    resetSettingsToDefault: (state) => {
+      state.granulatesSettings = granulatesState.granulatesSettings;
     }
     // Use the PayloadAction type to declare the contents of `action.payload`
     // incrementByAmount: (state, action: PayloadAction<number>) => {
@@ -25,7 +28,7 @@ export const granulatesSlice = createSlice({
   },
 });
 
-export const { increment, decrement, setNewSettings } = granulatesSlice.actions;
+export const { increment, decrement, setNewSettings, resetSettingsToDefault } = granulatesSlice.actions;
 
 // export const incrementIfOdd =
 //   (amount: number): AppThunk =>

@@ -1,4 +1,9 @@
-import { GranulatesDataType } from "../types/data-types";
+import { GranulatesDataType,GranulatesSettingsType } from "../types/data-types";
+
+export const basicGranulatesSettings: GranulatesSettingsType = {
+  basicVorekWeight: 25,
+  basicContainerWeight: 77,
+}
 
 export const granulatesData: GranulatesDataType = [
   {

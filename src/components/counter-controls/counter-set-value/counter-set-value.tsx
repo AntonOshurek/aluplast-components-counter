@@ -1,5 +1,7 @@
 import { ChangeEvent, useRef } from 'react';
-
+//utils
+import { onEscClickHandler } from '../../../utils/utils';
+//styles
 import './counter-set-value.scss';
 
 interface CouterSetValueProps {
@@ -11,13 +13,7 @@ const CounterSetValue = ({onInputChangeHandler, value}: CouterSetValueProps): JS
   const inputEl = useRef<HTMLInputElement>(null);
 
   const onInputKeydownListener = (evt: any) => {
-    if(evt.keyCode === 13 || evt.keyCode === 'enter') {
-      evt.preventDefault();
-
-      if(inputEl.current !== null) {
-        inputEl.current.blur();
-      }
-    }
+    onEscClickHandler(evt, inputEl.current);
   }
 
   return (

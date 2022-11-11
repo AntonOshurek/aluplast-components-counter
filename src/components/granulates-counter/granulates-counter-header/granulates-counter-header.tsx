@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
-import GranulatesCounterNav from '../granulates-counter-nav/granulates-counter-nav';
+import { GranulatesCounterNav } from '../';
 
 import { AppRoute } from '../../../variables/variables';
 

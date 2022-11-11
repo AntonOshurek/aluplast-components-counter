@@ -1,14 +1,14 @@
-import { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent, useEffect, useMemo } from 'react';
 //component
 import Header from '../../components/header/header';
 import GranulatesSettings from '../../components/settings/granulates-settings/granulates-settings';
-import ButtonAdd from '../../components/controls/button-add/button-add';
+import { ButtonAdd } from '../../components/controls';
 //consts and variables
 import { ComponentsTexts, GranulatesSettingsNames } from '../../variables/variables';
 //types
 import { GranulatesSettingsType } from '../../types/data-types';
 //store
-import { setNewSettings } from '../../store/slices/counter-slice';
+import { setNewSettings, resetSettingsToDefault } from '../../store/slices/counter-slice';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { getGranulatesSettings } from '../../store/selectors/selectors';
 //styles
@@ -22,7 +22,10 @@ const SettingsPage = (): JSX.Element => {
 
   const onSettingSubmitButtonClickHandler = (): void => {
     dispatch(setNewSettings(granulatesSettings));
-    console.log('save settings');
+  }
+
+  const onResetSettingsButtonHandler = () => {
+    dispatch(resetSettingsToDefault());
   }
 
   const onSettingsInputsHandler = (evt: ChangeEvent<HTMLInputElement>): void => {
@@ -41,14 +44,25 @@ const SettingsPage = (): JSX.Element => {
     }
   }
 
+  useEffect(() => {
+    setGranulatesSettings(basicGranulatesSettings);
+  }, [basicGranulatesSettings]);
+
   return (
     <div className='settings-page'>
       <Header/>
 
       <main className='settings-page__main container'>
+
+        <ButtonAdd
+          onButtonClickHandler={onResetSettingsButtonHandler}
+          errorMessage={''}
+          buttonText={ComponentsTexts.SETTINGS_PAGE_RESET_SETTINGS}
+        />
+
         <GranulatesSettings
           inputsHandler={onSettingsInputsHandler}
-          defaultValue={granulatesSettings}
+          value={granulatesSettings}
         />
 
         <ButtonAdd
