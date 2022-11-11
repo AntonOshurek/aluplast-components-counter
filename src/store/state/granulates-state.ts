@@ -1,12 +1,7 @@
-import { granulatesData } from "../../data/granulates-data";
+import { granulatesData, basicGranulatesSettings } from "../../data/granulates-data";
 
 import { GranulatesState } from "../../types/state-types";
-import { GranulateItemType, GranulatesSettingsType } from "../../types/data-types";
-
-const basicGranulatesSettings: GranulatesSettingsType = {
-  basicVorekWeight: 25,
-  basicContainerWeight: 77,
-}
+import { GranulateItemType } from "../../types/data-types";
 
 export const granulatesState: GranulatesState = {
   items: {},

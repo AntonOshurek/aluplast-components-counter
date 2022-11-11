@@ -8,10 +8,10 @@ import './granulates-settings.scss';
 
 interface GranulatesSettingsPropsType {
   inputsHandler: (evt: ChangeEvent<HTMLInputElement>) => void,
-  defaultValue: GranulatesSettingsType
+  value: GranulatesSettingsType
 }
 
-const GranulatesSettings = ({inputsHandler, defaultValue}: GranulatesSettingsPropsType): JSX.Element => {
+const GranulatesSettings = ({inputsHandler, value}: GranulatesSettingsPropsType): JSX.Element => {
   return (
     <section className='granulates-settings'>
       <h3 className='granulates-settings__title'>Granulates settings</h3>
@@ -19,7 +19,7 @@ const GranulatesSettings = ({inputsHandler, defaultValue}: GranulatesSettingsPro
         <label className='granulates-settings__label'>
           one vorek kg value
           <input className='granulates-settings__input' type="number"
-            defaultValue={defaultValue.basicVorekWeight}
+            value={value.basicVorekWeight || ''}
             data-input-name={GranulatesSettingsNames.VOREK_WEIGHT}
             onChange={inputsHandler}
           />
@@ -27,7 +27,7 @@ const GranulatesSettings = ({inputsHandler, defaultValue}: GranulatesSettingsPro
         <label className='granulates-settings__label'>
           default one container weight
           <input className='granulates-settings__input' type="number"
-            defaultValue={defaultValue.basicContainerWeight}
+            value={value.basicContainerWeight || ''}
             data-input-name={GranulatesSettingsNames.CONTAINER_WEIGHT}
             onChange={inputsHandler}
           />
