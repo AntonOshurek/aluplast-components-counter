@@ -1,5 +1,7 @@
-import { ChangeEvent, useRef } from 'react'
-
+import { ChangeEvent, useRef } from 'react';
+//utils
+import { onEscClickHandler } from '../../../utils/utils';
+//styles
 import './counter-added-amount.scss';
 
 interface CounterAddedAmountPropsType {
@@ -12,13 +14,7 @@ const CounterAddedAmount = ({onInputChangeHandler, value, title}: CounterAddedAm
   const inputEl = useRef<HTMLInputElement>(null);
 
   const onInputKeydownListener = (evt: any) => {
-    if(evt.keyCode === 13 || evt.keyCode === 'enter') {
-      evt.preventDefault();
-
-      if(inputEl.current !== null) {
-        inputEl.current.blur();
-      }
-    }
+    onEscClickHandler(evt, inputEl.current);
   }
 
   return (
