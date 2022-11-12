@@ -9,8 +9,14 @@ import {GranulatesCounterContainer, GranulatesCounter, GranulatesCounterVorek} f
 import { AppRoute } from '../variables/variables';
 import { setVhVariable } from '../utils/utils';
 
+import GranulatesStorage from '../storage-api/granulates.storage';
+
 function App() {
   setVhVariable(); //variable VH used in styles for set main height
+
+  const granulatesStorage = new GranulatesStorage('granulates');
+
+  console.log(granulatesStorage.getItems());
 
   return (
     <BrowserRouter basename="/aluplas-granules-counter">
