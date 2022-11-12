@@ -1,8 +1,6 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-
 //pages
 import {GranulatesPage, RootPage, SettingsPage, GranulatesCounterPage} from '../pages';
-
 //granulates counters components for GRANULATES_COUNTER root
 import {GranulatesCounterContainer, GranulatesCounter, GranulatesCounterVorek} from '../components/granulates-counter';
 //consts and utils functions

@@ -1,8 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AppThunk } from '../../types/store-types';
 // import { selectCount } from '../selectors/selectors';
-import { granulatesState } from '../state/granulates-state';
+import { granulatesState, defaultItems } from '../state/granulates-state';
 import { GranulatesSettingsType } from '../../types/data-types';
+
+import granulatesStorage from '../../storage-api/granulates-storage';
 
 export const granulatesSlice = createSlice({
   name: 'granulates',
@@ -20,24 +22,34 @@ export const granulatesSlice = createSlice({
     },
     resetSettingsToDefault: (state) => {
       state.granulatesSettings = granulatesState.granulatesSettings;
+    },
+    clear: (state) => {
+      state.items = defaultItems;
     }
   },
 });
 
-export const { increment, decrement, setNewSettings, resetSettingsToDefault } = granulatesSlice.actions;
+export const { increment, decrement, setNewSettings, resetSettingsToDefault, clear } = granulatesSlice.actions;
 
 export const incrementToStore =
   (action: {UNID: number, value: number}): AppThunk =>
   (dispatch, getState) => {
     dispatch(increment(action));
-    localStorage.setItem('granulates', JSON.stringify(getState().granulates.items))
+    granulatesStorage.setItems(getState().granulates.items);
   };
 
 export const decrementToStore =
   (action: {UNID: number, value: number}): AppThunk =>
   (dispatch, getState) => {
     dispatch(decrement(action));
-    localStorage.setItem('granulates', JSON.stringify(getState().granulates.items))
+    granulatesStorage.setItems(getState().granulates.items);
+  };
+
+export const clearStore =
+  (): AppThunk =>
+  (dispatch, getState) => {
+    dispatch(clear());
+    granulatesStorage.setItems(getState().granulates.items);
   };
 
 export default granulatesSlice.reducer;

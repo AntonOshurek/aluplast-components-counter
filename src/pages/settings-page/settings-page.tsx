@@ -8,7 +8,7 @@ import { ComponentsTexts, GranulatesSettingsNames } from '../../variables/variab
 //types
 import { GranulatesSettingsType } from '../../types/data-types';
 //store
-import { setNewSettings, resetSettingsToDefault } from '../../store/slices/counter-slice';
+import { setNewSettings, resetSettingsToDefault, clearStore } from '../../store/slices/counter-slice';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { getGranulatesSettings } from '../../store/selectors/selectors';
 //styles
@@ -26,6 +26,10 @@ const SettingsPage = (): JSX.Element => {
 
   const onResetSettingsButtonHandler = () => {
     dispatch(resetSettingsToDefault());
+  }
+
+  const resetCounter = () => {
+    dispatch(clearStore());
   }
 
   const onSettingsInputsHandler = (evt: ChangeEvent<HTMLInputElement>): void => {
@@ -53,6 +57,12 @@ const SettingsPage = (): JSX.Element => {
       <Header/>
 
       <main className='settings-page__main container'>
+
+        <ButtonAdd
+          onButtonClickHandler={resetCounter}
+          errorMessage={''}
+          buttonText={ComponentsTexts.SETTINGS_RESET_COUNTER_DATA}
+        />
 
         <ButtonAdd
           onButtonClickHandler={onResetSettingsButtonHandler}
