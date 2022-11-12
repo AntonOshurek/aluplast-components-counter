@@ -7,4 +7,6 @@ class GranulatesStorage extends AbstractStorage {
   }
 }
 
-export default GranulatesStorage;
+const granulatesStorage = new GranulatesStorage('granulates');
+
+export default granulatesStorage;

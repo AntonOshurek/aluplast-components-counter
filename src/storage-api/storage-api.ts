@@ -1,34 +1,34 @@
-import { GranulatesDataType } from "../types/data-types";
+import { GranulatesStoreDataType } from "../types/data-types";
 
 class AbstractStorage {
 
-  protected name: string;
-  protected items: GranulatesDataType | null;
+  #name: string;
 
   constructor(name: string) {
-    this.name = name;
-    this.items = [];
+    if(new.target === AbstractStorage) {
+      throw new Error('can\'t instantiate AbstractStorage, only concrete one.');
+    }
+
+    this.#name = name;
   }
 
   getItems() {
-    const jsonData = localStorage.getItem(this.name);
+    const jsonData = localStorage.getItem(this.#name);
 
     if(jsonData) {
-      this.items = JSON.parse(jsonData);
-      return this.items;
+      return JSON.parse(jsonData);
     } else {
-      throw new Error('Данные в хранилище не обнаружены!');
+      console.log('Данные в хранилище не обнаружены!');
+      return null;
     }
   }
 
-  setItems(items: GranulatesDataType) {
-    //setItem(key, value)
-    localStorage.setItem(this.name, JSON.stringify(items));
+  setItems(items: GranulatesStoreDataType) {
+    localStorage.setItem(this.#name, JSON.stringify(items));
   }
 
-  cleanStore() {
-    //removeItem(key)
-    localStorage.removeItem(this.name);
+  clearStore() {
+    localStorage.removeItem(this.#name);
   }
 
 }

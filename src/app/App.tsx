@@ -1,22 +1,14 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-
 //pages
 import {GranulatesPage, RootPage, SettingsPage, GranulatesCounterPage} from '../pages';
-
 //granulates counters components for GRANULATES_COUNTER root
 import {GranulatesCounterContainer, GranulatesCounter, GranulatesCounterVorek} from '../components/granulates-counter';
 //consts and utils functions
 import { AppRoute } from '../variables/variables';
 import { setVhVariable } from '../utils/utils';
 
-import GranulatesStorage from '../storage-api/granulates.storage';
-
 function App() {
   setVhVariable(); //variable VH used in styles for set main height
-
-  const granulatesStorage = new GranulatesStorage('granulates');
-
-  console.log(granulatesStorage.getItems());
 
   return (
     <BrowserRouter basename="/aluplas-granules-counter">
