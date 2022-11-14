@@ -1,24 +1,24 @@
-import { GranulatesDataType, GranulateItemType, GranulatesStoreDataType, GranulatesSettingsType } from "../types/data-types";
+import { BasicGranulatesDataType, IGranulateItemType, GranulatesDataType, GranulatesSettingsType } from "../types/data-types";
 import granulatesStorage from '../storage-api/granulates-storage';
-import { granulatesData, basicGranulatesSettings } from "../data/granulates-data";
+import { basicGranulatesData, basicGranulatesSettings } from "../data/granulates-data";
 
 class GranulatesDataApi {
-  #data: GranulatesDataType;
+  #basicData: BasicGranulatesDataType;
   #settings: GranulatesSettingsType;
-  #defaultData: GranulatesStoreDataType;
+  #defaultData: GranulatesDataType;
 
-  constructor(data: GranulatesDataType, settings: GranulatesSettingsType) {
-    this.#data = data;
+  constructor(data: BasicGranulatesDataType, settings: GranulatesSettingsType) {
+    this.#basicData = data;
     this.#settings = settings;
     this.#defaultData = {};
     this.init();
   }
 
-  getDefaultData(): GranulatesStoreDataType {
+  getDefaultData(): GranulatesDataType {
     return this.#defaultData;
   }
 
-  getDataFromStorage(): GranulatesStoreDataType {
+  getDataFromStorage(): GranulatesDataType {
     return granulatesStorage.getItems();
   }
 
@@ -26,7 +26,7 @@ class GranulatesDataApi {
     return this.#settings;
   }
 
-  getData(): GranulatesStoreDataType {
+  getData(): GranulatesDataType {
     const resultFromStorage = this.getDataFromStorage();
 
     if(resultFromStorage) {
@@ -37,14 +37,12 @@ class GranulatesDataApi {
   }
 
   init() {
-    this.#data.map((item: GranulateItemType) => {
+    this.#basicData.map((item: IGranulateItemType) => {
       this.#defaultData[item.UNID] = item;
     });
-
-    console.log(this.#defaultData);
   }
 }
 
-const granulatesDataApi = new GranulatesDataApi(granulatesData, basicGranulatesSettings);
+const granulatesDataApi = new GranulatesDataApi(basicGranulatesData, basicGranulatesSettings);
 
 export default granulatesDataApi;

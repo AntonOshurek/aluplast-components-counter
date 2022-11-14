@@ -2,7 +2,7 @@ import { useLocation } from 'react-router-dom';
 
 import OverviewItem from '../overview-item/overview-item';
 import { AppRoute } from '../../../variables/variables';
-import { OverviewComponentDataType, GranulatesDataType } from '../../../types/data-types';
+import { OverviewComponentDataType, BasicGranulatesDataType } from '../../../types/data-types';
 
 import './overview-list.scss';
 
@@ -24,7 +24,7 @@ const OverviewList = ({data}: OverviewListPropsType): JSX.Element => {
       location = AppRoute.GRANULATES_PAGE;
   }
 
-  const dataArray: GranulatesDataType = [...Object.values(data)]
+  const dataArray: BasicGranulatesDataType = [...Object.values(data)]
   const allItems: JSX.Element[] = dataArray.map(item => <OverviewItem item={item} key={item.UNID} path={location}/>);
 
   return (

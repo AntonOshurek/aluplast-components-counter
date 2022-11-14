@@ -1,22 +1,21 @@
 import { GranulatesSettingsNames } from "../variables/variables";
 
-export interface GranulateItemType {
+export interface IGranulateItemType {
   UNID: number,
   name: string,
   amount: number,
   image: string,
-}
-export type GranulatesDataType = GranulateItemType[]
+};
+
+export type BasicGranulatesDataType = IGranulateItemType[];
 
 export interface GranulatesSettingsType {
   [GranulatesSettingsNames.CONTAINER_WEIGHT]: number,
   [GranulatesSettingsNames.VOREK_WEIGHT]: number,
-}
+};
 
-export type GranulatesStoreDataType = {[propertyName: number]: GranulateItemType}
+export type GranulatesDataType = {[propertyName: number]: IGranulateItemType};
 
 //for add new data types (guma and another)
-export type OverviewComponentDataType = GranulatesStoreDataType;
-export type ThingItemComponentDataType = GranulateItemType;
-
-
+export type OverviewComponentDataType = GranulatesDataType;
+export type ThingItemComponentDataType = IGranulateItemType;

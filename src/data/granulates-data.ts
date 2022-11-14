@@ -1,11 +1,11 @@
-import { GranulatesDataType,GranulatesSettingsType } from "../types/data-types";
+import { BasicGranulatesDataType, GranulatesSettingsType } from "../types/data-types";
 
 export const basicGranulatesSettings: GranulatesSettingsType = {
   basicVorekWeight: 25,
   basicContainerWeight: 77,
 }
 
-export const granulatesData: GranulatesDataType = [
+export const basicGranulatesData: BasicGranulatesDataType = [
   {
     UNID: 100,
     name: 'HEUCOBATCH Cream 190 193',
