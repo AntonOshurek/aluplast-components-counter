@@ -1,23 +1,11 @@
-import { granulatesData, basicGranulatesSettings } from "../../data/granulates-data";
+//types
+import { IGranulatesState } from "../../types/state-types";
+//data
+import granulatesDataApi from "../../data-api/granulates-data-api";
 
-import { GranulatesState } from "../../types/state-types";
-import { GranulateItemType } from "../../types/data-types";
-
-import granulatesStorage from "../../storage-api/granulates-storage";
-
-export const granulatesState: GranulatesState = {
-  items: {},
-  granulatesSettings: basicGranulatesSettings,
+const granulatesState: IGranulatesState = {
+  items: granulatesDataApi.getData(),
+  granulatesSettings: granulatesDataApi.getSettings(),
 };
 
-const storageData = granulatesStorage.getItems();
-
-if(storageData) {
-  granulatesState.items = storageData;
-} else {
-  granulatesData.map((item: GranulateItemType) => {
-    granulatesState.items[item.UNID] = {...item, amount: 0};
-  });
-};
-
-
+export { granulatesState };
