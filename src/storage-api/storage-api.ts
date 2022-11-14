@@ -24,6 +24,7 @@ class AbstractStorage {
   }
 
   setItems(items: GranulatesStoreDataType) {
+    this.clearStore();
     localStorage.setItem(this.#name, JSON.stringify(items));
   }
 
