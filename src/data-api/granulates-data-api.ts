@@ -10,7 +10,7 @@ class GranulatesDataApi {
   constructor(data: GranulatesDataType, settings: GranulatesSettingsType) {
     this.#data = data;
     this.#settings = settings;
-    this.#defaultData = [];
+    this.#defaultData = {};
     this.init();
   }
 
@@ -27,7 +27,7 @@ class GranulatesDataApi {
   }
 
   getData(): GranulatesStoreDataType {
-    const resultFromStorage = this.getDataFromStorage()
+    const resultFromStorage = this.getDataFromStorage();
 
     if(resultFromStorage) {
       return resultFromStorage;
@@ -40,6 +40,8 @@ class GranulatesDataApi {
     this.#data.map((item: GranulateItemType) => {
       this.#defaultData[item.UNID] = item;
     });
+
+    console.log(this.#defaultData);
   }
 }
 

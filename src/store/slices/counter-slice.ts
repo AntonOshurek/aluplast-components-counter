@@ -13,6 +13,7 @@ export const granulatesSlice = createSlice({
   name: 'granulates',
   initialState: granulatesState,
 
+
   reducers: {
     increment: (state, action: PayloadAction<{UNID: number, value: number}>) => {
       state.items[action.payload.UNID].amount = state.items[action.payload.UNID].amount + action.payload.value;
