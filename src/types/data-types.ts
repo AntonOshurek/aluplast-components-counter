@@ -6,15 +6,17 @@ export interface GranulateItemType {
   amount: number,
   image: string,
 }
-
 export type GranulatesDataType = GranulateItemType[]
+
+export interface GranulatesSettingsType {
+  [GranulatesSettingsNames.CONTAINER_WEIGHT]: number,
+  [GranulatesSettingsNames.VOREK_WEIGHT]: number,
+}
+
 export type GranulatesStoreDataType = {[propertyName: number]: GranulateItemType}
 
 //for add new data types (guma and another)
 export type OverviewComponentDataType = GranulatesStoreDataType;
 export type ThingItemComponentDataType = GranulateItemType;
 
-export interface GranulatesSettingsType {
-  [GranulatesSettingsNames.CONTAINER_WEIGHT]: number,
-  [GranulatesSettingsNames.VOREK_WEIGHT]: number,
-}
+

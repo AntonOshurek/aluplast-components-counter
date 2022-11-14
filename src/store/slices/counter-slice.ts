@@ -1,9 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AppThunk } from '../../types/store-types';
+//data
 // import { selectCount } from '../selectors/selectors';
-import { granulatesState, defaultItems } from '../state/granulates-state';
+import granulatesState from '../state/granulates-state';
+//types
 import { GranulatesSettingsType } from '../../types/data-types';
-
+//storage
 import granulatesStorage from '../../storage-api/granulates-storage';
 
 export const granulatesSlice = createSlice({
@@ -24,7 +26,7 @@ export const granulatesSlice = createSlice({
       state.granulatesSettings = granulatesState.granulatesSettings;
     },
     clear: (state) => {
-      state.items = defaultItems;
+      state.items = granulatesState.items;
     }
   },
 });
