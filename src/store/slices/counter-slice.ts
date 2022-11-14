@@ -24,7 +24,7 @@ export const granulatesSlice = createSlice({
       state.granulatesSettings = action.payload;
     },
     resetSettingsToDefault: (state) => {
-      state.granulatesSettings = granulatesState.granulatesSettings;
+      state.granulatesSettings = granulatesDataApi.getSettings();
     },
     clear: (state) => {
       state.items = granulatesDataApi.getDefaultData();
