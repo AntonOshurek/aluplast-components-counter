@@ -9,7 +9,7 @@ export interface IGranulateItemType {
 
 export type BasicGranulatesDataType = IGranulateItemType[];
 
-export interface GranulatesSettingsType {
+export interface IGranulatesSettingsType {
   [GranulatesSettingsNames.CONTAINER_WEIGHT]: number,
   [GranulatesSettingsNames.VOREK_WEIGHT]: number,
 };

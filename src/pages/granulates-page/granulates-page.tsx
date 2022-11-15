@@ -2,14 +2,14 @@ import Header from '../../components/header/header';
 import Overview from '../../components/overview/overview';
 
 import { useAppSelector } from '../../hooks/hooks';
-import { getGranulatesStateSelector } from '../../store/selectors/selectors';
+import { SelectorGetGranulatesState } from '../../store/selectors/selectors';
 
 import { OverviewComponentDataType } from '../../types/data-types';
 
 import './granulates-page.scss';
 
 const GranulatesPage = (): JSX.Element => {
-  const data: OverviewComponentDataType = useAppSelector(getGranulatesStateSelector)
+  const data: OverviewComponentDataType = useAppSelector(SelectorGetGranulatesState)
 
   return (
     <div className='granulates-page'>

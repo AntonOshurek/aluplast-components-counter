@@ -8,7 +8,7 @@ import { ComponentsTexts } from '../../../variables/variables';
 //store
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
 import { increment, incrementToStore } from '../../../store/slices/counter-slice';
-import { getGranulatesSettingsContainerWeight } from '../../../store/selectors/selectors';
+import { SelectorGetGranulatesSettingsContainerWeight } from '../../../store/selectors/selectors';
 //styles
 import '../granulates-counter.scss';
 
@@ -18,7 +18,7 @@ const GranulatesCounterContainer = (): JSX.Element => {
 
   const dispatch = useAppDispatch();
 
-  const basicContainerWeight = useAppSelector(getGranulatesSettingsContainerWeight);
+  const basicContainerWeight = useAppSelector(SelectorGetGranulatesSettingsContainerWeight);
   const initialValue: number = 500;
   const addedAmountTitle: string = 'One container - ';
 

@@ -5,7 +5,7 @@ import { GranulatesCounterHeader } from '../../components/granulates-counter';
 import ThingItem from '../../components/item/thing-item';
 
 import { useAppSelector } from '../../hooks/hooks';
-import { getCurrentGranulatesSelector } from '../../store/selectors/selectors';
+import { SelectorGetCurrentGranulates } from '../../store/selectors/selectors';
 
 import './granulates-counter-page.scss';
 
@@ -20,7 +20,7 @@ const GranulatesCounterPage = (): JSX.Element => {
     currentItemUNID = 100;
   }
 
-  const currentItem = useAppSelector(getCurrentGranulatesSelector(currentItemUNID))
+  const currentItem = useAppSelector(SelectorGetCurrentGranulates(currentItemUNID))
 
   return (
     <div className='granulates-counter-page'>

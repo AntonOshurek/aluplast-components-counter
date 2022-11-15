@@ -5,7 +5,7 @@ import { AppThunk } from '../../types/store-types';
 import granulatesDataApi from '../../data-api/granulates-data-api';
 import { granulatesState } from '../state/granulates-state';
 //types
-import { GranulatesSettingsType } from '../../types/data-types';
+import { IGranulatesSettingsType } from '../../types/data-types';
 //storage
 import granulatesStorage from '../../storage-api/granulates-storage';
 
@@ -20,7 +20,7 @@ export const granulatesSlice = createSlice({
     decrement: (state, action: PayloadAction<{UNID: number, value: number}>) => {
       state.items[action.payload.UNID].amount = state.items[action.payload.UNID].amount - action.payload.value;
     },
-    setNewSettings: (state, action: PayloadAction<GranulatesSettingsType>) => {
+    setNewSettings: (state, action: PayloadAction<IGranulatesSettingsType>) => {
       state.granulatesSettings = action.payload;
     },
     resetSettingsToDefault: (state) => {
