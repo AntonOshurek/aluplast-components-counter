@@ -1,8 +1,10 @@
 //types
 // import type { BasicGranulatesDataType, IGranulateItemType, IGranulatesDataType, IGranulatesSettingsType } from "../../types/data-types";
-import { DataTypes, BasicDataTypes, ItemsTypes, SettingsTypes } from "../../types/data-types";
+import { DataTypes, BasicDataTypes, SettingsTypes } from "../../types/data-types";
 //storage
 import { granulatesStorageApi } from '../';
+
+import { adaptDataForClient } from '../../data-adapter/data-adapter';
 
 abstract class AbstractData {
   #basicData: BasicDataTypes;
@@ -43,9 +45,7 @@ abstract class AbstractData {
   }
 
   init() {
-    this.#basicData.map((item: ItemsTypes) => {
-      this.#defaultData[item.UNID] = item;
-    });
+    this.#defaultData = adaptDataForClient(this.#basicData);
   }
 }
 
