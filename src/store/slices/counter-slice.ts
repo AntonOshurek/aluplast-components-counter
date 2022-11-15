@@ -1,13 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 //data
-import granulatesDataApi from '../../api/data-api/granulates-data-api';
 import { granulatesState } from '../state/granulates-state';
 //types
 import type { AppThunk } from '../../types/store-types';
 import type { IGranulatesSettingsType } from '../../types/data-types';
 import type { IIncDecActionParametrsType } from '../../types/action-types';
-//storage
-import granulatesStorageApi from '../../api/storage-api/granulates-storage-api';
+//API
+import { granulatesDataApi, granulatesStorageApi } from '../../api/';
 
 export const granulatesSlice = createSlice({
   name: 'granulates',

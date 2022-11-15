@@ -2,7 +2,7 @@
 // import type { BasicGranulatesDataType, IGranulateItemType, IGranulatesDataType, IGranulatesSettingsType } from "../../types/data-types";
 import { DataTypes, BasicDataTypes, ItemsTypes, SettingsTypes } from "../../types/data-types";
 //storage
-import granulatesStorageApi from '../storage-api/granulates-storage-api';
+import { granulatesStorageApi } from '../';
 
 abstract class AbstractData {
   #basicData: BasicDataTypes;
