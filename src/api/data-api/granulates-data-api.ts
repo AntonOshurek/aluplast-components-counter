@@ -1,9 +1,9 @@
 //types
-import type { BasicGranulatesDataType, IGranulateItemType, IGranulatesDataType, IGranulatesSettingsType } from "../types/data-types";
+import type { BasicGranulatesDataType, IGranulateItemType, IGranulatesDataType, IGranulatesSettingsType } from "../../types/data-types";
 //storage
-import granulatesStorage from '../storage-api/granulates-storage';
+import granulatesStorageApi from '../storage-api/granulates-storage-api';
 //data
-import { basicGranulatesData, basicGranulatesSettings } from "../data/granulates-data";
+import { basicGranulatesData, basicGranulatesSettings } from "../../data/granulates-data";
 
 class GranulatesDataApi {
   #basicData: BasicGranulatesDataType;
@@ -21,8 +21,8 @@ class GranulatesDataApi {
     return this.#defaultData;
   }
 
-  getDataFromStorage(): IGranulatesDataType {
-    return granulatesStorage.getItems();
+  getDataFromStorage(): IGranulatesDataType | null {
+    return granulatesStorageApi.getItems();
   }
 
   getSettings(): IGranulatesSettingsType {
@@ -30,7 +30,7 @@ class GranulatesDataApi {
   }
 
   getData(): IGranulatesDataType {
-    const resultFromStorage = this.getDataFromStorage();
+    const resultFromStorage: IGranulatesDataType | null = this.getDataFromStorage();
 
     if(resultFromStorage) {
       return resultFromStorage;

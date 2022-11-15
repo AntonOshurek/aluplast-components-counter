@@ -20,3 +20,7 @@ export enum GranulatesSettingsNames {
   VOREK_WEIGHT = 'basicVorekWeight',
   CONTAINER_WEIGHT = 'basicContainerWeight',
 }
+
+export enum GranulatesStorageApiNames {
+  GRANULATES_STORAGE = 'granulates',
+}
