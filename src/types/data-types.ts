@@ -14,8 +14,10 @@ export interface IGranulatesSettingsType {
   [GranulatesSettingsNames.VOREK_WEIGHT]: number,
 };
 
-export type GranulatesDataType = {[propertyName: number]: IGranulateItemType};
+export interface IGranulatesDataType {
+  [propertyName: number]: IGranulateItemType,
+};
 
 //for add new data types (guma and another)
-export type OverviewComponentDataType = GranulatesDataType;
+export type OverviewComponentDataType = IGranulatesDataType;
 export type ThingItemComponentDataType = IGranulateItemType;

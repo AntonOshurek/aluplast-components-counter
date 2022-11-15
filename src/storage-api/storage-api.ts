@@ -1,4 +1,4 @@
-import { GranulatesDataType } from "../types/data-types";
+import { IGranulatesDataType } from "../types/data-types";
 
 class AbstractStorage {
 
@@ -23,7 +23,7 @@ class AbstractStorage {
     }
   }
 
-  setItems(items: GranulatesDataType) {
+  setItems(items: IGranulatesDataType) {
     this.clearStore();
     localStorage.setItem(this.#name, JSON.stringify(items));
   }
