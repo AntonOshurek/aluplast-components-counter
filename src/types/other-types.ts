@@ -1,3 +1,3 @@
-export type SetActiveLink = {
+export type SetActiveLinkType = {
   isActive: boolean,
 }

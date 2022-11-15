@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom';
-
+//variables and consts
 import { AppRoute } from '../../variables/variables';
-
-import { SetActiveLink } from '../../types/other-types';
-
+//types
+import type { SetActiveLinkType } from '../../types/other-types';
+//styles
 import './navigation.scss';
 
 const Navigation = (): JSX.Element => {
@@ -11,7 +11,7 @@ const Navigation = (): JSX.Element => {
   const activeLinkClass = 'navigation__link--active';
   const basicLinkClass = 'navigation__link unselectable';
 
-  const setActiveLink = ({isActive}: SetActiveLink) => isActive ? `${basicLinkClass}  ${activeLinkClass}` : `${basicLinkClass}`;
+  const setActiveLink = ({isActive}: SetActiveLinkType) => isActive ? `${basicLinkClass}  ${activeLinkClass}` : `${basicLinkClass}`;
 
   return (
     <nav className='navigation'>

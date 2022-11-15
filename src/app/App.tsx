@@ -4,14 +4,14 @@ import {GranulatesPage, RootPage, SettingsPage, GranulatesCounterPage} from '../
 //granulates counters components for GRANULATES_COUNTER root
 import {GranulatesCounterContainer, GranulatesCounter, GranulatesCounterVorek} from '../components/granulates-counter';
 //consts and utils functions
-import { AppRoute } from '../variables/variables';
+import { AppRoute, rootBaseName } from '../variables/variables';
 import { setVhVariable } from '../utils/utils';
 
 function App() {
   setVhVariable(); //variable VH used in styles for set main height
 
   return (
-    <BrowserRouter basename="/aluplas-granules-counter">
+    <BrowserRouter basename={rootBaseName}>
       <Routes>
         <Route path={AppRoute.ROOT} element={<RootPage/>}/>
         <Route path={AppRoute.SETTINGS} element={<SettingsPage/>}/>

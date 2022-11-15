@@ -2,13 +2,13 @@ import { ChangeEvent } from 'react';
 //consts and variables
 import { GranulatesSettingsNames } from '../../../variables/variables';
 //types
-import { GranulatesSettingsType } from '../../../types/data-types';
+import type { IGranulatesSettingsType } from '../../../types/data-types';
 //styles
 import './granulates-settings.scss';
 
 interface GranulatesSettingsPropsType {
   inputsHandler: (evt: ChangeEvent<HTMLInputElement>) => void,
-  value: GranulatesSettingsType
+  value: IGranulatesSettingsType
 }
 
 const GranulatesSettings = ({inputsHandler, value}: GranulatesSettingsPropsType): JSX.Element => {

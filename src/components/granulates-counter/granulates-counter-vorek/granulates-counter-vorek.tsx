@@ -7,8 +7,8 @@ import { ButtonChoice } from '../../controls';
 import { ComponentsTexts } from '../../../variables/variables';
 //store
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
-import { increment, decrement, incrementToStore, decrementToStore } from '../../../store/slices/counter-slice';
-import { getGranulatesSettingsVorekWeight } from '../../../store/selectors/selectors';
+import { incrementAction, decrementAction } from '../../../store/slices/counter-slice';
+import { SelectorGetGranulatesSettingsVorekWeight } from '../../../store/selectors/selectors';
 //styles
 import '../granulates-counter.scss';
 
@@ -21,7 +21,7 @@ const GranulatesCounterVorek = (): JSX.Element => {
   const initialAddedAmount: number = 1;
   const initialValue: number = 0;
   const addedAmountTitle: string = '1 click +';
-  const basicVorekWeight = useAppSelector(getGranulatesSettingsVorekWeight);
+  const basicVorekWeight = useAppSelector(SelectorGetGranulatesSettingsVorekWeight);
 
   const [addedAmount, setAddedAmount] = useState<number>(initialAddedAmount);
   const [value, setValue] = useState<number>(initialValue);
@@ -46,16 +46,14 @@ const GranulatesCounterVorek = (): JSX.Element => {
     setValue(() => value + addedAmount)
 
     let recalcValue: number = addedAmount * basicVorekWeight;
-    // dispatch(increment({UNID: currentItemUNID, value: recalcValue}));
-    dispatch(incrementToStore({UNID: currentItemUNID, value: recalcValue}));
+    dispatch(incrementAction({UNID: currentItemUNID, value: recalcValue}));
   }
 
   const decrementHandler = (): void => {
     setValue(() => value - addedAmount)
 
     const recalcValue: number = addedAmount * basicVorekWeight;
-    // dispatch(decrement({UNID: currentItemUNID, value: recalcValue}));
-    dispatch(decrementToStore({UNID: currentItemUNID, value: recalcValue}));
+    dispatch(decrementAction({UNID: currentItemUNID, value: recalcValue}));
   }
 
   //CHECK IT!!!!!

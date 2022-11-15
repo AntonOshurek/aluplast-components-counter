@@ -1,11 +1,13 @@
+//components
 import OverviewHeader from './overview-header/overview-header';
 import OverviewList from './overview-list/overview-list';
-import { OverviewComponentDataType } from '../../types/data-types';
-
+//types
+import type { DataTypes } from '../../types/data-types';
+//styles
 import './overview.scss';
 
 interface OverviewPropsType {
-  data: OverviewComponentDataType,
+  data: DataTypes,
 }
 
 const Overview = ({data}: OverviewPropsType): JSX.Element => {

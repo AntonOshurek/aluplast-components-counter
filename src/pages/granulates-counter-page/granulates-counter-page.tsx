@@ -1,26 +1,20 @@
 import { Outlet } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-
+//components
 import { GranulatesCounterHeader } from '../../components/granulates-counter';
 import ThingItem from '../../components/item/thing-item';
-
+//store
 import { useAppSelector } from '../../hooks/hooks';
-import { getCurrentGranulatesSelector } from '../../store/selectors/selectors';
-
+import { SelectorGetCurrentGranulates } from '../../store/selectors/selectors';
+//types
+import { IGranulateItemType } from '../../types/data-types';
+//styles
 import './granulates-counter-page.scss';
 
 const GranulatesCounterPage = (): JSX.Element => {
-
   const {UNID = 100} = useParams();
 
-  let currentItemUNID: number = 0;
-  if(UNID) {
-    currentItemUNID = +UNID;
-  } else {
-    currentItemUNID = 100;
-  }
-
-  const currentItem = useAppSelector(getCurrentGranulatesSelector(currentItemUNID))
+  const currentItem: IGranulateItemType = useAppSelector(SelectorGetCurrentGranulates(+UNID));
 
   return (
     <div className='granulates-counter-page'>

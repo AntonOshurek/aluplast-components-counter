@@ -1,15 +1,15 @@
 import { Link, generatePath } from 'react-router-dom';
-
+//components
 import ThingItem from '../../item/thing-item';
-import { ThingItemComponentDataType } from '../../../types/data-types';
+//types
+import type { ItemsTypes } from '../../../types/data-types';
+//variables and consts
 import { AppRoute } from '../../../variables/variables';
-
+//styles
 import './overview-item.scss';
 
-export type Routes = AppRoute;
-
 interface OverviewItemPropsType {
-  item: ThingItemComponentDataType,
+  item: ItemsTypes,
   path: AppRoute,
 }
 
