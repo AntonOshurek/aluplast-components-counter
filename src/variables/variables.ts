@@ -1,3 +1,5 @@
+export const rootBaseName = '/aluplas-granules-counter';
+
 export const enum AppRoute {
   ROOT = '/',
   SETTINGS = '/settings',
