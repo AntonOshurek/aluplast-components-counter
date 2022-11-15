@@ -1,6 +1,6 @@
-import { IGranulatesSettingsType, IGranulatesDataType } from "./data-types"
+import type { IGranulatesSettingsType, IGranulatesDataType } from "./data-types";
 
-export interface IGranulatesState {
+export interface IGranulatesStateType {
   items: IGranulatesDataType,
   granulatesSettings: IGranulatesSettingsType
 }

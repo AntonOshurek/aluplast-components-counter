@@ -1,4 +1,5 @@
-import { IGranulatesDataType } from "../types/data-types";
+//types
+import type { IGranulatesDataType } from "../types/data-types";
 
 class AbstractStorage {
 

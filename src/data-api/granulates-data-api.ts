@@ -1,5 +1,8 @@
-import { BasicGranulatesDataType, IGranulateItemType, IGranulatesDataType, IGranulatesSettingsType } from "../types/data-types";
+//types
+import type { BasicGranulatesDataType, IGranulateItemType, IGranulatesDataType, IGranulatesSettingsType } from "../types/data-types";
+//storage
 import granulatesStorage from '../storage-api/granulates-storage';
+//data
 import { basicGranulatesData, basicGranulatesSettings } from "../data/granulates-data";
 
 class GranulatesDataApi {

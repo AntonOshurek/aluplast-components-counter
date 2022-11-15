@@ -1,6 +1,6 @@
 //types
-import { RootState } from "../../types/store-types";
-import { IGranulatesDataType, IGranulateItemType, IGranulatesSettingsType } from "../../types/data-types";
+import type { RootState } from "../../types/store-types";
+import type { IGranulatesDataType, IGranulateItemType, IGranulatesSettingsType } from "../../types/data-types";
 
 // GRANULATES SELECTROS
 export const SelectorGetGranulatesState = (state: RootState): IGranulatesDataType => state.granulates.items;

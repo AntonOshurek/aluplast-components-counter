@@ -1,11 +1,9 @@
 //types
-import { IGranulatesState } from "../../types/state-types";
+import type { IGranulatesStateType } from "../../types/state-types";
 //data
 import granulatesDataApi from "../../data-api/granulates-data-api";
 
-const granulatesState: IGranulatesState = {
+export const granulatesState: IGranulatesStateType = {
   items: granulatesDataApi.getData(),
   granulatesSettings: granulatesDataApi.getSettings(),
 };
-
-export { granulatesState };

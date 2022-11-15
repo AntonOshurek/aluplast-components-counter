@@ -6,7 +6,7 @@ import { ButtonAdd } from '../../components/controls';
 //consts and variables
 import { ComponentsTexts, GranulatesSettingsNames } from '../../variables/variables';
 //types
-import { IGranulatesSettingsType } from '../../types/data-types';
+import type { IGranulatesSettingsType } from '../../types/data-types';
 //store
 import { setNewSettings, resetSettingsToDefault, clearStore } from '../../store/slices/counter-slice';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';

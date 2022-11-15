@@ -1,8 +1,9 @@
 import { NavLink, useParams, generatePath } from 'react-router-dom';
-
+//variables and consts
 import { AppRoute } from '../../../variables/variables';
-import { SetActiveLink } from '../../../types/other-types';
-
+//types
+import type { SetActiveLinkType } from '../../../types/other-types';
+//styles
 import './granulates-counter-nav.scss';
 
 const GranulatesCounterNav = (): JSX.Element => {
@@ -11,7 +12,7 @@ const GranulatesCounterNav = (): JSX.Element => {
   const activeLinkClass = 'granulates-counter-nav__link--active';
   const basicLinkClass = 'granulates-counter-nav__link';
 
-  const setActiveLink = ({isActive}: SetActiveLink) => isActive ? `${basicLinkClass}  ${activeLinkClass}` : `${basicLinkClass}`;
+  const setActiveLink = ({isActive}: SetActiveLinkType) => isActive ? `${basicLinkClass}  ${activeLinkClass}` : `${basicLinkClass}`;
 
   return (
     <nav className='granulates-counter-nav'>

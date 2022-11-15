@@ -2,7 +2,7 @@
 import OverviewHeader from './overview-header/overview-header';
 import OverviewList from './overview-list/overview-list';
 //types
-import { OverviewComponentDataType } from '../../types/data-types';
+import type { OverviewComponentDataType } from '../../types/data-types';
 //styles
 import './overview.scss';
 

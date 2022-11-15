@@ -4,7 +4,7 @@ import OverviewItem from '../overview-item/overview-item';
 //variables and consts
 import { AppRoute } from '../../../variables/variables';
 //types
-import { OverviewComponentDataType } from '../../../types/data-types';
+import type { OverviewComponentDataType } from '../../../types/data-types';
 //styles
 import './overview-list.scss';
 

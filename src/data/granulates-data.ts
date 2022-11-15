@@ -1,4 +1,5 @@
-import { BasicGranulatesDataType, IGranulatesSettingsType } from "../types/data-types";
+//types
+import type { BasicGranulatesDataType, IGranulatesSettingsType } from "../types/data-types";
 
 export const basicGranulatesSettings: IGranulatesSettingsType = {
   basicVorekWeight: 25,

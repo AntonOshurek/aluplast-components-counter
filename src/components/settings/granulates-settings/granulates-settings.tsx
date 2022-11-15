@@ -2,7 +2,7 @@ import { ChangeEvent } from 'react';
 //consts and variables
 import { GranulatesSettingsNames } from '../../../variables/variables';
 //types
-import { IGranulatesSettingsType } from '../../../types/data-types';
+import type { IGranulatesSettingsType } from '../../../types/data-types';
 //styles
 import './granulates-settings.scss';
 

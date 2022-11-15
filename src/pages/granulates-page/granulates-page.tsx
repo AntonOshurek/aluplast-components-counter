@@ -5,7 +5,7 @@ import Overview from '../../components/overview/overview';
 import { useAppSelector } from '../../hooks/hooks';
 import { SelectorGetGranulatesState } from '../../store/selectors/selectors';
 //types
-import { OverviewComponentDataType } from '../../types/data-types';
+import type { OverviewComponentDataType } from '../../types/data-types';
 
 import './granulates-page.scss';
 

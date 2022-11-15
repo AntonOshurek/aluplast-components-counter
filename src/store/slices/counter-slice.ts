@@ -1,11 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AppThunk } from '../../types/store-types';
 //data
-// import { selectCount } from '../selectors/selectors';
 import granulatesDataApi from '../../data-api/granulates-data-api';
 import { granulatesState } from '../state/granulates-state';
 //types
-import { IGranulatesSettingsType } from '../../types/data-types';
+import type { IGranulatesSettingsType } from '../../types/data-types';
+import type { IIncDecActionParametrsType } from '../../types/action-types';
+
 //storage
 import granulatesStorage from '../../storage-api/granulates-storage';
 
@@ -14,10 +15,10 @@ export const granulatesSlice = createSlice({
   initialState: granulatesState,
 
   reducers: {
-    increment: (state, action: PayloadAction<{UNID: number, value: number}>) => {
+    increment: (state, action: PayloadAction<IIncDecActionParametrsType>) => {
       state.items[action.payload.UNID].amount = state.items[action.payload.UNID].amount + action.payload.value;
     },
-    decrement: (state, action: PayloadAction<{UNID: number, value: number}>) => {
+    decrement: (state, action: PayloadAction<IIncDecActionParametrsType>) => {
       state.items[action.payload.UNID].amount = state.items[action.payload.UNID].amount - action.payload.value;
     },
     setNewSettings: (state, action: PayloadAction<IGranulatesSettingsType>) => {
@@ -35,14 +36,14 @@ export const granulatesSlice = createSlice({
 export const { increment, decrement, setNewSettings, resetSettingsToDefault, clear } = granulatesSlice.actions;
 
 export const incrementToStore =
-  (action: {UNID: number, value: number}): AppThunk =>
+  (action: IIncDecActionParametrsType): AppThunk =>
   (dispatch, getState) => {
     dispatch(increment(action));
     granulatesStorage.setItems(getState().granulates.items);
   };
 
 export const decrementToStore =
-  (action: {UNID: number, value: number}): AppThunk =>
+  (action: IIncDecActionParametrsType): AppThunk =>
   (dispatch, getState) => {
     dispatch(decrement(action));
     granulatesStorage.setItems(getState().granulates.items);

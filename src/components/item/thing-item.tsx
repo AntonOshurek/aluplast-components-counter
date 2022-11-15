@@ -1,5 +1,6 @@
-import { ThingItemComponentDataType } from '../../types/data-types';
-
+//types
+import type { ThingItemComponentDataType } from '../../types/data-types';
+//styles
 import './thing-item.scss';
 
 interface ThingItemPropsType {
