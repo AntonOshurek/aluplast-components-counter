@@ -19,3 +19,22 @@ export const onEscClickHandler = (evt: any, htmlElement: HTMLElement | null = nu
     }
   }
 }
+
+export const getZero = (num: number): number | string => {
+  if (num >= 0 && num < 10) {
+    return `0${num}`;
+  } else {
+    return num;
+  }
+};
+
+export const getFullDate = (): string => {
+  const date: Date = new Date();
+  const year: number = date.getFullYear();
+  const month: number | string = getZero(date.getMonth());
+  const day: number | string = getZero(date.getDay());
+
+  const fullDate: string = `${day}-${month}-${year}`;
+
+  return fullDate;
+}

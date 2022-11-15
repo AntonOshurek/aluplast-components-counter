@@ -6,7 +6,7 @@ import { useAppSelector } from '../../hooks/hooks';
 import { SelectorGetGranulatesState } from '../../store/selectors/selectors';
 //types
 import type { DataTypes } from '../../types/data-types';
-
+//styles
 import './granulates-page.scss';
 
 const GranulatesPage = (): JSX.Element => {
