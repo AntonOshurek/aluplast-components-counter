@@ -33,27 +33,35 @@ export const granulatesSlice = createSlice({
   },
 });
 
-export const { increment, decrement, setNewSettings, resetSettingsToDefault, clear } = granulatesSlice.actions;
+export const { resetSettingsToDefault, clear } = granulatesSlice.actions;
 
-export const incrementToStore =
+export const incrementAction =
   (action: IIncDecActionParametrsType): AppThunk =>
   (dispatch, getState) => {
-    dispatch(increment(action));
+    dispatch(granulatesSlice.actions.increment(action));
     granulatesStorage.setItems(getState().granulates.items);
   };
 
-export const decrementToStore =
+export const decrementAction =
   (action: IIncDecActionParametrsType): AppThunk =>
   (dispatch, getState) => {
-    dispatch(decrement(action));
+    dispatch(granulatesSlice.actions.decrement(action));
     granulatesStorage.setItems(getState().granulates.items);
   };
 
-export const clearStore =
+export const clearStoreAction =
   (): AppThunk =>
   (dispatch) => {
-    dispatch(clear());
+    dispatch(granulatesSlice.actions.clear());
     granulatesStorage.setItems(granulatesDataApi.getDefaultData());
+  };
+
+export const setSettingsAction =
+  (action: IGranulatesSettingsType): AppThunk =>
+  (dispatch, getState) => {
+    dispatch(granulatesSlice.actions.setNewSettings(action));
+    //add save settings to store logick
+    //granulatesStorage.setItems(getState().granulates.items);
   };
 
 export default granulatesSlice.reducer;

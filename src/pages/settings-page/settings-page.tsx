@@ -8,7 +8,7 @@ import { ComponentsTexts, GranulatesSettingsNames } from '../../variables/variab
 //types
 import type { IGranulatesSettingsType } from '../../types/data-types';
 //store
-import { setNewSettings, resetSettingsToDefault, clearStore } from '../../store/slices/counter-slice';
+import { setSettingsAction, resetSettingsToDefault, clearStoreAction } from '../../store/slices/counter-slice';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { SelectorGetGranulatesSettings } from '../../store/selectors/selectors';
 //styles
@@ -21,7 +21,7 @@ const SettingsPage = (): JSX.Element => {
   const [granulatesSettings, setGranulatesSettings] = useState<IGranulatesSettingsType>(basicGranulatesSettings);
 
   const onSettingSubmitButtonClickHandler = (): void => {
-    dispatch(setNewSettings(granulatesSettings));
+    dispatch(setSettingsAction(granulatesSettings));
   }
 
   const onResetSettingsButtonHandler = () => {
@@ -29,7 +29,7 @@ const SettingsPage = (): JSX.Element => {
   }
 
   const resetCounter = () => {
-    dispatch(clearStore());
+    dispatch(clearStoreAction());
   }
 
   const onSettingsInputsHandler = (evt: ChangeEvent<HTMLInputElement>): void => {

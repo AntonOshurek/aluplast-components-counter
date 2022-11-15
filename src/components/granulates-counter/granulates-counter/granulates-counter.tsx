@@ -7,7 +7,7 @@ import { ButtonAdd } from '../../controls';
 import { ComponentsTexts } from '../../../variables/variables';
 //store
 import { useAppDispatch } from '../../../hooks/hooks';
-import { increment, incrementToStore } from '../../../store/slices/counter-slice';
+import { incrementAction } from '../../../store/slices/counter-slice';
 //styles
 import '../granulates-counter.scss';
 
@@ -35,8 +35,7 @@ const GranulatesCounter = (): JSX.Element => {
     if(value === NaN) {
       setError('You can\'t add zero');
     } else {
-      // dispatch(increment({UNID: currentItemUNID, value: value}));
-      dispatch(incrementToStore({UNID: currentItemUNID, value: value}));
+      dispatch(incrementAction({UNID: currentItemUNID, value: value}));
     }
   }
 
