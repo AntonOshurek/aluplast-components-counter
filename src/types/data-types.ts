@@ -22,7 +22,3 @@ export type DataTypes = IGranulatesDataType;
 export type BasicDataTypes = BasicGranulatesDataType;
 export type ItemsTypes = IGranulateItemType;
 export type SettingsTypes = IGranulatesSettingsType;
-
-//for add new data types (guma and another)
-export type OverviewComponentDataType = IGranulatesDataType;
-export type ThingItemComponentDataType = IGranulateItemType;

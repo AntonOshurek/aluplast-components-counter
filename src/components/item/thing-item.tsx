@@ -1,10 +1,10 @@
 //types
-import type { ThingItemComponentDataType } from '../../types/data-types';
+import type { ItemsTypes } from '../../types/data-types';
 //styles
 import './thing-item.scss';
 
 interface ThingItemPropsType {
-  item: ThingItemComponentDataType,
+  item: ItemsTypes,
 }
 
 const ThingItem = ({item}: ThingItemPropsType): JSX.Element => {

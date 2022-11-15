@@ -4,12 +4,12 @@ import OverviewItem from '../overview-item/overview-item';
 //variables and consts
 import { AppRoute } from '../../../variables/variables';
 //types
-import type { OverviewComponentDataType } from '../../../types/data-types';
+import type { DataTypes } from '../../../types/data-types';
 //styles
 import './overview-list.scss';
 
 interface OverviewListPropsType {
-  data: OverviewComponentDataType,
+  data: DataTypes,
 }
 
 const OverviewList = ({data}: OverviewListPropsType): JSX.Element => {
