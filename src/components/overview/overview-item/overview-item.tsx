@@ -8,8 +8,6 @@ import { AppRoute } from '../../../variables/variables';
 //styles
 import './overview-item.scss';
 
-export type Routes = AppRoute;
-
 interface OverviewItemPropsType {
   item: ItemsTypes,
   path: AppRoute,

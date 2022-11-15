@@ -13,7 +13,6 @@ interface OverviewListPropsType {
 }
 
 const OverviewList = ({data}: OverviewListPropsType): JSX.Element => {
-
   let location: AppRoute;
 
   //here checked opened page (granulates or guma) and send route for overviewItem component
@@ -33,10 +32,6 @@ const OverviewList = ({data}: OverviewListPropsType): JSX.Element => {
     }
     return itemsArray;
   }
-
-  // old - commented 15.11.2022 Anton Oshurek refactoring. added generateItems function
-  // const dataArray: BasicGranulatesDataType = [...Object.values(data)]
-  // const allItems: JSX.Element[] = dataArray.map(item => <OverviewItem item={item} key={item.UNID} path={location}/>);
 
   return (
     <ul className='overview-list'>
