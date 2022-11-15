@@ -1,3 +1,4 @@
+//abstract classes
 import AbstractStorage from "./abstract-storage";
 //variables ans consts
 import { GranulatesStorageApiNames } from "../../variables/variables";
