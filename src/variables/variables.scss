@@ -34,6 +34,7 @@ $standart-subtext-color: #9a9a9a;
 $main-color: #3d4584;
 $standart-white: #ffffff;
 $white-bg-color: #f0f4fd;
+$error-color: #e74c3c;
 //navigation icons colors
 $navigation-link-color: #2b2b2b;
 $navigation-link-hover-color: #101010;
@@ -45,6 +46,9 @@ $standart-active-box-shadow--large: 9px 9px 25px #abafd1, 0px -10px 25px  #abafd
 
 $standart-box-shadow--medium: 3px 3px 10px #c7cbeb, -3px -3px 10px #ffffff;
 $standart-hover-box-shadow--medium: 6px 6px 20px #abafd1, -6px -6px 20px rgb(231, 237, 250);
+
+$error-button-shadow: 5px 5px 16px $error-color, -5px -5px 16px $standart-white;
+$error-button-active-shadow: 5px 5px 30px $error-color, -5px -5px 30px $standart-white;
 
 
 //OTHER----------------------
