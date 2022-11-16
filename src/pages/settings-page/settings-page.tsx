@@ -48,6 +48,10 @@ const SettingsPage = (): JSX.Element => {
     }
   }
 
+  const click = () => {
+    console.log('click');
+  }
+
   useEffect(() => {
     setGranulatesSettings(basicGranulatesSettings);
   }, [basicGranulatesSettings]);
@@ -58,21 +62,9 @@ const SettingsPage = (): JSX.Element => {
 
       <main className='settings-page__main container'>
         <div className='settings-page__reset-controls'>
-          <ButtonResetRemove/>
-          <ButtonResetRemove/>
+          <ButtonResetRemove buttonText={ComponentsTexts.SETTINGS_RESET_COUNTER_DATA} onButtonClickHandler={resetCounter}/>
+          <ButtonResetRemove buttonText={ComponentsTexts.SETTINGS_PAGE_RESET_SETTINGS} onButtonClickHandler={onResetSettingsButtonHandler}/>
         </div>
-
-        <ButtonAdd
-          onButtonClickHandler={resetCounter}
-          errorMessage={''}
-          buttonText={ComponentsTexts.SETTINGS_RESET_COUNTER_DATA}
-        />
-
-        <ButtonAdd
-          onButtonClickHandler={onResetSettingsButtonHandler}
-          errorMessage={''}
-          buttonText={ComponentsTexts.SETTINGS_PAGE_RESET_SETTINGS}
-        />
 
         <GranulatesSettings
           inputsHandler={onSettingsInputsHandler}
