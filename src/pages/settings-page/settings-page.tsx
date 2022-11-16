@@ -57,7 +57,10 @@ const SettingsPage = (): JSX.Element => {
       <Header/>
 
       <main className='settings-page__main container'>
-        <ButtonResetRemove/>
+        <div className='settings-page__reset-controls'>
+          <ButtonResetRemove/>
+          <ButtonResetRemove/>
+        </div>
 
         <ButtonAdd
           onButtonClickHandler={resetCounter}
