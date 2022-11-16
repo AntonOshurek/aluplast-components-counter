@@ -2,7 +2,7 @@ import { useState, ChangeEvent, useEffect } from 'react';
 //component
 import Header from '../../components/header/header';
 import GranulatesSettings from '../../components/settings/granulates-settings/granulates-settings';
-import { ButtonAdd } from '../../components/controls';
+import { ButtonAdd, ButtonResetRemove } from '../../components/controls';
 //consts and variables
 import { ComponentsTexts, GranulatesSettingsNames } from '../../variables/variables';
 //types
@@ -57,6 +57,7 @@ const SettingsPage = (): JSX.Element => {
       <Header/>
 
       <main className='settings-page__main container'>
+        <ButtonResetRemove/>
 
         <ButtonAdd
           onButtonClickHandler={resetCounter}
