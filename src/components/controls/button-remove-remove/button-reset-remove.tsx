@@ -1,4 +1,8 @@
 import { useState } from 'react';
+//components
+import ButtonChoice from '../button-choice/button-choice';
+//variables and consts
+import { ComponentsTexts } from '../../../variables/variables';
 //styles
 import './button-reset-remove.scss';
 
@@ -9,6 +13,7 @@ interface ButtonResetRemovePropsType {
 
 const ButtonResetRemove = ({onButtonClickHandler, buttonText}: ButtonResetRemovePropsType): JSX.Element => {
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [showSuccessModal, setShowSuccessModal] = useState<boolean>(false);
 
   const onShowAcceptModalClickHandler = (): void => {
     setShowModal(!showModal);
@@ -16,7 +21,12 @@ const ButtonResetRemove = ({onButtonClickHandler, buttonText}: ButtonResetRemove
 
   const confirmButtonClickHandler = () => {
     setShowModal(false);
+    setShowSuccessModal(true);
     onButtonClickHandler();
+  }
+
+  const closeSuccessModal = () => {
+    setShowSuccessModal(false);
   }
 
   return (
@@ -30,10 +40,27 @@ const ButtonResetRemove = ({onButtonClickHandler, buttonText}: ButtonResetRemove
 
       {
         showModal ? <div className='button-reset-remove__accept'>
-          <button onClick={confirmButtonClickHandler}>ok</button>
-          <button onClick={onShowAcceptModalClickHandler}>cancel</button>
+          <h2 className='button-reset-remove__accept-title'>Napewno chcesz {buttonText}?</h2>
+          <ButtonChoice
+            onIncButtonClickHandler={confirmButtonClickHandler}
+            onDecButtonClickHandler={onShowAcceptModalClickHandler}
+            choiseText={{plus: ComponentsTexts.CONFIRM, minus: ComponentsTexts.CANCEL}}/>
         </div> : null
       }
+
+      {
+        showSuccessModal ? <div className='button-reset-remove__success'>
+          <span className='button-reset-remove__success-icon'></span>
+          <h2 className='button-reset-remove__accept-title'>
+            {buttonText} - operacja skończyła się sukcesem
+          </h2>
+
+          <button onClick={closeSuccessModal} className='button-reset-remove__close'>X</button>
+
+        </div> : null
+      }
+
+
 
 
     </div>

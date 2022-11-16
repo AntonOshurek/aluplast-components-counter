@@ -12,10 +12,12 @@ export const enum AppRoute {
 export enum ComponentsTexts {
   SETTING_PAGE_SAVE_BUTTON = 'Save settings',
   SETTINGS_PAGE_RESET_SETTINGS = 'Reset All settings',
-  SETTINGS_RESET_COUNTER_DATA = 'Reset counter data!',
+  SETTINGS_RESET_COUNTER_DATA = 'Reset counter data',
   GRANULATES_COUNTER_ADD_BUTTON = 'Add value',
   GRANULATES_COUNTER_PLUS_BUTTON = 'Plus',
   GRANULATES_COUNTER_MINUS_BUTTON = 'Minus',
+  CONFIRM = 'Confirm',
+  CANCEL = 'Cancel',
 }
 
 export enum GranulatesSettingsNames {
