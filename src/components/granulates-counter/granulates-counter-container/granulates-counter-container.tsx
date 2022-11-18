@@ -20,7 +20,6 @@ const GranulatesCounterContainer = (): JSX.Element => {
 
   const basicContainerWeight = useAppSelector(SelectorGetGranulatesSettingsContainerWeight);
   const initialValue: number = 500;
-  const addedAmountTitle: string = 'One container - ';
 
   const [addedAmount, setAddedAmount] = useState<number>(basicContainerWeight)
   const [value, setValue] = useState<number>(initialValue);
@@ -51,9 +50,9 @@ const GranulatesCounterContainer = (): JSX.Element => {
 
   return (
     <section className="granulates-counter granulates-counter--set-controls">
-      <h3 className='visually-hidden'>GranulatesCounter</h3>
+      <h3 className='visually-hidden'>Licznik {ComponentsTexts.GRANULATES_COUNTER_NAME} {ComponentsTexts.GRANULATES_COUNTER_CONTAINER_NAME}</h3>
 
-      <CounterAddedAmount onInputChangeHandler={onAddedAmountChangeHandler} value={addedAmount} title={addedAmountTitle}/>
+      <CounterAddedAmount onInputChangeHandler={onAddedAmountChangeHandler} value={addedAmount} title={ComponentsTexts.GRANULATES_COUNTER_CONTAINER_ADDED_AMOUNT_TITLE}/>
       <CounterSetValue onInputChangeHandler={onInputValueChangeHandler} value={value}/>
       <ButtonAdd
         onButtonClickHandler={onAddButtonClickHandler}

@@ -41,7 +41,7 @@ const GranulatesCounter = (): JSX.Element => {
 
   return (
     <section className="granulates-counter">
-      <h3 className='visually-hidden'>GranulatesCounter</h3>
+      <h3 className='visually-hidden'>{ComponentsTexts.GRANULATES_COUNTER_NAME} {ComponentsTexts.GRANULATES_COUNTER_BASIC_NAME}</h3>
 
       <CounterSetValue onInputChangeHandler={onInputValueChangeHandler} value={value}/>
       <ButtonAdd

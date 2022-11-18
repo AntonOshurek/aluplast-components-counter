@@ -23,7 +23,7 @@ const GranulatesCounterPage = (): JSX.Element => {
 
         <div className='granulates-counter-page__wrap container'>
           <section className='granulates-counter-page__counter-info'>
-            <h2 className='granulates-counter-page__title'>Counter</h2>
+            <h2 className='granulates-counter-page__title'>Przegląd licznika</h2>
             <ThingItem item={currentItem}/>
           </section>
 

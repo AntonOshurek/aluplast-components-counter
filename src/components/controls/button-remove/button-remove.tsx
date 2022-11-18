@@ -11,7 +11,7 @@ interface ButtonRemovePropsType {
 
 const ButtonRemove = ({onButtonClickHandler, dataToDeleteName}: ButtonRemovePropsType): JSX.Element => {
   const [showModal, setShowModal] = useState<boolean>(false);
-  const [showSuccessModal, setShowSuccessModal] = useState<boolean>(false);
+  const [success, setSuccess] = useState<boolean>(false);
 
   const openAcceptModal = (): void => {
     setShowModal(true);
@@ -19,11 +19,11 @@ const ButtonRemove = ({onButtonClickHandler, dataToDeleteName}: ButtonRemoveProp
 
   const closeAcceptModal = (): void => {
     setShowModal(false);
-    setShowSuccessModal(false);
+    setSuccess(false);
   }
 
   const confirmButtonClickHandler = () => {
-    setShowSuccessModal(true);
+    setSuccess(true);
     onButtonClickHandler();
   }
 
@@ -39,17 +39,17 @@ const ButtonRemove = ({onButtonClickHandler, dataToDeleteName}: ButtonRemoveProp
       {
         showModal ?
           <div className='button-remove__modal'>
-            <div className={showSuccessModal ? 'button-remove__modal-wrap button-remove__modal-wrap--success' : 'button-remove__modal-wrap'}>
+            <div className={success ? 'button-remove__modal-wrap button-remove__modal-wrap--success' : 'button-remove__modal-wrap'}>
               <h2 className='button-remove__modal-title'>
                 {
-                  showSuccessModal ? 'Dane zostali usunięci :)' : `Napewno chcesz ${ComponentsTexts.SETTING_RESET_COUNTER_DATA} \"${dataToDeleteName}\"?`
+                  success ? 'Dane zostali usunięci :)' : `Napewno chcesz ${ComponentsTexts.SETTING_RESET_COUNTER_DATA} \"${dataToDeleteName}\"?`
                 }
               </h2>
 
               <div className='button-remove__modal-controls'>
 
                 {
-                  showSuccessModal ?
+                  success ?
                     <button className='button-remove__modal-button button-remove__modal-button--cancel'
                       type='button'
                       onClick={closeAcceptModal}>
@@ -73,9 +73,9 @@ const ButtonRemove = ({onButtonClickHandler, dataToDeleteName}: ButtonRemoveProp
 
               </div>
 
-              <figure className={showSuccessModal ? 'button-remove__modal-icon button-remove__modal-icon--success' : 'button-remove__modal-icon'}>
+              <figure className={success ? 'button-remove__modal-icon button-remove__modal-icon--success' : 'button-remove__modal-icon'}>
                 {
-                  showSuccessModal ?
+                  success ?
                   <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40">
                     <path fill='#008000' d="M20 37.667q-3.708 0-6.938-1.375-3.229-1.375-5.604-3.75t-3.75-5.604Q2.333 23.708 2.333 20q0-3.708 1.375-6.937 1.375-3.23 3.771-5.605 2.396-2.375 5.625-3.75T20 2.333q2.958 0 5.583.855 2.625.854 4.792 2.437L27.5 8.5q-1.625-1-3.521-1.604-1.896-.604-3.979-.604-5.75 0-9.729 3.958Q6.292 14.208 6.292 20q0 5.75 3.979 9.729Q14.25 33.708 20 33.708q5.792 0 9.75-3.979T33.708 20q0-.833-.104-1.646-.104-.812-.312-1.604l3.208-3.208q.583 1.5.875 3.125.292 1.625.292 3.333 0 3.708-1.375 6.917-1.375 3.208-3.75 5.604t-5.604 3.771q-3.23 1.375-6.938 1.375Zm-2.417-9.459-7.541-7.583 2.75-2.792 4.833 4.792 17.25-17.25 2.833 2.75Z"/>
                   </svg>

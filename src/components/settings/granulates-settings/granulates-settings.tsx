@@ -51,7 +51,7 @@ const GranulatesSettings = ({inputsHandler, value}: GranulatesSettingsPropsType)
 
       </form>
 
-      <ButtonRemove dataToDeleteName={ComponentsTexts.SETTING_GRANULATE_COUNTER_NAME} onButtonClickHandler={resetCounter}/>
+      <ButtonRemove dataToDeleteName={ComponentsTexts.GRANULATES_COUNTER_NAME} onButtonClickHandler={resetCounter}/>
     </section>
   )
 }

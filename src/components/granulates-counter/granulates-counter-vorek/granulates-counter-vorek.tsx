@@ -20,7 +20,6 @@ const GranulatesCounterVorek = (): JSX.Element => {
 
   const initialAddedAmount: number = 1;
   const initialValue: number = 0;
-  const addedAmountTitle: string = '1 click +';
   const basicVorekWeight = useAppSelector(SelectorGetGranulatesSettingsVorekWeight);
 
   const [addedAmount, setAddedAmount] = useState<number>(initialAddedAmount);
@@ -63,9 +62,10 @@ const GranulatesCounterVorek = (): JSX.Element => {
 
   return (
     <section className='granulates-counter granulates-counter--set-controls'>
-      <h3 className='visually-hidden'>granulates counter vorek</h3>
+      <h3 className='visually-hidden'>Licznik {ComponentsTexts.GRANULATES_COUNTER_NAME} {ComponentsTexts.GRANULATES_COUNTER_VOREK_NAME}</h3>
 
-      <CounterAddedAmount onInputChangeHandler={onAddedAmountChangeHandler} value={addedAmount} title={addedAmountTitle}/>
+
+      <CounterAddedAmount onInputChangeHandler={onAddedAmountChangeHandler} value={addedAmount} title={ComponentsTexts.GRANULATES_COUNTER_VOREK_ADDED_AMOUNT_TITLE}/>
       <CounterValue value={value}/>
       <ButtonChoice
         onIncButtonClickHandler={incrementHandler}

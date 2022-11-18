@@ -1,6 +1,6 @@
 import { NavLink, useParams, generatePath } from 'react-router-dom';
 //variables and consts
-import { AppRoute } from '../../../variables/variables';
+import { AppRoute, ComponentsTexts } from '../../../variables/variables';
 //types
 import type { SetActiveLinkType } from '../../../types/other-types';
 //styles
@@ -22,19 +22,19 @@ const GranulatesCounterNav = (): JSX.Element => {
           <NavLink to={generatePath(AppRoute.GRANULATES_COUNTER, {UNID: (UNID ? UNID : '')})}
            end
            className={setActiveLink}>
-            Counter
+            {ComponentsTexts.GRANULATES_COUNTER_BASIC_NAME}
           </NavLink>
         </li>
         <li className='granulates-counter-nav__item'>
           <NavLink to={AppRoute.GRANULATES_COUNTER_VOREK}
             className={setActiveLink}>
-            Vorek
+            {ComponentsTexts.GRANULATES_COUNTER_VOREK_NAME}
           </NavLink>
         </li>
         <li className='granulates-counter-nav__item'>
           <NavLink to={AppRoute.GRANULATES_COUNTER_CONTAINER}
             className={setActiveLink}>
-            container
+            {ComponentsTexts.GRANULATES_COUNTER_CONTAINER_NAME}
           </NavLink>
         </li>
       </ul>
