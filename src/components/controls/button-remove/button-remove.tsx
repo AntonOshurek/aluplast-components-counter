@@ -2,15 +2,14 @@ import { useState } from 'react';
 //variables and constants
 import { ComponentsTexts } from '../../../variables/variables';
 //styles
-import './button-reset-remove.scss';
+import './button-remove.scss';
 
-interface ButtonResetRemovePropsType {
+interface ButtonRemovePropsType {
   onButtonClickHandler: () => void,
   dataToDeleteName: string,
 }
 
-//rename to RemoveButton component!
-const ButtonResetRemove = ({onButtonClickHandler, dataToDeleteName}: ButtonResetRemovePropsType): JSX.Element => {
+const ButtonRemove = ({onButtonClickHandler, dataToDeleteName}: ButtonRemovePropsType): JSX.Element => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [showSuccessModal, setShowSuccessModal] = useState<boolean>(false);
 
@@ -29,9 +28,9 @@ const ButtonResetRemove = ({onButtonClickHandler, dataToDeleteName}: ButtonReset
   }
 
   return (
-    <div className='button-reset-remove'>
+    <div className='button-remove'>
       <button
-        className='button-reset-remove__button'
+        className='button-remove__button'
         type='button'
         onClick={openAcceptModal}>
           {ComponentsTexts.SETTING_RESET_COUNTER_DATA}
@@ -39,32 +38,30 @@ const ButtonResetRemove = ({onButtonClickHandler, dataToDeleteName}: ButtonReset
 
       {
         showModal ?
-          <div className='button-reset-remove__accept'>
-            <div className={showSuccessModal ? 'button-reset-remove__accept-wrap button-reset-remove__accept-wrap--success' : 'button-reset-remove__accept-wrap'}>
-              <h2 className='button-reset-remove__accept-title'>
-
+          <div className='button-remove__modal'>
+            <div className={showSuccessModal ? 'button-remove__modal-wrap button-remove__modal-wrap--success' : 'button-remove__modal-wrap'}>
+              <h2 className='button-remove__modal-title'>
                 {
                   showSuccessModal ? 'Dane zostali usunięci :)' : `Napewno chcesz ${ComponentsTexts.SETTING_RESET_COUNTER_DATA} \"${dataToDeleteName}\"?`
                 }
-
               </h2>
 
-              <div className='button-reset-remove__accept-controls'>
+              <div className='button-remove__modal-controls'>
 
                 {
                   showSuccessModal ?
-                    <button className='button-reset-remove__accept-button button-reset-remove__accept-button--cancel'
+                    <button className='button-remove__modal-button button-remove__modal-button--cancel'
                       type='button'
                       onClick={closeAcceptModal}>
                       {ComponentsTexts.REMOVE_CLOSE}
                     </button>
                     : <>
-                      <button className='button-reset-remove__accept-button button-reset-remove__accept-button--cancel'
+                      <button className='button-remove__modal-button button-remove__modal-button--cancel'
                         type='button'
                         onClick={closeAcceptModal}>
                         {ComponentsTexts.REMOVE_CANCEL}
                       </button>
-                      <button className='button-reset-remove__accept-button button-reset-remove__accept-button--confirm'
+                      <button className='button-remove__modal-button button-remove__modal-button--confirm'
                         type='button'
                         onClick={confirmButtonClickHandler}>
                           {ComponentsTexts.REMOVE_CONFIRM}
@@ -76,7 +73,7 @@ const ButtonResetRemove = ({onButtonClickHandler, dataToDeleteName}: ButtonReset
 
               </div>
 
-              <figure className={showSuccessModal ? 'button-reset-remove__accept-icon button-reset-remove__accept-icon--success' : 'button-reset-remove__accept-icon'}>
+              <figure className={showSuccessModal ? 'button-remove__modal-icon button-remove__modal-icon--success' : 'button-remove__modal-icon'}>
                 {
                   showSuccessModal ?
                   <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40">
@@ -96,4 +93,4 @@ const ButtonResetRemove = ({onButtonClickHandler, dataToDeleteName}: ButtonReset
   )
 }
 
-export default ButtonResetRemove;
+export default ButtonRemove;

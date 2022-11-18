@@ -1,6 +1,6 @@
 import { ChangeEvent } from 'react';
 //components
-import { ButtonResetRemove } from '../../controls';
+import { ButtonRemove } from '../../controls';
 //consts and variables
 import { GranulatesSettingsNames } from '../../../variables/variables';
 import { ComponentsTexts } from '../../../variables/variables';
@@ -51,7 +51,7 @@ const GranulatesSettings = ({inputsHandler, value}: GranulatesSettingsPropsType)
 
       </form>
 
-      <ButtonResetRemove dataToDeleteName={ComponentsTexts.SETTING_GRANULATE_COUNTER_NAME} onButtonClickHandler={resetCounter}/>
+      <ButtonRemove dataToDeleteName={ComponentsTexts.SETTING_GRANULATE_COUNTER_NAME} onButtonClickHandler={resetCounter}/>
     </section>
   )
 }

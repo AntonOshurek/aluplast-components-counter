@@ -1,12 +1,12 @@
 @import '../../../variables/variables.scss';
 
-.button-reset-remove {
+.button-remove {
   width: max-content;
   height: min-content;
   background-color: transparent;
 }
 
-.button-reset-remove__button {
+.button-remove__button {
   position: relative;
   padding: 15px 20px 15px 50px;
   cursor: pointer;
@@ -54,7 +54,7 @@
   }
 }
 
-.button-reset-remove__accept {
+.button-remove__modal {
   z-index: 1;
   position: fixed;
   top: 0;
@@ -68,9 +68,9 @@
   align-items: center;
 }
 
-.button-reset-remove__accept-wrap {
+.button-remove__modal-wrap {
   position: relative;
-
+  max-width: 90%;
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-template-rows: 1fr 1fr;
@@ -90,14 +90,14 @@
   }
 }
 
-.button-reset-remove__accept-title {
+.button-remove__modal-title {
   text-align: center;
   color: $standart-text-color;
   grid-row-start: 1;
   grid-column-start: 2;
 }
 
-.button-reset-remove__accept-controls {
+.button-remove__modal-controls {
  display: flex;
  justify-content: center;
  align-items: center;
@@ -107,7 +107,7 @@
  grid-column-start: 2;
 }
 
-.button-reset-remove__accept-button {
+.button-remove__modal-button {
   cursor: pointer;
   padding: 10px 20px;
   border: 2px solid $standart-black;
@@ -143,7 +143,7 @@
   }
 }
 
-.button-reset-remove__accept-icon {
+.button-remove__modal-icon {
   grid-row-start: 1;
   grid-row-end: 3;
   grid-column-start: 1;
