@@ -7,31 +7,44 @@
 }
 
 .button-reset-remove__button {
-  padding: 15px 25px;
+  position: relative;
+  padding: 15px 20px 15px 50px;
   cursor: pointer;
-  border: 2px solid $error-color;
+  border: none;
   border-radius: 15px;
 
   font-family: $basic-font;
   font-size: 14px;
   font-weight: $standart-subtext-font-weight;
-
-  // color: $error-color;
-  color: #fff;
+  color: $standart-white;
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
 
   box-shadow: $standart-box-shadow--large;
-  // background-color: $white-bg-color;
   background-color: $error-color;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 45px;
+    border-radius: 15px;
+    background-color: $standart-text-color;
+
+    background-image: url('./trash-icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+  }
 
   &:hover,
   &:focus {
-    outline: 0;
-    box-shadow: $error-button-shadow;
-    background-color: $error-color;
     color: $standart-white;
+    background-color: $error-color;
+    box-shadow: $error-button-shadow;
   }
 
   &:active {
