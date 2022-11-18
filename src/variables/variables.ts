@@ -10,14 +10,15 @@ export const enum AppRoute {
 }
 
 export enum ComponentsTexts {
-  SETTING_PAGE_SAVE_BUTTON = 'Save settings',
-  SETTINGS_PAGE_RESET_SETTINGS = 'Reset All settings',
-  SETTINGS_RESET_COUNTER_DATA = 'Reset counter data',
-  GRANULATES_COUNTER_ADD_BUTTON = 'Add value',
+  SETTING_PAGE_SAVE_BUTTON = 'Zapisz ustawienia',
+  SETTINGS_RESET_COUNTER_DATA = 'Usunąć dane licznika',
+  GRANULATES_COUNTER_ADD_BUTTON = 'Dodaj',
   GRANULATES_COUNTER_PLUS_BUTTON = 'Plus',
   GRANULATES_COUNTER_MINUS_BUTTON = 'Minus',
-  CONFIRM = 'Confirm',
-  CANCEL = 'Cancel',
+  CONFIRM = 'Potwirdz',
+  CANCEL = 'Odwołaj',
+  DELETE_ACCEPT = 'Usunąć wybrane dane',
+  CLOSE_MODAL = 'Zamknij powiadomienie',
 }
 
 export enum GranulatesSettingsNames {

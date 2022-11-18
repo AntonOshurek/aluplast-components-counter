@@ -16,7 +16,7 @@
   background-color: $main-color;
   border: none;
   border-radius: 20px;
-  box-shadow: $standart-box-shadow--large;
+  box-shadow: $standart-button-shadow;
   transition: transform .3s ease, box-shadow .1s ease;
   cursor: pointer;
 
@@ -26,13 +26,13 @@
   color: $standart-white;
 
   &:hover {
-    box-shadow: $standart-hover-box-shadow--large;
+    box-shadow: $standart-button-hover-shadow;
   }
 
   &:active {
     transform: translate(0, 10px);
     transition: transform .2s ease, box-shadow .1s ease;
-    box-shadow: $standart-active-box-shadow--large;
+    box-shadow: $standart-button-active-shadow;
   }
 
   &--error {

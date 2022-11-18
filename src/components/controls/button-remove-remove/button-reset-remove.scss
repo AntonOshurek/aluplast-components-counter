@@ -21,7 +21,7 @@
   text-align: center;
   text-transform: uppercase;
 
-  box-shadow: $standart-box-shadow--large;
+  box-shadow: $standart-button-shadow;
   background-color: $error-color;
 
   &::before {
@@ -61,7 +61,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,.6);
+  background-color: rgba(0,0,0,0.6);
 
   display: flex;
   justify-content: center;
@@ -82,6 +82,12 @@
   border-radius: 10px;
   padding: 20px;
 
+  box-shadow: $error-modal-shadow;
+
+  &--success {
+    border-top: 4px solid $success-color;
+    box-shadow: $success-modal-shadow;
+  }
 }
 
 .button-reset-remove__accept-title {
@@ -104,18 +110,36 @@
 .button-reset-remove__accept-button {
   cursor: pointer;
   padding: 10px 20px;
-  border: 2px solid #000;
+  border: 2px solid $standart-black;
   border-radius: 10px;
 
   &--confirm {
     background-color: $error-color;
     color: $standart-white;
     border: 2px solid $error-color;
+    box-shadow: $standart-button-shadow;
+
+    &:hover {
+      box-shadow: $error-button-shadow;
+    }
+
+    &:active {
+      box-shadow: $error-button-active-shadow;
+    }
   }
 
   &--cancel {
     background-color: transparent;
     color: $standart-text-color;
+    box-shadow: $standart-button-shadow;
+
+    &:hover {
+      box-shadow: $standart-button-hover-shadow;
+    }
+
+    &:active {
+      box-shadow: $standart-button-active-shadow;
+    }
   }
 }
 
@@ -133,43 +157,8 @@
   background-color: $error-color;
   padding: 10px;
   border-radius: 50%;
+
+  &--success {
+    background-color: $standart-white;
+  }
 }
-
-
-
-
-// .button-reset-remove__success {
-//   position: fixed;
-//   top: 50%;
-//   left: 5%;
-//   transform: translateY(-50%);
-
-//   background-color: #2ECC40;
-//   width: 90%;
-//   height: min-content;
-//   padding: 30px 20px;
-//   border-radius: 30px;
-
-//   box-shadow: $standart-box-shadow--large;
-
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   gap: 20px;
-// }
-
-// .button-reset-remove__success-icon {
-//   background-color: rgba(0, 0, 0, 0.25);
-//   padding: 0 30px;
-// }
-
-// .button-reset-remove__close {
-//   padding: 10px;
-//   background-color: rgba(0, 0, 0, 0.25);
-//   border: none;
-//   border-radius: 10px;
-//   position: absolute;
-//   top: 10px;
-//   right: 10px;
-//   cursor: pointer;
-// }
