@@ -11,7 +11,6 @@ interface OverviewPropsType {
 }
 
 const Overview = ({data}: OverviewPropsType): JSX.Element => {
-
   return (
     <section className="overview container">
 

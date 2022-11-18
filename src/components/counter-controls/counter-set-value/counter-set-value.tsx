@@ -19,14 +19,13 @@ const CounterSetValue = ({onInputChangeHandler, value}: CouterSetValueProps): JS
   return (
     <div className='counter-set-value'>
       <label className='counter-set-value__label'>
-        Add
+        Dodać kilogramy
         <input className='counter-set-value__input' type="number"
           ref={inputEl}
           value={value ? value : ''}
           onChange={onInputChangeHandler}
           onKeyDown={onInputKeydownListener}
         />
-        kilos
       </label>
     </div>
   )

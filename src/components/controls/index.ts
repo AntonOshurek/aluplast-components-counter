@@ -1,5 +1,5 @@
 import ButtonChoice from "./button-choice/button-choice";
 import ButtonAdd from "./button-add/button-add";
-import ButtonResetRemove from "./button-remove-remove/button-reset-remove";
+import ButtonRemove from "./button-remove/button-remove";
 
-export { ButtonAdd, ButtonChoice, ButtonResetRemove };
+export { ButtonAdd, ButtonChoice, ButtonRemove };
