@@ -26,10 +26,13 @@ const GranulatesSettings = ({inputsHandler, value}: GranulatesSettingsPropsType)
 
   return (
     <section className='granulates-settings'>
-      <h3 className='granulates-settings__title'>Granulates settings</h3>
+      <h3 className='granulates-settings__title'>{ComponentsTexts.SETTING_GRANULATES_TITLE}</h3>
+
       <form className='granulates-settings__form'>
+
         <label className='granulates-settings__label'>
-          one vorek kg value
+          {ComponentsTexts.SETTING_GRANULATES_VOREK_INPUT}
+
           <input className='granulates-settings__input' type="number"
             value={value.basicVorekWeight || ''}
             data-input-name={GranulatesSettingsNames.VOREK_WEIGHT}
@@ -37,15 +40,18 @@ const GranulatesSettings = ({inputsHandler, value}: GranulatesSettingsPropsType)
           />
         </label>
         <label className='granulates-settings__label'>
-          default one container weight
+          {ComponentsTexts.SETTING_GRANULATES_CONTAINER_INPUT}
+
           <input className='granulates-settings__input' type="number"
             value={value.basicContainerWeight || ''}
             data-input-name={GranulatesSettingsNames.CONTAINER_WEIGHT}
             onChange={inputsHandler}
           />
         </label>
+
       </form>
-      <ButtonResetRemove buttonText={ComponentsTexts.SETTINGS_RESET_COUNTER_DATA} onButtonClickHandler={resetCounter}/>
+
+      <ButtonResetRemove dataToDeleteName={ComponentsTexts.SETTING_GRANULATE_COUNTER_NAME} onButtonClickHandler={resetCounter}/>
     </section>
   )
 }

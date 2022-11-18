@@ -6,11 +6,11 @@ import './button-reset-remove.scss';
 
 interface ButtonResetRemovePropsType {
   onButtonClickHandler: () => void,
-  buttonText: string,
+  dataToDeleteName: string,
 }
 
 //rename to RemoveButton component!
-const ButtonResetRemove = ({onButtonClickHandler, buttonText}: ButtonResetRemovePropsType): JSX.Element => {
+const ButtonResetRemove = ({onButtonClickHandler, dataToDeleteName}: ButtonResetRemovePropsType): JSX.Element => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [showSuccessModal, setShowSuccessModal] = useState<boolean>(false);
 
@@ -34,7 +34,7 @@ const ButtonResetRemove = ({onButtonClickHandler, buttonText}: ButtonResetRemove
         className='button-reset-remove__button'
         type='button'
         onClick={openAcceptModal}>
-          {buttonText}
+          {ComponentsTexts.SETTING_RESET_COUNTER_DATA}
       </button>
 
       {
@@ -44,7 +44,7 @@ const ButtonResetRemove = ({onButtonClickHandler, buttonText}: ButtonResetRemove
               <h2 className='button-reset-remove__accept-title'>
 
                 {
-                  showSuccessModal ? 'Dane zostali usunięci :)' : `Napewno chcesz ${buttonText}?`
+                  showSuccessModal ? 'Dane zostali usunięci :)' : `Napewno chcesz ${ComponentsTexts.SETTING_RESET_COUNTER_DATA} \"${dataToDeleteName}\"?`
                 }
 
               </h2>
@@ -56,18 +56,18 @@ const ButtonResetRemove = ({onButtonClickHandler, buttonText}: ButtonResetRemove
                     <button className='button-reset-remove__accept-button button-reset-remove__accept-button--cancel'
                       type='button'
                       onClick={closeAcceptModal}>
-                      {ComponentsTexts.CLOSE_MODAL}
+                      {ComponentsTexts.REMOVE_CLOSE}
                     </button>
                     : <>
                       <button className='button-reset-remove__accept-button button-reset-remove__accept-button--cancel'
                         type='button'
                         onClick={closeAcceptModal}>
-                        {ComponentsTexts.CANCEL}
+                        {ComponentsTexts.REMOVE_CANCEL}
                       </button>
                       <button className='button-reset-remove__accept-button button-reset-remove__accept-button--confirm'
                         type='button'
                         onClick={confirmButtonClickHandler}>
-                          {ComponentsTexts.DELETE_ACCEPT}
+                          {ComponentsTexts.REMOVE_CONFIRM}
                       </button>
                     </>
 

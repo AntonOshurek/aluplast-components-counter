@@ -58,7 +58,7 @@ const SettingsPage = (): JSX.Element => {
         <ButtonAdd
           onButtonClickHandler={onSettingSubmitButtonClickHandler}
           errorMessage={''}
-          buttonText={ComponentsTexts.SETTING_PAGE_SAVE_BUTTON}
+          buttonText={ComponentsTexts.SETTING_SAVE}
         />
       </main>
     </div>
