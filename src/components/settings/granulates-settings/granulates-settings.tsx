@@ -1,6 +1,12 @@
 import { ChangeEvent } from 'react';
+//components
+import { ButtonResetRemove } from '../../controls';
 //consts and variables
 import { GranulatesSettingsNames } from '../../../variables/variables';
+import { ComponentsTexts } from '../../../variables/variables';
+//store
+import { useAppDispatch } from '../../../hooks/hooks';
+import { clearStoreAction } from '../../../store/slices/counter-slice';
 //types
 import type { IGranulatesSettingsType } from '../../../types/data-types';
 //styles
@@ -12,6 +18,12 @@ interface GranulatesSettingsPropsType {
 }
 
 const GranulatesSettings = ({inputsHandler, value}: GranulatesSettingsPropsType): JSX.Element => {
+  const dispatch = useAppDispatch();
+
+  const resetCounter = () => {
+    dispatch(clearStoreAction());
+  }
+
   return (
     <section className='granulates-settings'>
       <h3 className='granulates-settings__title'>Granulates settings</h3>
@@ -33,6 +45,7 @@ const GranulatesSettings = ({inputsHandler, value}: GranulatesSettingsPropsType)
           />
         </label>
       </form>
+      <ButtonResetRemove buttonText={ComponentsTexts.SETTINGS_RESET_COUNTER_DATA} onButtonClickHandler={resetCounter}/>
     </section>
   )
 }

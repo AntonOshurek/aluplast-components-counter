@@ -59,10 +59,6 @@ const ButtonResetRemove = ({onButtonClickHandler, buttonText}: ButtonResetRemove
 
         </div> : null
       }
-
-
-
-
     </div>
   )
 }
