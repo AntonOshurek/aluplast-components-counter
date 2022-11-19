@@ -8,7 +8,7 @@ import { adaptDataForClient } from '../../data-adapter/data-adapter';
 
 abstract class AbstractData {
   #basicData: BasicDataTypes;
-  #settings: SettingsTypes;
+  #basicSettings: SettingsTypes;
   #defaultData: DataTypes;
 
   constructor(data: BasicDataTypes, settings: SettingsTypes) {
@@ -17,7 +17,7 @@ abstract class AbstractData {
     }
 
     this.#basicData = data;
-    this.#settings = settings;
+    this.#basicSettings = settings;
     this.#defaultData = {};
     this.init();
   }
@@ -26,12 +26,16 @@ abstract class AbstractData {
     return this.#defaultData;
   }
 
+  getDefaultSettings(): SettingsTypes {
+    return this.#basicSettings;
+  }
+
   getDataFromStorage(): DataTypes | null {
     return granulatesStorageApi.getItems();
   }
 
-  getSettings(): SettingsTypes {
-    return this.#settings;
+  getSettingsFromStorage(): SettingsTypes | null {
+    return granulatesStorageApi.getSettings();
   }
 
   getData(): DataTypes {
@@ -41,6 +45,16 @@ abstract class AbstractData {
       return resultFromStorage;
     } else {
       return this.getDefaultData();
+    }
+  }
+
+  getSettings(): SettingsTypes {
+    const resultFromStorage: SettingsTypes | null = this.getSettingsFromStorage();
+
+    if(resultFromStorage) {
+      return resultFromStorage;
+    } else {
+      return this.getDefaultSettings();
     }
   }
 

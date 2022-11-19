@@ -15,15 +15,14 @@ export const granulatesSlice = createSlice({
   reducers: {
     increment: (state, action: PayloadAction<IIncDecActionParametrsType>) => {
       state.items[action.payload.UNID].amount = state.items[action.payload.UNID].amount + action.payload.value;
+      state.items[action.payload.UNID].logs[action.payload.logName] = [...state.items[action.payload.UNID].logs[action.payload.logName], action.payload.value]
     },
     decrement: (state, action: PayloadAction<IIncDecActionParametrsType>) => {
       state.items[action.payload.UNID].amount = state.items[action.payload.UNID].amount - action.payload.value;
+      state.items[action.payload.UNID].logs[action.payload.logName] = [...state.items[action.payload.UNID].logs[action.payload.logName], action.payload.value]
     },
     setNewSettings: (state, action: PayloadAction<IGranulatesSettingsType>) => {
       state.granulatesSettings = action.payload;
-    },
-    resetSettingsToDefault: (state) => {
-      state.granulatesSettings = granulatesDataApi.getSettings();
     },
     clear: (state) => {
       state.items = granulatesDataApi.getDefaultData();
@@ -31,7 +30,7 @@ export const granulatesSlice = createSlice({
   },
 });
 
-export const { resetSettingsToDefault, clear } = granulatesSlice.actions;
+export const { clear } = granulatesSlice.actions;
 
 export const incrementAction =
   (action: IIncDecActionParametrsType): AppThunk =>
@@ -58,8 +57,7 @@ export const setSettingsAction =
   (action: IGranulatesSettingsType): AppThunk =>
   (dispatch, getState) => {
     dispatch(granulatesSlice.actions.setNewSettings(action));
-    //add save settings to store logick
-    //granulatesStorageApi.setItems(getState().granulates.items);
+    granulatesStorageApi.setSettings(getState().granulates.granulatesSettings);
   };
 
 export default granulatesSlice.reducer;

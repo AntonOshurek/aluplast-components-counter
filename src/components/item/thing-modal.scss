@@ -1,0 +1,42 @@
+@import '../../variables/variables.scss';
+
+.thing-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thing-modal__wrap {
+  width: 90%;
+  height: min-content;
+  background-color: aliceblue;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.thing-modal__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+
+  padding: 10px;
+  border-radius: 15px;
+
+  box-shadow: $standart-box-shadow--large;
+  background-color: $standart-white;
+}
