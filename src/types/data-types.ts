@@ -6,7 +6,7 @@ export interface IGranulateItemType {
   amount: number,
   image: string,
   logs: {
-    [key: string]: string,
+    [key: string]: number[],
   }
 };
 

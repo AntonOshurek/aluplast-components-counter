@@ -13,9 +13,9 @@ export const basicGranulatesData: BasicGranulatesDataType = [
     amount: 0,
     image: '/aluplas-granules-counter/images/granulates/granulates-100.jpg',
     logs: {
-      container: '',
-      vorek: '',
-      counter: '',
+      container: [500, 400],
+      vorek: [100, 100],
+      counter: [],
     }
   },
   {
@@ -24,9 +24,9 @@ export const basicGranulatesData: BasicGranulatesDataType = [
     amount: 0,
     image: '/aluplas-granules-counter/images/granulates/granulates-101.jpg',
     logs: {
-      container: '',
-      vorek: '',
-      counter: '',
+      container: [],
+      vorek: [],
+      counter: [],
     }
   },
   {
@@ -35,9 +35,9 @@ export const basicGranulatesData: BasicGranulatesDataType = [
     amount: 0,
     image: '/aluplas-granules-counter/images/granulates/granulates-102.jpg',
     logs: {
-      container: '',
-      vorek: '',
-      counter: '',
+      container: [],
+      vorek: [],
+      counter: [],
     }
   },
   {
@@ -46,9 +46,9 @@ export const basicGranulatesData: BasicGranulatesDataType = [
     amount: 0,
     image: '/aluplas-granules-counter/images/granulates/granulates-103.jpg',
     logs: {
-      container: '',
-      vorek: '',
-      counter: '',
+      container: [],
+      vorek: [],
+      counter: [],
     }
   },
   {
@@ -57,9 +57,9 @@ export const basicGranulatesData: BasicGranulatesDataType = [
     amount: 0,
     image: '/aluplas-granules-counter/images/granulates/granulates-104.jpg',
     logs: {
-      container: '',
-      vorek: '',
-      counter: '',
+      container: [],
+      vorek: [],
+      counter: [],
     }
   },
   {
@@ -68,9 +68,9 @@ export const basicGranulatesData: BasicGranulatesDataType = [
     amount: 0,
     image: '/aluplas-granules-counter/images/granulates/granulates-105.jpg',
     logs: {
-      container: '',
-      vorek: '',
-      counter: '',
+      container: [],
+      vorek: [],
+      counter: [],
     }
   },
   {
@@ -79,9 +79,9 @@ export const basicGranulatesData: BasicGranulatesDataType = [
     amount: 0,
     image: '/aluplas-granules-counter/images/granulates/granulates-106.jpg',
     logs: {
-      container: '',
-      vorek: '',
-      counter: '',
+      container: [],
+      vorek: [],
+      counter: [],
     }
   },
   {
@@ -90,9 +90,9 @@ export const basicGranulatesData: BasicGranulatesDataType = [
     amount: 0,
     image: '/aluplas-granules-counter/images/granulates/granulates-107.jpg',
     logs: {
-      container: '',
-      vorek: '',
-      counter: '',
+      container: [],
+      vorek: [],
+      counter: [],
     }
   },
   {
@@ -101,9 +101,9 @@ export const basicGranulatesData: BasicGranulatesDataType = [
     amount: 0,
     image: '/aluplas-granules-counter/images/granulates/granulates-107.jpg',
     logs: {
-      container: '',
-      vorek: '',
-      counter: '',
+      container: [],
+      vorek: [],
+      counter: [],
     }
   },
 ];

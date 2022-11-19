@@ -29,7 +29,7 @@ const GranulatesCounter = (): JSX.Element => {
     if(value <= 0 || value === NaN) {
       console.log('sdfsd');
     } else {
-      dispatch(incrementAction({UNID: currentItemUNID, value: value}));
+      dispatch(incrementAction({UNID: currentItemUNID, value: value, logName: 'counter'}));
     }
   }
 
@@ -37,7 +37,7 @@ const GranulatesCounter = (): JSX.Element => {
     if(value <= 0 || value === NaN) {
       console.log('sdfsd');
     } else {
-      dispatch(decrementAction({UNID: currentItemUNID, value: value}));
+      dispatch(decrementAction({UNID: currentItemUNID, value: value, logName: 'counter'}));
     }
   }
 
