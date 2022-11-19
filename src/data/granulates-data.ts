@@ -13,8 +13,8 @@ export const basicGranulatesData: BasicGranulatesDataType = [
     amount: 0,
     image: '/aluplas-granules-counter/images/granulates/granulates-100.jpg',
     logs: {
-      container: [500, 400],
-      vorek: [100, 100],
+      container: [],
+      vorek: [],
       counter: [],
     }
   },

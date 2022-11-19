@@ -34,7 +34,7 @@
   align-items: flex-start;
   gap: 20px;
 
-  pointer-events: none;
+  // pointer-events: none;
 }
 
 .granulates-counter-page__title {
@@ -42,4 +42,10 @@
   color: $main-color;
   font-size: $standart-title-text-size;
   font-weight: $standart-title-font-weight;
+}
+
+.granulates-counter-page__item-wrap {
+  width: 100%;
+  height: min-content;
+  cursor: pointer;
 }
