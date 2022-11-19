@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/aluplas-granules-counter/static/css/main.2b2a1158.css",
-    "main.js": "/aluplas-granules-counter/static/js/main.3684dce0.js",
+    "main.css": "/aluplas-granules-counter/static/css/main.39683047.css",
+    "main.js": "/aluplas-granules-counter/static/js/main.96e716eb.js",
     "static/media/all-granulates.jpg": "/aluplas-granules-counter/static/media/all-granulates.790701d455aff4d3f6fc.jpg",
     "index.html": "/aluplas-granules-counter/index.html",
     "static/media/trash-icon.svg": "/aluplas-granules-counter/static/media/trash-icon.37f9742debe84b8b952e.svg",
-    "main.2b2a1158.css.map": "/aluplas-granules-counter/static/css/main.2b2a1158.css.map",
-    "main.3684dce0.js.map": "/aluplas-granules-counter/static/js/main.3684dce0.js.map"
+    "main.39683047.css.map": "/aluplas-granules-counter/static/css/main.39683047.css.map",
+    "main.96e716eb.js.map": "/aluplas-granules-counter/static/js/main.96e716eb.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b2a1158.css",
-    "static/js/main.3684dce0.js"
+    "static/css/main.39683047.css",
+    "static/js/main.96e716eb.js"
   ]
 }
