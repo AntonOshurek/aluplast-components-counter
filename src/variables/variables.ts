@@ -44,6 +44,6 @@ export enum GranulatesSettingsNames {
   CONTAINER_WEIGHT = 'basicContainerWeight',
 }
 
-export enum GranulatesStorageApiNames {
+export enum ApplicationStorageApiNames {
   GRANULATES_STORAGE = 'granulates',
 }

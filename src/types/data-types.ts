@@ -5,12 +5,18 @@ export interface IGranulateItemType {
   name: string,
   amount: number,
   image: string,
+  logs: {
+    [key: string]: string,
+  }
 };
+
 export type BasicGranulatesDataType = IGranulateItemType[];
+
 export interface IGranulatesSettingsType {
   [GranulatesSettingsNames.CONTAINER_WEIGHT]: number,
   [GranulatesSettingsNames.VOREK_WEIGHT]: number,
 };
+
 export interface IGranulatesDataType {
   [propertyName: number]: IGranulateItemType,
 };
