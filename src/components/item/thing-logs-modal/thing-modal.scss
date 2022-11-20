@@ -26,10 +26,17 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 10px;
+
+  background: linear-gradient(45deg, #9dc5b6, #d09fd8);
 }
 
 .thing-modal__title {
-
+  width: 100%;
+  font-family: $basic-font;
+  color: $standart-white;
+  font-size: $main-title-text-size;
+  font-weight: $main-title-font-weight;
+  text-align: center;
 }
 
 .thing-modal__item {
@@ -42,6 +49,20 @@
   padding: 10px;
   border-radius: 15px;
 
-  box-shadow: $standart-box-shadow--large;
+  box-shadow: $standart-box-shadow--medium;
   background-color: $standart-white;
+}
+
+.thing-modal__item-name {
+  font-family: $basic-font;
+  color: $standart-subtext-color;
+  font-size: $standart-title-text-size;
+  font-weight: $main-title-font-weight;
+}
+
+.thing-modal__item-value {
+  font-family: $basic-font;
+  color: $standart-text-color;
+  font-size: $standart-title-text-size;
+  font-weight: $standart-title-font-weight;
 }

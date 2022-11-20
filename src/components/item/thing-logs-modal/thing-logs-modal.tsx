@@ -15,8 +15,10 @@ const ThingLogsModal = ({logs, closeModal}: ThingLogsModalPropsType): JSX.Elemen
     for (let item in logs) {
       itemsArray.push(
         <section className='thing-modal__item' key={item}>
-          <h3>{item}</h3>
-          <p>{logs[item].map(item => ` + ${item} kg ,`)}</p>
+          <h4 className='thing-modal__item-name'>{item}</h4>
+          <p className='thing-modal__item-value'>
+            {logs[item].map(item => ` + ${item} kg ,`)}
+          </p>
         </section>
       )
     }
