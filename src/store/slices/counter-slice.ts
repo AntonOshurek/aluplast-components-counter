@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { granulatesState } from '../state/granulates-state';
 //types
 import type { AppThunk } from '../../types/store-types';
-import type { IGranulatesSettingsType } from '../../types/data-types';
+import type { IGranulatesSettingsType, ItemsTypes } from '../../types/data-types';
 import type { IIncDecActionParametrsType } from '../../types/action-types';
 //API
 import { granulatesDataApi, granulatesStorageApi } from '../../api/';
@@ -24,13 +24,16 @@ export const granulatesSlice = createSlice({
     setNewSettings: (state, action: PayloadAction<IGranulatesSettingsType>) => {
       state.granulatesSettings = action.payload;
     },
+    clearItem: (state, action: PayloadAction<ItemsTypes>) => {
+      state.items[action.payload.UNID] = action.payload;
+    },
     clear: (state) => {
       state.items = granulatesDataApi.getDefaultData();
     }
   },
 });
 
-export const { clear } = granulatesSlice.actions;
+export const { clear, clearItem } = granulatesSlice.actions;
 
 export const incrementAction =
   (action: IIncDecActionParametrsType): AppThunk =>
@@ -51,6 +54,14 @@ export const clearStoreAction =
   (dispatch) => {
     dispatch(granulatesSlice.actions.clear());
     granulatesStorageApi.setItems(granulatesDataApi.getDefaultData());
+  };
+
+export const clearItemAction =
+  (action: {id: number}): AppThunk =>
+  (dispatch, getState) => {
+    const newDefaultItem = granulatesDataApi.getDefaultItem(action.id)
+    dispatch(granulatesSlice.actions.clearItem(newDefaultItem));
+    granulatesStorageApi.setItems(getState().granulates.items);
   };
 
 export const setSettingsAction =

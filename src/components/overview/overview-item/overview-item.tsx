@@ -1,6 +1,6 @@
 import { Link, generatePath } from 'react-router-dom';
 //components
-import ThingItem from '../../item/thing-item';
+import ThingItem from '../../item/thing-item/thing-item';
 //types
 import type { ItemsTypes } from '../../../types/data-types';
 //variables and consts

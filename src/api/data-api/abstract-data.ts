@@ -1,6 +1,6 @@
 //types
 // import type { BasicGranulatesDataType, IGranulateItemType, IGranulatesDataType, IGranulatesSettingsType } from "../../types/data-types";
-import { DataTypes, BasicDataTypes, SettingsTypes } from "../../types/data-types";
+import { DataTypes, BasicDataTypes, SettingsTypes, ItemsTypes } from "../../types/data-types";
 //storage
 import { granulatesStorageApi } from '../';
 
@@ -36,6 +36,10 @@ abstract class AbstractData {
 
   getSettingsFromStorage(): SettingsTypes | null {
     return granulatesStorageApi.getSettings();
+  }
+
+  getDefaultItem(id: number): ItemsTypes {
+    return this.#defaultData[id];
   }
 
   getData(): DataTypes {
