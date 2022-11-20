@@ -66,3 +66,11 @@
   font-size: $standart-title-text-size;
   font-weight: $standart-title-font-weight;
 }
+
+.thing-modal__controls {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+}

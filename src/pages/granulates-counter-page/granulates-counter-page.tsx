@@ -48,7 +48,7 @@ const GranulatesCounterPage = (): JSX.Element => {
       </main>
 
       {
-        showThingLogsModal ? <ThingLogsModal logs={currentItem.logs} closeModal={closeItemLogs}/> : null
+        showThingLogsModal ? <ThingLogsModal currentItem={currentItem} closeModal={closeItemLogs}/> : null
       }
 
     </div>
