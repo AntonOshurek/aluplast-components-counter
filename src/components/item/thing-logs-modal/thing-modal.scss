@@ -1,4 +1,4 @@
-@import '../../variables/variables.scss';
+@import '../../../variables/variables.scss';
 
 .thing-modal {
   position: fixed;
@@ -18,13 +18,18 @@
   height: min-content;
   background-color: aliceblue;
 
-  padding: 20px;
+  padding: 40px 20px;
+  border-radius: 10px;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   gap: 10px;
+}
+
+.thing-modal__title {
+
 }
 
 .thing-modal__item {

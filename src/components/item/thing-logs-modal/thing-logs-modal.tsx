@@ -1,15 +1,14 @@
+//styles
 import './thing-modal.scss';
 
-import { MouseEventHandler } from 'react';
-
-interface ThingModalPropsType {
+interface ThingLogsModalPropsType {
   closeModal: (evt: any) => void,
   logs: {
     [key: string]: number[],
   }
 }
 
-const ThingModal = ({logs, closeModal}: ThingModalPropsType): JSX.Element => {
+const ThingLogsModal = ({logs, closeModal}: ThingLogsModalPropsType): JSX.Element => {
 
   const generateItems = ():JSX.Element[] => {
     let itemsArray: JSX.Element[] = [];
@@ -27,10 +26,11 @@ const ThingModal = ({logs, closeModal}: ThingModalPropsType): JSX.Element => {
   return (
     <article className='thing-modal' onClick={closeModal}>
       <div className='thing-modal__wrap'>
+        <h3 className='thing-modal__title'>Logi licznika</h3>
       {generateItems()}
       </div>
     </article>
   )
 }
 
-export default ThingModal;
+export default ThingLogsModal;
