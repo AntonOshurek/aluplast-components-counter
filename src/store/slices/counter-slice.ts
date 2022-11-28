@@ -16,17 +16,17 @@ export const granulatesSlice = createSlice({
     increment: (state, action: PayloadAction<IIncDecActionParametrsType>) => {
       state.items[action.payload.UNID].amount = state.items[action.payload.UNID].amount + action.payload.value;
       if(action.payload.logValue) {
-        state.items[action.payload.UNID].logs[action.payload.logName] = [...state.items[action.payload.UNID].logs[action.payload.logName], action.payload.logValue];
+        state.items[action.payload.UNID].logs[action.payload.logName] = [...state.items[action.payload.UNID].logs[action.payload.logName], `+${action.payload.logValue}`];
       } else {
-        state.items[action.payload.UNID].logs[action.payload.logName] = [...state.items[action.payload.UNID].logs[action.payload.logName], action.payload.value];
+        state.items[action.payload.UNID].logs[action.payload.logName] = [...state.items[action.payload.UNID].logs[action.payload.logName], `+${action.payload.value}`];
       }
     },
     decrement: (state, action: PayloadAction<IIncDecActionParametrsType>) => {
       state.items[action.payload.UNID].amount = state.items[action.payload.UNID].amount - action.payload.value;
       if(action.payload.logValue) {
-        state.items[action.payload.UNID].logs[action.payload.logName] = [...state.items[action.payload.UNID].logs[action.payload.logName], action.payload.logValue];
+        state.items[action.payload.UNID].logs[action.payload.logName] = [...state.items[action.payload.UNID].logs[action.payload.logName], `-${action.payload.logValue}`];
       } else {
-        state.items[action.payload.UNID].logs[action.payload.logName] = [...state.items[action.payload.UNID].logs[action.payload.logName], action.payload.value];
+        state.items[action.payload.UNID].logs[action.payload.logName] = [...state.items[action.payload.UNID].logs[action.payload.logName], `-${action.payload.value}`];
       }
     },
     setNewSettings: (state, action: PayloadAction<IGranulatesSettingsType>) => {

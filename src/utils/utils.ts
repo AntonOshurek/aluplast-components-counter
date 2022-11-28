@@ -31,8 +31,9 @@ export const getZero = (num: number): number | string => {
 export const getFullDate = (): string => {
   const date: Date = new Date();
   const year: number = date.getFullYear();
-  const month: number | string = getZero(date.getMonth());
-  const day: number | string = getZero(date.getDay());
+  const dateMonth = +date.getMonth() + 1;
+  const month: number | string = getZero(dateMonth);
+  const day: number | string = getZero(date.getDate());
 
   const fullDate: string = `${day}-${month}-${year}`;
 

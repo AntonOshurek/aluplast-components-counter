@@ -5,6 +5,8 @@ import { useAppDispatch } from '../../hooks/hooks';
 import { clearItemAction } from '../../store/slices/counter-slice';
 //types
 import { IGranulateItemType } from '../../types/data-types';
+//variables and constants
+import { GranulatesLogsTitleNames } from '../../variables/variables';
 //styles
 import './log-info.scss';
 
@@ -23,12 +25,13 @@ const LogInfo = ({currentItem, closeModal}: ILogInfoPropsType): JSX.Element => {
 
   const generateItems = ():JSX.Element[] => {
     let itemsArray: JSX.Element[] = [];
+
     for (let item in currentItem.logs) {
       itemsArray.push(
         <section className='thing-modal__item' key={item}>
-          <h4 className='thing-modal__item-name'>{item}</h4>
+          <h4 className='thing-modal__item-name'>{GranulatesLogsTitleNames[item]}</h4>
           <p className='thing-modal__item-value'>
-            {currentItem.logs[item].map(item => ` +${item} kg ,`)}
+            {currentItem.logs[item].map(item => ` ${item} kg ,`)}
           </p>
         </section>
       )

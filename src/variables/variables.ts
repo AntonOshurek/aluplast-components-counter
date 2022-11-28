@@ -53,3 +53,9 @@ export enum GranulatesLogsNames {
   VOREK = 'vorek',
   COUNTER = 'counter',
 }
+
+export const GranulatesLogsTitleNames: {[propName: string]: string} = {
+  [GranulatesLogsNames.CONTAINER]: 'Kontainer',
+  [GranulatesLogsNames.VOREK]: 'Worek',
+  [GranulatesLogsNames.COUNTER]: 'Licznik',
+}
