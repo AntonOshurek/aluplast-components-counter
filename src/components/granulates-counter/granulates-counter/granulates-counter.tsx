@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { CounterSetValue } from '../../counter-controls';
 import { ButtonChoice } from '../../controls';
 //consts and variables
-import { ComponentsTexts } from '../../../variables/variables';
+import { ComponentsTexts, GranulatesLogsNames} from '../../../variables/variables';
 //store
 import { useAppDispatch } from '../../../hooks/hooks';
 import { incrementAction, decrementAction } from '../../../store/slices/counter-slice';
@@ -29,7 +29,7 @@ const GranulatesCounter = (): JSX.Element => {
     if(value <= 0 || value === NaN) {
       console.log('sdfsd');
     } else {
-      dispatch(incrementAction({UNID: currentItemUNID, value: value, logName: 'counter'}));
+      dispatch(incrementAction({UNID: currentItemUNID, value: value, logName: GranulatesLogsNames.COUNTER}));
     }
   }
 
@@ -37,7 +37,7 @@ const GranulatesCounter = (): JSX.Element => {
     if(value <= 0 || value === NaN) {
       console.log('sdfsd');
     } else {
-      dispatch(decrementAction({UNID: currentItemUNID, value: value, logName: 'counter'}));
+      dispatch(decrementAction({UNID: currentItemUNID, value: value, logName: GranulatesLogsNames.COUNTER}));
     }
   }
 

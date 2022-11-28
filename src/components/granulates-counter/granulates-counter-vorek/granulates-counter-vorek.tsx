@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { CounterAddedAmount, CounterValue } from '../../counter-controls';
 import { ButtonChoice } from '../../controls';
 //consts and variables
-import { ComponentsTexts } from '../../../variables/variables';
+import { ComponentsTexts, GranulatesLogsNames } from '../../../variables/variables';
 //store
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
 import { incrementAction, decrementAction } from '../../../store/slices/counter-slice';
@@ -45,14 +45,14 @@ const GranulatesCounterVorek = (): JSX.Element => {
     setValue(() => value + addedAmount)
 
     let recalcValue: number = addedAmount * basicVorekWeight;
-    dispatch(incrementAction({UNID: currentItemUNID, value: recalcValue, logName: 'vorek', logValue: value}));
+    dispatch(incrementAction({UNID: currentItemUNID, value: recalcValue, logName: GranulatesLogsNames.VOREK, logValue: value}));
   }
 
   const decrementHandler = (): void => {
     setValue(() => value - addedAmount)
 
     const recalcValue: number = addedAmount * basicVorekWeight;
-    dispatch(decrementAction({UNID: currentItemUNID, value: recalcValue, logName: 'vorek', logValue: value}));
+    dispatch(decrementAction({UNID: currentItemUNID, value: recalcValue, logName: GranulatesLogsNames.VOREK, logValue: value}));
   }
 
   //CHECK IT!!!!!
