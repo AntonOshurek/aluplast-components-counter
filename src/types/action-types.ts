@@ -1,5 +1,8 @@
+import { GranulatesLogsNames } from "../variables/variables";
+
 export interface IIncDecActionParametrsType {
   UNID: number,
   value: number,
-  logName: string,
+  logName: GranulatesLogsNames,
+  logValue?: number,
 }

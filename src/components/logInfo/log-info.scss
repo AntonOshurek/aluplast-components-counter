@@ -1,4 +1,4 @@
-@import '../../../variables/variables.scss';
+@import '../../variables/variables.scss';
 
 .thing-modal {
   position: fixed;
@@ -27,13 +27,14 @@
   align-items: flex-start;
   gap: 10px;
 
-  background: linear-gradient(45deg, #9dc5b6, #d09fd8);
+  // background: linear-gradient(45deg, #9dc5b6, #d09fd8);
+  background: $white-bg-color;
 }
 
 .thing-modal__title {
   width: 100%;
   font-family: $basic-font;
-  color: $standart-white;
+  color: $standart-black;
   font-size: $main-title-text-size;
   font-weight: $main-title-font-weight;
   text-align: center;

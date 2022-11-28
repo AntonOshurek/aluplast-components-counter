@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { CounterAddedAmount, CounterSetValue } from '../../counter-controls';
 import { ButtonAdd } from '../../controls';
 //consts and variables
-import { ComponentsTexts } from '../../../variables/variables';
+import { ComponentsTexts, GranulatesLogsNames } from '../../../variables/variables';
 //store
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
 import { incrementAction } from '../../../store/slices/counter-slice';
@@ -44,7 +44,7 @@ const GranulatesCounterContainer = (): JSX.Element => {
     } else {
       const recalcValue = value - addedAmount
       setAddedAmount(basicContainerWeight);
-      dispatch(incrementAction({UNID: currentItemUNID, value: recalcValue, logName: 'container'}));
+      dispatch(incrementAction({UNID: currentItemUNID, value: recalcValue, logName: GranulatesLogsNames.CONTAINER, logValue: value}));
     }
   }
 

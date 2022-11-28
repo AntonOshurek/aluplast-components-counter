@@ -47,3 +47,9 @@ export enum GranulatesSettingsNames {
 export enum ApplicationStorageApiNames {
   GRANULATES_STORAGE = 'granulates',
 }
+
+export enum GranulatesLogsNames {
+  CONTAINER = 'container',
+  VOREK = 'vorek',
+  COUNTER = 'counter',
+}

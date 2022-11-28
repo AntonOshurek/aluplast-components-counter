@@ -4,7 +4,7 @@ import { useState } from 'react';
 //components
 import { GranulatesCounterHeader } from '../../components/granulates-counter';
 import ThingItem from '../../components/item/thing-item/thing-item';
-import ThingLogsModal from '../../components/item/thing-logs-modal/thing-logs-modal';
+import LogInfo from '../../components/logInfo/log-info';
 //store
 import { useAppSelector } from '../../hooks/hooks';
 import { SelectorGetCurrentGranulates } from '../../store/selectors/selectors';
@@ -48,7 +48,7 @@ const GranulatesCounterPage = (): JSX.Element => {
       </main>
 
       {
-        showThingLogsModal ? <ThingLogsModal currentItem={currentItem} closeModal={closeItemLogs}/> : null
+        showThingLogsModal ? <LogInfo currentItem={currentItem} closeModal={closeItemLogs}/> : null
       }
 
     </div>
