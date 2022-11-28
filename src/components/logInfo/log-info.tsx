@@ -31,7 +31,7 @@ const LogInfo = ({currentItem, closeModal}: ILogInfoPropsType): JSX.Element => {
         <section className='thing-modal__item' key={item}>
           <h4 className='thing-modal__item-name'>{GranulatesLogsTitleNames[item]}</h4>
           <p className='thing-modal__item-value'>
-            {currentItem.logs[item].map(item => ` +${item} kg ,`)}
+            {currentItem.logs[item].map(item => ` ${item} kg ,`)}
           </p>
         </section>
       )
