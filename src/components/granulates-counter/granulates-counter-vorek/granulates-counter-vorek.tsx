@@ -45,14 +45,14 @@ const GranulatesCounterVorek = (): JSX.Element => {
     setValue(() => value + addedAmount)
 
     let recalcValue: number = addedAmount * basicVorekWeight;
-    dispatch(incrementAction({UNID: currentItemUNID, value: recalcValue, logName: GranulatesLogsNames.VOREK, logValue: value}));
+    dispatch(incrementAction({UNID: currentItemUNID, value: recalcValue, logName: GranulatesLogsNames.VOREK, logValue: recalcValue}));
   }
 
   const decrementHandler = (): void => {
     setValue(() => value - addedAmount)
 
     const recalcValue: number = addedAmount * basicVorekWeight;
-    dispatch(decrementAction({UNID: currentItemUNID, value: recalcValue, logName: GranulatesLogsNames.VOREK, logValue: value}));
+    dispatch(decrementAction({UNID: currentItemUNID, value: recalcValue, logName: GranulatesLogsNames.VOREK, logValue: recalcValue}));
   }
 
   //CHECK IT!!!!!
