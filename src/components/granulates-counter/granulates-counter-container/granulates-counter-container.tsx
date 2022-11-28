@@ -44,7 +44,7 @@ const GranulatesCounterContainer = (): JSX.Element => {
     } else {
       const recalcValue = value - addedAmount
       setAddedAmount(basicContainerWeight);
-      dispatch(incrementAction({UNID: currentItemUNID, value: recalcValue, logName: 'container'}));
+      dispatch(incrementAction({UNID: currentItemUNID, value: recalcValue, logName: 'container', logValue: value}));
     }
   }
 

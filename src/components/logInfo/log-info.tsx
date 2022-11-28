@@ -8,13 +8,12 @@ import { IGranulateItemType } from '../../types/data-types';
 //styles
 import './log-info.scss';
 
-
-interface ThingLogsModalPropsType {
+interface ILogInfoPropsType {
   closeModal: (evt: any) => void,
   currentItem: IGranulateItemType
 }
 
-const LogInfo = ({currentItem, closeModal}: ThingLogsModalPropsType): JSX.Element => {
+const LogInfo = ({currentItem, closeModal}: ILogInfoPropsType): JSX.Element => {
 
   const dispatch = useAppDispatch();
 
