@@ -1,11 +1,12 @@
 //components
-import { ButtonRemove } from '../../controls';
+import { ButtonRemove } from '../controls';
+//store
+import { useAppDispatch } from '../../hooks/hooks';
+import { clearItemAction } from '../../store/slices/counter-slice';
 //types
-import { IGranulateItemType } from '../../../types/data-types';
+import { IGranulateItemType } from '../../types/data-types';
 //styles
-import './thing-modal.scss';
-import { useAppDispatch } from '../../../hooks/hooks';
-import {clearItemAction} from '../../../store/slices/counter-slice';
+import './log-info.scss';
 
 
 interface ThingLogsModalPropsType {
@@ -13,7 +14,7 @@ interface ThingLogsModalPropsType {
   currentItem: IGranulateItemType
 }
 
-const ThingLogsModal = ({currentItem, closeModal}: ThingLogsModalPropsType): JSX.Element => {
+const LogInfo = ({currentItem, closeModal}: ThingLogsModalPropsType): JSX.Element => {
 
   const dispatch = useAppDispatch();
 
@@ -52,4 +53,4 @@ const ThingLogsModal = ({currentItem, closeModal}: ThingLogsModalPropsType): JSX
   )
 }
 
-export default ThingLogsModal;
+export default LogInfo;
