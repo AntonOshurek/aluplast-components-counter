@@ -6,7 +6,6 @@ import { ComponentsTexts } from '../../../variables/variables';
 import './overview-header.scss';
 
 const OverviewHeader = (): JSX.Element => {
-
   return (
     <div className='overview-header'>
       <h2 className='overview-header__title'>{ComponentsTexts.OVERVIEW_PAGE_TITLE}</h2>
