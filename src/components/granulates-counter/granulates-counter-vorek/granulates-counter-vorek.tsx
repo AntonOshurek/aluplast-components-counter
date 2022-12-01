@@ -7,7 +7,7 @@ import { ButtonChoice } from '../../controls';
 import { ComponentsTexts, GranulatesLogsNames } from '../../../variables/variables';
 //store
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
-import { incrementAction, decrementAction } from '../../../store/slices/counter-slice';
+import { incrementAction, decrementAction, log } from '../../../store/slices/counter-slice';
 import { SelectorGetGranulatesSettingsVorekWeight } from '../../../store/selectors/selectors';
 //styles
 import '../granulates-counter.scss';
@@ -45,20 +45,29 @@ const GranulatesCounterVorek = (): JSX.Element => {
     setValue(() => value + addedAmount)
 
     let recalcValue: number = addedAmount * basicVorekWeight;
-    dispatch(incrementAction({UNID: currentItemUNID, value: recalcValue, logName: GranulatesLogsNames.VOREK, logValue: recalcValue}));
+    dispatch(incrementAction({UNID: currentItemUNID, value: recalcValue}));
   }
 
   const decrementHandler = (): void => {
     setValue(() => value - addedAmount)
 
     const recalcValue: number = addedAmount * basicVorekWeight;
-    dispatch(decrementAction({UNID: currentItemUNID, value: recalcValue, logName: GranulatesLogsNames.VOREK, logValue: recalcValue}));
+    dispatch(decrementAction({UNID: currentItemUNID, value: recalcValue}));
   }
 
   //CHECK IT!!!!!
   useEffect(() => {
     resetAddedAmount();
   }, [value]);
+
+  useEffect(() => {
+    console.log(`Mount ${value}`)
+
+    return () => {
+      console.log(`componentWillUnmount ${value}`)
+      // dispatch(log({UNID: currentItemUNID, logName: GranulatesLogsNames.VOREK, logValue: `+${value} worków`}));
+    }
+  }, [value])
 
   return (
     <section className='granulates-counter granulates-counter--set-controls'>
