@@ -7,7 +7,7 @@ import { ButtonChoice } from '../../controls';
 import { ComponentsTexts, GranulatesLogsNames } from '../../../variables/variables';
 //store
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
-import { incrementAction, decrementAction } from '../../../store/slices/counter-slice';
+import { incrementAction, decrementAction, log } from '../../../store/slices/counter-slice';
 import { SelectorGetGranulatesSettingsVorekWeight } from '../../../store/selectors/selectors';
 //styles
 import '../granulates-counter.scss';
@@ -59,6 +59,15 @@ const GranulatesCounterVorek = (): JSX.Element => {
   useEffect(() => {
     resetAddedAmount();
   }, [value]);
+
+  useEffect(() => {
+    console.log(`Mount ${value}`)
+
+    return () => {
+      console.log(`componentWillUnmount ${value}`)
+      // dispatch(log({UNID: currentItemUNID, logName: GranulatesLogsNames.VOREK, logValue: `+${value} worków`}));
+    }
+  }, [value])
 
   return (
     <section className='granulates-counter granulates-counter--set-controls'>
