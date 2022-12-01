@@ -7,7 +7,7 @@ import { ButtonChoice } from '../../controls';
 import { ComponentsTexts, GranulatesLogsNames } from '../../../variables/variables';
 //store
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
-import { incrementAction, decrementAction, log } from '../../../store/slices/counter-slice';
+import { incrementAction, decrementAction, logAction } from '../../../store/slices/counter-slice';
 import { SelectorGetGranulatesSettingsVorekWeight } from '../../../store/selectors/selectors';
 //styles
 import '../granulates-counter.scss';
@@ -46,14 +46,14 @@ const GranulatesCounterVorek = (): JSX.Element => {
 
     let recalcValue: number = addedAmount * basicVorekWeight;
     dispatch(incrementAction({UNID: currentItemUNID, value: recalcValue}));
-  }
+  };
 
   const decrementHandler = (): void => {
     setValue((prev) => prev - addedAmount)
 
     const recalcValue: number = addedAmount * basicVorekWeight;
     dispatch(decrementAction({UNID: currentItemUNID, value: recalcValue}));
-  }
+  };
 
   const ref = useRef(0);
 
@@ -66,15 +66,14 @@ const GranulatesCounterVorek = (): JSX.Element => {
   useEffect(() => {
     return () => {
       if(ref.current !== 0) {
-        dispatch(log({UNID: currentItemUNID, logName: GranulatesLogsNames.VOREK, logValue: `+${ref.current} worków`}));
+        dispatch(logAction({UNID: currentItemUNID, logName: GranulatesLogsNames.VOREK, logValue: `+${ref.current} worków`}));
       }
     }
-  }, [])
+  }, []);
 
   return (
     <section className='granulates-counter granulates-counter--set-controls'>
       <h3 className='visually-hidden'>Licznik {ComponentsTexts.GRANULATES_COUNTER_NAME} {ComponentsTexts.GRANULATES_COUNTER_VOREK_NAME}</h3>
-
 
       <CounterAddedAmount onInputChangeHandler={onAddedAmountChangeHandler} value={addedAmount} title={ComponentsTexts.GRANULATES_COUNTER_VOREK_ADDED_AMOUNT_TITLE}/>
       <CounterValue value={value}/>

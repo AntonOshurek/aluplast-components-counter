@@ -1,5 +1,6 @@
+//variables and constants
 import { ComponentsTexts } from '../../../variables/variables';
-
+//styles
 import '../standart-button.scss';
 
 interface ButtonChoicePropsType {
@@ -9,8 +10,6 @@ interface ButtonChoicePropsType {
 }
 
 const ButtonChoice = ({onIncButtonClickHandler, onDecButtonClickHandler, choiseText}: ButtonChoicePropsType): JSX.Element => {
-
-    // console.log('render')
   return (
     <div className='button-block'>
       <button className='standart-button standart-button--second-btn ' type='button'
