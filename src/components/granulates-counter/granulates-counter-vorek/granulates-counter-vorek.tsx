@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, useEffect } from 'react';
+import { useState, ChangeEvent, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 //components
 import { CounterAddedAmount, CounterValue } from '../../counter-controls';
@@ -42,32 +42,39 @@ const GranulatesCounterVorek = (): JSX.Element => {
   }
 
   const incrementHandler = (): void => {
-    setValue(() => value + addedAmount)
+    setValue((prev) => prev + addedAmount)
 
     let recalcValue: number = addedAmount * basicVorekWeight;
     dispatch(incrementAction({UNID: currentItemUNID, value: recalcValue}));
   }
 
   const decrementHandler = (): void => {
-    setValue(() => value - addedAmount)
+    setValue((prev) => prev - addedAmount)
 
     const recalcValue: number = addedAmount * basicVorekWeight;
     dispatch(decrementAction({UNID: currentItemUNID, value: recalcValue}));
   }
 
+  const ref = useRef(0);
+
   //CHECK IT!!!!!
   useEffect(() => {
     resetAddedAmount();
+    ref.current = value;
   }, [value]);
 
   useEffect(() => {
-    console.log(`Mount ${value}`)
+    // console.log(`Component Mount ${value}`)
 
     return () => {
-      console.log(`componentWillUnmount ${value}`)
-      // dispatch(log({UNID: currentItemUNID, logName: GranulatesLogsNames.VOREK, logValue: `+${value} worków`}));
+      // console.log(ref.current);
+      // console.log(`componentWillUnmount ${memo('')}`)
+      if(ref.current !== 0) {
+        dispatch(log({UNID: currentItemUNID, logName: GranulatesLogsNames.VOREK, logValue: `+${ref.current} worków`}));
+      }
+
     }
-  }, [value])
+  }, [])
 
   return (
     <section className='granulates-counter granulates-counter--set-controls'>
