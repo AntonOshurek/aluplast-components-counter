@@ -7,7 +7,7 @@ import { ButtonChoice } from '../../controls';
 import { ComponentsTexts, GranulatesLogsNames} from '../../../variables/variables';
 //store
 import { useAppDispatch } from '../../../hooks/hooks';
-import { incrementAction, decrementAction, log } from '../../../store/slices/counter-slice';
+import { incrementAction, decrementAction, logAction } from '../../../store/slices/counter-slice';
 //styles
 import '../granulates-counter.scss';
 
@@ -29,8 +29,8 @@ const GranulatesCounter = (): JSX.Element => {
     if(value <= 0 || value === NaN) {
       console.log('sdfsd');
     } else {
-      dispatch(log({UNID: currentItemUNID, logName: GranulatesLogsNames.COUNTER, logValue: `+${value}kg`}))
       dispatch(incrementAction({UNID: currentItemUNID, value: value}));
+      dispatch(logAction({UNID: currentItemUNID, logName: GranulatesLogsNames.COUNTER, logValue: `+${value}kg`}))
     }
   }
 
@@ -38,8 +38,8 @@ const GranulatesCounter = (): JSX.Element => {
     if(value <= 0 || value === NaN) {
       console.log('sdfsd');
     } else {
-      dispatch(log({UNID: currentItemUNID, logName: GranulatesLogsNames.COUNTER, logValue: `-${value}kg`}))
       dispatch(decrementAction({UNID: currentItemUNID, value: value}));
+      dispatch(logAction({UNID: currentItemUNID, logName: GranulatesLogsNames.COUNTER, logValue: `-${value}kg`}))
     }
   }
 
