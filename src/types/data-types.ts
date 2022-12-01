@@ -1,4 +1,4 @@
-import type { GranulatesSettingsNames } from "../variables/variables";
+import type { GranulatesSettingsNames, GranulatesLogsNames } from "../variables/variables";
 //Granulates Types
 export interface IGranulateItemType {
   UNID: number,

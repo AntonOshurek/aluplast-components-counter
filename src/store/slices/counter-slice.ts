@@ -4,7 +4,7 @@ import { granulatesState } from '../state/granulates-state';
 //types
 import type { AppThunk } from '../../types/store-types';
 import type { IGranulatesSettingsType, ItemsTypes } from '../../types/data-types';
-import type { IIncDecActionParametrsType } from '../../types/action-types';
+import type { IIncDecActionParametrsType, ILogActionType } from '../../types/action-types';
 //API
 import { granulatesDataApi, granulatesStorageApi } from '../../api/';
 
@@ -15,19 +15,14 @@ export const granulatesSlice = createSlice({
   reducers: {
     increment: (state, action: PayloadAction<IIncDecActionParametrsType>) => {
       state.items[action.payload.UNID].amount = state.items[action.payload.UNID].amount + action.payload.value;
-      if(action.payload.logValue) {
-        state.items[action.payload.UNID].logs[action.payload.logName] = [...state.items[action.payload.UNID].logs[action.payload.logName], `+${action.payload.logValue}`];
-      } else {
-        state.items[action.payload.UNID].logs[action.payload.logName] = [...state.items[action.payload.UNID].logs[action.payload.logName], `+${action.payload.value}`];
-      }
     },
     decrement: (state, action: PayloadAction<IIncDecActionParametrsType>) => {
       state.items[action.payload.UNID].amount = state.items[action.payload.UNID].amount - action.payload.value;
-      if(action.payload.logValue) {
-        state.items[action.payload.UNID].logs[action.payload.logName] = [...state.items[action.payload.UNID].logs[action.payload.logName], `-${action.payload.logValue}`];
-      } else {
-        state.items[action.payload.UNID].logs[action.payload.logName] = [...state.items[action.payload.UNID].logs[action.payload.logName], `-${action.payload.value}`];
-      }
+    },
+    log: (state, action: PayloadAction<ILogActionType>) => {
+      const {UNID, logName, logValue} = action.payload;
+
+      state.items[UNID].logs[logName] = [...state.items[UNID].logs[logName], logValue];
     },
     setNewSettings: (state, action: PayloadAction<IGranulatesSettingsType>) => {
       state.granulatesSettings = action.payload;
@@ -41,7 +36,7 @@ export const granulatesSlice = createSlice({
   },
 });
 
-export const { clear, clearItem } = granulatesSlice.actions;
+export const { clear, clearItem, log } = granulatesSlice.actions;
 
 export const incrementAction =
   (action: IIncDecActionParametrsType): AppThunk =>
