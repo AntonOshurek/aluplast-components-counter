@@ -64,15 +64,10 @@ const GranulatesCounterVorek = (): JSX.Element => {
   }, [value]);
 
   useEffect(() => {
-    // console.log(`Component Mount ${value}`)
-
     return () => {
-      // console.log(ref.current);
-      // console.log(`componentWillUnmount ${memo('')}`)
       if(ref.current !== 0) {
         dispatch(log({UNID: currentItemUNID, logName: GranulatesLogsNames.VOREK, logValue: `+${ref.current} worków`}));
       }
-
     }
   }, [])
 
