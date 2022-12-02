@@ -1,6 +1,6 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 //pages
-import {GranulatesPage, RootPage, SettingsPage, GranulatesCounterPage} from '../pages';
+import {GranulatesPage, RootPage, SettingsPage, GranulatesCounterPage, InfoPage} from '../pages';
 //granulates counters components for GRANULATES_COUNTER root
 import {GranulatesCounterContainer, GranulatesCounter, GranulatesCounterVorek} from '../components/granulates-counter';
 //consts and utils functions
@@ -15,6 +15,7 @@ function App() {
       <Routes>
         <Route path={AppRoute.ROOT} element={<RootPage/>}/>
         <Route path={AppRoute.SETTINGS} element={<SettingsPage/>}/>
+        <Route path={AppRoute.INFORMATION} element={<InfoPage/>} />
         <Route path={AppRoute.GRANULATES_PAGE} element={<GranulatesPage/>}/>
         <Route path={AppRoute.GRANULATES_COUNTER} element={<GranulatesCounterPage/>}>
           <Route index element={<GranulatesCounter/>} />

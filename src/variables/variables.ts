@@ -3,6 +3,7 @@ export const rootBaseName = '/aluplas-granules-counter';
 export const enum AppRoute {
   ROOT = '/',
   SETTINGS = '/settings',
+  INFORMATION = '/information',
   GRANULATES_PAGE = '/granulates',
   GRANULATES_COUNTER = '/granulates/:UNID',
   GRANULATES_COUNTER_CONTAINER = 'container',
