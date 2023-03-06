@@ -5,6 +5,7 @@ export interface IGranulateItemType {
   name: string,
   amount: number,
   image: string,
+  description: '',
   logs: {
     [key: string]: string[],
   },
@@ -27,7 +28,7 @@ export interface IGumItemType {
   amount: number,
   firm: string,
   name: string,
-  systemCode: string,
+  description: string,
   image: string,
   color: string,
 };
@@ -41,7 +42,7 @@ export interface IGumsDataType {
 //universal types for abstract data API classes and overview component
 //An abstract class with data must be able to accept any data.
 //The overview should be able to work with all types of data. overview is a universal component.
-export type DataTypes = IGranulatesDataType;
-export type BasicDataTypes = BasicGranulatesDataType;
-export type ItemsTypes = IGranulateItemType;
+export type DataTypes = IGranulatesDataType | IGumsDataType;
+export type BasicDataTypes = BasicGranulatesDataType | BasicGumsDataType;
+export type ItemsTypes = IGranulateItemType | IGumItemType;
 export type SettingsTypes = IGranulatesSettingsType;

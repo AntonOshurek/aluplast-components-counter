@@ -1,6 +1,5 @@
 //types
 import type {
-  BasicDataTypes,
   BasicGranulatesDataType,
   IGranulatesDataType,
   IGranulatesSettingsType,
@@ -16,7 +15,7 @@ class GranulatesDataApi {
   #basicSettings: IGranulatesSettingsType;
   #defaultData: IGranulatesDataType;
 
-  constructor(data: BasicDataTypes, settings: IGranulatesSettingsType) {
+  constructor(data: BasicGranulatesDataType, settings: IGranulatesSettingsType) {
     this.#basicData = data;
     this.#basicSettings = settings;
     this.#defaultData = {};

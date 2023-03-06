@@ -12,6 +12,7 @@ export const basicGranulatesData: BasicGranulatesDataType = [
     name: 'HEUCOBATCH Cream 190 193',
     amount: 0,
     image: '/aluplas-granules-counter/images/granulates/granulates-100.jpg',
+    description: '',
     logs: {
       container: [],
       vorek: [],
@@ -23,6 +24,7 @@ export const basicGranulatesData: BasicGranulatesDataType = [
     name: 'HEUCOBATCH Ocher brown',
     amount: 0,
     image: '/aluplas-granules-counter/images/granulates/granulates-101.jpg',
+    description: '',
     logs: {
       container: [],
       vorek: [],
@@ -34,6 +36,7 @@ export const basicGranulatesData: BasicGranulatesDataType = [
     name: 'CROMOFIX MARRON/BROWN IQAP',
     amount: 0,
     image: '/aluplas-granules-counter/images/granulates/granulates-102.jpg',
+    description: '',
     logs: {
       container: [],
       vorek: [],
@@ -45,6 +48,7 @@ export const basicGranulatesData: BasicGranulatesDataType = [
     name: 'Sicovinyl Black 02-270795 BASF',
     amount: 0,
     image: '/aluplas-granules-counter/images/granulates/granulates-103.jpg',
+    description: '',
     logs: {
       container: [],
       vorek: [],
@@ -56,6 +60,7 @@ export const basicGranulatesData: BasicGranulatesDataType = [
     name: 'Sicovinyl White 00-9065 BASF',
     amount: 0,
     image: '/aluplas-granules-counter/images/granulates/granulates-104.jpg',
+    description: '',
     logs: {
       container: [],
       vorek: [],
@@ -67,6 +72,7 @@ export const basicGranulatesData: BasicGranulatesDataType = [
     name: 'Sicovinyl Yellow 10-0895 BASF',
     amount: 0,
     image: '/aluplas-granules-counter/images/granulates/granulates-105.jpg',
+    description: '',
     logs: {
       container: [],
       vorek: [],
@@ -78,6 +84,7 @@ export const basicGranulatesData: BasicGranulatesDataType = [
     name: 'Evicom granulat ACF400/5hellblau 5154',
     amount: 0,
     image: '/aluplas-granules-counter/images/granulates/granulates-106.jpg',
+    description: '',
     logs: {
       container: [],
       vorek: [],
@@ -89,6 +96,7 @@ export const basicGranulatesData: BasicGranulatesDataType = [
     name: 'Dryblend chłodzący Colorstab',
     amount: 0,
     image: '/aluplas-granules-counter/images/granulates/granulates-107.jpg',
+    description: '',
     logs: {
       container: [],
       vorek: [],
@@ -100,6 +108,7 @@ export const basicGranulatesData: BasicGranulatesDataType = [
     name: 'B1800055 HEUCOBATCH Dark grey 790 199',
     amount: 0,
     image: '/aluplas-granules-counter/images/granulates/granulates-107.jpg',
+    description: '',
     logs: {
       container: [],
       vorek: [],

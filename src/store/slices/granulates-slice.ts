@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { granulatesState } from '../state/granulates-state';
 //types
 import type { AppThunk } from '../../types/store-types';
-import type { IGranulatesSettingsType, ItemsTypes } from '../../types/data-types';
+import type { IGranulatesSettingsType, ItemsTypes, IGranulateItemType } from '../../types/data-types';
 import type { IIncDecActionParametrsType, ILogActionType } from '../../types/action-types';
 //API
 import { granulatesDataApi, granulatesStorageApi } from '../../api';
@@ -28,7 +28,7 @@ export const granulatesSlice = createSlice({
     setNewSettings: (state, action: PayloadAction<IGranulatesSettingsType>) => {
       state.granulatesSettings = action.payload;
     },
-    clearItem: (state, action: PayloadAction<ItemsTypes>) => {
+    clearItem: (state, action: PayloadAction<IGranulateItemType>) => {
       const {UNID} = action.payload;
       state.items[UNID] = action.payload;
     },

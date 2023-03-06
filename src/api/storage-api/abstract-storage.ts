@@ -1,5 +1,5 @@
 //types
-import type { DataTypes, SettingsTypes } from "../../types/data-types";
+import type { DataTypes, IGranulatesSettingsType, SettingsTypes, IGranulatesDataType } from "../../types/data-types";
 //variables and consts
 import { ApplicationStorageApiNames } from "../../variables/variables";
 
@@ -15,33 +15,33 @@ abstract class AbstractStorage {
     this.#name = name;
   }
 
-  getItems(): DataTypes | null {
+  getItems(): IGranulatesDataType | null {
     const jsonData: string | null = localStorage.getItem(this.#name);
 
     if(jsonData) {
-      const parsedJsonData: DataTypes = JSON.parse(jsonData);
+      const parsedJsonData: IGranulatesDataType = JSON.parse(jsonData);
       return parsedJsonData;
     } else {
       return null;
     }
   }
 
-  getSettings(): SettingsTypes | null {
+  getSettings(): IGranulatesSettingsType | null {
     const jsonData: string | null = localStorage.getItem(`${this.#name}--settings`);
 
     if(jsonData) {
-      const parsedJsonData: SettingsTypes = JSON.parse(jsonData);
+      const parsedJsonData: IGranulatesSettingsType = JSON.parse(jsonData);
       return parsedJsonData;
     } else {
       return null;
     }
   }
 
-  setItems(items: DataTypes) {
+  setItems(items: IGranulatesDataType) {
     localStorage.setItem(this.#name, JSON.stringify(items));
   }
 
-  setSettings(settings: SettingsTypes) {
+  setSettings(settings: IGranulatesSettingsType) {
     localStorage.setItem(`${this.#name}--settings`, JSON.stringify(settings));
   }
 
