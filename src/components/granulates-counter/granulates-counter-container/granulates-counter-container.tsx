@@ -7,7 +7,7 @@ import { ButtonAdd } from '../../controls';
 import { ComponentsTexts, GranulatesLogsNames } from '../../../variables/variables';
 //store
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
-import { incrementAction, logAction } from '../../../store/slices/counter-slice';
+import { incrementAction, logAction } from '../../../store/slices/granulates-slice';
 import { SelectorGetGranulatesSettingsContainerWeight } from '../../../store/selectors/selectors';
 //styles
 import '../granulates-counter.scss';
@@ -39,7 +39,7 @@ const GranulatesCounterContainer = (): JSX.Element => {
   }
 
   const onAddButtonClickHandler = (): void => {
-    if(value <= 0 || value === NaN) {
+    if(value <= 0 || typeof(value) !== "number") {
       setError('You can\'t add zero');
     } else {
       const recalcValue = value - addedAmount

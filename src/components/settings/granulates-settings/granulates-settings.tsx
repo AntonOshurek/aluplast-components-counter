@@ -6,7 +6,7 @@ import { GranulatesSettingsNames } from '../../../variables/variables';
 import { ComponentsTexts } from '../../../variables/variables';
 //store
 import { useAppDispatch } from '../../../hooks/hooks';
-import { clearStoreAction } from '../../../store/slices/counter-slice';
+import { clearStoreAction } from '../../../store/slices/granulates-slice';
 //types
 import type { IGranulatesSettingsType } from '../../../types/data-types';
 //styles

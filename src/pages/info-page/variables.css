@@ -1,0 +1,16 @@
+:root {
+  --basic-font-family: 'Roboto', 'Arial', sans-serif;
+  --standart-black: #000000;
+  --standart-white: #ffffff;
+
+  --info-text-color: #000000;
+  --code-text-color: #ffffff;
+
+
+  --info-title-text-font-size: 38px;
+  --info-title-text-font-weight: 500;
+  --info-subtitle-text-font-size: 24px;
+  --info-subtitle-text-font-weight: 500;
+  --info-text-font-size: 18px;
+  --info-text-font-weight: 400;
+}

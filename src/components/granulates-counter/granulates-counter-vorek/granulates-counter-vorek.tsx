@@ -7,7 +7,7 @@ import { ButtonChoice } from '../../controls';
 import { ComponentsTexts, GranulatesLogsNames } from '../../../variables/variables';
 //store
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
-import { incrementAction, decrementAction, logAction } from '../../../store/slices/counter-slice';
+import { incrementAction, decrementAction, logAction } from '../../../store/slices/granulates-slice';
 import { SelectorGetGranulatesSettingsVorekWeight } from '../../../store/selectors/selectors';
 //styles
 import '../granulates-counter.scss';

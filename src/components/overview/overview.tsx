@@ -2,12 +2,12 @@
 import OverviewHeader from './overview-header/overview-header';
 import OverviewList from './overview-list/overview-list';
 //types
-import type { DataTypes } from '../../types/data-types';
+import type { IAdaptedDataType } from '../../types/data-types';
 //styles
 import './overview.scss';
 
 interface OverviewPropsType {
-  data: DataTypes,
+  data: IAdaptedDataType,
 }
 
 const Overview = ({data}: OverviewPropsType): JSX.Element => {

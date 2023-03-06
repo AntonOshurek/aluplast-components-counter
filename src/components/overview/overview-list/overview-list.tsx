@@ -4,13 +4,13 @@ import OverviewItem from '../overview-item/overview-item';
 //variables and consts
 import { AppRoute } from '../../../variables/variables';
 //types
-import type { DataTypes } from '../../../types/data-types';
+import type { IAdaptedDataType } from '../../../types/data-types';
 //styles
 import './overview-list.scss';
 
 interface OverviewListPropsType {
-  data: DataTypes,
-}
+  data: IAdaptedDataType,
+};
 
 const OverviewList = ({data}: OverviewListPropsType): JSX.Element => {
   let location: AppRoute;
@@ -21,9 +21,12 @@ const OverviewList = ({data}: OverviewListPropsType): JSX.Element => {
     case AppRoute.GRANULATES_PAGE:
       location = AppRoute.GRANULATES_COUNTER;
       break;
+    case AppRoute.GUM_PAGE:
+      location = AppRoute.GUM_PAGE;
+      break;
     default:
       location = AppRoute.GRANULATES_PAGE;
-  }
+  };
 
   const generateItems = ():JSX.Element[] => {
     let itemsArray: JSX.Element[] = [];
@@ -31,13 +34,13 @@ const OverviewList = ({data}: OverviewListPropsType): JSX.Element => {
       itemsArray.push(<OverviewItem item={data[item]} key={data[item].UNID} path={location}/>)
     }
     return itemsArray;
-  }
+  };
 
   return (
     <ul className='overview-list'>
       {generateItems()}
     </ul>
-  )
-}
+  );
+};
 
 export default OverviewList;

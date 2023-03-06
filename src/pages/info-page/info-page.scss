@@ -1,6 +1,7 @@
 .info-page {
   width: 100%;
-  min-height: var(--vh);
+  // min-height: var(--vh);
+  min-height: 100vh;
 
   display: grid;
   grid-template-columns: 1fr;
@@ -24,38 +25,34 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+
+  padding: 0 10px;
 }
 
 .info__title {
-  font-size: 38px;
-  font-weight: 500;
+  font-family: var(--basic-font-family);
+  color: var(--info-text-color);
+  font-size: var(--info-title-text-font-size);
+  font-weight: var(--info-title-text-font-weight);
   text-transform: capitalize;
-}
-
-.info__subtitle {
-  text-transform: capitalize;
-  font-size: 24px;
-  font-weight: 500;
-}
-
-.info__text {
-  color: #000;
-  font-size: 18px;
-  font-weight: 400;
   text-align: center;
 }
 
-.info__socials {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+.info__subtitle {
+  font-family: var(--basic-font-family);
+  color: var(--info-text-color);
+  font-size: var(--info-subtitle-text-font-size);
+  font-weight: var(--info-subtitle-text-font-weight);
+  text-transform: capitalize;
+  text-align: center;
 }
 
-.info__social-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.info__text {
+  font-family: var(--basic-font-family);
+  color: var(--info-text-color);
+  font-size: var(--info-text-font-size);
+  font-weight: var(--info-text-font-weight);
+  text-align: center;
 }
 
 .info__stack {
@@ -70,17 +67,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
-  color: #fff;
-  font-size: 18px;
+
+  font-family: var(--basic-font-family);
+  color: var(--code-text-color);
+  font-size: var(--info-text-font-size);
   font-weight: 600;
 
   list-style: none;
+
+  & code {
+    font-family: var(--basic-font-family);
+    background-color: var(--info-text-color);
+    border-radius: 3px;
+    font-family: courier, monospace;
+    padding: 2px 3px;
+  }
 }
 
-code {
-  background-color: #000;
-  border-radius: 3px;
-  font-family: courier, monospace;
-  padding: 2px 3px;
+.info__socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.info__social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

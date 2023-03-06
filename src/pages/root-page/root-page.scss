@@ -15,7 +15,8 @@
   width: 100%;
   height: 100%;
   padding: $standart-section-top-padding $standart-section-side-padding;
-  padding-bottom: calc($standart-section-top-padding * 3)+ $navigation-link-size;
+  // padding-bottom: calc($standart-section-top-padding * 3)+ $navigation-link-size;
+  padding-bottom: 100px;
 }
 
 .root-page__wrap {
@@ -72,5 +73,5 @@
   object-fit: cover;
   border-radius: 30px;
 
-  filter: blur(2px);
+  filter: blur(1px);
 }
