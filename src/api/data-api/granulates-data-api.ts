@@ -1,54 +1,27 @@
+//abstract classes
+import AbstractDataApi from "./abstract-data-api";
+import AbstractStorage from "../storage-api/abstract-storage";
 //types
-import type {
-  IGranulatesSettingsType,
-  IDataType,
-  IAdaptedDataType,
-  IItemDataType,
-} from "../../types/data-types";
+import type { IGranulatesSettingsType, IDataType,} from "../../types/data-types";
+//api
+import granulatesStorageApi from "../storage-api/granulates-storage-api";
 //data
 import { basicGranulatesData, basicGranulatesSettings } from "../../data/granulates-data";
-import granulatesStorageApi from "../storage-api/granulates-storage-api";
 
-class GranulatesDataApi {
-  #basicData: IDataType;
+class GranulatesDataApi extends AbstractDataApi {
   #basicSettings: IGranulatesSettingsType;
-  #defaultData: IAdaptedDataType;
 
-  constructor(data: IDataType, settings: IGranulatesSettingsType) {
-    this.#basicData = data;
+  constructor(data: IDataType, settings: IGranulatesSettingsType, storageApi: AbstractStorage) {
+    super(data, storageApi);
     this.#basicSettings = settings;
-    this.#defaultData = {};
-    this.init();
-  };
-
-  getDefaultData(): IAdaptedDataType {
-    return this.#defaultData;
   };
 
   getDefaultSettings(): IGranulatesSettingsType {
     return this.#basicSettings;
   };
 
-  getDataFromStorage(): IAdaptedDataType | null {
-    return granulatesStorageApi.getItems();
-  };
-
   getSettingsFromStorage(): IGranulatesSettingsType | null {
     return granulatesStorageApi.getSettings();
-  };
-
-  getDefaultItem(id: number): IItemDataType {
-    return this.#defaultData[id];
-  };
-
-  getData(): IAdaptedDataType {
-    const resultFromStorage: IAdaptedDataType | null = this.getDataFromStorage();
-
-    if(resultFromStorage) {
-      return resultFromStorage;
-    } else {
-      return this.getDefaultData();
-    }
   };
 
   getSettings(): IGranulatesSettingsType {
@@ -60,15 +33,8 @@ class GranulatesDataApi {
       return this.getDefaultSettings();
     }
   };
-
-  init() {
-    // this.#defaultData = adaptDataForClient(this.#basicData);
-    this.#basicData.map((item: IItemDataType) => {
-      this.#defaultData[item.UNID] = item;
-    });
-  };
 };
 
-const granulatesDataApi = new GranulatesDataApi(basicGranulatesData, basicGranulatesSettings);
+const granulatesDataApi = new GranulatesDataApi(basicGranulatesData, basicGranulatesSettings, granulatesStorageApi);
 
 export default granulatesDataApi;

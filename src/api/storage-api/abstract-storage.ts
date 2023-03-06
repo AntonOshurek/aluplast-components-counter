@@ -4,13 +4,12 @@ import type { IAdaptedDataType } from "../../types/data-types";
 import { ApplicationStorageApiNames } from "../../variables/variables";
 
 abstract class AbstractStorage {
-
   name: ApplicationStorageApiNames;
 
   constructor(name: ApplicationStorageApiNames) {
     if(new.target === AbstractStorage) {
       throw new Error('can\'t instantiate AbstractStorage, only concrete one.');
-    }
+    };
 
     this.name = name;
   };
@@ -23,7 +22,7 @@ abstract class AbstractStorage {
       return parsedJsonData;
     } else {
       return null;
-    }
+    };
   };
 
   setItems(items: IAdaptedDataType) {
