@@ -1,49 +1,48 @@
 //types
 import type {
-  BasicGranulatesDataType,
-  IGranulatesDataType,
   IGranulatesSettingsType,
-  IGranulateItemType,
-  SettingsTypes
+  IDataType,
+  IAdaptedDataType,
+  IItemDataType,
 } from "../../types/data-types";
 //data
 import { basicGranulatesData, basicGranulatesSettings } from "../../data/granulates-data";
 import granulatesStorageApi from "../storage-api/granulates-storage-api";
 
 class GranulatesDataApi {
-  #basicData: BasicGranulatesDataType;
+  #basicData: IDataType;
   #basicSettings: IGranulatesSettingsType;
-  #defaultData: IGranulatesDataType;
+  #defaultData: IAdaptedDataType;
 
-  constructor(data: BasicGranulatesDataType, settings: IGranulatesSettingsType) {
+  constructor(data: IDataType, settings: IGranulatesSettingsType) {
     this.#basicData = data;
     this.#basicSettings = settings;
     this.#defaultData = {};
     this.init();
   };
 
-  getDefaultData(): IGranulatesDataType {
+  getDefaultData(): IAdaptedDataType {
     return this.#defaultData;
   };
 
-  getDefaultSettings(): SettingsTypes {
+  getDefaultSettings(): IGranulatesSettingsType {
     return this.#basicSettings;
   };
 
-  getDataFromStorage(): IGranulatesDataType | null {
+  getDataFromStorage(): IAdaptedDataType | null {
     return granulatesStorageApi.getItems();
   };
 
-  getSettingsFromStorage(): SettingsTypes | null {
+  getSettingsFromStorage(): IGranulatesSettingsType | null {
     return granulatesStorageApi.getSettings();
   };
 
-  getDefaultItem(id: number): IGranulateItemType {
+  getDefaultItem(id: number): IItemDataType {
     return this.#defaultData[id];
   };
 
-  getData(): IGranulatesDataType {
-    const resultFromStorage: IGranulatesDataType | null = this.getDataFromStorage();
+  getData(): IAdaptedDataType {
+    const resultFromStorage: IAdaptedDataType | null = this.getDataFromStorage();
 
     if(resultFromStorage) {
       return resultFromStorage;
@@ -52,8 +51,8 @@ class GranulatesDataApi {
     }
   };
 
-  getSettings(): SettingsTypes {
-    const resultFromStorage: SettingsTypes | null = this.getSettingsFromStorage();
+  getSettings(): IGranulatesSettingsType {
+    const resultFromStorage: IGranulatesSettingsType | null = this.getSettingsFromStorage();
 
     if(resultFromStorage) {
       return resultFromStorage;
@@ -64,7 +63,7 @@ class GranulatesDataApi {
 
   init() {
     // this.#defaultData = adaptDataForClient(this.#basicData);
-    this.#basicData.map((item: IGranulateItemType) => {
+    this.#basicData.map((item: IItemDataType) => {
       this.#defaultData[item.UNID] = item;
     });
   };

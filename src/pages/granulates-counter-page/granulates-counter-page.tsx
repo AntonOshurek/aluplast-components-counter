@@ -9,14 +9,14 @@ import LogInfo from '../../components/logInfo/log-info';
 import { useAppSelector } from '../../hooks/hooks';
 import { SelectorGetCurrentGranulates } from '../../store/selectors/selectors';
 //types
-import { IGranulateItemType } from '../../types/data-types';
+import type { IItemDataType } from '../../types/data-types';
 //styles
 import './granulates-counter-page.scss';
 
 const GranulatesCounterPage = (): JSX.Element => {
   const {UNID = 100} = useParams();
 
-  const currentItem: IGranulateItemType = useAppSelector(SelectorGetCurrentGranulates(+UNID));
+  const currentItem: IItemDataType = useAppSelector(SelectorGetCurrentGranulates(+UNID));
 
   const [showThingLogsModal, setShowThingLogsModal] = useState<boolean>(false);
 

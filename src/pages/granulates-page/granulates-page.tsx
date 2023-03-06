@@ -5,12 +5,12 @@ import Overview from '../../components/overview/overview';
 import { useAppSelector } from '../../hooks/hooks';
 import { SelectorGetGranulatesState } from '../../store/selectors/selectors';
 //types
-import type { DataTypes } from '../../types/data-types';
+import type { IAdaptedDataType } from '../../types/data-types';
 //styles
 import './granulates-page.scss';
 
 const GranulatesPage = (): JSX.Element => {
-  const data: DataTypes = useAppSelector(SelectorGetGranulatesState);
+  const data: IAdaptedDataType = useAppSelector(SelectorGetGranulatesState);
 
   return (
     <div className='granulates-page'>

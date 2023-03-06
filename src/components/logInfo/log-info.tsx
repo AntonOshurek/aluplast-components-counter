@@ -4,7 +4,7 @@ import { ButtonRemove } from '../controls';
 import { useAppDispatch } from '../../hooks/hooks';
 import { clearItemAction } from '../../store/slices/granulates-slice';
 //types
-import { IGranulateItemType } from '../../types/data-types';
+import type { IItemDataType } from '../../types/data-types';
 //variables and constants
 import { GranulatesLogsTitleNames } from '../../variables/variables';
 //styles
@@ -12,7 +12,7 @@ import './log-info.scss';
 
 interface ILogInfoPropsType {
   closeModal: (evt: any) => void,
-  currentItem: IGranulateItemType
+  currentItem: IItemDataType
 }
 
 const LogInfo = ({currentItem, closeModal}: ILogInfoPropsType): JSX.Element => {
