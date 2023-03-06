@@ -39,7 +39,7 @@ const GranulatesCounterContainer = (): JSX.Element => {
   }
 
   const onAddButtonClickHandler = (): void => {
-    if(value <= 0 || value === NaN) {
+    if(value <= 0 || typeof(value) !== "number") {
       setError('You can\'t add zero');
     } else {
       const recalcValue = value - addedAmount
