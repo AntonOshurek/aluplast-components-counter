@@ -33,7 +33,7 @@ export const granulatesSlice = createSlice({
       state.items[UNID] = action.payload;
     },
     clear: (state) => {
-      state.items = granulatesDataApi.getDefaultData();
+      state.items = granulatesDataApi.getAdaptedData();
     }
   },
 });
@@ -58,13 +58,13 @@ export const clearStoreAction =
   (): AppThunk =>
   (dispatch) => {
     dispatch(granulatesSlice.actions.clear());
-    granulatesStorageApi.setItems(granulatesDataApi.getDefaultData());
+    granulatesStorageApi.setItems(granulatesDataApi.getAdaptedData());
   };
 
 export const clearItemAction =
   (action: {id: number}): AppThunk =>
   (dispatch, getState) => {
-    const newDefaultItem = granulatesDataApi.getDefaultItem(action.id)
+    const newDefaultItem = granulatesDataApi.getDataItem(action.id)
     dispatch(granulatesSlice.actions.clearItem(newDefaultItem));
     granulatesStorageApi.setItems(getState().granulates.items);
   };

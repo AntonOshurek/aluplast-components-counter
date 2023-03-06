@@ -5,7 +5,7 @@ import type { IAdaptedDataType, IDataType, IItemDataType } from "../../types/dat
 
 abstract class AbstractDataApi {
   #basicData: IDataType;
-  #defaultData: IAdaptedDataType;
+  #adaptedData: IAdaptedDataType;
   storageApi: AbstractStorage
 
   constructor(data: IDataType, storageApi: AbstractStorage) {
@@ -14,21 +14,21 @@ abstract class AbstractDataApi {
     };
 
     this.#basicData = data;
-    this.#defaultData = {};
+    this.#adaptedData = {};
     this.storageApi = storageApi;
     this.init();
   };
 
-  getDefaultData(): IAdaptedDataType {
-    return this.#defaultData;
+  getAdaptedData(): IAdaptedDataType {
+    return this.#adaptedData;
   };
 
   getDataFromStorage(): IAdaptedDataType | null {
     return this.storageApi.getItems();
   };
 
-  getDefaultItem(id: number): IItemDataType {
-    return this.#defaultData[id];
+  getDataItem(id: number): IItemDataType {
+    return this.#adaptedData[id];
   };
 
   getData(): IAdaptedDataType {
@@ -37,13 +37,13 @@ abstract class AbstractDataApi {
     if(resultFromStorage) {
       return resultFromStorage;
     } else {
-      return this.getDefaultData();
-    }
+      return this.getAdaptedData();
+    };
   };
 
   init() {
     this.#basicData.map((item: IItemDataType) => {
-      this.#defaultData[item.UNID] = item;
+      this.#adaptedData[item.UNID] = item;
     });
   };
 };
