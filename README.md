@@ -1,8 +1,8 @@
 ![commits](https://img.shields.io/github/last-commit/AntonOshurek/aluplas-granules-counter?style=plastic)
 ![lang](https://img.shields.io/github/languages/top/AntonOshurek/aluplas-granules-counter)
 
-# Aluplast counter
-This site created for Aluplast in Poznań
+# Aluplast components counter
+This application created for Aluplast, based in Poznań.
 
 ***[:point_right: Gh-Pages Here](https://antonoshurek.github.io/aluplas-granules-counter/):bank:***
 
@@ -12,6 +12,7 @@ This site created for Aluplast in Poznań
 * **HTML**
 * **SASS**
 * **Redux**
+* **TypeScript**
 
 
 :bulb: To start the series, you need to install all the :hammer_and_wrench: dependencies.
