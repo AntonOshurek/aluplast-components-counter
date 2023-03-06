@@ -1,7 +1,9 @@
 //components
 import Header from "../../components/header/header";
+//styles
+import './gums-page.scss';
 
-const GumPage = (): JSX.Element => {
+const GumsPage = (): JSX.Element => {
   return (
     <div className='gum-page'>
       <Header />
@@ -12,4 +14,4 @@ const GumPage = (): JSX.Element => {
   );
 };
 
-export default GumPage;
+export default GumsPage;

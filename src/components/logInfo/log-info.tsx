@@ -2,7 +2,7 @@
 import { ButtonRemove } from '../controls';
 //store
 import { useAppDispatch } from '../../hooks/hooks';
-import { clearItemAction } from '../../store/slices/counter-slice';
+import { clearItemAction } from '../../store/slices/granulates-slice';
 //types
 import { IGranulateItemType } from '../../types/data-types';
 //variables and constants

@@ -6,7 +6,7 @@ import type { AppThunk } from '../../types/store-types';
 import type { IGranulatesSettingsType, ItemsTypes } from '../../types/data-types';
 import type { IIncDecActionParametrsType, ILogActionType } from '../../types/action-types';
 //API
-import { granulatesDataApi, granulatesStorageApi } from '../../api/';
+import { granulatesDataApi, granulatesStorageApi } from '../../api';
 
 export const granulatesSlice = createSlice({
   name: 'granulates',

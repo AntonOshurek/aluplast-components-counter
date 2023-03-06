@@ -50,6 +50,7 @@ export enum GranulatesSettingsNames {
 
 export enum ApplicationStorageApiNames {
   GRANULATES_STORAGE = 'granulates',
+  GUMS_STORAGE = 'gums',
 }
 
 export enum GranulatesLogsNames {

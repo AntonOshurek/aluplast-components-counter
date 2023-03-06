@@ -8,7 +8,7 @@ import { ComponentsTexts, GranulatesSettingsNames } from '../../variables/variab
 //types
 import type { IGranulatesSettingsType } from '../../types/data-types';
 //store
-import { setSettingsAction } from '../../store/slices/counter-slice';
+import { setSettingsAction } from '../../store/slices/granulates-slice';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { SelectorGetGranulatesSettings } from '../../store/selectors/selectors';
 //styles

@@ -1,4 +1,4 @@
-import type { GranulatesSettingsNames, GranulatesLogsNames } from "../variables/variables";
+import type { GranulatesSettingsNames } from "../variables/variables";
 //Granulates Types
 export interface IGranulateItemType {
   UNID: number,
@@ -7,7 +7,7 @@ export interface IGranulateItemType {
   image: string,
   logs: {
     [key: string]: string[],
-  }
+  },
 };
 
 export type BasicGranulatesDataType = IGranulateItemType[];
@@ -19,6 +19,23 @@ export interface IGranulatesSettingsType {
 
 export interface IGranulatesDataType {
   [propertyName: number]: IGranulateItemType,
+};
+
+//Gum types
+export interface IGumItemType {
+  UNID: number,
+  amount: number,
+  firm: string,
+  name: string,
+  systemCode: string,
+  image: string,
+  color: string,
+};
+
+export type BasicGumsDataType = IGumItemType[];
+
+export interface IGumsDataType {
+  [propertyName: number]: IGumItemType,
 };
 
 //universal types for abstract data API classes and overview component
