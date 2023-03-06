@@ -5,6 +5,7 @@ export const enum AppRoute {
   SETTINGS = '/settings',
   INFORMATION = '/information',
   GRANULATES_PAGE = '/granulates',
+  GUM_PAGE = '/gums',
   GRANULATES_COUNTER = '/granulates/:UNID',
   GRANULATES_COUNTER_CONTAINER = 'container',
   GRANULATES_COUNTER_VOREK = 'vorek',
@@ -13,7 +14,7 @@ export const enum AppRoute {
 export enum ComponentsTexts {
   ROOT_PAGE_TITLE = 'Strona główna',
   OVERVIEW_PAGE_TITLE = 'Przegląd',
-  GRANULATES_COUNTER_PAGE_TITLE = 'licznik granulatów',
+  GRANULATES_COUNTER_PAGE_TITLE = 'licznik pigmentów',
 
   GRANULATES_COUNTER_VOREK_NAME = 'Worki',
   GRANULATES_COUNTER_BASIC_NAME = 'Licznik',
@@ -22,10 +23,12 @@ export enum ComponentsTexts {
   GRANULATES_COUNTER_CONTAINER_ADDED_AMOUNT_TITLE = 'Jeden kontener - ',
   GRANULATES_COUNTER_VOREK_ADDED_AMOUNT_TITLE = 'Jedno kliknięcie +',
 
-  GRANULATES_COUNTER_NAME = 'granulaty',
+  GRANULATES_COUNTER_NAME = 'pigmenty',
   GRANULATES_COUNTER_ADD_BUTTON = 'Dodaj',
   GRANULATES_COUNTER_PLUS_BUTTON = 'Plus',
   GRANULATES_COUNTER_MINUS_BUTTON = 'Minus',
+
+  GUM_COUNTER_NAME = 'uszczelka',
 
   SETTING_SAVE = 'Zapisz ustawienia',
   SETTING_RESET_COUNTER_DATA = 'Usunąć dane licznika',
