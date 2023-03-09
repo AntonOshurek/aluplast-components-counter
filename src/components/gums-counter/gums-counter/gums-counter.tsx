@@ -1,19 +1,21 @@
 import { useState, ChangeEvent } from 'react';
 import { useParams } from 'react-router-dom';
 //components
-import { CounterSetValue } from '../../counter-controls';
 import { ButtonChoice } from '../../controls';
-//consts and variables
-import { ComponentsTexts, GranulatesLogsNames} from '../../../variables/variables';
+import { CounterSetValue } from '../../counter-controls';
 //store
 import { useAppDispatch } from '../../../hooks/hooks';
-import { incrementAction, decrementAction, logAction } from '../../../store/slices/granulates-slice';
+import { incrementAction, decrementAction } from '../../../store/slices/gums-slice';
+//consts and variables
+import { ComponentsTexts } from '../../../variables/variables';
 //styles
-import '../granulates-counter.scss';
+import './gums-counter.scss';
 
-const GranulatesCounter = (): JSX.Element => {
+const GumsCounter = (): JSX.Element => {
   const {UNID = 100} = useParams();
   const currentItemUNID = +UNID;
+
+  console.log(currentItemUNID)
 
   const dispatch = useAppDispatch();
 
@@ -30,7 +32,7 @@ const GranulatesCounter = (): JSX.Element => {
       console.log('sdfsd');
     } else {
       dispatch(incrementAction({UNID: currentItemUNID, value: value}));
-      dispatch(logAction({UNID: currentItemUNID, logName: GranulatesLogsNames.COUNTER, logValue: `+${value}kg`}))
+      // dispatch(logAction({UNID: currentItemUNID, logName: GranulatesLogsNames.COUNTER, logValue: `+${value}kg`}))
     };
   };
 
@@ -39,13 +41,13 @@ const GranulatesCounter = (): JSX.Element => {
       console.log('sdfsd');
     } else {
       dispatch(decrementAction({UNID: currentItemUNID, value: value}));
-      dispatch(logAction({UNID: currentItemUNID, logName: GranulatesLogsNames.COUNTER, logValue: `-${value}kg`}))
+      // dispatch(logAction({UNID: currentItemUNID, logName: GranulatesLogsNames.COUNTER, logValue: `-${value}kg`}))
     };
   };
 
   return (
     <section className="granulates-counter">
-      <h3 className='visually-hidden'>{ComponentsTexts.GRANULATES_COUNTER_NAME} {ComponentsTexts.GRANULATES_COUNTER_BASIC_NAME}</h3>
+      <h3 className='visually-hidden'>{ComponentsTexts.GUM_COUNTER_NAME} {ComponentsTexts.GRANULATES_COUNTER_BASIC_NAME}</h3>
 
       <CounterSetValue onInputChangeHandler={onInputValueChangeHandler} value={value}/>
 
@@ -54,8 +56,8 @@ const GranulatesCounter = (): JSX.Element => {
         onDecButtonClickHandler={decrementHandler}
         choiseText={
           {
-            plus: ComponentsTexts.GRANULATES_COUNTER_PLUS_BUTTON,
-            minus: ComponentsTexts.GRANULATES_COUNTER_MINUS_BUTTON
+            plus: ComponentsTexts.COUNTER_PLUS_BUTTON,
+            minus: ComponentsTexts.COUNTER_MINUS_BUTTON
           }
         }
       />
@@ -64,4 +66,4 @@ const GranulatesCounter = (): JSX.Element => {
   );
 };
 
-export default GranulatesCounter;
+export default GumsCounter;

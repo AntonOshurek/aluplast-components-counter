@@ -11,3 +11,4 @@ export const SelectorGetGranulatesSettingsContainerWeight = (state: RootState): 
 
 // GUMS SELECTORS
 export const SelectorGetGumsState = (state: RootState): IAdaptedDataType => state.gums.items;
+export const SelectorGetCurrentGum = (UNID: number) => (state: RootState): IItemDataType => state.gums.items[UNID];

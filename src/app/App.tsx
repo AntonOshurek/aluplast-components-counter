@@ -1,8 +1,10 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 //pages
-import {GranulatesPage, RootPage, SettingsPage, GranulatesCounterPage, InfoPage, GumsPage} from '../pages';
+import {GranulatesPage, RootPage, SettingsPage, GranulatesCounterPage, InfoPage, GumsPage, GumsCounterPage} from '../pages';
 //granulates counters components for GRANULATES_COUNTER root
 import {GranulatesCounterContainer, GranulatesCounter, GranulatesCounterVorek} from '../components/granulates-counter';
+//Gums components
+import { GumsCounter } from '../components/gums-counter';
 //consts and utils functions
 import { AppRoute, rootBaseName } from '../variables/variables';
 import { setVhVariable } from '../utils/utils';
@@ -22,6 +24,11 @@ function App() {
           <Route index element={<GranulatesCounter/>} />
           <Route path={AppRoute.GRANULATES_COUNTER_CONTAINER} element={<GranulatesCounterContainer/>}/>
           <Route path={AppRoute.GRANULATES_COUNTER_VOREK} element={<GranulatesCounterVorek/>}/>
+        </Route>
+
+        <Route path={AppRoute.GUM_COUNTER} element={<GumsCounterPage/>}>
+          <Route index element={<GumsCounter/>} />
+          {/* <Route path={AppRoute.GUM_COUNTER_CARDBOARD} element={<GranulatesCounter/>}/> */}
         </Route>
       </Routes>
     </BrowserRouter>

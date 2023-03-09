@@ -2,21 +2,21 @@ import { Outlet } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 //components
-import { GranulatesCounterHeader } from '../../components/granulates-counter';
 import ThingItem from '../../components/item/thing-item/thing-item';
 import LogInfo from '../../components/logInfo/log-info';
+import { GumsCounterHeader } from '../../components/gums-counter';
 //store
 import { useAppSelector } from '../../hooks/hooks';
-import { SelectorGetCurrentGranulates } from '../../store/selectors/selectors';
+import { SelectorGetCurrentGum } from '../../store/selectors/selectors';
 //types
 import type { IItemDataType } from '../../types/data-types';
 //styles
-import './granulates-counter-page.scss';
+import './gums-counter-page.scss';
 
-const GranulatesCounterPage = (): JSX.Element => {
+const GumsCounterPage = (): JSX.Element => {
   const {UNID = 100} = useParams();
 
-  const currentItem: IItemDataType = useAppSelector(SelectorGetCurrentGranulates(+UNID));
+  const currentItem: IItemDataType = useAppSelector(SelectorGetCurrentGum(+UNID));
 
   const [showThingLogsModal, setShowThingLogsModal] = useState<boolean>(false);
 
@@ -27,12 +27,13 @@ const GranulatesCounterPage = (): JSX.Element => {
   const closeItemLogs = (evt: any): void => {
     if(!evt.target.closest('.thing-modal__wrap')) {
       setShowThingLogsModal(false);
-    }
+    };
   };
 
   return (
     <div className='granulates-counter-page'>
-      <GranulatesCounterHeader/>
+      <GumsCounterHeader/>
+
       <main className='granulates-counter-page__main'>
 
         <div className='granulates-counter-page__wrap container'>
@@ -55,4 +56,4 @@ const GranulatesCounterPage = (): JSX.Element => {
   );
 };
 
-export default GranulatesCounterPage;
+export default GumsCounterPage;
