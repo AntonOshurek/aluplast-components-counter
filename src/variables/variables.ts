@@ -11,12 +11,12 @@ export const enum AppRoute {
   GRANULATES_COUNTER = '/granulates/:UNID',
   GRANULATES_COUNTER_CONTAINER = 'container',
   GRANULATES_COUNTER_VOREK = 'vorek',
-}
+};
 
 export enum ComponentsTexts {
   ROOT_PAGE_TITLE = 'Strona główna',
   OVERVIEW_PAGE_TITLE = 'Przegląd',
-  GRANULATES_COUNTER_PAGE_TITLE = 'licznik pigmentów',
+  GRANULATES_COUNTER_PAGE_TITLE = 'licznik pegmentów',
   GUMS_COUNTER_PAGE_TITLE = 'Licznik uszczelki',
 
   GRANULATES_COUNTER_VOREK_NAME = 'Worki',
@@ -43,9 +43,11 @@ export enum ComponentsTexts {
   SETTING_SAVE = 'Zapisz ustawienia',
   SETTING_RESET_COUNTER_DATA = 'Usunąć dane licznika',
 
-  SETTING_GRANULATES_TITLE = 'Ustawienia granulaty',
+  SETTING_GRANULATES_TITLE = 'Ustawienia pegmenty',
   SETTING_GRANULATES_VOREK_INPUT = 'Waga jednego worka / KG',
   SETTING_GRANULATES_CONTAINER_INPUT = 'Waga jednego kontenera / KG',
+  SETTING_GUMS_TITLE = 'Ustawienia uszczelka',
+  SETTING_GUMS_CARDBOARD_INPUT = 'Waga jednego kartonu / KG',
 
   REMOVE_CANCEL = 'Odwołaj',
   REMOVE_CONFIRM = 'Usunąć wybrane dane',
