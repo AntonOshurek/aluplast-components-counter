@@ -61,16 +61,20 @@ export enum GranulatesSettingsNames {
 export enum ApplicationStorageApiNames {
   GRANULATES_STORAGE = 'granulates',
   GUMS_STORAGE = 'gums',
-}
+};
 
 export enum GranulatesLogsNames {
   CONTAINER = 'container',
   VOREK = 'vorek',
   COUNTER = 'counter',
-}
+};
+
+export enum GumsLogsNames {
+  CHANGES = 'changes',
+};
 
 export const GranulatesLogsTitleNames: {[propName: string]: string} = {
   [GranulatesLogsNames.CONTAINER]: 'Kontainer',
   [GranulatesLogsNames.VOREK]: 'Worek',
   [GranulatesLogsNames.COUNTER]: 'Licznik',
-}
+};

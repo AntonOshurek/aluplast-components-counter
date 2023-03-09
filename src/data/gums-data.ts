@@ -11,7 +11,7 @@ export const basicGumsData: IDataType = [
     image: '',
     color: '',
     logs: {
-      change: [],
+      changes: [],
     }
   },
   {
@@ -24,7 +24,7 @@ export const basicGumsData: IDataType = [
     image: '',
     color: '',
     logs: {
-      change: [],
+      changes: [],
     },
   },
   {
@@ -37,7 +37,7 @@ export const basicGumsData: IDataType = [
     image: '',
     color: '',
     logs: {
-      change: [],
+      changes: [],
     },
   },
   {
@@ -50,7 +50,7 @@ export const basicGumsData: IDataType = [
     image: '',
     color: '',
     logs: {
-      change: [],
+      changes: [],
     },
   },
   {
@@ -63,7 +63,7 @@ export const basicGumsData: IDataType = [
     image: '',
     color: '',
     logs: {
-      change: [],
+      changes: [],
     },
   },
   {
@@ -76,7 +76,7 @@ export const basicGumsData: IDataType = [
     image: '',
     color: '',
     logs: {
-      change: [],
+      changes: [],
     },
   },
   {
@@ -89,7 +89,7 @@ export const basicGumsData: IDataType = [
     image: '',
     color: '',
     logs: {
-      change: [],
+      changes: [],
     },
   },
   {
@@ -102,7 +102,7 @@ export const basicGumsData: IDataType = [
     image: '',
     color: '',
     logs: {
-      change: [],
+      changes: [],
     },
   },
 ];

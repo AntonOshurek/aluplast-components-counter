@@ -2,8 +2,9 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 //data
 import { gumsState } from '../state/gums-state';
 //types
-import type { IIncDecActionParametrsType } from '../../types/action-types';
+import type { IIncDecActionParametrsType, ILogActionType } from '../../types/action-types';
 import type { AppThunk } from '../../types/store-types';
+import type { IItemDataType } from '../../types/data-types';
 //API
 import { gumsDataApi, gumsStorageApi } from '../../api';
 
@@ -20,22 +21,21 @@ export const gumsSlice = createSlice({
       const {UNID, value} = action.payload;
       state.items[UNID].amount = state.items[UNID].amount - value;
     },
-    // log: (state, action: PayloadAction<ILogActionType>) => {
-    //   const {UNID, logName, logValue} = action.payload;
-    //   state.items[UNID].logs[logName] = [...state.items[UNID].logs[logName], logValue];
-    // },
-    // clearItem: (state, action: PayloadAction<ItemsTypes>) => {
-    //   const {UNID} = action.payload;
-    //   state.items[UNID] = action.payload;
-    // },
+    log: (state, action: PayloadAction<ILogActionType>) => {
+      const {UNID, logName, logValue} = action.payload;
+      state.items[UNID].logs[logName] =  [...state.items[UNID].logs[logName], logValue];
+    },
+    clearItem: (state, action: PayloadAction<IItemDataType>) => {
+      const {UNID} = action.payload;
+      state.items[UNID] = action.payload;
+    },
     clear: (state) => {
       state.items = gumsDataApi.getAdaptedData();
-    }
+    },
   },
 });
 
-// export const { clear, clearItem, log } = gumsSlice.actions;
-export const { clear} = gumsSlice.actions;
+export const { clear, log, clearItem } = gumsSlice.actions;
 
 export const incrementAction =
   (action: IIncDecActionParametrsType): AppThunk =>
@@ -56,6 +56,21 @@ export const clearStoreAction =
   (dispatch) => {
     dispatch(gumsSlice.actions.clear());
     gumsStorageApi.setItems(gumsDataApi.getAdaptedData());
+  };
+
+export const clearItemAction =
+  (action: {id: number}): AppThunk =>
+  (dispatch, getState) => {
+    const newDefaultItem = gumsDataApi.getDataItem(action.id)
+    dispatch(gumsSlice.actions.clearItem(newDefaultItem));
+    gumsStorageApi.setItems(getState().gums.items);
+  };
+
+export const logAction =
+  (action: ILogActionType): AppThunk =>
+  (dispatch, getState) => {
+    dispatch(gumsSlice.actions.log(action));
+    gumsStorageApi.setItems(getState().gums.items);
   };
 
 

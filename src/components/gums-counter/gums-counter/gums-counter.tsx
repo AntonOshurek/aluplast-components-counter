@@ -5,9 +5,9 @@ import { ButtonChoice } from '../../controls';
 import { CounterSetValue } from '../../counter-controls';
 //store
 import { useAppDispatch } from '../../../hooks/hooks';
-import { incrementAction, decrementAction } from '../../../store/slices/gums-slice';
+import { incrementAction, decrementAction, logAction } from '../../../store/slices/gums-slice';
 //consts and variables
-import { ComponentsTexts } from '../../../variables/variables';
+import { ComponentsTexts, GumsLogsNames } from '../../../variables/variables';
 //styles
 import './gums-counter.scss';
 
@@ -15,12 +15,9 @@ const GumsCounter = (): JSX.Element => {
   const {UNID = 100} = useParams();
   const currentItemUNID = +UNID;
 
-  console.log(currentItemUNID)
-
   const dispatch = useAppDispatch();
 
   const defaultCounterValue: number = 100;
-
   const [value, setValue] = useState<number>(defaultCounterValue);
 
   const onInputValueChangeHandler = (evt: ChangeEvent<HTMLInputElement>): void => {
@@ -32,7 +29,7 @@ const GumsCounter = (): JSX.Element => {
       console.log('sdfsd');
     } else {
       dispatch(incrementAction({UNID: currentItemUNID, value: value}));
-      // dispatch(logAction({UNID: currentItemUNID, logName: GranulatesLogsNames.COUNTER, logValue: `+${value}kg`}))
+      dispatch(logAction({UNID: currentItemUNID, logName: GumsLogsNames.CHANGES, logValue: `+${value}kg`}))
     };
   };
 
@@ -41,7 +38,7 @@ const GumsCounter = (): JSX.Element => {
       console.log('sdfsd');
     } else {
       dispatch(decrementAction({UNID: currentItemUNID, value: value}));
-      // dispatch(logAction({UNID: currentItemUNID, logName: GranulatesLogsNames.COUNTER, logValue: `-${value}kg`}))
+      dispatch(logAction({UNID: currentItemUNID, logName: GumsLogsNames.CHANGES, logValue: `-${value}kg`}))
     };
   };
 
