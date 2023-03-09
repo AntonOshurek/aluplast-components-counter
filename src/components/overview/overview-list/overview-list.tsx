@@ -22,7 +22,7 @@ const OverviewList = ({data}: OverviewListPropsType): JSX.Element => {
       location = AppRoute.GRANULATES_COUNTER;
       break;
     case AppRoute.GUM_PAGE:
-      location = AppRoute.GUM_PAGE;
+      location = AppRoute.GUM_COUNTER;
       break;
     default:
       location = AppRoute.GRANULATES_PAGE;

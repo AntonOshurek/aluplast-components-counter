@@ -1,9 +1,11 @@
 //components
 import Header from "../../components/header/header";
 import Overview from "../../components/overview/overview";
-import { useAppSelector } from "../../hooks/hooks";
+//store
 import { SelectorGetGumsState } from "../../store/selectors/selectors";
-import { IAdaptedDataType } from "../../types/data-types";
+import { useAppSelector } from "../../hooks/hooks";
+//types
+import type { IAdaptedDataType } from "../../types/data-types";
 //styles
 import './gums-page.scss';
 

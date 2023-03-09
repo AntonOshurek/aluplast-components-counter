@@ -6,6 +6,7 @@ export const enum AppRoute {
   INFORMATION = '/information',
   GRANULATES_PAGE = '/granulates',
   GUM_PAGE = '/gums',
+  GUM_COUNTER = '/gums:UNID',
   GRANULATES_COUNTER = '/granulates/:UNID',
   GRANULATES_COUNTER_CONTAINER = 'container',
   GRANULATES_COUNTER_VOREK = 'vorek',
