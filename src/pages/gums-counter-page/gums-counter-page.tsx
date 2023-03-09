@@ -8,6 +8,7 @@ import { GumsCounterHeader } from '../../components/gums-counter';
 //store
 import { useAppSelector } from '../../hooks/hooks';
 import { SelectorGetCurrentGum } from '../../store/selectors/selectors';
+import { clearItemAction } from '../../store/slices/gums-slice';
 //types
 import type { IItemDataType } from '../../types/data-types';
 //styles
@@ -49,7 +50,7 @@ const GumsCounterPage = (): JSX.Element => {
       </main>
 
       {
-        showThingLogsModal ? <LogInfo currentItem={currentItem} closeModal={closeItemLogs}/> : null
+        showThingLogsModal ? <LogInfo clearItemAction={clearItemAction} currentItem={currentItem} closeModal={closeItemLogs}/> : null
       }
 
     </div>

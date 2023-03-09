@@ -8,6 +8,7 @@ import LogInfo from '../../components/logInfo/log-info';
 //store
 import { useAppSelector } from '../../hooks/hooks';
 import { SelectorGetCurrentGranulates } from '../../store/selectors/selectors';
+import { clearItemAction } from '../../store/slices/granulates-slice';
 //types
 import type { IItemDataType } from '../../types/data-types';
 //styles
@@ -48,7 +49,7 @@ const GranulatesCounterPage = (): JSX.Element => {
       </main>
 
       {
-        showThingLogsModal ? <LogInfo currentItem={currentItem} closeModal={closeItemLogs}/> : null
+        showThingLogsModal ? <LogInfo clearItemAction={clearItemAction} currentItem={currentItem} closeModal={closeItemLogs}/> : null
       }
 
     </div>
