@@ -4,7 +4,7 @@ import {GranulatesPage, RootPage, SettingsPage, GranulatesCounterPage, InfoPage,
 //granulates counters components for GRANULATES_COUNTER root
 import {GranulatesCounterContainer, GranulatesCounter, GranulatesCounterVorek} from '../components/granulates-counter';
 //Gums components
-import { GumsCounter } from '../components/gums-counter';
+import { GumsCounter, GumsCounterCardboard } from '../components/gums-counter';
 //consts and utils functions
 import { AppRoute, rootBaseName } from '../variables/variables';
 import { setVhVariable } from '../utils/utils';
@@ -28,7 +28,7 @@ function App() {
 
         <Route path={AppRoute.GUM_COUNTER} element={<GumsCounterPage/>}>
           <Route index element={<GumsCounter/>} />
-          {/* <Route path={AppRoute.GUM_COUNTER_CARDBOARD} element={<GranulatesCounter/>}/> */}
+          <Route path={AppRoute.GUM_COUNTER_CARDBOARD} element={<GumsCounterCardboard/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

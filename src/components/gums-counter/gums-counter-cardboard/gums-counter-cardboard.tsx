@@ -1,18 +1,16 @@
 import { useState, ChangeEvent, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
-//components
-import { CounterAddedAmount, CounterValue } from '../../counter-controls';
-import { ButtonChoice } from '../../controls';
-//consts and variables
-import { ComponentsTexts, GranulatesLogsNames } from '../../../variables/variables';
 //store
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
-import { incrementAction, decrementAction, logAction } from '../../../store/slices/granulates-slice';
 import { SelectorGetGranulatesSettingsVorekWeight } from '../../../store/selectors/selectors';
+import { decrementAction, incrementAction, logAction } from '../../../store/slices/gums-slice';
+import { ComponentsTexts, GumsLogsNames } from '../../../variables/variables';
+import { ButtonChoice } from '../../controls';
+import { CounterAddedAmount, CounterValue } from '../../counter-controls';
 //styles
-import '../granulates-counter.scss';
+import './gums-counter-cardboard.scss';
 
-const GranulatesCounterVorek = (): JSX.Element => {
+const GumsCounterCardboard = (): JSX.Element => {
   const {UNID = 100} = useParams();
   const currentItemUNID = +UNID;
 
@@ -20,7 +18,8 @@ const GranulatesCounterVorek = (): JSX.Element => {
 
   const initialAddedAmount: number = 1;
   const initialValue: number = 0;
-  const basicVorekWeight = useAppSelector(SelectorGetGranulatesSettingsVorekWeight);
+  // const basicVorekWeight = useAppSelector(SelectorGetGranulatesSettingsVorekWeight);
+  const basicVorekWeight = 500;
 
   const [addedAmount, setAddedAmount] = useState<number>(initialAddedAmount);
   const [value, setValue] = useState<number>(initialValue);
@@ -66,7 +65,7 @@ const GranulatesCounterVorek = (): JSX.Element => {
   useEffect(() => {
     return () => {
       if(ref.current !== 0) {
-        dispatch(logAction({UNID: currentItemUNID, logName: GranulatesLogsNames.VOREK, logValue: `+${ref.current} worków`}));
+        dispatch(logAction({UNID: currentItemUNID, logName: GumsLogsNames.CHANGES, logValue: `+${ref.current} karton`}));
       }
     }
   }, []);
@@ -82,8 +81,8 @@ const GranulatesCounterVorek = (): JSX.Element => {
         onDecButtonClickHandler={decrementHandler}
         choiseText={
           {
-            plus: ComponentsTexts.GRANULATES_COUNTER_PLUS_BUTTON,
-            minus: ComponentsTexts.GRANULATES_COUNTER_MINUS_BUTTON
+            plus: ComponentsTexts.COUNTER_PLUS_BUTTON,
+            minus: ComponentsTexts.COUNTER_MINUS_BUTTON
           }
         }
       />
@@ -92,4 +91,4 @@ const GranulatesCounterVorek = (): JSX.Element => {
   );
 };
 
-export default GranulatesCounterVorek;
+export default GumsCounterCardboard;
