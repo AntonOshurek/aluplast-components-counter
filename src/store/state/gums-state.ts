@@ -1,5 +1,5 @@
 //data
-import gumsDataApi from "../../api/data-api/gums-data-api";
+import {gumsDataApi} from "../../api/";
 //types
 import type { IGumsStateType } from "../../types/state-types";
 
