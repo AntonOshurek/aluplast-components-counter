@@ -20,6 +20,7 @@ function App() {
         <Route path={AppRoute.INFORMATION} element={<InfoPage/>} />
         <Route path={AppRoute.GRANULATES_PAGE} element={<GranulatesPage/>}/>
         <Route path={AppRoute.GUM_PAGE} element={<GumsPage/>}/>
+
         <Route path={AppRoute.GRANULATES_COUNTER} element={<GranulatesCounterPage/>}>
           <Route index element={<GranulatesCounter/>} />
           <Route path={AppRoute.GRANULATES_COUNTER_CONTAINER} element={<GranulatesCounterContainer/>}/>

@@ -4,7 +4,7 @@ import { gumsState } from '../state/gums-state';
 //types
 import type { IIncDecActionParametrsType, ILogActionType } from '../../types/action-types';
 import type { AppThunk } from '../../types/store-types';
-import type { IItemDataType } from '../../types/data-types';
+import type { IItemDataType, IGumsSettingsType } from '../../types/data-types';
 //API
 import { gumsDataApi, gumsStorageApi } from '../../api';
 
@@ -24,6 +24,9 @@ export const gumsSlice = createSlice({
     log: (state, action: PayloadAction<ILogActionType>) => {
       const {UNID, logName, logValue} = action.payload;
       state.items[UNID].logs[logName] =  [...state.items[UNID].logs[logName], logValue];
+    },
+    setNewSettings: (state, action: PayloadAction<IGumsSettingsType>) => {
+      state.gumsSettings = action.payload;
     },
     clearItem: (state, action: PayloadAction<IItemDataType>) => {
       const {UNID} = action.payload;
@@ -64,6 +67,13 @@ export const clearItemAction =
     const newDefaultItem = gumsDataApi.getDataItem(action.id)
     dispatch(gumsSlice.actions.clearItem(newDefaultItem));
     gumsStorageApi.setItems(getState().gums.items);
+  };
+
+export const setSettingsAction =
+  (action: IGumsSettingsType): AppThunk =>
+  (dispatch, getState) => {
+    dispatch(gumsSlice.actions.setNewSettings(action));
+    gumsStorageApi.setSettings(getState().gums.gumsSettings);
   };
 
 export const logAction =

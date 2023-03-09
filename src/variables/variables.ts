@@ -50,13 +50,17 @@ export enum ComponentsTexts {
   REMOVE_CANCEL = 'Odwołaj',
   REMOVE_CONFIRM = 'Usunąć wybrane dane',
   REMOVE_CLOSE = 'Zamknij powiadomienie',
-}
+};
 
 //this vars used inside store and settings inputs values! Dont delet or change!
 export enum GranulatesSettingsNames {
   VOREK_WEIGHT = 'basicVorekWeight',
   CONTAINER_WEIGHT = 'basicContainerWeight',
-}
+};
+
+export enum GumsSettingsNames {
+  CARDBOARD_WEIGHT = 'basicCardboardWeight',
+};
 
 export enum ApplicationStorageApiNames {
   GRANULATES_STORAGE = 'granulates',

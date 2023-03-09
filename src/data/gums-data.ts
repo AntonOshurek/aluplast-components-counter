@@ -1,4 +1,11 @@
-import type { IDataType } from "../types/data-types";
+//types
+import type { IDataType, IGumsSettingsType } from "../types/data-types";
+//variables and consts
+import { GumsSettingsNames } from "../variables/variables";
+
+export const basicGumsSettings: IGumsSettingsType = {
+  [GumsSettingsNames.CARDBOARD_WEIGHT]: 500,
+};
 
 export const basicGumsData: IDataType = [
   {
@@ -12,7 +19,7 @@ export const basicGumsData: IDataType = [
     color: '',
     logs: {
       changes: [],
-    }
+    },
   },
   {
     UNID: 201,

@@ -2,7 +2,8 @@
 import AbstractStorage from "./abstract-storage";
 //variables ans consts
 import { ApplicationStorageApiNames } from "../../variables/variables";
-import { IGranulatesSettingsType } from "../../types/data-types";
+//types
+import type { IGranulatesSettingsType } from "../../types/data-types";
 
 class GranulatesStorageApi extends AbstractStorage {
 

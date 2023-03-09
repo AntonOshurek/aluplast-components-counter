@@ -2,7 +2,7 @@ import { useState, ChangeEvent, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 //store
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
-import { SelectorGetGranulatesSettingsVorekWeight } from '../../../store/selectors/selectors';
+import { SelectorGetGumsSettingsCardboardWeight } from '../../../store/selectors/selectors';
 import { decrementAction, incrementAction, logAction } from '../../../store/slices/gums-slice';
 import { ComponentsTexts, GumsLogsNames } from '../../../variables/variables';
 import { ButtonChoice } from '../../controls';
@@ -18,8 +18,7 @@ const GumsCounterCardboard = (): JSX.Element => {
 
   const initialAddedAmount: number = 1;
   const initialValue: number = 0;
-  // const basicVorekWeight = useAppSelector(SelectorGetGranulatesSettingsVorekWeight);
-  const basicVorekWeight = 500;
+  const basicVorekWeight = useAppSelector(SelectorGetGumsSettingsCardboardWeight);
 
   const [addedAmount, setAddedAmount] = useState<number>(initialAddedAmount);
   const [value, setValue] = useState<number>(initialValue);

@@ -1,10 +1,12 @@
 //types
 import type { IGranulatesSettingsType, IDataType } from "../types/data-types";
+//variables and consts
+import { GranulatesSettingsNames } from "../variables/variables";
 
 export const basicGranulatesSettings: IGranulatesSettingsType = {
-  basicVorekWeight: 25,
-  basicContainerWeight: 77,
-}
+  [GranulatesSettingsNames.VOREK_WEIGHT]: 25,
+  [GranulatesSettingsNames.CONTAINER_WEIGHT]: 77,
+};
 
 export const basicGranulatesData: IDataType = [
   {
@@ -35,7 +37,7 @@ export const basicGranulatesData: IDataType = [
       container: [],
       vorek: [],
       counter: [],
-    }
+    },
   },
   {
     UNID: 102,
@@ -50,7 +52,7 @@ export const basicGranulatesData: IDataType = [
       container: [],
       vorek: [],
       counter: [],
-    }
+    },
   },
   {
     UNID: 103,
@@ -65,7 +67,7 @@ export const basicGranulatesData: IDataType = [
       container: [],
       vorek: [],
       counter: [],
-    }
+    },
   },
   {
     UNID: 104,
@@ -80,7 +82,7 @@ export const basicGranulatesData: IDataType = [
       container: [],
       vorek: [],
       counter: [],
-    }
+    },
   },
   {
     UNID: 105,
@@ -95,7 +97,7 @@ export const basicGranulatesData: IDataType = [
       container: [],
       vorek: [],
       counter: [],
-    }
+    },
   },
   {
     UNID: 106,
@@ -110,7 +112,7 @@ export const basicGranulatesData: IDataType = [
       container: [],
       vorek: [],
       counter: [],
-    }
+    },
   },
   {
     UNID: 107,
@@ -125,7 +127,7 @@ export const basicGranulatesData: IDataType = [
       container: [],
       vorek: [],
       counter: [],
-    }
+    },
   },
   {
     UNID: 108,
@@ -140,6 +142,6 @@ export const basicGranulatesData: IDataType = [
       container: [],
       vorek: [],
       counter: [],
-    }
+    },
   },
 ];

@@ -4,10 +4,10 @@ import { useParams } from 'react-router-dom';
 import { CounterSetValue } from '../../counter-controls';
 import { ButtonChoice } from '../../controls';
 //consts and variables
-import { ComponentsTexts, GumsLogsNames} from '../../../variables/variables';
+import { ComponentsTexts, GranulatesLogsNames} from '../../../variables/variables';
 //store
 import { useAppDispatch } from '../../../hooks/hooks';
-import { incrementAction, decrementAction, logAction } from '../../../store/slices/gums-slice';
+import { incrementAction, decrementAction, logAction } from '../../../store/slices/granulates-slice';
 //styles
 import '../granulates-counter.scss';
 
@@ -30,7 +30,7 @@ const GranulatesCounter = (): JSX.Element => {
       console.log('sdfsd');
     } else {
       dispatch(incrementAction({UNID: currentItemUNID, value: value}));
-      dispatch(logAction({UNID: currentItemUNID, logName: GumsLogsNames.CHANGES, logValue: `+${value}kg`}))
+      dispatch(logAction({UNID: currentItemUNID, logName: GranulatesLogsNames.COUNTER, logValue: `+${value}kg`}))
     };
   };
 
@@ -39,7 +39,7 @@ const GranulatesCounter = (): JSX.Element => {
       console.log('sdfsd');
     } else {
       dispatch(decrementAction({UNID: currentItemUNID, value: value}));
-      dispatch(logAction({UNID: currentItemUNID, logName: GumsLogsNames.CHANGES, logValue: `-${value}kg`}))
+      dispatch(logAction({UNID: currentItemUNID, logName: GranulatesLogsNames.COUNTER, logValue: `-${value}kg`}))
     };
   };
 

@@ -4,16 +4,37 @@ import AbstractStorage from "../storage-api/abstract-storage";
 //api
 import gumsStorageApi from "../storage-api/gums-storage-api";
 //data
-import { basicGumsData } from "../../data/gums-data";
+import { basicGumsData, basicGumsSettings } from "../../data/gums-data";
 //types
-import type { IDataType } from "../../types/data-types";
+import type { IDataType, IGumsSettingsType } from "../../types/data-types";
 
 class GumsDataApi extends AbstractDataApi {
-  constructor(data: IDataType, storageApi: AbstractStorage) {
+  #basicSettings: IGumsSettingsType;
+
+  constructor(data: IDataType, settings: IGumsSettingsType, storageApi: AbstractStorage) {
     super(data, storageApi);
+    this.#basicSettings = settings;
+  };
+
+  getDefaultSettings(): IGumsSettingsType {
+    return this.#basicSettings;
+  };
+
+  getSettingsFromStorage(): IGumsSettingsType | null {
+    return gumsStorageApi.getSettings();
+  };
+
+  getSettings(): IGumsSettingsType {
+    const resultFromStorage: IGumsSettingsType | null = this.getSettingsFromStorage();
+
+    if(resultFromStorage) {
+      return resultFromStorage;
+    } else {
+      return this.getDefaultSettings();
+    };
   };
 };
 
-const gumsDataApi = new GumsDataApi(basicGumsData, gumsStorageApi);
+const gumsDataApi = new GumsDataApi(basicGumsData, basicGumsSettings, gumsStorageApi);
 
 export default gumsDataApi;

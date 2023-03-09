@@ -1,4 +1,4 @@
-import type { IGranulatesSettingsType, IAdaptedDataType } from "./data-types";
+import type { IGranulatesSettingsType, IAdaptedDataType, IGumsSettingsType } from "./data-types";
 
 export interface IGranulatesStateType {
   items: IAdaptedDataType,
@@ -7,4 +7,5 @@ export interface IGranulatesStateType {
 
 export interface IGumsStateType {
   items: IAdaptedDataType,
+  gumsSettings: IGumsSettingsType,
 };

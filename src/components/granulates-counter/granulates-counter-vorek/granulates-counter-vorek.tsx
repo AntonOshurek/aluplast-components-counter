@@ -42,7 +42,7 @@ const GranulatesCounterVorek = (): JSX.Element => {
   };
 
   const incrementHandler = (): void => {
-    setValue((prev) => prev + addedAmount)
+    setValue((prev) => prev + addedAmount);
 
     let recalcValue: number = addedAmount * basicVorekWeight;
     dispatch(incrementAction({UNID: currentItemUNID, value: recalcValue}));
