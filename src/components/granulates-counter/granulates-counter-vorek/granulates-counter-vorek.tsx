@@ -1,8 +1,7 @@
 import { useState, ChangeEvent, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 //components
-import { CounterAddedAmount, CounterValue } from '../../counter-controls';
-import { ButtonChoice } from '../../controls';
+import { ItemsCounter } from '../../counters';
 //consts and variables
 import { ComponentsTexts, GranulatesLogsNames } from '../../../variables/variables';
 //store
@@ -72,23 +71,15 @@ const GranulatesCounterVorek = (): JSX.Element => {
   }, []);
 
   return (
-    <section className='granulates-counter granulates-counter--set-controls'>
-      <h3 className='visually-hidden'>Licznik {ComponentsTexts.GRANULATES_COUNTER_NAME} {ComponentsTexts.GRANULATES_COUNTER_VOREK_NAME}</h3>
 
-      <CounterAddedAmount onInputChangeHandler={onAddedAmountChangeHandler} value={addedAmount} title={ComponentsTexts.GRANULATES_COUNTER_VOREK_ADDED_AMOUNT_TITLE}/>
-      <CounterValue value={value}/>
-      <ButtonChoice
-        onIncButtonClickHandler={incrementHandler}
-        onDecButtonClickHandler={decrementHandler}
-        choiseText={
-          {
-            plus: ComponentsTexts.GRANULATES_COUNTER_PLUS_BUTTON,
-            minus: ComponentsTexts.GRANULATES_COUNTER_MINUS_BUTTON
-          }
-        }
-      />
-
-    </section>
+    <ItemsCounter
+      title={`${ComponentsTexts.GRANULATES_COUNTER_NAME} ${ComponentsTexts.GRANULATES_COUNTER_VOREK_NAME}`}
+      onAddedAmountChangeHandler={onAddedAmountChangeHandler}
+      addedAmount={addedAmount}
+      value={value}
+      incrementHandler={incrementHandler}
+      decrementHandler={decrementHandler}
+    />
   );
 };
 

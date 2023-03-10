@@ -1,15 +1,12 @@
 import { useState, ChangeEvent } from 'react';
 import { useParams } from 'react-router-dom';
 //components
-import { ButtonChoice } from '../../controls';
-import { CounterSetValue } from '../../counter-controls';
+import { BasicCounter } from '../../counters';
 //store
 import { useAppDispatch } from '../../../hooks/hooks';
 import { incrementAction, decrementAction, logAction } from '../../../store/slices/gums-slice';
 //consts and variables
 import { ComponentsTexts, GumsLogsNames } from '../../../variables/variables';
-//styles
-import './gums-counter.scss';
 
 const GumsCounter = (): JSX.Element => {
   const {UNID = 100} = useParams();
@@ -43,23 +40,13 @@ const GumsCounter = (): JSX.Element => {
   };
 
   return (
-    <section className="granulates-counter">
-      <h3 className='visually-hidden'>{ComponentsTexts.GUM_COUNTER_NAME} {ComponentsTexts.GRANULATES_COUNTER_BASIC_NAME}</h3>
-
-      <CounterSetValue onInputChangeHandler={onInputValueChangeHandler} value={value}/>
-
-      <ButtonChoice
-        onIncButtonClickHandler={incrementHandler}
-        onDecButtonClickHandler={decrementHandler}
-        choiseText={
-          {
-            plus: ComponentsTexts.COUNTER_PLUS_BUTTON,
-            minus: ComponentsTexts.COUNTER_MINUS_BUTTON
-          }
-        }
-      />
-
-    </section>
+    <BasicCounter
+      title={`${ComponentsTexts.GUM_COUNTER_NAME} ${ComponentsTexts.GRANULATES_COUNTER_BASIC_NAME}`}
+      onInputValueChangeHandler={onInputValueChangeHandler}
+      value={value}
+      incrementHandler={incrementHandler}
+      decrementHandler={decrementHandler}
+    />
   );
 };
 

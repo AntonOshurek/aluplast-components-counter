@@ -1,8 +1,7 @@
 import { useState, ChangeEvent } from 'react';
 import { useParams } from 'react-router-dom';
 //components
-import { CounterSetValue } from '../../counter-controls';
-import { ButtonChoice } from '../../controls';
+import { BasicCounter } from '../../counters';
 //consts and variables
 import { ComponentsTexts, GranulatesLogsNames} from '../../../variables/variables';
 //store
@@ -18,7 +17,6 @@ const GranulatesCounter = (): JSX.Element => {
   const dispatch = useAppDispatch();
 
   const defaultCounterValue: number = 100;
-
   const [value, setValue] = useState<number>(defaultCounterValue);
 
   const onInputValueChangeHandler = (evt: ChangeEvent<HTMLInputElement>): void => {
@@ -44,23 +42,13 @@ const GranulatesCounter = (): JSX.Element => {
   };
 
   return (
-    <section className="granulates-counter">
-      <h3 className='visually-hidden'>{ComponentsTexts.GRANULATES_COUNTER_NAME} {ComponentsTexts.GRANULATES_COUNTER_BASIC_NAME}</h3>
-
-      <CounterSetValue onInputChangeHandler={onInputValueChangeHandler} value={value}/>
-
-      <ButtonChoice
-        onIncButtonClickHandler={incrementHandler}
-        onDecButtonClickHandler={decrementHandler}
-        choiseText={
-          {
-            plus: ComponentsTexts.GRANULATES_COUNTER_PLUS_BUTTON,
-            minus: ComponentsTexts.GRANULATES_COUNTER_MINUS_BUTTON
-          }
-        }
-      />
-
-    </section>
+    <BasicCounter
+      title={`${ComponentsTexts.GRANULATES_COUNTER_NAME} ${ComponentsTexts.GRANULATES_COUNTER_BASIC_NAME}`}
+      onInputValueChangeHandler={onInputValueChangeHandler}
+      value={value}
+      incrementHandler={incrementHandler}
+      decrementHandler={decrementHandler}
+    />
   );
 };
 

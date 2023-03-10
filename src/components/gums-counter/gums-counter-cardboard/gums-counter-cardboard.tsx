@@ -1,14 +1,12 @@
 import { useState, ChangeEvent, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
+//compoents
+import { ItemsCounter } from '../../counters';
 //store
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
 import { SelectorGetGumsSettingsCardboardWeight } from '../../../store/selectors/selectors';
 import { decrementAction, incrementAction, logAction } from '../../../store/slices/gums-slice';
 import { ComponentsTexts, GumsLogsNames } from '../../../variables/variables';
-import { ButtonChoice } from '../../controls';
-import { CounterAddedAmount, CounterValue } from '../../counter-controls';
-//styles
-import './gums-counter-cardboard.scss';
 
 const GumsCounterCardboard = (): JSX.Element => {
   const {UNID = 100} = useParams();
@@ -70,23 +68,14 @@ const GumsCounterCardboard = (): JSX.Element => {
   }, []);
 
   return (
-    <section className='granulates-counter granulates-counter--set-controls'>
-      <h3 className='visually-hidden'>Licznik {ComponentsTexts.GRANULATES_COUNTER_NAME} {ComponentsTexts.GRANULATES_COUNTER_VOREK_NAME}</h3>
-
-      <CounterAddedAmount onInputChangeHandler={onAddedAmountChangeHandler} value={addedAmount} title={ComponentsTexts.GRANULATES_COUNTER_VOREK_ADDED_AMOUNT_TITLE}/>
-      <CounterValue value={value}/>
-      <ButtonChoice
-        onIncButtonClickHandler={incrementHandler}
-        onDecButtonClickHandler={decrementHandler}
-        choiseText={
-          {
-            plus: ComponentsTexts.COUNTER_PLUS_BUTTON,
-            minus: ComponentsTexts.COUNTER_MINUS_BUTTON
-          }
-        }
-      />
-
-    </section>
+    <ItemsCounter
+      title={`${ComponentsTexts.GRANULATES_COUNTER_NAME} ${ComponentsTexts.GRANULATES_COUNTER_VOREK_NAME}`}
+      onAddedAmountChangeHandler={onAddedAmountChangeHandler}
+      addedAmount={addedAmount}
+      value={value}
+      incrementHandler={incrementHandler}
+      decrementHandler={decrementHandler}
+    />
   );
 };
 
