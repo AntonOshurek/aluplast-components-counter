@@ -1,6 +1,6 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 //pages
-import { CounterPage, GranulatesPage, RootPage, SettingsPage, InfoPage, GumsPage } from '../pages';
+import { CounterPage, OverviewPage, RootPage, SettingsPage, InfoPage } from '../pages';
 //granulates components
 import { GranulatesCounterContainer, GranulatesCounter, GranulatesCounterVorek, GranulatesCounterHeader } from '../components/granulates-counter';
 //Gums components
@@ -9,7 +9,7 @@ import { GumsCounter, GumsCounterCardboard, GumsCounterHeader } from '../compone
 import { AppRoute, rootBaseName } from '../variables/variables';
 import { setVhVariable } from '../utils/utils';
 //store
-import { SelectorGetCurrentGranulates, SelectorGetCurrentGum } from '../store/selectors/selectors';
+import { SelectorGetCurrentGranulates, SelectorGetCurrentGum, SelectorGetGranulatesState, SelectorGetGumsState } from '../store/selectors/selectors';
 import { clearItemAction as gumsClearItemAction } from '../store/slices/gums-slice';
 import { clearItemAction as granulatesClearItemAction } from '../store/slices/granulates-slice';
 
@@ -23,7 +23,7 @@ function App() {
         <Route path={AppRoute.SETTINGS} element={<SettingsPage/>}/>
         <Route path={AppRoute.INFORMATION} element={<InfoPage/>} />
 
-        <Route path={AppRoute.GRANULATES_PAGE} element={<GranulatesPage/>}/>
+        <Route path={AppRoute.GRANULATES_PAGE} element={<OverviewPage getStateSelector={SelectorGetGranulatesState}/>}/>
         <Route path={AppRoute.GRANULATES_COUNTER} element={<CounterPage
           getItemSelector={SelectorGetCurrentGranulates}
           clearItemSelector={granulatesClearItemAction}
@@ -34,7 +34,7 @@ function App() {
           <Route path={AppRoute.GRANULATES_COUNTER_VOREK} element={<GranulatesCounterVorek/>}/>
         </Route>
 
-        <Route path={AppRoute.GUM_PAGE} element={<GumsPage/>}/>
+        <Route path={AppRoute.GUM_PAGE} element={<OverviewPage getStateSelector={SelectorGetGumsState}/>}/>
         <Route path={AppRoute.GUM_COUNTER} element={<CounterPage
           getItemSelector={SelectorGetCurrentGum}
           clearItemSelector={gumsClearItemAction}

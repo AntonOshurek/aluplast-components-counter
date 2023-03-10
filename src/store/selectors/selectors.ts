@@ -20,3 +20,5 @@ export const SelectorGetGumsSettingsCardboardWeight = (state: RootState): number
 //this types used in counter-page component, for props actions.
 export type GetItemSelector = typeof SelectorGetCurrentGum | typeof SelectorGetCurrentGranulates;
 export type ClearItemSelector = typeof clearItemActionGranulates | typeof clearItemActionGums;
+
+export type GetStateSelectorType = typeof SelectorGetGumsState | typeof SelectorGetGranulatesState;

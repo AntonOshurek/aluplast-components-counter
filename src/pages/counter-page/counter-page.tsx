@@ -21,8 +21,6 @@ interface ICounterPagePropsType {
 const CounterPage = ({getItemSelector, clearItemSelector, counterHeader}: ICounterPagePropsType): JSX.Element => {
   const {UNID = 100} = useParams();
 
-  console.log('done');
-
   const currentItem: IItemDataType = useAppSelector(getItemSelector(+UNID));
 
   const [showThingLogsModal, setShowThingLogsModal] = useState<boolean>(false);
