@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 //components
 import { BasicCounter } from '../../counters';
@@ -6,7 +6,7 @@ import { BasicCounter } from '../../counters';
 import { useAppDispatch } from '../../../hooks/hooks';
 import { incrementAction, decrementAction, logAction } from '../../../store/slices/gums-slice';
 //consts and variables
-import { ComponentsTexts, GumsLogsNames } from '../../../variables/variables';
+import { ComponentsTexts, GumsLogsNames, InputStatuses } from '../../../variables/variables';
 
 const GumsCounter = (): JSX.Element => {
   const {UNID = 100} = useParams();
@@ -15,29 +15,57 @@ const GumsCounter = (): JSX.Element => {
   const dispatch = useAppDispatch();
 
   const defaultCounterValue: number = 100;
-  const [value, setValue] = useState<number>(defaultCounterValue);
+  const [value, setValue] = useState<number | null>(defaultCounterValue);
+  const [message, setMessage] = useState('');
+  const [status, setStatus] = useState<InputStatuses>(InputStatuses.DEFAULT);
 
-  const onInputValueChangeHandler = (evt: ChangeEvent<HTMLInputElement>): void => {
-    setValue(+evt.target.value)
+  const onInputValueChangeHandler = (value: number | null): void => {
+    setValue(value);
   };
 
   const incrementHandler = (): void => {
-    if(value <= 0 || typeof(value) !== "number") {
-      console.log('sdfsd');
+    if(value === null) {
+      console.log('value === null ERROR');
+      setStatus(InputStatuses.ERROR);
+      setMessage('Nic nie wpisanę w pole!');
+    } else if (value === 0) {
+      console.log('value === ZERO');
+      setStatus(InputStatuses.ERROR);
+      setMessage('Nie można dodać/odjąć ZERO!');
     } else {
       dispatch(incrementAction({UNID: currentItemUNID, value: value}));
-      dispatch(logAction({UNID: currentItemUNID, logName: GumsLogsNames.CHANGES, logValue: `+${value}kg`}))
+      dispatch(logAction({UNID: currentItemUNID, logName: GumsLogsNames.CHANGES, logValue: `+${value}kg`}));
+      setStatus(InputStatuses.SUCCESS);
+      setMessage('');
     };
   };
 
   const decrementHandler = (): void => {
-    if(value <= 0 || typeof(value) !== "number") {
-      console.log('sdfsd');
+    if(value === null) {
+      console.log('value === null ERROR');
+      setStatus(InputStatuses.ERROR);
+      setMessage('Nic nie wpisanę w pole!');
+    } else if (value === 0) {
+      console.log('value === ZERO');
+      setStatus(InputStatuses.ERROR);
+      setMessage('Nie można dodać/odjąć ZERO!');
     } else {
       dispatch(decrementAction({UNID: currentItemUNID, value: value}));
-      dispatch(logAction({UNID: currentItemUNID, logName: GumsLogsNames.CHANGES, logValue: `-${value}kg`}))
+      dispatch(logAction({UNID: currentItemUNID, logName: GumsLogsNames.CHANGES, logValue: `-${value}kg`}));
+      setStatus(InputStatuses.SUCCESS);
+      setMessage('');
     };
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setStatus(InputStatuses.DEFAULT);
+    }, 200);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [status]);
 
   return (
     <BasicCounter
@@ -46,6 +74,8 @@ const GumsCounter = (): JSX.Element => {
       value={value}
       incrementHandler={incrementHandler}
       decrementHandler={decrementHandler}
+      message={message}
+      status={status}
     />
   );
 };

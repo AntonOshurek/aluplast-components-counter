@@ -13,6 +13,12 @@ export const enum AppRoute {
   GRANULATES_COUNTER_VOREK = 'vorek',
 };
 
+export enum InputStatuses {
+  SUCCESS = 'success',
+  ERROR = 'error',
+  DEFAULT = '',
+};
+
 export enum ComponentsTexts {
   ROOT_PAGE_TITLE = 'Strona główna',
   OVERVIEW_PAGE_TITLE = 'Przegląd',

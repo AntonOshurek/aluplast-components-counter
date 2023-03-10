@@ -14,7 +14,6 @@ interface IItemsCounterPropsType {
 }
 
 const ItemsCounter = ({title, onAddedAmountChangeHandler, addedAmount, value, incrementHandler, decrementHandler}: IItemsCounterPropsType): JSX.Element => {
-  console.log('items counter');
   return (
     <section className='items-counter items-counter--set-controls'>
     <h3 className='visually-hidden'>Licznik {title}</h3>
