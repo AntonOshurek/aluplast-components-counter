@@ -7,7 +7,7 @@ import './button-remove.scss';
 interface ButtonRemovePropsType {
   onButtonClickHandler: () => void,
   dataToDeleteName: string,
-}
+};
 
 const ButtonRemove = ({onButtonClickHandler, dataToDeleteName}: ButtonRemovePropsType): JSX.Element => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -15,17 +15,17 @@ const ButtonRemove = ({onButtonClickHandler, dataToDeleteName}: ButtonRemoveProp
 
   const openAcceptModal = (): void => {
     setShowModal(true);
-  }
+  };
 
   const closeAcceptModal = (): void => {
     setShowModal(false);
     setSuccess(false);
-  }
+  };
 
   const confirmButtonClickHandler = () => {
     setSuccess(true);
     onButtonClickHandler();
-  }
+  };
 
   return (
     <div className='button-remove'>
@@ -90,7 +90,7 @@ const ButtonRemove = ({onButtonClickHandler, dataToDeleteName}: ButtonRemoveProp
         : null
       }
     </div>
-  )
-}
+  );
+};
 
 export default ButtonRemove;

@@ -1,6 +1,6 @@
 @import '../../variables/variables.scss';
 
-.granulates-counter-page {
+.counter-page {
   width: 100%;
   min-height: var(--vh);
 
@@ -9,13 +9,13 @@
   grid-template-rows: min-content 1fr;
 }
 
-.granulates-counter-page__main {
+.counter-page__main {
   width: 100%;
   height: 100%;
   padding: $standart-section-top-padding $standart-section-side-padding;
 }
 
-.granulates-counter-page__wrap {
+.counter-page__wrap {
   width: 100%;
   height: 100%;
   display: grid;
@@ -24,7 +24,7 @@
   gap: 10px;
 }
 
-.granulates-counter-page__counter-info {
+.counter-page__counter-info {
   width: 100%;
   height: min-content;
 
@@ -33,18 +33,16 @@
   justify-content: center;
   align-items: flex-start;
   gap: 20px;
-
-  // pointer-events: none;
 }
 
-.granulates-counter-page__title {
+.counter-page__title {
   font-family: $basic-font;
   color: $main-color;
   font-size: $standart-title-text-size;
   font-weight: $standart-title-font-weight;
 }
 
-.granulates-counter-page__item-wrap {
+.counter-page__item-wrap {
   width: 100%;
   height: min-content;
   cursor: pointer;

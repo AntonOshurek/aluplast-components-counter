@@ -2,7 +2,7 @@
 import { ButtonRemove } from '../controls';
 //store
 import { useAppDispatch } from '../../hooks/hooks';
-import { clearItemAction } from '../../store/slices/granulates-slice';
+import { AppThunk } from '../../types/store-types';
 //types
 import type { IItemDataType } from '../../types/data-types';
 //variables and constants
@@ -12,16 +12,17 @@ import './log-info.scss';
 
 interface ILogInfoPropsType {
   closeModal: (evt: any) => void,
-  currentItem: IItemDataType
-}
+  currentItem: IItemDataType,
+  clearItemAction: (action: {id: number}) => AppThunk,
+};
 
-const LogInfo = ({currentItem, closeModal}: ILogInfoPropsType): JSX.Element => {
+const LogInfo = ({currentItem, closeModal, clearItemAction}: ILogInfoPropsType): JSX.Element => {
 
   const dispatch = useAppDispatch();
 
   const removeCurrentData = (): void => {
-    dispatch(clearItemAction({id: currentItem.UNID}))
-  }
+    dispatch(clearItemAction({id: currentItem.UNID}));
+  };
 
   const generateItems = ():JSX.Element[] => {
     let itemsArray: JSX.Element[] = [];
@@ -34,10 +35,10 @@ const LogInfo = ({currentItem, closeModal}: ILogInfoPropsType): JSX.Element => {
             {currentItem.logs[item].map(item => ` ${item} ,`)}
           </p>
         </section>
-      )
-    }
+      );
+    };
     return itemsArray;
-  }
+  };
 
   return (
     <article className='thing-modal' onClick={closeModal}>
@@ -52,7 +53,7 @@ const LogInfo = ({currentItem, closeModal}: ILogInfoPropsType): JSX.Element => {
         </div>
       </div>
     </article>
-  )
-}
+  );
+};
 
 export default LogInfo;

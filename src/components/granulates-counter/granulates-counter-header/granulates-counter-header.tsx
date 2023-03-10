@@ -4,7 +4,7 @@ import { GranulatesCounterNav } from '../';
 //variables and constants
 import { ComponentsTexts } from '../../../variables/variables';
 import { AppRoute } from '../../../variables/variables';
-
+//styles
 import './granulates-counter-header.scss';
 
 const GranulatesCounterHeader = (): JSX.Element => {
@@ -23,7 +23,7 @@ const GranulatesCounterHeader = (): JSX.Element => {
           <GranulatesCounterNav/>
         </div>
     </header>
-  )
-}
+  );
+};
 
 export default GranulatesCounterHeader;

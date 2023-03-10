@@ -12,17 +12,17 @@ import type { IGranulatesSettingsType } from '../../../types/data-types';
 //styles
 import './granulates-settings.scss';
 
-interface GranulatesSettingsPropsType {
+interface IGranulatesSettingsPropsType {
   inputsHandler: (evt: ChangeEvent<HTMLInputElement>) => void,
   value: IGranulatesSettingsType
-}
+};
 
-const GranulatesSettings = ({inputsHandler, value}: GranulatesSettingsPropsType): JSX.Element => {
+const GranulatesSettings = ({inputsHandler, value}: IGranulatesSettingsPropsType): JSX.Element => {
   const dispatch = useAppDispatch();
 
   const resetCounter = () => {
     dispatch(clearStoreAction());
-  }
+  };
 
   return (
     <section className='granulates-settings'>
@@ -53,7 +53,7 @@ const GranulatesSettings = ({inputsHandler, value}: GranulatesSettingsPropsType)
 
       <ButtonRemove dataToDeleteName={ComponentsTexts.GRANULATES_COUNTER_NAME} onButtonClickHandler={resetCounter}/>
     </section>
-  )
-}
+  );
+};
 
 export default GranulatesSettings;

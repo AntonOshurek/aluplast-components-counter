@@ -11,7 +11,7 @@ import './overview-item.scss';
 interface OverviewItemPropsType {
   item: IItemDataType,
   path: AppRoute,
-}
+};
 
 const OverviewItem = ({item, path}: OverviewItemPropsType): JSX.Element => {
   const UNID = item.UNID.toString();
@@ -22,7 +22,7 @@ const OverviewItem = ({item, path}: OverviewItemPropsType): JSX.Element => {
           <ThingItem item={item}/>
         </Link>
       </li>
-  )
-}
+  );
+};
 
 export default OverviewItem;

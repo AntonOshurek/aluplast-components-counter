@@ -40,6 +40,6 @@ const GranulatesCounterNav = (): JSX.Element => {
       </ul>
     </nav>
   );
-}
+};
 
 export default GranulatesCounterNav;

@@ -17,6 +17,18 @@
   font-size: $standart-title-text-size;
   font-weight: $standart-title-font-weight;
   color: $standart-subtext-color;
+
+  &--error .counter-set-value__input {
+    border-color: red;
+  }
+
+  &--success .counter-set-value__input {
+    border-color: green;
+  }
+}
+
+.counter-set-value__message {
+  color: rgb(170, 5, 5);
 }
 
 .counter-set-value__input {
@@ -36,10 +48,14 @@
   padding: 10px;
   background-color: $standart-white;
   box-shadow: $standart-button-shadow;
-  border: none;
+  // border: none;
   border-radius: 30px;
 
   -moz-appearance: textfield;
+
+  border: 4px solid transparent;
+
+  // transition: all ease-in 0.1s;
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {

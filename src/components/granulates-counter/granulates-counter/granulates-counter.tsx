@@ -1,10 +1,9 @@
-import { useState, ChangeEvent } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 //components
-import { CounterSetValue } from '../../counter-controls';
-import { ButtonChoice } from '../../controls';
+import { BasicCounter } from '../../counters';
 //consts and variables
-import { ComponentsTexts, GranulatesLogsNames} from '../../../variables/variables';
+import { ComponentsTexts, GranulatesLogsNames, InputStatuses} from '../../../variables/variables';
 //store
 import { useAppDispatch } from '../../../hooks/hooks';
 import { incrementAction, decrementAction, logAction } from '../../../store/slices/granulates-slice';
@@ -13,55 +12,72 @@ import '../granulates-counter.scss';
 
 const GranulatesCounter = (): JSX.Element => {
   const {UNID = 100} = useParams();
-  const currentItemUNID = +UNID
+  const currentItemUNID = +UNID;
 
   const dispatch = useAppDispatch();
 
   const defaultCounterValue: number = 100;
+  const [value, setValue] = useState<number | null>(defaultCounterValue);
+  const [message, setMessage] = useState('');
+  const [status, setStatus] = useState<InputStatuses>(InputStatuses.DEFAULT);
 
-  const [value, setValue] = useState<number>(defaultCounterValue);
-
-  const onInputValueChangeHandler = (evt: ChangeEvent<HTMLInputElement>): void => {
-    setValue(+evt.target.value)
-  }
+  const onInputValueChangeHandler = (value: number | null): void => {
+    setValue(value);
+  };
 
   const incrementHandler = (): void => {
-    if(value <= 0 || typeof(value) !== "number") {
-      console.log('sdfsd');
+    if(value === null) {
+      console.log('value === null ERROR');
+      setStatus(InputStatuses.ERROR);
+      setMessage('Nic nie wpisanę w pole!');
+    } else if (value === 0) {
+      console.log('value === ZERO');
+      setStatus(InputStatuses.ERROR);
+      setMessage('Nie można dodać/odjąć ZERO!');
     } else {
       dispatch(incrementAction({UNID: currentItemUNID, value: value}));
       dispatch(logAction({UNID: currentItemUNID, logName: GranulatesLogsNames.COUNTER, logValue: `+${value}kg`}))
-    }
-  }
+      setMessage('');
+    };
+  };
 
   const decrementHandler = (): void => {
-    if(value <= 0 || typeof(value) !== "number") {
-      console.log('sdfsd');
+    if(value === null) {
+      console.log('value === null ERROR');
+      setStatus(InputStatuses.ERROR);
+      setMessage('Nic nie wpisanę w pole!');
+    } else if (value === 0) {
+      console.log('value === ZERO');
+      setStatus(InputStatuses.ERROR);
+      setMessage('Nie można dodać/odjąć ZERO!');
     } else {
       dispatch(decrementAction({UNID: currentItemUNID, value: value}));
       dispatch(logAction({UNID: currentItemUNID, logName: GranulatesLogsNames.COUNTER, logValue: `-${value}kg`}))
-    }
-  }
+      setMessage('');
+    };
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setStatus(InputStatuses.DEFAULT);
+    }, 200);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [status]);
 
   return (
-    <section className="granulates-counter">
-      <h3 className='visually-hidden'>{ComponentsTexts.GRANULATES_COUNTER_NAME} {ComponentsTexts.GRANULATES_COUNTER_BASIC_NAME}</h3>
-
-      <CounterSetValue onInputChangeHandler={onInputValueChangeHandler} value={value}/>
-
-      <ButtonChoice
-        onIncButtonClickHandler={incrementHandler}
-        onDecButtonClickHandler={decrementHandler}
-        choiseText={
-          {
-            plus: ComponentsTexts.GRANULATES_COUNTER_PLUS_BUTTON,
-            minus: ComponentsTexts.GRANULATES_COUNTER_MINUS_BUTTON
-          }
-        }
-      />
-
-    </section>
-  )
-}
+    <BasicCounter
+      title={`${ComponentsTexts.GRANULATES_COUNTER_NAME} ${ComponentsTexts.GRANULATES_COUNTER_BASIC_NAME}`}
+      onInputValueChangeHandler={onInputValueChangeHandler}
+      value={value}
+      incrementHandler={incrementHandler}
+      decrementHandler={decrementHandler}
+      message={message}
+      status={status}
+    />
+  );
+};
 
 export default GranulatesCounter;

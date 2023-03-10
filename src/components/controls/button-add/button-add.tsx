@@ -4,7 +4,7 @@ import '../standart-button.scss';
 interface ButtonAddPropsType {
   onButtonClickHandler: () => void,
   buttonText: ComponentsTexts,
-  errorMessage: string,
+  errorMessage?: string,
 }
 
 const ButtonAdd = ({onButtonClickHandler, errorMessage, buttonText}: ButtonAddPropsType): JSX.Element => {
@@ -15,9 +15,9 @@ const ButtonAdd = ({onButtonClickHandler, errorMessage, buttonText}: ButtonAddPr
       <button className={buttonClasses}
         type='button'
         onClick={onButtonClickHandler}
-      >{errorMessage ? errorMessage : buttonText}</button>
+      >{buttonText}</button>
     </div>
-  )
-}
+  );
+};
 
 export default ButtonAdd;

@@ -8,7 +8,7 @@ import './overview.scss';
 
 interface OverviewPropsType {
   data: IAdaptedDataType,
-}
+};
 
 const Overview = ({data}: OverviewPropsType): JSX.Element => {
   return (
@@ -18,7 +18,7 @@ const Overview = ({data}: OverviewPropsType): JSX.Element => {
       <OverviewList data={data}/>
 
     </section>
-  )
-}
+  );
+};
 
 export default Overview;
