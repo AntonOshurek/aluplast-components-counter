@@ -10,6 +10,8 @@
   align-items: center;
   gap: 10px;
 
+  border: 4px solid transparent; //added inline in thing-item.tsx
+
   background-color: $standart-white;
   border-radius: $thing-item-border-radius;
   padding: 0 10px 0 0;
@@ -67,10 +69,10 @@
 }
 
 .thing-item__description {
-  // font-family: $basic-font;
-  // color: $standart-subtext-color;
-  // font-size: $standart-subtext-size;
-  // font-weight: $standart-subtext-font-weight;
+  font-family: $basic-font;
+  color: $standart-text-color;
+  font-size: $standart-subtext-size;
+  font-weight: $standart-subtext-font-weight;
 }
 
 .thing-item__amount {
