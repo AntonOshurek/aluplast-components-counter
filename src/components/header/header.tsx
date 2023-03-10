@@ -1,5 +1,6 @@
+//components
 import Navigation from '../navigation/navigation';
-
+//styles
 import './header.scss';
 
 const Header = (): JSX.Element => {

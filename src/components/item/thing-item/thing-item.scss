@@ -20,11 +20,12 @@
   transition: all .4s ease;
   box-shadow:  $standart-box-shadow--large;
 
-  &:hover {
+  &:hover,
+  &:focus-within {
     box-shadow:  $standart-hover-box-shadow--large;
 
-    & .overview-item__image {
-      scale: 1;
+    & .thing-item__image {
+      scale: 1.4;
     }
   }
 }

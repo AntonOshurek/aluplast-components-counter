@@ -7,7 +7,6 @@ import type { SetActiveLinkType } from '../../types/other-types';
 import './navigation.scss';
 
 const Navigation = (): JSX.Element => {
-
   const activeLinkClass = 'navigation__link--active';
   const basicLinkClass = 'navigation__link unselectable';
 
@@ -51,7 +50,7 @@ const Navigation = (): JSX.Element => {
         </li>
       </ul>
     </nav>
-  )
-}
+  );
+};
 
 export default Navigation;
