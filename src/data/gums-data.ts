@@ -15,7 +15,7 @@ export const basicGumsData: IDataType = [
     name: 'Uszczelka czarna dynamiczna do profili',
     itemNumber: '794125',
     description: '(kolor etykiety niebieski)',
-    image: '/aluplas-granules-counter/images/gums/uszczelka czarna.jpg',
+    image: '/aluplast-components-counter/images/gums/uszczelka czarna.jpg',
     color: '#BDD7EE',
     logs: {
       [GumsLogsNames.CARDBOARD]: [],
@@ -29,7 +29,7 @@ export const basicGumsData: IDataType = [
     name: 'Uszczelka czarna dynamicznado profili',
     itemNumber: '794125',
     description: '(kolor etykiety niebieski 2x250)',
-    image: '/aluplas-granules-counter/images/gums/uszczelka czarna.jpg',
+    image: '/aluplast-components-counter/images/gums/uszczelka czarna.jpg',
     color: '#BDD7EE',
     logs: {
       [GumsLogsNames.CARDBOARD]: [],
@@ -43,7 +43,7 @@ export const basicGumsData: IDataType = [
     name: 'Uszczelka szara dynamiczna do profili',
     itemNumber: '794126',
     description: '(kolor etykiety zielony)',
-    image: '/aluplas-granules-counter/images/gums/uszczelka szara.jpg',
+    image: '/aluplast-components-counter/images/gums/uszczelka szara.jpg',
     color: '#C6E0B4',
     logs: {
       [GumsLogsNames.CARDBOARD]: [],
@@ -57,7 +57,7 @@ export const basicGumsData: IDataType = [
     name: 'Uszczelka szara dynamiczna do profili',
     itemNumber: '794126',
     description: '(kolor etykiety zielony) 2x250',
-    image: '/aluplas-granules-counter/images/gums/uszczelka szara.jpg',
+    image: '/aluplast-components-counter/images/gums/uszczelka szara.jpg',
     color: '#C6E0B4',
     logs: {
       [GumsLogsNames.CARDBOARD]: [],
@@ -71,7 +71,7 @@ export const basicGumsData: IDataType = [
     name: 'Uszczelka szara statyczna do listwy',
     itemNumber: '794091',
     description: '(kolor etykiety pomarańczowy)',
-    image: '/aluplas-granules-counter/images/gums/uszczelka szara.jpg',
+    image: '/aluplast-components-counter/images/gums/uszczelka szara.jpg',
     color: '#F4B084',
     logs: {
       [GumsLogsNames.CARDBOARD]: [],
@@ -85,7 +85,7 @@ export const basicGumsData: IDataType = [
     name: 'Uszczelka szara statyczna do listwy',
     itemNumber: '794091',
     description: '(kolor etykiety pomarańczowy)',
-    image: '/aluplas-granules-counter/images/gums/uszczelka szara.jpg',
+    image: '/aluplast-components-counter/images/gums/uszczelka szara.jpg',
     color: '#F4B084',
     logs: {
       [GumsLogsNames.CARDBOARD]: [],
@@ -99,7 +99,7 @@ export const basicGumsData: IDataType = [
     name: 'Uszczelka czarna statyczna do listwy',
     itemNumber: '794096A',
     description: '(kolor etykiety biały)',
-    image: '/aluplas-granules-counter/images/gums/uszczelka czarna.jpg',
+    image: '/aluplast-components-counter/images/gums/uszczelka czarna.jpg',
     color: '#ffffff',
     logs: {
       [GumsLogsNames.CARDBOARD]: [],
@@ -113,7 +113,7 @@ export const basicGumsData: IDataType = [
     name: 'Uszczelka czarna statyczna do listwy',
     itemNumber: '794096A',
     description: '(kolor etykiety biały)',
-    image: '/aluplas-granules-counter/images/gums/uszczelka czarna.jpg',
+    image: '/aluplast-components-counter/images/gums/uszczelka czarna.jpg',
     color: '#ffffff',
     logs: {
       [GumsLogsNames.CARDBOARD]: [],
