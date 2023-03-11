@@ -3,7 +3,7 @@ import { Link, generatePath } from 'react-router-dom';
 import ThingItem from '../../item/thing-item/thing-item';
 //types
 import type { IItemDataType } from '../../../types/data-types';
-//variables and consts
+//variables and constans
 import { AppRoute } from '../../../variables/variables';
 //styles
 import './overview-item.scss';

@@ -1,4 +1,5 @@
 import { Action, ThunkAction } from "@reduxjs/toolkit";
+import { useAppDispatch } from "../hooks/hooks";
 import { store } from "../store/store";
 
 export type AppDispatch = typeof store.dispatch;
@@ -9,3 +10,6 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   unknown,
   Action<string>
 >;
+
+// Define the type for the dispatch variable
+export type AppDispatchType = ReturnType<typeof useAppDispatch>;

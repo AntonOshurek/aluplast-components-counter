@@ -1,16 +1,17 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 //pages
-import { CounterPage, OverviewPage, RootPage, SettingsPage, InfoPage } from '../pages';
+import { CounterPage, OverviewPage, RootPage, SettingsPage, InfoPage, BasicCounterPage } from '../pages';
 //granulates components
-import { GranulatesCounterContainer, GranulatesCounter, GranulatesCounterVorek, GranulatesCounterHeader } from '../components/granulates-counter';
+import { GranulatesCounterContainer, GranulatesCounterVorek, GranulatesCounterHeader } from '../components/granulates-counter';
 //Gums components
-import { GumsCounter, GumsCounterCardboard, GumsCounterHeader } from '../components/gums-counter';
+import { GumsCounterCardboard, GumsCounterHeader } from '../components/gums-counter';
 //consts and utils functions
-import { AppRoute, rootBaseName } from '../variables/variables';
+import { AppRoute, GranulatesLogsNames, GumsLogsNames, rootBaseName } from '../variables/variables';
 import { setVhVariable } from '../utils/utils';
 //store
 import { SelectorGetCurrentGranulates, SelectorGetCurrentGum, SelectorGetGranulatesState, SelectorGetGumsState } from '../store/selectors/selectors';
-import { clearItemAction as gumsClearItemAction } from '../store/slices/gums-slice';
+import { clearItemAction as gumsClearItemAction, decrementAction as gumsDec, incrementAction as gumsInc, logAction as gumsLog } from '../store/slices/gums-slice';
+import { incrementAction as granulatesInc, decrementAction as granulatesDec, logAction as granulatesLog } from '../store/slices/granulates-slice';
 import { clearItemAction as granulatesClearItemAction } from '../store/slices/granulates-slice';
 
 function App() {
@@ -29,7 +30,13 @@ function App() {
           clearItemSelector={granulatesClearItemAction}
           counterHeader={<GranulatesCounterHeader/>}/>
         }>
-          <Route index element={<GranulatesCounter/>} />
+          {/* <Route index element={<GranulatesCounter/>} /> */}
+          <Route index element={<BasicCounterPage
+            incrementAction={granulatesInc}
+            decrementAction={granulatesDec}
+            logAction={granulatesLog}
+            logName={GranulatesLogsNames.COUNTER}
+          />} />
           <Route path={AppRoute.GRANULATES_COUNTER_CONTAINER} element={<GranulatesCounterContainer/>}/>
           <Route path={AppRoute.GRANULATES_COUNTER_VOREK} element={<GranulatesCounterVorek/>}/>
         </Route>
@@ -40,12 +47,18 @@ function App() {
           clearItemSelector={gumsClearItemAction}
           counterHeader={<GumsCounterHeader/>}/>
         }>
-          <Route index element={<GumsCounter/>} />
+          {/* <Route index element={<GumsCounter/>} /> */}
+          <Route index element={<BasicCounterPage
+            incrementAction={gumsInc}
+            decrementAction={gumsDec}
+            logAction={gumsLog}
+            logName={GumsLogsNames.CHANGES}
+          />} />
           <Route path={AppRoute.GUM_COUNTER_CARDBOARD} element={<GumsCounterCardboard/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

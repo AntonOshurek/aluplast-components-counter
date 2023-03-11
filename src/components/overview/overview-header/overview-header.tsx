@@ -11,7 +11,7 @@ const OverviewHeader = (): JSX.Element => {
       <h2 className='overview-header__title'>{ComponentsTexts.OVERVIEW_PAGE_TITLE}</h2>
       <span className='overview-header__date'>{getFullDate()}</span>
     </div>
-  )
-}
+  );
+};
 
 export default OverviewHeader;
