@@ -17,7 +17,7 @@ export const basicGranulatesData: IDataType = [
     color: '',
     name: 'HEUCOBATCH Cream 190 193',
     description: '',
-    image: '/aluplas-granules-counter/images/granulates/granulates-100.jpg',
+    image: '/aluplast-components-counter/images/granulates/granulates-100.jpg',
     logs: {
       container: [],
       vorek: [],
@@ -31,7 +31,7 @@ export const basicGranulatesData: IDataType = [
     itemNumber: '',
     color: '',
     amount: 0,
-    image: '/aluplas-granules-counter/images/granulates/granulates-101.jpg',
+    image: '/aluplast-components-counter/images/granulates/granulates-101.jpg',
     description: '',
     logs: {
       container: [],
@@ -46,7 +46,7 @@ export const basicGranulatesData: IDataType = [
     itemNumber: '',
     color: '',
     amount: 0,
-    image: '/aluplas-granules-counter/images/granulates/granulates-102.jpg',
+    image: '/aluplast-components-counter/images/granulates/granulates-102.jpg',
     description: '',
     logs: {
       container: [],
@@ -61,7 +61,7 @@ export const basicGranulatesData: IDataType = [
     itemNumber: '',
     color: '',
     amount: 0,
-    image: '/aluplas-granules-counter/images/granulates/granulates-103.jpg',
+    image: '/aluplast-components-counter/images/granulates/granulates-103.jpg',
     description: '',
     logs: {
       container: [],
@@ -76,7 +76,7 @@ export const basicGranulatesData: IDataType = [
     itemNumber: '',
     color: '',
     amount: 0,
-    image: '/aluplas-granules-counter/images/granulates/granulates-104.jpg',
+    image: '/aluplast-components-counter/images/granulates/granulates-104.jpg',
     description: '',
     logs: {
       container: [],
@@ -91,7 +91,7 @@ export const basicGranulatesData: IDataType = [
     itemNumber: '',
     color: '',
     amount: 0,
-    image: '/aluplas-granules-counter/images/granulates/granulates-105.jpg',
+    image: '/aluplast-components-counter/images/granulates/granulates-105.jpg',
     description: '',
     logs: {
       container: [],
@@ -106,7 +106,7 @@ export const basicGranulatesData: IDataType = [
     itemNumber: '',
     color: '',
     amount: 0,
-    image: '/aluplas-granules-counter/images/granulates/granulates-106.jpg',
+    image: '/aluplast-components-counter/images/granulates/granulates-106.jpg',
     description: '',
     logs: {
       container: [],
@@ -121,7 +121,7 @@ export const basicGranulatesData: IDataType = [
     itemNumber: '',
     color: '',
     amount: 0,
-    image: '/aluplas-granules-counter/images/granulates/granulates-107.jpg',
+    image: '/aluplast-components-counter/images/granulates/granulates-107.jpg',
     description: '',
     logs: {
       container: [],
@@ -136,7 +136,7 @@ export const basicGranulatesData: IDataType = [
     itemNumber: '',
     color: '',
     amount: 0,
-    image: '/aluplas-granules-counter/images/granulates/granulates-107.jpg',
+    image: '/aluplast-components-counter/images/granulates/granulates-107.jpg',
     description: '',
     logs: {
       container: [],
