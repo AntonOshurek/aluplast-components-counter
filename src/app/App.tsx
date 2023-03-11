@@ -1,15 +1,15 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 //pages
-import { CounterPage, OverviewPage, RootPage, SettingsPage, InfoPage, BasicCounterPage } from '../pages';
+import { CounterPage, OverviewPage, RootPage, SettingsPage, InfoPage, BasicCounterPage, ItemsCounterPage } from '../pages';
 //granulates components
-import { GranulatesCounterContainer, GranulatesCounterVorek, GranulatesCounterHeader } from '../components/granulates-counter';
+import { GranulatesCounterContainer, GranulatesCounterHeader } from '../components/granulates-counter';
 //Gums components
-import { GumsCounterCardboard, GumsCounterHeader } from '../components/gums-counter';
+import { GumsCounterHeader } from '../components/gums-counter';
 //consts and utils functions
 import { AppRoute, GranulatesLogsNames, GumsLogsNames, rootBaseName } from '../variables/variables';
 import { setVhVariable } from '../utils/utils';
 //store
-import { SelectorGetCurrentGranulates, SelectorGetCurrentGum, SelectorGetGranulatesState, SelectorGetGumsState } from '../store/selectors/selectors';
+import { SelectorGetCurrentGranulates, SelectorGetCurrentGum, SelectorGetGranulatesState, SelectorGetGumsState, SelectorGetGumsSettingsCardboardWeight, SelectorGetGranulatesSettingsVorekWeight } from '../store/selectors/selectors';
 import { clearItemAction as gumsClearItemAction, decrementAction as gumsDec, incrementAction as gumsInc, logAction as gumsLog } from '../store/slices/gums-slice';
 import { incrementAction as granulatesInc, decrementAction as granulatesDec, logAction as granulatesLog } from '../store/slices/granulates-slice';
 import { clearItemAction as granulatesClearItemAction } from '../store/slices/granulates-slice';
@@ -38,7 +38,14 @@ function App() {
             logName={GranulatesLogsNames.COUNTER}
           />} />
           <Route path={AppRoute.GRANULATES_COUNTER_CONTAINER} element={<GranulatesCounterContainer/>}/>
-          <Route path={AppRoute.GRANULATES_COUNTER_VOREK} element={<GranulatesCounterVorek/>}/>
+          {/* <Route path={AppRoute.GRANULATES_COUNTER_VOREK} element={<GranulatesCounterVorek/>}/> */}
+          <Route path={AppRoute.GRANULATES_COUNTER_VOREK} element={<ItemsCounterPage
+            getItemWeight={SelectorGetGranulatesSettingsVorekWeight}
+            incrementAction={granulatesInc}
+            decrementAction={granulatesDec}
+            logAction={granulatesLog}
+            logName={GranulatesLogsNames.VOREK}
+          />}/>
         </Route>
 
         <Route path={AppRoute.GUM_PAGE} element={<OverviewPage getStateSelector={SelectorGetGumsState}/>}/>
@@ -54,7 +61,14 @@ function App() {
             logAction={gumsLog}
             logName={GumsLogsNames.CHANGES}
           />} />
-          <Route path={AppRoute.GUM_COUNTER_CARDBOARD} element={<GumsCounterCardboard/>}/>
+          {/* <Route path={AppRoute.GUM_COUNTER_CARDBOARD} element={<GumsCounterCardboard/>}/> */}
+          <Route path={AppRoute.GUM_COUNTER_CARDBOARD} element={<ItemsCounterPage
+            getItemWeight={SelectorGetGumsSettingsCardboardWeight}
+            incrementAction={gumsInc}
+            decrementAction={gumsDec}
+            logAction={gumsLog}
+            logName={GumsLogsNames.CHANGES}
+          />}/>
         </Route>
       </Routes>
     </BrowserRouter>
