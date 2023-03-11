@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/aluplast-components-counter/static/css/main.4b87cfbb.css",
-    "main.js": "/aluplast-components-counter/static/js/main.c6d49a3c.js",
+    "main.js": "/aluplast-components-counter/static/js/main.de515931.js",
     "static/media/all-granulates.jpg": "/aluplast-components-counter/static/media/all-granulates.790701d455aff4d3f6fc.jpg",
     "static/media/all-gum.jpg": "/aluplast-components-counter/static/media/all-gum.c9e258369506dc64aa75.jpg",
     "index.html": "/aluplast-components-counter/index.html",
     "static/media/trash-icon.svg": "/aluplast-components-counter/static/media/trash-icon.f6b009cc7521eb1ae1a6.svg",
     "main.4b87cfbb.css.map": "/aluplast-components-counter/static/css/main.4b87cfbb.css.map",
-    "main.c6d49a3c.js.map": "/aluplast-components-counter/static/js/main.c6d49a3c.js.map"
+    "main.de515931.js.map": "/aluplast-components-counter/static/js/main.de515931.js.map"
   },
   "entrypoints": [
     "static/css/main.4b87cfbb.css",
-    "static/js/main.c6d49a3c.js"
+    "static/js/main.de515931.js"
   ]
 }
