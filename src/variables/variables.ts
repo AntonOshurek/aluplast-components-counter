@@ -1,4 +1,4 @@
-export const rootBaseName = '/aluplas-granules-counter';
+export const rootBaseName = '/aluplast-components-counter';
 
 export const enum AppRoute {
   ROOT = '/',
