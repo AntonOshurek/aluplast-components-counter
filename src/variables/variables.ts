@@ -82,7 +82,8 @@ export enum GranulatesLogsNames {
 };
 
 export enum GumsLogsNames {
-  CHANGES = 'changes',
+  COUNTER = 'licznik',
+  CARDBOARD = 'kartony',
 };
 
 export type logNamesType = GranulatesLogsNames | GumsLogsNames;

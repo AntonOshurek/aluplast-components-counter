@@ -1,7 +1,7 @@
 //types
 import type { IDataType, IGumsSettingsType } from "../types/data-types";
 //variables and consts
-import { GumsSettingsNames } from "../variables/variables";
+import { GumsSettingsNames, GumsLogsNames } from "../variables/variables";
 
 export const basicGumsSettings: IGumsSettingsType = {
   [GumsSettingsNames.CARDBOARD_WEIGHT]: 500,
@@ -18,7 +18,8 @@ export const basicGumsData: IDataType = [
     image: '/aluplas-granules-counter/images/gums/uszczelka czarna.jpg',
     color: '#BDD7EE',
     logs: {
-      changes: [],
+      [GumsLogsNames.CARDBOARD]: [],
+      [GumsLogsNames.COUNTER]: [],
     },
   },
   {
@@ -31,7 +32,8 @@ export const basicGumsData: IDataType = [
     image: '/aluplas-granules-counter/images/gums/uszczelka czarna.jpg',
     color: '#BDD7EE',
     logs: {
-      changes: [],
+      [GumsLogsNames.CARDBOARD]: [],
+      [GumsLogsNames.COUNTER]: [],
     },
   },
   {
@@ -44,7 +46,8 @@ export const basicGumsData: IDataType = [
     image: '/aluplas-granules-counter/images/gums/uszczelka szara.jpg',
     color: '#C6E0B4',
     logs: {
-      changes: [],
+      [GumsLogsNames.CARDBOARD]: [],
+      [GumsLogsNames.COUNTER]: [],
     },
   },
   {
@@ -57,7 +60,8 @@ export const basicGumsData: IDataType = [
     image: '/aluplas-granules-counter/images/gums/uszczelka szara.jpg',
     color: '#C6E0B4',
     logs: {
-      changes: [],
+      [GumsLogsNames.CARDBOARD]: [],
+      [GumsLogsNames.COUNTER]: [],
     },
   },
   {
@@ -70,7 +74,8 @@ export const basicGumsData: IDataType = [
     image: '/aluplas-granules-counter/images/gums/uszczelka szara.jpg',
     color: '#F4B084',
     logs: {
-      changes: [],
+      [GumsLogsNames.CARDBOARD]: [],
+      [GumsLogsNames.COUNTER]: [],
     },
   },
   {
@@ -83,7 +88,8 @@ export const basicGumsData: IDataType = [
     image: '/aluplas-granules-counter/images/gums/uszczelka szara.jpg',
     color: '#F4B084',
     logs: {
-      changes: [],
+      [GumsLogsNames.CARDBOARD]: [],
+      [GumsLogsNames.COUNTER]: [],
     },
   },
   {
@@ -96,7 +102,8 @@ export const basicGumsData: IDataType = [
     image: '/aluplas-granules-counter/images/gums/uszczelka czarna.jpg',
     color: '#ffffff',
     logs: {
-      changes: [],
+      [GumsLogsNames.CARDBOARD]: [],
+      [GumsLogsNames.COUNTER]: [],
     },
   },
   {
@@ -109,7 +116,8 @@ export const basicGumsData: IDataType = [
     image: '/aluplas-granules-counter/images/gums/uszczelka czarna.jpg',
     color: '#ffffff',
     logs: {
-      changes: [],
+      [GumsLogsNames.CARDBOARD]: [],
+      [GumsLogsNames.COUNTER]: [],
     },
   },
 ];

@@ -24,13 +24,13 @@ function App() {
         <Route path={AppRoute.SETTINGS} element={<SettingsPage/>}/>
         <Route path={AppRoute.INFORMATION} element={<InfoPage/>} />
 
+        {/* pegmenty */}
         <Route path={AppRoute.GRANULATES_PAGE} element={<OverviewPage getStateSelector={SelectorGetGranulatesState}/>}/>
         <Route path={AppRoute.GRANULATES_COUNTER} element={<CounterPage
           getItemSelector={SelectorGetCurrentGranulates}
           clearItemSelector={granulatesClearItemAction}
           counterHeader={<GranulatesCounterHeader/>}/>
         }>
-          {/* <Route index element={<GranulatesCounter/>} /> */}
           <Route index element={<BasicCounterPage
             incrementAction={granulatesInc}
             decrementAction={granulatesDec}
@@ -38,7 +38,6 @@ function App() {
             logName={GranulatesLogsNames.COUNTER}
           />} />
           <Route path={AppRoute.GRANULATES_COUNTER_CONTAINER} element={<GranulatesCounterContainer/>}/>
-          {/* <Route path={AppRoute.GRANULATES_COUNTER_VOREK} element={<GranulatesCounterVorek/>}/> */}
           <Route path={AppRoute.GRANULATES_COUNTER_VOREK} element={<ItemsCounterPage
             getItemWeight={SelectorGetGranulatesSettingsVorekWeight}
             incrementAction={granulatesInc}
@@ -48,26 +47,25 @@ function App() {
           />}/>
         </Route>
 
+        {/* uszczelki */}
         <Route path={AppRoute.GUM_PAGE} element={<OverviewPage getStateSelector={SelectorGetGumsState}/>}/>
         <Route path={AppRoute.GUM_COUNTER} element={<CounterPage
           getItemSelector={SelectorGetCurrentGum}
           clearItemSelector={gumsClearItemAction}
           counterHeader={<GumsCounterHeader/>}/>
         }>
-          {/* <Route index element={<GumsCounter/>} /> */}
           <Route index element={<BasicCounterPage
             incrementAction={gumsInc}
             decrementAction={gumsDec}
             logAction={gumsLog}
-            logName={GumsLogsNames.CHANGES}
+            logName={GumsLogsNames.COUNTER}
           />} />
-          {/* <Route path={AppRoute.GUM_COUNTER_CARDBOARD} element={<GumsCounterCardboard/>}/> */}
           <Route path={AppRoute.GUM_COUNTER_CARDBOARD} element={<ItemsCounterPage
             getItemWeight={SelectorGetGumsSettingsCardboardWeight}
             incrementAction={gumsInc}
             decrementAction={gumsDec}
             logAction={gumsLog}
-            logName={GumsLogsNames.CHANGES}
+            logName={GumsLogsNames.CARDBOARD}
           />}/>
         </Route>
       </Routes>
