@@ -9,6 +9,10 @@ import { ComponentsTexts, GranulatesLogsNames, InputStatuses } from '../../../va
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
 import { incrementAction, logAction } from '../../../store/slices/granulates-slice';
 import { SelectorGetGranulatesSettingsContainerWeight } from '../../../store/selectors/selectors';
+//types
+import type { SetMessageStateType, SetStatusStateType } from '../../../types/set-state-actions';
+//API
+import CounterApi from '../../../api/counter-api/counter-api';
 //styles
 import '../granulates-counter.scss';
 
@@ -23,11 +27,13 @@ const GranulatesCounterContainer = (): JSX.Element => {
 
   const [addedAmount, setAddedAmount] = useState<number>(basicContainerWeight);
   const [value, setValue] = useState<number | null>(initialValue);
-  const [message, setMessage] = useState('');
-  const [status, setStatus] = useState<InputStatuses>(InputStatuses.DEFAULT);
+  const [message, setMessage]: [string, SetMessageStateType] = useState('');
+  const [status, setStatus]: [InputStatuses, SetStatusStateType] = useState<InputStatuses>(InputStatuses.DEFAULT);
+
+  const counterApi = new CounterApi({dispatch, incrementAction, setMessage, setStatus, logAction});
 
   const onAddedAmountChangeHandler = (evt: ChangeEvent<HTMLInputElement>): void => {
-    setAddedAmount(+evt.target.value)
+    setAddedAmount(+evt.target.value);
   };
 
   const onInputValueChangeHandler = (value: number | null): void => {
@@ -35,21 +41,7 @@ const GranulatesCounterContainer = (): JSX.Element => {
   };
 
   const onAddButtonClickHandler = (): void => {
-    if(value === null) {
-      console.log('value === null ERROR');
-      setStatus(InputStatuses.ERROR);
-      setMessage('Nic nie wpisanę w pole!');
-    } else if (value === 0) {
-      console.log('value === ZERO');
-      setStatus(InputStatuses.ERROR);
-      setMessage('Nie można dodać/odjąć ZERO!');
-    } else {
-      const recalcValue = value - addedAmount
-      setAddedAmount(basicContainerWeight);
-      dispatch(incrementAction({UNID: currentItemUNID, value: recalcValue}));
-      dispatch(logAction({UNID: currentItemUNID, logName: GranulatesLogsNames.CONTAINER, logValue: `+${value}kg`}));
-      setMessage('');
-    };
+    counterApi.incrementHandler(value, currentItemUNID, GranulatesLogsNames.CONTAINER);
   };
 
   useEffect(() => {

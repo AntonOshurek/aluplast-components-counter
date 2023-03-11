@@ -5,8 +5,6 @@ import { useAppDispatch } from '../../hooks/hooks';
 import { AppThunk } from '../../types/store-types';
 //types
 import type { IItemDataType } from '../../types/data-types';
-//variables and constants
-import { GranulatesLogsTitleNames } from '../../variables/variables';
 //styles
 import './log-info.scss';
 
@@ -17,7 +15,6 @@ interface ILogInfoPropsType {
 };
 
 const LogInfo = ({currentItem, closeModal, clearItemAction}: ILogInfoPropsType): JSX.Element => {
-
   const dispatch = useAppDispatch();
 
   const removeCurrentData = (): void => {
@@ -30,7 +27,7 @@ const LogInfo = ({currentItem, closeModal, clearItemAction}: ILogInfoPropsType):
     for (let item in currentItem.logs) {
       itemsArray.push(
         <section className='thing-modal__item' key={item}>
-          <h4 className='thing-modal__item-name'>{GranulatesLogsTitleNames[item]}</h4>
+          <h4 className='thing-modal__item-name'>{item}</h4>
           <p className='thing-modal__item-value'>
             {currentItem.logs[item].map(item => ` ${item} ,`)}
           </p>

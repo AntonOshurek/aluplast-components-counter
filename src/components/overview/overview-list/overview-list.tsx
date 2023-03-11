@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 //components
 import OverviewItem from '../overview-item/overview-item';
-//variables and consts
+//variables and constans
 import { AppRoute } from '../../../variables/variables';
 //types
 import type { IAdaptedDataType } from '../../../types/data-types';
@@ -32,7 +32,7 @@ const OverviewList = ({data}: OverviewListPropsType): JSX.Element => {
     let itemsArray: JSX.Element[] = [];
     for (let item in data) {
       itemsArray.push(<OverviewItem item={data[item]} key={data[item].UNID} path={location}/>)
-    }
+    };
     return itemsArray;
   };
 

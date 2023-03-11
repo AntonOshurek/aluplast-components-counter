@@ -22,3 +22,5 @@ export type GetItemSelector = typeof SelectorGetCurrentGum | typeof SelectorGetC
 export type ClearItemSelector = typeof clearItemActionGranulates | typeof clearItemActionGums;
 
 export type GetStateSelectorType = typeof SelectorGetGumsState | typeof SelectorGetGranulatesState;
+
+export type GetItemVeightSelectorsType = typeof SelectorGetGumsSettingsCardboardWeight | typeof SelectorGetGranulatesSettingsVorekWeight;

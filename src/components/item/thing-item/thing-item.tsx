@@ -12,7 +12,6 @@ const ThingItem = ({item}: ThingItemPropsType): JSX.Element => {
   const color: string = item.color;
   let bottomBorderStyle = {border: ` 4px solid ${color}`};
 
-
   if(item) {
     return (
       <article className='thing-item' style={color ? bottomBorderStyle : {}}>

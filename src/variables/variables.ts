@@ -1,4 +1,4 @@
-export const rootBaseName = '/aluplas-granules-counter';
+export const rootBaseName = '/aluplast-components-counter';
 
 export const enum AppRoute {
   ROOT = '/',
@@ -82,8 +82,11 @@ export enum GranulatesLogsNames {
 };
 
 export enum GumsLogsNames {
-  CHANGES = 'changes',
+  COUNTER = 'licznik',
+  CARDBOARD = 'kartony',
 };
+
+export type logNamesType = GranulatesLogsNames | GumsLogsNames;
 
 export const GranulatesLogsTitleNames: {[propName: string]: string} = {
   [GranulatesLogsNames.CONTAINER]: 'Kontainer',
