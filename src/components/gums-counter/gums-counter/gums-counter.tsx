@@ -7,6 +7,8 @@ import { useAppDispatch } from '../../../hooks/hooks';
 import { incrementAction, decrementAction, logAction } from '../../../store/slices/gums-slice';
 //consts and variables
 import { ComponentsTexts, GumsLogsNames, InputStatuses } from '../../../variables/variables';
+//API
+import CounterApi from '../../../api/counter-api/counter-api';
 
 const GumsCounter = (): JSX.Element => {
   const {UNID = 100} = useParams();
@@ -19,42 +21,18 @@ const GumsCounter = (): JSX.Element => {
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState<InputStatuses>(InputStatuses.DEFAULT);
 
+  const counterApi = new CounterApi({dispatch, incrementAction, decrementAction, setMessage, setStatus, logAction});
+
   const onInputValueChangeHandler = (value: number | null): void => {
     setValue(value);
   };
 
   const incrementHandler = (): void => {
-    if(value === null) {
-      console.log('value === null ERROR');
-      setStatus(InputStatuses.ERROR);
-      setMessage('Nic nie wpisanę w pole!');
-    } else if (value === 0) {
-      console.log('value === ZERO');
-      setStatus(InputStatuses.ERROR);
-      setMessage('Nie można dodać/odjąć ZERO!');
-    } else {
-      dispatch(incrementAction({UNID: currentItemUNID, value: value}));
-      dispatch(logAction({UNID: currentItemUNID, logName: GumsLogsNames.CHANGES, logValue: `+${value}kg`}));
-      setStatus(InputStatuses.SUCCESS);
-      setMessage('');
-    };
+    counterApi.incrementHandler(value, currentItemUNID, GumsLogsNames.CHANGES);
   };
 
   const decrementHandler = (): void => {
-    if(value === null) {
-      console.log('value === null ERROR');
-      setStatus(InputStatuses.ERROR);
-      setMessage('Nic nie wpisanę w pole!');
-    } else if (value === 0) {
-      console.log('value === ZERO');
-      setStatus(InputStatuses.ERROR);
-      setMessage('Nie można dodać/odjąć ZERO!');
-    } else {
-      dispatch(decrementAction({UNID: currentItemUNID, value: value}));
-      dispatch(logAction({UNID: currentItemUNID, logName: GumsLogsNames.CHANGES, logValue: `-${value}kg`}));
-      setStatus(InputStatuses.SUCCESS);
-      setMessage('');
-    };
+    counterApi.decrementHandler(value, currentItemUNID, GumsLogsNames.CHANGES);
   };
 
   useEffect(() => {

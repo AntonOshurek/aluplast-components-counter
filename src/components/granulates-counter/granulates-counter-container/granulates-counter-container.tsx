@@ -11,6 +11,8 @@ import { incrementAction, logAction } from '../../../store/slices/granulates-sli
 import { SelectorGetGranulatesSettingsContainerWeight } from '../../../store/selectors/selectors';
 //styles
 import '../granulates-counter.scss';
+//API
+import CounterApi from '../../../api/counter-api/counter-api';
 
 const GranulatesCounterContainer = (): JSX.Element => {
   const {UNID = 100} = useParams();
@@ -26,8 +28,10 @@ const GranulatesCounterContainer = (): JSX.Element => {
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState<InputStatuses>(InputStatuses.DEFAULT);
 
+  const counterApi = new CounterApi({dispatch, incrementAction, setMessage, setStatus, logAction});
+
   const onAddedAmountChangeHandler = (evt: ChangeEvent<HTMLInputElement>): void => {
-    setAddedAmount(+evt.target.value)
+    setAddedAmount(+evt.target.value);
   };
 
   const onInputValueChangeHandler = (value: number | null): void => {
@@ -35,21 +39,7 @@ const GranulatesCounterContainer = (): JSX.Element => {
   };
 
   const onAddButtonClickHandler = (): void => {
-    if(value === null) {
-      console.log('value === null ERROR');
-      setStatus(InputStatuses.ERROR);
-      setMessage('Nic nie wpisanę w pole!');
-    } else if (value === 0) {
-      console.log('value === ZERO');
-      setStatus(InputStatuses.ERROR);
-      setMessage('Nie można dodać/odjąć ZERO!');
-    } else {
-      const recalcValue = value - addedAmount
-      setAddedAmount(basicContainerWeight);
-      dispatch(incrementAction({UNID: currentItemUNID, value: recalcValue}));
-      dispatch(logAction({UNID: currentItemUNID, logName: GranulatesLogsNames.CONTAINER, logValue: `+${value}kg`}));
-      setMessage('');
-    };
+    counterApi.incrementHandler(value, currentItemUNID, GranulatesLogsNames.CONTAINER);
   };
 
   useEffect(() => {

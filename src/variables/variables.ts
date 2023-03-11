@@ -85,6 +85,8 @@ export enum GumsLogsNames {
   CHANGES = 'changes',
 };
 
+export type logNamesType = GranulatesLogsNames | GumsLogsNames;
+
 export const GranulatesLogsTitleNames: {[propName: string]: string} = {
   [GranulatesLogsNames.CONTAINER]: 'Kontainer',
   [GranulatesLogsNames.VOREK]: 'Worek',

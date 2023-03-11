@@ -24,28 +24,28 @@ const GumsCounterCardboard = (): JSX.Element => {
   const resetAddedAmount = (): void => {
     //before added value + addedAmount whe need reset this to default value
     if(addedAmount > 1) {
-      setAddedAmount(initialAddedAmount)
+      setAddedAmount(initialAddedAmount);
     };
   };
 
   const onAddedAmountChangeHandler = (evt: ChangeEvent<HTMLInputElement>): void => {
     if(+evt.target.value < 0) {
       //Create push notification about negatiove value!
-      console.error('you cant sen negative value!')
+      console.error('you cant sen negative value!');
     } else {
       setAddedAmount(+evt.target.value);
     };
   };
 
   const incrementHandler = (): void => {
-    setValue((prev) => prev + addedAmount)
+    setValue((prev) => prev + addedAmount);
 
     let recalcValue: number = addedAmount * basicVorekWeight;
     dispatch(incrementAction({UNID: currentItemUNID, value: recalcValue}));
   };
 
   const decrementHandler = (): void => {
-    setValue((prev) => prev - addedAmount)
+    setValue((prev) => prev - addedAmount);
 
     const recalcValue: number = addedAmount * basicVorekWeight;
     dispatch(decrementAction({UNID: currentItemUNID, value: recalcValue}));

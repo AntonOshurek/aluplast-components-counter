@@ -48,7 +48,7 @@ const GranulatesCounterVorek = (): JSX.Element => {
   };
 
   const decrementHandler = (): void => {
-    setValue((prev) => prev - addedAmount)
+    setValue((prev) => prev - addedAmount);
 
     const recalcValue: number = addedAmount * basicVorekWeight;
     dispatch(decrementAction({UNID: currentItemUNID, value: recalcValue}));
@@ -66,8 +66,8 @@ const GranulatesCounterVorek = (): JSX.Element => {
     return () => {
       if(ref.current !== 0) {
         dispatch(logAction({UNID: currentItemUNID, logName: GranulatesLogsNames.VOREK, logValue: `+${ref.current} worków`}));
-      }
-    }
+      };
+    };
   }, []);
 
   return (

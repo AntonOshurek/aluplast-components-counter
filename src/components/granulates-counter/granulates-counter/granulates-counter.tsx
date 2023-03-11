@@ -9,6 +9,8 @@ import { useAppDispatch } from '../../../hooks/hooks';
 import { incrementAction, decrementAction, logAction } from '../../../store/slices/granulates-slice';
 //styles
 import '../granulates-counter.scss';
+//API
+import CounterApi from '../../../api/counter-api/counter-api';
 
 const GranulatesCounter = (): JSX.Element => {
   const {UNID = 100} = useParams();
@@ -21,40 +23,18 @@ const GranulatesCounter = (): JSX.Element => {
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState<InputStatuses>(InputStatuses.DEFAULT);
 
+  const counterApi = new CounterApi({dispatch, incrementAction, decrementAction, setMessage, setStatus, logAction});
+
   const onInputValueChangeHandler = (value: number | null): void => {
     setValue(value);
   };
 
   const incrementHandler = (): void => {
-    if(value === null) {
-      console.log('value === null ERROR');
-      setStatus(InputStatuses.ERROR);
-      setMessage('Nic nie wpisanę w pole!');
-    } else if (value === 0) {
-      console.log('value === ZERO');
-      setStatus(InputStatuses.ERROR);
-      setMessage('Nie można dodać/odjąć ZERO!');
-    } else {
-      dispatch(incrementAction({UNID: currentItemUNID, value: value}));
-      dispatch(logAction({UNID: currentItemUNID, logName: GranulatesLogsNames.COUNTER, logValue: `+${value}kg`}))
-      setMessage('');
-    };
+    counterApi.incrementHandler(value, currentItemUNID, GranulatesLogsNames.COUNTER);
   };
 
   const decrementHandler = (): void => {
-    if(value === null) {
-      console.log('value === null ERROR');
-      setStatus(InputStatuses.ERROR);
-      setMessage('Nic nie wpisanę w pole!');
-    } else if (value === 0) {
-      console.log('value === ZERO');
-      setStatus(InputStatuses.ERROR);
-      setMessage('Nie można dodać/odjąć ZERO!');
-    } else {
-      dispatch(decrementAction({UNID: currentItemUNID, value: value}));
-      dispatch(logAction({UNID: currentItemUNID, logName: GranulatesLogsNames.COUNTER, logValue: `-${value}kg`}))
-      setMessage('');
-    };
+    counterApi.decrementHandler(value, currentItemUNID, GranulatesLogsNames.COUNTER);
   };
 
   useEffect(() => {
