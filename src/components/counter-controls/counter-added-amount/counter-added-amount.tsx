@@ -8,14 +8,14 @@ interface CounterAddedAmountPropsType {
   onInputChangeHandler: (evt: ChangeEvent<HTMLInputElement>) => void,
   value: number,
   title: string,
-}
+};
 
 const CounterAddedAmount = ({onInputChangeHandler, value, title}: CounterAddedAmountPropsType): JSX.Element => {
   const inputEl = useRef<HTMLInputElement>(null);
 
   const onInputKeydownListener = (evt: any) => {
     onEscClickHandler(evt, inputEl.current);
-  }
+  };
 
   return (
     <div className='counter-added-amount'>
@@ -29,7 +29,7 @@ const CounterAddedAmount = ({onInputChangeHandler, value, title}: CounterAddedAm
         />
       </label>
     </div>
-  )
-}
+  );
+};
 
 export default CounterAddedAmount;
