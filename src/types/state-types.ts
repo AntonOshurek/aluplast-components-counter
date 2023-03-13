@@ -1,8 +1,8 @@
-import type { IGranulatesSettingsType, IAdaptedDataType, IGumsSettingsType } from "./data-types";
+import type { IPigmentsSettingsType, IAdaptedDataType, IGumsSettingsType } from "./data-types";
 
-export interface IGranulatesStateType {
+export interface IPigmentsStateType {
   items: IAdaptedDataType,
-  granulatesSettings: IGranulatesSettingsType
+  pigmentsSettings: IPigmentsSettingsType
 };
 
 export interface IGumsStateType {

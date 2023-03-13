@@ -12,7 +12,7 @@ class GumsDataApi extends AbstractDataApi {
   #basicSettings: IGumsSettingsType;
 
   constructor(data: IDataType, settings: IGumsSettingsType, storageApi: AbstractStorage) {
-    super(data, storageApi);
+    super(data, storageApi, settings);
     this.#basicSettings = settings;
   };
 

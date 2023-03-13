@@ -1,4 +1,4 @@
-import { GranulatesLogsNames, GumsLogsNames } from "../variables/variables";
+import { PigmentsLogsNames, GumsLogsNames } from "../variables/variables";
 import { AppThunk } from "./store-types";
 
 export interface IIncDecActionParametrsType {
@@ -8,7 +8,7 @@ export interface IIncDecActionParametrsType {
 
 export interface ILogActionType {
   UNID: number,
-  logName: GranulatesLogsNames | GumsLogsNames,
+  logName: PigmentsLogsNames | GumsLogsNames,
   logValue: string,
 };
 

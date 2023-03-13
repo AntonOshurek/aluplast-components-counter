@@ -6,4 +6,4 @@ all interface must be start named "I" and end "Type"
 
 import template 
   //types
-  import type { GranulatesSettingsNames } from "../variables/variables";
+  import type { PigmentsSettingsNames } from "../variables/variables";

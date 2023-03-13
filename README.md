@@ -1,10 +1,10 @@
-![commits](https://img.shields.io/github/last-commit/AntonOshurek/aluplas-granules-counter?style=plastic)
-![lang](https://img.shields.io/github/languages/top/AntonOshurek/aluplas-granules-counter)
+![commits](https://img.shields.io/github/last-commit/AntonOshurek/aluplast-components-counter?style=plastic)
+![lang](https://img.shields.io/github/languages/top/AntonOshurek/aluplast-components-counter)
 
 # Aluplast components counter
 This application created for Aluplast, based in Poznań.
 
-***[:point_right: Gh-Pages Here](https://antonoshurek.github.io/aluplas-granules-counter/):bank:***
+***[:point_right: Gh-Pages Here](https://antonoshurek.github.io/aluplast-components-counter/):bank:***
 
 ## Technologies stack
 

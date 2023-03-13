@@ -5,7 +5,7 @@ import Header from '../../components/header/header';
 import { ComponentsTexts } from '../../variables/variables';
 import { AppRoute } from '../../variables/variables';
 //images
-import granulatesBaner from './all-granulates.jpg';
+import pigmentsBaner from './all-pigments.jpg';
 import gumBanner from './all-gum.jpg';
 //styles
 import './root-page.scss';
@@ -24,9 +24,9 @@ const RootPage = (): JSX.Element => {
 
           <ul className='root-page__list'>
             <li className='root-page__item'>
-              <Link className='root-page__link' to={AppRoute.GRANULATES_PAGE}>
-                <h3 className='root-page__link-title'>{ComponentsTexts.GRANULATES_COUNTER_NAME}</h3>
-                <img className='root-page__link-image' src={granulatesBaner} width='150' height='150' alt="colored granulates" />
+              <Link className='root-page__link' to={AppRoute.PIGMENTS_PAGE}>
+                <h3 className='root-page__link-title'>{ComponentsTexts.PIGMENTS_COUNTER_NAME}</h3>
+                <img className='root-page__link-image' src={pigmentsBaner} width='150' height='150' alt="colored pigments" />
               </Link>
             </li>
             <li className='root-page__item'>

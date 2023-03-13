@@ -1,13 +1,15 @@
-import type { GranulatesSettingsNames, GumsSettingsNames } from "../variables/variables";
+import type { PigmentsSettingsNames, GumsSettingsNames } from "../variables/variables";
 
-export interface IGranulatesSettingsType {
-  [GranulatesSettingsNames.CONTAINER_WEIGHT]: number,
-  [GranulatesSettingsNames.VOREK_WEIGHT]: number,
+export interface IPigmentsSettingsType {
+  [PigmentsSettingsNames.CONTAINER_WEIGHT]: number,
+  [PigmentsSettingsNames.VOREK_WEIGHT]: number,
 };
 
 export interface IGumsSettingsType {
   [GumsSettingsNames.CARDBOARD_WEIGHT]: number,
 };
+
+export type SettingsType = IPigmentsSettingsType | IGumsSettingsType;
 
 export interface IItemDataType {
   UNID: number,

@@ -4,7 +4,7 @@ import Overview from '../../components/overview/overview';
 //store
 import { useAppSelector } from '../../hooks/hooks';
 //types
-import type { GetStateSelectorType } from '../../store/selectors/selectors';
+import { GetStateSelectorType } from '../../types/selectors-types';
 import type { IAdaptedDataType } from '../../types/data-types';
 //styles
 import './overview-page.scss';
