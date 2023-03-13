@@ -20,7 +20,12 @@ const BasicCounter = ({ onInputValueChangeHandler, value, incrementHandler, decr
     <section className="basic-counter">
       <h3 className='visually-hidden'>Licznik</h3>
 
-      <CounterSetValue onInputChangeHandler={onInputValueChangeHandler} value={value} status={status} message={message}/>
+      <CounterSetValue
+        onInputChangeHandler={onInputValueChangeHandler}
+        value={value}
+        status={status}
+        message={message}
+      />
 
       <ButtonChoice
         onIncButtonClickHandler={incrementHandler}

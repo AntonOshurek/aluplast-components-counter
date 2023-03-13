@@ -1,15 +1,15 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 //pages
-import { CounterPage, OverviewPage, RootPage, SettingsPage, InfoPage, BasicCounterPage, ItemsCounterPage } from '../pages';
+import {WithdrawalCounterPage, CounterPage, OverviewPage, RootPage, SettingsPage, InfoPage, BasicCounterPage, ItemsCounterPage } from '../pages';
 //pigments components
-import { PigmentsCounterContainer, PigmentsCounterHeader } from '../components/pigments-counter';
+import { PigmentsCounterHeader } from '../components/pigments-counter';
 //Gums components
 import { GumsCounterHeader } from '../components/gums-counter';
 //consts and utils functions
 import { AppRoute, PigmentsLogsNames, GumsLogsNames, rootBaseName, ComponentsTexts } from '../variables/variables';
 import { setVhVariable } from '../utils/utils';
 //store
-import { SelectorGetCurrentPigments, SelectorGetCurrentGum, SelectorGetPigmentsState, SelectorGetGumsState, SelectorGetGumsSettingsCardboardWeight, SelectorGetPigmentsSettingsVorekWeight } from '../store/selectors/selectors';
+import { SelectorGetCurrentPigments, SelectorGetCurrentGum, SelectorGetPigmentsState, SelectorGetGumsState, SelectorGetGumsSettingsCardboardWeight, SelectorGetPigmentsSettingsVorekWeight, SelectorGetPigmentsSettingsContainerWeight } from '../store/selectors/selectors';
 import { clearItemAction as gumsClearItemAction, decrementAction as gumsDec, incrementAction as gumsInc, logAction as gumsLog } from '../store/slices/gums-slice';
 import { incrementAction as pigmentsInc, decrementAction as pigmentsDec, logAction as pigmentsLog } from '../store/slices/pigments-slice';
 import { clearItemAction as pigmentsClearItemAction } from '../store/slices/pigments-slice';
@@ -37,7 +37,15 @@ function App() {
             logAction={pigmentsLog}
             logName={PigmentsLogsNames.COUNTER}
           />} />
-          <Route path={AppRoute.PIGMENTS_COUNTER_CONTAINER} element={<PigmentsCounterContainer/>}/>
+
+          <Route path={AppRoute.PIGMENTS_COUNTER_CONTAINER} element={<WithdrawalCounterPage
+              counterName={ComponentsTexts.PIGMENTS_COUNTER_CONTAINER_NAME}
+              incrementAction={pigmentsInc}
+              logAction={pigmentsLog}
+              logName={PigmentsLogsNames.CONTAINER}
+              getSettingsWithdrawalCount={SelectorGetPigmentsSettingsContainerWeight}
+          />}/>
+
           <Route path={AppRoute.PIGMENTS_COUNTER_VOREK} element={<ItemsCounterPage
             counterName={ComponentsTexts.PIGMENTS_COUNTER_VOREK_NAME}
             getItemWeight={SelectorGetPigmentsSettingsVorekWeight}
