@@ -22,19 +22,19 @@ const PigmentsCounterNav = (): JSX.Element => {
           <NavLink to={generatePath(AppRoute.PIGMENTS_COUNTER, {UNID: (UNID ? UNID : '')})}
            end
            className={setActiveLink}>
-            {ComponentsTexts.GRANULATES_COUNTER_BASIC_NAME}
+            {ComponentsTexts.PIGMENTS_COUNTER_BASIC_NAME}
           </NavLink>
         </li>
         <li className='pigments-counter-nav__item'>
           <NavLink to={AppRoute.PIGMENTS_COUNTER_VOREK}
             className={setActiveLink}>
-            {ComponentsTexts.GRANULATES_COUNTER_VOREK_NAME}
+            {ComponentsTexts.PIGMENTS_COUNTER_VOREK_NAME}
           </NavLink>
         </li>
         <li className='pigments-counter-nav__item'>
           <NavLink to={AppRoute.PIGMENTS_COUNTER_CONTAINER}
             className={setActiveLink}>
-            {ComponentsTexts.GRANULATES_COUNTER_CONTAINER_NAME}
+            {ComponentsTexts.PIGMENTS_COUNTER_CONTAINER_NAME}
           </NavLink>
         </li>
       </ul>

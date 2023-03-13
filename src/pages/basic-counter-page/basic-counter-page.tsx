@@ -25,8 +25,6 @@ const BasicCounterPage = ({incrementAction, decrementAction, logAction, logName}
   const {UNID = 100} = useParams();
   const currentItemUNID = +UNID;
 
-  console.log('DONE!')
-
   const dispatch = useAppDispatch();
 
   const defaultCounterValue: number = 100;
@@ -60,7 +58,6 @@ const BasicCounterPage = ({incrementAction, decrementAction, logAction, logName}
 
   return (
     <BasicCounter
-      title={`licznik`}
       onInputValueChangeHandler={onInputValueChangeHandler}
       value={value}
       incrementHandler={incrementHandler}

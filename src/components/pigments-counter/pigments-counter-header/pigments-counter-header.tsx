@@ -19,7 +19,7 @@ const PigmentsCounterHeader = (): JSX.Element => {
             </svg>
           </NavLink>
 
-          <h1 className='pigments-counter-header__title'>{ComponentsTexts.GRANULATES_COUNTER_PAGE_TITLE}</h1>
+          <h1 className='pigments-counter-header__title'>{ComponentsTexts.PIGMENTS_COUNTER_PAGE_TITLE}</h1>
           <PigmentsCounterNav/>
         </div>
     </header>

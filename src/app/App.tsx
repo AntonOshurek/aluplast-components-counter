@@ -6,7 +6,7 @@ import { PigmentsCounterContainer, PigmentsCounterHeader } from '../components/p
 //Gums components
 import { GumsCounterHeader } from '../components/gums-counter';
 //consts and utils functions
-import { AppRoute, PigmentsLogsNames, GumsLogsNames, rootBaseName } from '../variables/variables';
+import { AppRoute, PigmentsLogsNames, GumsLogsNames, rootBaseName, ComponentsTexts } from '../variables/variables';
 import { setVhVariable } from '../utils/utils';
 //store
 import { SelectorGetCurrentPigments, SelectorGetCurrentGum, SelectorGetPigmentsState, SelectorGetGumsState, SelectorGetGumsSettingsCardboardWeight, SelectorGetPigmentsSettingsVorekWeight } from '../store/selectors/selectors';
@@ -39,6 +39,7 @@ function App() {
           />} />
           <Route path={AppRoute.PIGMENTS_COUNTER_CONTAINER} element={<PigmentsCounterContainer/>}/>
           <Route path={AppRoute.PIGMENTS_COUNTER_VOREK} element={<ItemsCounterPage
+            counterName={ComponentsTexts.PIGMENTS_COUNTER_VOREK_NAME}
             getItemWeight={SelectorGetPigmentsSettingsVorekWeight}
             incrementAction={pigmentsInc}
             decrementAction={pigmentsDec}
@@ -61,6 +62,7 @@ function App() {
             logName={GumsLogsNames.COUNTER}
           />} />
           <Route path={AppRoute.GUM_COUNTER_CARDBOARD} element={<ItemsCounterPage
+            counterName={ComponentsTexts.GUMS_COUNTER_CARDBOARD_NAME}
             getItemWeight={SelectorGetGumsSettingsCardboardWeight}
             incrementAction={gumsInc}
             decrementAction={gumsDec}

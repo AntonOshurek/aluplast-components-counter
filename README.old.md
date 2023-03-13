@@ -1,1 +1,0 @@
-# aluplas-granules-counter

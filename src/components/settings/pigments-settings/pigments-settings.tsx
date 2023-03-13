@@ -26,12 +26,12 @@ const PigmentsSettings = ({inputsHandler, value}: IPigmentsSettingsPropsType): J
 
   return (
     <section className='pigments-settings'>
-      <h3 className='pigments-settings__title'>{ComponentsTexts.SETTING_GRANULATES_TITLE}</h3>
+      <h3 className='pigments-settings__title'>{ComponentsTexts.SETTING_PIGMENTS_TITLE}</h3>
 
       <form className='pigments-settings__form'>
 
         <label className='pigments-settings__label'>
-          {ComponentsTexts.SETTING_GRANULATES_VOREK_INPUT}
+          {ComponentsTexts.SETTING_PIGMENTS_VOREK_INPUT}
 
           <input className='pigments-settings__input' type="number"
             value={value.basicVorekWeight || ''}
@@ -40,7 +40,7 @@ const PigmentsSettings = ({inputsHandler, value}: IPigmentsSettingsPropsType): J
           />
         </label>
         <label className='pigments-settings__label'>
-          {ComponentsTexts.SETTING_GRANULATES_CONTAINER_INPUT}
+          {ComponentsTexts.SETTING_PIGMENTS_CONTAINER_INPUT}
 
           <input className='pigments-settings__input' type="number"
             value={value.basicContainerWeight || ''}
@@ -51,7 +51,7 @@ const PigmentsSettings = ({inputsHandler, value}: IPigmentsSettingsPropsType): J
 
       </form>
 
-      <ButtonRemove dataToDeleteName={ComponentsTexts.GRANULATES_COUNTER_NAME} onButtonClickHandler={resetCounter}/>
+      <ButtonRemove dataToDeleteName={ComponentsTexts.PIGMENTS_COUNTER_NAME} onButtonClickHandler={resetCounter}/>
     </section>
   );
 };

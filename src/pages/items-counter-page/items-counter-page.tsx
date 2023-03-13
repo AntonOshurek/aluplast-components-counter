@@ -9,6 +9,7 @@ import type { IncrementActionType, DecrementActionType, LogActionType } from "..
 import { logNamesType } from "../../variables/variables";
 
 interface IItemsCounterPagePropsType {
+  counterName: string,
   getItemWeight: GetItemVeightSelectorsType,
   incrementAction: IncrementActionType,
   decrementAction: DecrementActionType,
@@ -16,11 +17,9 @@ interface IItemsCounterPagePropsType {
   logName: logNamesType,
 };
 
-const ItemsCounterPage = ({getItemWeight, incrementAction, decrementAction, logAction, logName}: IItemsCounterPagePropsType): JSX.Element => {
+const ItemsCounterPage = ({counterName, getItemWeight, incrementAction, decrementAction, logAction, logName}: IItemsCounterPagePropsType): JSX.Element => {
   const {UNID = 100} = useParams();
   const currentItemUNID = +UNID;
-
-  console.log('ItemsCounterPage');
 
   const dispatch = useAppDispatch();
 
@@ -79,7 +78,7 @@ const ItemsCounterPage = ({getItemWeight, incrementAction, decrementAction, logA
 
   return (
     <ItemsCounter
-      title={`licznik`}
+      title={counterName}
       onAddedAmountChangeHandler={onAddedAmountChangeHandler}
       addedAmount={addedAmount}
       value={value}

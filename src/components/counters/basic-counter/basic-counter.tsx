@@ -7,7 +7,6 @@ import { ComponentsTexts, InputStatuses } from '../../../variables/variables';
 import './basic-counter.scss';
 
 interface IBasicCounterPropsType {
-  title: string,
   onInputValueChangeHandler: (value: number | null) => void,
   value: number | null,
   incrementHandler: () => void,
@@ -16,10 +15,10 @@ interface IBasicCounterPropsType {
   status?: InputStatuses,
 };
 
-const BasicCounter = ({title, onInputValueChangeHandler, value, incrementHandler, decrementHandler, status, message}: IBasicCounterPropsType): JSX.Element => {
+const BasicCounter = ({ onInputValueChangeHandler, value, incrementHandler, decrementHandler, status, message}: IBasicCounterPropsType): JSX.Element => {
   return (
     <section className="basic-counter">
-      <h3 className='visually-hidden'>{title}</h3>
+      <h3 className='visually-hidden'>Licznik</h3>
 
       <CounterSetValue onInputChangeHandler={onInputValueChangeHandler} value={value} status={status} message={message}/>
 
@@ -33,7 +32,6 @@ const BasicCounter = ({title, onInputValueChangeHandler, value, incrementHandler
           }
         }
       />
-
     </section>
   );
 };

@@ -42,7 +42,7 @@ const ButtonRemove = ({onButtonClickHandler, dataToDeleteName}: ButtonRemoveProp
             <div className={success ? 'button-remove__modal-wrap button-remove__modal-wrap--success' : 'button-remove__modal-wrap'}>
               <h2 className='button-remove__modal-title'>
                 {
-                  success ? 'Dane zostali usunięci :)' : `Napewno chcesz ${ComponentsTexts.SETTING_RESET_COUNTER_DATA} \"${dataToDeleteName}\"?`
+                  success ? `${ComponentsTexts.INFO_DATA_DELETED}` : `${ComponentsTexts.INFO_REQUEST_TO_DELETE_DATA} \"${dataToDeleteName}\"?`
                 }
               </h2>
 
@@ -53,18 +53,18 @@ const ButtonRemove = ({onButtonClickHandler, dataToDeleteName}: ButtonRemoveProp
                     <button className='button-remove__modal-button button-remove__modal-button--cancel'
                       type='button'
                       onClick={closeAcceptModal}>
-                      {ComponentsTexts.REMOVE_CLOSE}
+                      {ComponentsTexts.BUTTON_ACTION_CLOSE}
                     </button>
                     : <>
                       <button className='button-remove__modal-button button-remove__modal-button--cancel'
                         type='button'
                         onClick={closeAcceptModal}>
-                        {ComponentsTexts.REMOVE_CANCEL}
+                        {ComponentsTexts.BUTTON_ACTION_CANCEL}
                       </button>
                       <button className='button-remove__modal-button button-remove__modal-button--confirm'
                         type='button'
                         onClick={confirmButtonClickHandler}>
-                          {ComponentsTexts.REMOVE_CONFIRM}
+                          {ComponentsTexts.BUTTON_ACTION_CONFIRM}
                       </button>
                     </>
 

@@ -6,6 +6,8 @@ import ThingItem from '../../components/item/thing-item/thing-item';
 import LogInfo from '../../components/logInfo/log-info';
 //store
 import { useAppSelector } from '../../hooks/hooks';
+//variables and constants
+import { ComponentsTexts } from '../../variables/variables';
 //types
 import type { GetItemSelector, ClearItemSelector } from '../../types/selectors-types';
 import type { IItemDataType } from '../../types/data-types';
@@ -43,7 +45,7 @@ const CounterPage = ({getItemSelector, clearItemSelector, counterHeader}: ICount
 
       <div className='counter-page__wrap container'>
         <section className='counter-page__counter-info'>
-          <h2 className='counter-page__title'>Przegląd licznika</h2>
+          <h2 className='counter-page__title'>{ComponentsTexts.COUNTER_PAGE_TITLE}</h2>
           <div className='counter-page__item-wrap' onClick={showItemLogs}>
             <ThingItem item={currentItem}/>
           </div>

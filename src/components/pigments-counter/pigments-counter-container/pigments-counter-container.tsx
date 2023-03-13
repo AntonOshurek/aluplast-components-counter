@@ -56,9 +56,9 @@ const PigmentsCounterContainer = (): JSX.Element => {
 
   return (
     <section className="pigments-counter pigments-counter--set-controls">
-      <h3 className='visually-hidden'>Licznik {ComponentsTexts.GRANULATES_COUNTER_NAME} {ComponentsTexts.GRANULATES_COUNTER_CONTAINER_NAME}</h3>
+      <h3 className='visually-hidden'>Licznik {ComponentsTexts.PIGMENTS_COUNTER_NAME} {ComponentsTexts.PIGMENTS_COUNTER_CONTAINER_NAME}</h3>
 
-      <CounterAddedAmount onInputChangeHandler={onAddedAmountChangeHandler} value={addedAmount} title={ComponentsTexts.GRANULATES_COUNTER_CONTAINER_ADDED_AMOUNT_TITLE}/>
+      <CounterAddedAmount onInputChangeHandler={onAddedAmountChangeHandler} value={addedAmount} title={ComponentsTexts.PIGMENTS_COUNTER_CONTAINER_ADDED_AMOUNT_TITLE}/>
       <CounterSetValue
         onInputChangeHandler={onInputValueChangeHandler}
         value={value}
@@ -66,7 +66,7 @@ const PigmentsCounterContainer = (): JSX.Element => {
         status={status}/>
       <ButtonAdd
         onButtonClickHandler={onAddButtonClickHandler}
-        buttonText={ComponentsTexts.GRANULATES_COUNTER_ADD_BUTTON}
+        buttonText={ComponentsTexts.COUNTER_ADD_BUTTON}
       />
 
     </section>
