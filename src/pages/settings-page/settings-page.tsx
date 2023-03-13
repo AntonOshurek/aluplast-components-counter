@@ -1,31 +1,31 @@
 import { useState, ChangeEvent, useEffect } from 'react';
 //component
 import Header from '../../components/header/header';
-import GranulatesSettings from '../../components/settings/granulates-settings/granulates-settings';
+import PigmentsSettings from '../../components/settings/pigments-settings/pigments-settings';
 import GumsSettings from '../../components/settings/gums-settings/gums-settings';
 import { ButtonAdd } from '../../components/controls';
 //consts and variables
-import { ComponentsTexts, GranulatesSettingsNames, GumsSettingsNames } from '../../variables/variables';
+import { ComponentsTexts, PigmentsSettingsNames, GumsSettingsNames } from '../../variables/variables';
 //types
-import type { IGranulatesSettingsType, IGumsSettingsType } from '../../types/data-types';
+import type { IPigmentsSettingsType, IGumsSettingsType } from '../../types/data-types';
 //store
-import { setSettingsAction as granulatesSetSettings } from '../../store/slices/granulates-slice';
+import { setSettingsAction as pigmentsSetSettings } from '../../store/slices/pigments-slice';
 import { setSettingsAction as gumsSetSettings } from '../../store/slices/gums-slice';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import { SelectorGetGranulatesSettings, SelectorGetGumsSettings } from '../../store/selectors/selectors';
+import { SelectorGetPigmentsSettings, SelectorGetGumsSettings } from '../../store/selectors/selectors';
 //styles
 import './settings-page.scss';
 
 const SettingsPage = (): JSX.Element => {
-  const basicGranulatesSettings = useAppSelector(SelectorGetGranulatesSettings);
+  const basicPigmentsSettings = useAppSelector(SelectorGetPigmentsSettings);
   const basicGumsSettings = useAppSelector(SelectorGetGumsSettings);
   const dispatch = useAppDispatch();
 
-  const [granulatesSettings, setGranulatesSettings] = useState<IGranulatesSettingsType>(basicGranulatesSettings);
+  const [pigmentsSettings, setPigmentsSettings] = useState<IPigmentsSettingsType>(basicPigmentsSettings);
   const [gumsSettings, setGumsSettings] = useState<IGumsSettingsType>(basicGumsSettings);
 
   const onSettingSubmitButtonClickHandler = (): void => {
-    dispatch(granulatesSetSettings(granulatesSettings));
+    dispatch(pigmentsSetSettings(pigmentsSettings));
     dispatch(gumsSetSettings(gumsSettings));
   };
 
@@ -34,11 +34,11 @@ const SettingsPage = (): JSX.Element => {
     const inputValue: number = +evt.target.value;
 
     switch(inputName) {
-      case GranulatesSettingsNames.VOREK_WEIGHT:
-        setGranulatesSettings({...granulatesSettings, [GranulatesSettingsNames.VOREK_WEIGHT]: inputValue});
+      case PigmentsSettingsNames.VOREK_WEIGHT:
+        setPigmentsSettings({...pigmentsSettings, [PigmentsSettingsNames.VOREK_WEIGHT]: inputValue});
         break;
-      case GranulatesSettingsNames.CONTAINER_WEIGHT:
-        setGranulatesSettings({...granulatesSettings, [GranulatesSettingsNames.CONTAINER_WEIGHT]: inputValue});
+      case PigmentsSettingsNames.CONTAINER_WEIGHT:
+        setPigmentsSettings({...pigmentsSettings, [PigmentsSettingsNames.CONTAINER_WEIGHT]: inputValue});
         break;
       case GumsSettingsNames.CARDBOARD_WEIGHT:
         setGumsSettings({...gumsSettings, [GumsSettingsNames.CARDBOARD_WEIGHT]: inputValue});
@@ -49,8 +49,8 @@ const SettingsPage = (): JSX.Element => {
   };
 
   useEffect(() => {
-    setGranulatesSettings(basicGranulatesSettings);
-  }, [basicGranulatesSettings]);
+    setPigmentsSettings(basicPigmentsSettings);
+  }, [basicPigmentsSettings]);
 
   return (
     <div className='settings-page'>
@@ -58,9 +58,9 @@ const SettingsPage = (): JSX.Element => {
 
       <main className='settings-page__main container'>
 
-        <GranulatesSettings
+        <PigmentsSettings
           inputsHandler={onSettingsInputsHandler}
-          value={granulatesSettings}
+          value={pigmentsSettings}
         />
 
         <GumsSettings

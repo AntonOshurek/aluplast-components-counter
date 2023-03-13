@@ -1,13 +1,13 @@
 @import '../../../variables/variables.scss';
 
-.granulates-counter-nav {
+.pigments-counter-nav {
   width: 100%;
 
   grid-column-start: 1;
   grid-column-end: -1;
 }
 
-.granulates-counter-nav__list {
+.pigments-counter-nav__list {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -16,12 +16,12 @@
   list-style: none;
 }
 
-.granulates-counter-nav__item {
+.pigments-counter-nav__item {
   width: min-content;
   height: min-content;
 }
 
-.granulates-counter-nav__link {
+.pigments-counter-nav__link {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,0 +1,53 @@
+@import '../../../variables/variables.scss';
+
+.gums-counter-nav {
+  width: 100%;
+
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+.gums-counter-nav__list {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+
+  list-style: none;
+}
+
+.gums-counter-nav__item {
+  width: min-content;
+  height: min-content;
+}
+
+.gums-counter-nav__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  cursor: pointer;
+
+  background-color: $standart-white;
+  color: $standart-text-color;
+  border-radius: 40px;
+
+  box-shadow: $standart-box-shadow--medium;
+  transition: all .1s ease-in;
+  text-decoration: none;
+
+  &:hover {
+    box-shadow: $standart-hover-box-shadow--medium;
+  }
+
+  &:active {
+    box-shadow: $standart-hover-box-shadow--medium;
+    opacity: 0.8;
+  }
+
+  &--active {
+    box-shadow: $standart-hover-box-shadow--medium;
+    background-color: $main-color;
+    color: $standart-white;
+  }
+}

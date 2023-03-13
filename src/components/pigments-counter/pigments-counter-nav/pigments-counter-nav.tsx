@@ -4,35 +4,35 @@ import { AppRoute, ComponentsTexts } from '../../../variables/variables';
 //types
 import type { SetActiveLinkType } from '../../../types/other-types';
 //styles
-import './granulates-counter-nav.scss';
+import './pigments-counter-nav.scss';
 
-const GranulatesCounterNav = (): JSX.Element => {
+const PigmentsCounterNav = (): JSX.Element => {
   const {UNID} = useParams();
 
-  const activeLinkClass = 'granulates-counter-nav__link--active';
-  const basicLinkClass = 'granulates-counter-nav__link';
+  const activeLinkClass = 'pigments-counter-nav__link--active';
+  const basicLinkClass = 'pigments-counter-nav__link';
 
   const setActiveLink = ({isActive}: SetActiveLinkType) => isActive ? `${basicLinkClass}  ${activeLinkClass}` : `${basicLinkClass}`;
 
   return (
-    <nav className='granulates-counter-nav'>
-      <h2 className='visually-hidden'>Granulates counter navigation panel</h2>
-      <ul className='granulates-counter-nav__list'>
-        <li className='granulates-counter-nav__item'>
-          <NavLink to={generatePath(AppRoute.GRANULATES_COUNTER, {UNID: (UNID ? UNID : '')})}
+    <nav className='pigments-counter-nav'>
+      <h2 className='visually-hidden'>Pigments counter navigation panel</h2>
+      <ul className='pigments-counter-nav__list'>
+        <li className='pigments-counter-nav__item'>
+          <NavLink to={generatePath(AppRoute.PIGMENTS_COUNTER, {UNID: (UNID ? UNID : '')})}
            end
            className={setActiveLink}>
             {ComponentsTexts.GRANULATES_COUNTER_BASIC_NAME}
           </NavLink>
         </li>
-        <li className='granulates-counter-nav__item'>
-          <NavLink to={AppRoute.GRANULATES_COUNTER_VOREK}
+        <li className='pigments-counter-nav__item'>
+          <NavLink to={AppRoute.PIGMENTS_COUNTER_VOREK}
             className={setActiveLink}>
             {ComponentsTexts.GRANULATES_COUNTER_VOREK_NAME}
           </NavLink>
         </li>
-        <li className='granulates-counter-nav__item'>
-          <NavLink to={AppRoute.GRANULATES_COUNTER_CONTAINER}
+        <li className='pigments-counter-nav__item'>
+          <NavLink to={AppRoute.PIGMENTS_COUNTER_CONTAINER}
             className={setActiveLink}>
             {ComponentsTexts.GRANULATES_COUNTER_CONTAINER_NAME}
           </NavLink>
@@ -42,4 +42,4 @@ const GranulatesCounterNav = (): JSX.Element => {
   );
 };
 
-export default GranulatesCounterNav;
+export default PigmentsCounterNav;

@@ -1,16 +1,21 @@
 export const rootBaseName = '/aluplast-components-counter';
 
 export const enum AppRoute {
+  //basic/main paths
   ROOT = '/',
   SETTINGS = '/settings',
   INFORMATION = '/information',
-  GRANULATES_PAGE = '/granulates',
+
+  //pigments/pegmenty paths
+  PIGMENTS_PAGE = '/pigments',
+  PIGMENTS_COUNTER = '/pigments/:UNID',
+  PIGMENTS_COUNTER_CONTAINER = 'container',
+  PIGMENTS_COUNTER_VOREK = 'vorek',
+
+  //gums/uszczelka paths
   GUM_PAGE = '/gums',
   GUM_COUNTER = '/gums/:UNID',
   GUM_COUNTER_CARDBOARD = 'cardboard',
-  GRANULATES_COUNTER = '/granulates/:UNID',
-  GRANULATES_COUNTER_CONTAINER = 'container',
-  GRANULATES_COUNTER_VOREK = 'vorek',
 };
 
 export enum InputStatuses {
@@ -60,36 +65,32 @@ export enum ComponentsTexts {
   REMOVE_CLOSE = 'Zamknij powiadomienie',
 };
 
-//this vars used inside store and settings inputs values! Dont delet or change!
-export enum GranulatesSettingsNames {
+//this vars used inside store and settings inputs values! Dont delet or change!\
+
+//SETTINGS
+export enum PigmentsSettingsNames {
   VOREK_WEIGHT = 'basicVorekWeight',
   CONTAINER_WEIGHT = 'basicContainerWeight',
 };
-
 export enum GumsSettingsNames {
   CARDBOARD_WEIGHT = 'basicCardboardWeight',
 };
+export type SettingsNamesType = PigmentsSettingsNames | GumsSettingsNames;
 
+//STORAGE
 export enum ApplicationStorageApiNames {
-  GRANULATES_STORAGE = 'granulates',
+  PIGMENTS_STORAGE = 'pigments',
   GUMS_STORAGE = 'gums',
 };
 
-export enum GranulatesLogsNames {
+//LOGS
+export enum PigmentsLogsNames {
   CONTAINER = 'container',
   VOREK = 'vorek',
   COUNTER = 'counter',
 };
-
 export enum GumsLogsNames {
   COUNTER = 'licznik',
   CARDBOARD = 'kartony',
 };
-
-export type logNamesType = GranulatesLogsNames | GumsLogsNames;
-
-export const GranulatesLogsTitleNames: {[propName: string]: string} = {
-  [GranulatesLogsNames.CONTAINER]: 'Kontainer',
-  [GranulatesLogsNames.VOREK]: 'Worek',
-  [GranulatesLogsNames.COUNTER]: 'Licznik',
-};
+export type logNamesType = PigmentsLogsNames | GumsLogsNames;

@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import granulatesSlice from './slices/granulates-slice';
+import pigmentsSlice from './slices/pigments-slice';
 import gumsSlice from './slices/gums-slice';
 
 export const store = configureStore({
   reducer: {
-    granulates: granulatesSlice,
+    pigments: pigmentsSlice,
     gums: gumsSlice,
   },
 });

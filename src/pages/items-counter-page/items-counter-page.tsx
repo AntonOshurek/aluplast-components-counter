@@ -4,7 +4,7 @@ import { ItemsCounter } from "../../components/counters";
 //store
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 //types
-import type { GetItemVeightSelectorsType } from "../../store/selectors/selectors";
+import type { GetItemVeightSelectorsType } from "../../types/selectors-types";
 import type { IncrementActionType, DecrementActionType, LogActionType } from "../../types/action-types";
 import { logNamesType } from "../../variables/variables";
 

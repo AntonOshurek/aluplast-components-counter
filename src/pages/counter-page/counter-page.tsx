@@ -7,7 +7,7 @@ import LogInfo from '../../components/logInfo/log-info';
 //store
 import { useAppSelector } from '../../hooks/hooks';
 //types
-import type { GetItemSelector, ClearItemSelector } from '../../store/selectors/selectors';
+import type { GetItemSelector, ClearItemSelector } from '../../types/selectors-types';
 import type { IItemDataType } from '../../types/data-types';
 //styles
 import './counter-page.scss';

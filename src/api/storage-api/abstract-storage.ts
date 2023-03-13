@@ -29,6 +29,21 @@ abstract class AbstractStorage {
     localStorage.setItem(this.name, JSON.stringify(items));
   };
 
+  // getSettings(): SettingsType | null {
+  //   const jsonData: string | null = localStorage.getItem(`${this.name}--settings`);
+
+  //   if(jsonData) {
+  //     const parsedJsonData: SettingsType = JSON.parse(jsonData);
+  //     return parsedJsonData;
+  //   } else {
+  //     return null;
+  //   };
+  // };
+
+  // setSettings(settings: SettingsType) {
+  //   localStorage.setItem(`${this.name}--settings`, JSON.stringify(settings));
+  // };
+
   clearStore() {
     localStorage.removeItem(this.name);
   };

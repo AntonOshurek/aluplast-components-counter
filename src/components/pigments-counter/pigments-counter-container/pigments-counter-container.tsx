@@ -4,25 +4,25 @@ import { useParams } from 'react-router-dom';
 import { CounterAddedAmount, CounterSetValue } from '../../counter-controls';
 import { ButtonAdd } from '../../controls';
 //consts and variables
-import { ComponentsTexts, GranulatesLogsNames, InputStatuses } from '../../../variables/variables';
+import { ComponentsTexts, PigmentsLogsNames, InputStatuses } from '../../../variables/variables';
 //store
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
-import { incrementAction, logAction } from '../../../store/slices/granulates-slice';
-import { SelectorGetGranulatesSettingsContainerWeight } from '../../../store/selectors/selectors';
+import { incrementAction, logAction } from '../../../store/slices/pigments-slice';
+import { SelectorGetPigmentsSettingsContainerWeight } from '../../../store/selectors/selectors';
 //types
 import type { SetMessageStateType, SetStatusStateType } from '../../../types/set-state-actions';
 //API
 import CounterApi from '../../../api/counter-api/counter-api';
 //styles
-import '../granulates-counter.scss';
+import '../pigments-counter.scss';
 
-const GranulatesCounterContainer = (): JSX.Element => {
+const PigmentsCounterContainer = (): JSX.Element => {
   const {UNID = 100} = useParams();
   const currentItemUNID = +UNID;
 
   const dispatch = useAppDispatch();
 
-  const basicContainerWeight = useAppSelector(SelectorGetGranulatesSettingsContainerWeight);
+  const basicContainerWeight = useAppSelector(SelectorGetPigmentsSettingsContainerWeight);
   const initialValue: number = 500;
 
   const [addedAmount, setAddedAmount] = useState<number>(basicContainerWeight);
@@ -41,7 +41,7 @@ const GranulatesCounterContainer = (): JSX.Element => {
   };
 
   const onAddButtonClickHandler = (): void => {
-    counterApi.incrementHandler(value, currentItemUNID, GranulatesLogsNames.CONTAINER);
+    counterApi.incrementHandler(value, currentItemUNID, PigmentsLogsNames.CONTAINER);
   };
 
   useEffect(() => {
@@ -55,7 +55,7 @@ const GranulatesCounterContainer = (): JSX.Element => {
   }, [status]);
 
   return (
-    <section className="granulates-counter granulates-counter--set-controls">
+    <section className="pigments-counter pigments-counter--set-controls">
       <h3 className='visually-hidden'>Licznik {ComponentsTexts.GRANULATES_COUNTER_NAME} {ComponentsTexts.GRANULATES_COUNTER_CONTAINER_NAME}</h3>
 
       <CounterAddedAmount onInputChangeHandler={onAddedAmountChangeHandler} value={addedAmount} title={ComponentsTexts.GRANULATES_COUNTER_CONTAINER_ADDED_AMOUNT_TITLE}/>
@@ -73,4 +73,4 @@ const GranulatesCounterContainer = (): JSX.Element => {
   );
 };
 
-export default GranulatesCounterContainer;
+export default PigmentsCounterContainer;

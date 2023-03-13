@@ -1,14 +1,15 @@
 //types
-import type { IGranulatesSettingsType, IDataType } from "../types/data-types";
+import type { IPigmentsSettingsType, IDataType } from "../types/data-types";
 //variables and consts
-import { GranulatesSettingsNames } from "../variables/variables";
+import { PigmentsSettingsNames } from "../variables/variables";
 
-export const basicGranulatesSettings: IGranulatesSettingsType = {
-  [GranulatesSettingsNames.VOREK_WEIGHT]: 25,
-  [GranulatesSettingsNames.CONTAINER_WEIGHT]: 77,
+export const basicPigmentsSettings: IPigmentsSettingsType = {
+  [PigmentsSettingsNames.VOREK_WEIGHT]: 25,
+  [PigmentsSettingsNames.CONTAINER_WEIGHT]: 77,
 };
 
-export const basicGranulatesData: IDataType = [
+//pigments
+export const basicPigmentsData: IDataType = [
   {
     UNID: 100,
     amount: 0,
@@ -17,7 +18,7 @@ export const basicGranulatesData: IDataType = [
     color: '',
     name: 'HEUCOBATCH Cream 190 193',
     description: '',
-    image: '/aluplast-components-counter/images/granulates/granulates-100.jpg',
+    image: '/aluplast-components-counter/images/pigments/pigment-cream.jpg',
     logs: {
       container: [],
       vorek: [],
@@ -31,7 +32,7 @@ export const basicGranulatesData: IDataType = [
     itemNumber: '',
     color: '',
     amount: 0,
-    image: '/aluplast-components-counter/images/granulates/granulates-101.jpg',
+    image: '/aluplast-components-counter/images/pigments/pigment-ochra.jpg',
     description: '',
     logs: {
       container: [],
@@ -46,7 +47,7 @@ export const basicGranulatesData: IDataType = [
     itemNumber: '',
     color: '',
     amount: 0,
-    image: '/aluplast-components-counter/images/granulates/granulates-102.jpg',
+    image: '/aluplast-components-counter/images/pigments/pigment-braz.jpg',
     description: '',
     logs: {
       container: [],
@@ -61,7 +62,7 @@ export const basicGranulatesData: IDataType = [
     itemNumber: '',
     color: '',
     amount: 0,
-    image: '/aluplast-components-counter/images/granulates/granulates-103.jpg',
+    image: '/aluplast-components-counter/images/pigments/pigment-braz.jpg',
     description: '',
     logs: {
       container: [],
@@ -76,7 +77,7 @@ export const basicGranulatesData: IDataType = [
     itemNumber: '',
     color: '',
     amount: 0,
-    image: '/aluplast-components-counter/images/granulates/granulates-104.jpg',
+    image: '/aluplast-components-counter/images/pigments/pigment-bialy.jpg',
     description: '',
     logs: {
       container: [],
@@ -91,7 +92,7 @@ export const basicGranulatesData: IDataType = [
     itemNumber: '',
     color: '',
     amount: 0,
-    image: '/aluplast-components-counter/images/granulates/granulates-105.jpg',
+    image: '/aluplast-components-counter/images/pigments/pigment-zolty.jpg',
     description: '',
     logs: {
       container: [],
@@ -106,7 +107,7 @@ export const basicGranulatesData: IDataType = [
     itemNumber: '',
     color: '',
     amount: 0,
-    image: '/aluplast-components-counter/images/granulates/granulates-106.jpg',
+    image: '/aluplast-components-counter/images/pigments/pigment-shelblue.jpg',
     description: '',
     logs: {
       container: [],
@@ -121,7 +122,7 @@ export const basicGranulatesData: IDataType = [
     itemNumber: '',
     color: '',
     amount: 0,
-    image: '/aluplast-components-counter/images/granulates/granulates-107.jpg',
+    image: '/aluplast-components-counter/images/pigments/pigment-shelblue.jpg',
     description: '',
     logs: {
       container: [],
@@ -136,7 +137,7 @@ export const basicGranulatesData: IDataType = [
     itemNumber: '',
     color: '',
     amount: 0,
-    image: '/aluplast-components-counter/images/granulates/granulates-107.jpg',
+    image: '/aluplast-components-counter/images/pigments/pigment-antracyt.jpg',
     description: '',
     logs: {
       container: [],

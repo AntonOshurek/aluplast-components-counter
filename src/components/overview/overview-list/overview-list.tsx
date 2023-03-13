@@ -15,17 +15,17 @@ interface OverviewListPropsType {
 const OverviewList = ({data}: OverviewListPropsType): JSX.Element => {
   let location: AppRoute;
 
-  //here checked opened page (granulates or guma) and send route for overviewItem component
-  //inside overviewComponent generate link for granulatesCounter or gumaCounter
+  //here checked opened page (pigments or guma) and send route for overviewItem component
+  //inside overviewComponent generate link for pigmentsCounter or gumaCounter
   switch(useLocation().pathname) {
-    case AppRoute.GRANULATES_PAGE:
-      location = AppRoute.GRANULATES_COUNTER;
+    case AppRoute.PIGMENTS_PAGE:
+      location = AppRoute.PIGMENTS_COUNTER;
       break;
     case AppRoute.GUM_PAGE:
       location = AppRoute.GUM_COUNTER;
       break;
     default:
-      location = AppRoute.GRANULATES_PAGE;
+      location = AppRoute.PIGMENTS_PAGE;
   };
 
   const generateItems = ():JSX.Element[] => {

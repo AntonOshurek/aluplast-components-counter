@@ -1,16 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 //data
-import { granulatesState } from '../state/granulates-state';
+import { pigmentsState } from '../state/pigments-state';
 //types
 import type { AppThunk } from '../../types/store-types';
-import type { IGranulatesSettingsType, IItemDataType } from '../../types/data-types';
+import type { IPigmentsSettingsType, IItemDataType } from '../../types/data-types';
 import type { IIncDecActionParametrsType, ILogActionType } from '../../types/action-types';
 //API
-import { granulatesDataApi, granulatesStorageApi } from '../../api';
+import { pigmentsDataApi, pigmentsStorageApi } from '../../api';
 
-export const granulatesSlice = createSlice({
-  name: 'granulates',
-  initialState: granulatesState,
+export const pigmentsSlice = createSlice({
+  name: 'pigments',
+  initialState: pigmentsState,
 
   reducers: {
     increment: (state, action: PayloadAction<IIncDecActionParametrsType>) => {
@@ -25,62 +25,62 @@ export const granulatesSlice = createSlice({
       const {UNID, logName, logValue} = action.payload;
       state.items[UNID].logs[logName] = [...state.items[UNID].logs[logName], logValue];
     },
-    setNewSettings: (state, action: PayloadAction<IGranulatesSettingsType>) => {
-      state.granulatesSettings = action.payload;
+    setNewSettings: (state, action: PayloadAction<IPigmentsSettingsType>) => {
+      state.pigmentsSettings = action.payload;
     },
     clearItem: (state, action: PayloadAction<IItemDataType>) => {
       const {UNID} = action.payload;
       state.items[UNID] = action.payload;
     },
     clear: (state) => {
-      state.items = granulatesDataApi.getAdaptedData();
+      state.items = pigmentsDataApi.getAdaptedData();
     }
   },
 });
 
-export const { clear, clearItem, log } = granulatesSlice.actions;
+export const { clear, clearItem, log } = pigmentsSlice.actions;
 
 export const incrementAction =
   (action: IIncDecActionParametrsType): AppThunk =>
   (dispatch, getState) => {
-    dispatch(granulatesSlice.actions.increment(action));
-    granulatesStorageApi.setItems(getState().granulates.items);
+    dispatch(pigmentsSlice.actions.increment(action));
+    pigmentsStorageApi.setItems(getState().pigments.items);
   };
 
 export const decrementAction =
   (action: IIncDecActionParametrsType): AppThunk =>
   (dispatch, getState) => {
-    dispatch(granulatesSlice.actions.decrement(action));
-    granulatesStorageApi.setItems(getState().granulates.items);
+    dispatch(pigmentsSlice.actions.decrement(action));
+    pigmentsStorageApi.setItems(getState().pigments.items);
   };
 
 export const clearStoreAction =
   (): AppThunk =>
   (dispatch) => {
-    dispatch(granulatesSlice.actions.clear());
-    granulatesStorageApi.setItems(granulatesDataApi.getAdaptedData());
+    dispatch(pigmentsSlice.actions.clear());
+    pigmentsStorageApi.setItems(pigmentsDataApi.getAdaptedData());
   };
 
 export const clearItemAction =
   (action: {id: number}): AppThunk =>
   (dispatch, getState) => {
-    const newDefaultItem = granulatesDataApi.getDataItem(action.id)
-    dispatch(granulatesSlice.actions.clearItem(newDefaultItem));
-    granulatesStorageApi.setItems(getState().granulates.items);
+    const newDefaultItem = pigmentsDataApi.getDataItem(action.id)
+    dispatch(pigmentsSlice.actions.clearItem(newDefaultItem));
+    pigmentsStorageApi.setItems(getState().pigments.items);
   };
 
 export const setSettingsAction =
-  (action: IGranulatesSettingsType): AppThunk =>
+  (action: IPigmentsSettingsType): AppThunk =>
   (dispatch, getState) => {
-    dispatch(granulatesSlice.actions.setNewSettings(action));
-    granulatesStorageApi.setSettings(getState().granulates.granulatesSettings);
+    dispatch(pigmentsSlice.actions.setNewSettings(action));
+    pigmentsStorageApi.setSettings(getState().pigments.pigmentsSettings);
   };
 
 export const logAction =
   (action: ILogActionType): AppThunk =>
   (dispatch, getState) => {
-    dispatch(granulatesSlice.actions.log(action));
-    granulatesStorageApi.setItems(getState().granulates.items);
+    dispatch(pigmentsSlice.actions.log(action));
+    pigmentsStorageApi.setItems(getState().pigments.items);
   };
 
-export default granulatesSlice.reducer;
+export default pigmentsSlice.reducer;

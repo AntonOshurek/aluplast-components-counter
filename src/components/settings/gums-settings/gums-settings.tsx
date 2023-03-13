@@ -20,15 +20,15 @@ const GumsSettings = ({inputsHandler, value}: IGumsSettingsPropsType): JSX.Eleme
   };
 
   return (
-    <section className='granulates-settings'>
-      <h3 className='granulates-settings__title'>{ComponentsTexts.SETTING_GUMS_TITLE}</h3>
+    <section className='pigments-settings'>
+      <h3 className='pigments-settings__title'>{ComponentsTexts.SETTING_GUMS_TITLE}</h3>
 
-      <form className='granulates-settings__form'>
+      <form className='pigments-settings__form'>
 
-        <label className='granulates-settings__label'>
+        <label className='pigments-settings__label'>
           {ComponentsTexts.SETTING_GUMS_CARDBOARD_INPUT}
 
-          <input className='granulates-settings__input' type="number"
+          <input className='pigments-settings__input' type="number"
             value={value.basicCardboardWeight || ''}
             data-input-name={GumsSettingsNames.CARDBOARD_WEIGHT}
             onChange={inputsHandler}
