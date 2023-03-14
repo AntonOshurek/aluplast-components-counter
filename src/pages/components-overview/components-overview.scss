@@ -1,0 +1,54 @@
+@import '../../variables/variables.scss';
+
+.components-overview {
+  width: 100%;
+  min-height: var(--vh);
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr;
+}
+
+.components-overview__main {
+  width: 100%;
+  height: 100%;
+  padding: $standart-section-top-padding $standart-section-side-padding;
+}
+
+.components-overview__titles {
+  width: 100%;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.components-overview__titel {
+  font-family: $basic-font;
+  font-size: $main-title-text-size;
+  font-weight: $main-title-font-weight;
+  color: $standart-text-color;
+}
+
+.components-overview__subtitle {
+  font-family: $basic-font;
+  font-size: $standart-title-text-size;
+  font-weight: $standart-title-font-weight;
+  color: $standart-text-color;
+}
+
+.components-overview__component {
+  width: 100%;
+  height: min-content;
+}
+
+.components-overview__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.components-overview__list-item {
+  list-style: none;
+}

@@ -6,6 +6,7 @@ import InfoPage from "./info-page/info-page";
 import BasicCounterPage from "./basic-counter-page/basic-counter-page";
 import ItemsCounterPage from "./items-counter-page/items-counter-page";
 import WithdrawalCounterPage from "./withdrawal-counter-page/withdrawal-counter-page";
+import ComponentsOverview from "./components-overview/components-overview";
 
 export {
   CounterPage,
@@ -16,4 +17,5 @@ export {
   BasicCounterPage,
   ItemsCounterPage,
   WithdrawalCounterPage,
+  ComponentsOverview,
 };

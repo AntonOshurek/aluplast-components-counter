@@ -71,7 +71,7 @@ const ItemsCounterPage = ({counterName, getItemWeight, incrementAction, decremen
   useEffect(() => {
     return () => {
       if(ref.current !== 0) {
-        dispatch(logAction({UNID: currentItemUNID, logName: logName, logValue: `+${ref.current} komponent`}));
+        dispatch(logAction({UNID: currentItemUNID, logName: logName, logValue: `+${ref.current} `}));
       }
     }
   }, []);

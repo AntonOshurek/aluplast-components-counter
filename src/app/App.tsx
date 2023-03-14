@@ -23,6 +23,7 @@ function App() {
         <Route path={AppRoute.ROOT} element={<Pages.RootPage/>}/>
         <Route path={AppRoute.SETTINGS} element={<Pages.SettingsPage/>}/>
         <Route path={AppRoute.INFORMATION} element={<Pages.InfoPage/>} />
+        <Route path={AppRoute.COMPONENTS_OVERVIEW} element={<Pages.ComponentsOverview/>} />
 
         {/* pegmenty */}
         <Route path={AppRoute.PIGMENTS_PAGE} element={<Pages.OverviewPage getStateSelector={selectors.SelectorGetPigmentsState}/>}/>
