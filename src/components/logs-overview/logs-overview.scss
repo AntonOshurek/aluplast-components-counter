@@ -1,0 +1,10 @@
+.logs-overview {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.logs-overview__title {
+  grid-column: 1 / -1;
+}

@@ -13,6 +13,7 @@
   width: 100%;
   height: 100%;
   padding: $standart-section-top-padding $standart-section-side-padding;
+  padding-bottom: calc($standart-section-top-padding * 3)+ $navigation-link-size;
 }
 
 .components-overview__titles {
@@ -41,14 +42,16 @@
 .components-overview__component {
   width: 100%;
   height: min-content;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 20px;
+
+  padding: 40px 0;
 }
 
 .components-overview__list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
-}
-
-.components-overview__list-item {
-  list-style: none;
+  gap: 10px;
 }

@@ -11,6 +11,10 @@ export interface IGumsSettingsType {
 
 export type SettingsType = IPigmentsSettingsType | IGumsSettingsType;
 
+export interface ILogsDataType {
+  [key: string]: string[],
+};
+
 export interface IItemDataType {
   UNID: number,
   amount: number,
@@ -20,9 +24,7 @@ export interface IItemDataType {
   description: string,
   image: string,
   color: string,
-  logs: {
-    [key: string]: string[],
-  },
+  logs: ILogsDataType,
 };
 
 export type IDataType = IItemDataType[];
