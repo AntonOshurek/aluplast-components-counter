@@ -10,7 +10,7 @@ import { clearStoreAction } from '../../../store/slices/pigments-slice';
 //types
 import type { IPigmentsSettingsType } from '../../../types/data-types';
 //styles
-import './pigments-settings.scss';
+import '../components-settings.scss';
 
 interface IPigmentsSettingsPropsType {
   inputsHandler: (evt: ChangeEvent<HTMLInputElement>) => void,
@@ -25,24 +25,24 @@ const PigmentsSettings = ({inputsHandler, value}: IPigmentsSettingsPropsType): J
   };
 
   return (
-    <section className='pigments-settings'>
-      <h3 className='pigments-settings__title'>{ComponentsTexts.SETTING_PIGMENTS_TITLE}</h3>
+    <section className='components-settings'>
+      <h3 className='components-settings__title'>{ComponentsTexts.SETTING_PIGMENTS_TITLE}</h3>
 
-      <form className='pigments-settings__form'>
+      <form className='components-settings__form'>
 
-        <label className='pigments-settings__label'>
+        <label className='components-settings__label'>
           {ComponentsTexts.SETTING_PIGMENTS_VOREK_INPUT}
 
-          <input className='pigments-settings__input' type="number"
+          <input className='components-settings__input' type="number"
             value={value.basicVorekWeight || ''}
             data-input-name={PigmentsSettingsNames.VOREK_WEIGHT}
             onChange={inputsHandler}
           />
         </label>
-        <label className='pigments-settings__label'>
+        <label className='components-settings__label'>
           {ComponentsTexts.SETTING_PIGMENTS_CONTAINER_INPUT}
 
-          <input className='pigments-settings__input' type="number"
+          <input className='components-settings__input' type="number"
             value={value.basicContainerWeight || ''}
             data-input-name={PigmentsSettingsNames.CONTAINER_WEIGHT}
             onChange={inputsHandler}

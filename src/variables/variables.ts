@@ -5,6 +5,7 @@ export const enum AppRoute {
   ROOT = '/',
   SETTINGS = '/settings',
   INFORMATION = '/information',
+  COMPONENTS_OVERVIEW = '/components-overview',
 
   //pigments/pegmenty paths
   PIGMENTS_PAGE = '/pigments',

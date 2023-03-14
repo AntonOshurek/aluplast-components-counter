@@ -1,12 +1,17 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+//API
 import { CounterApi } from "../../api";
-import WithdrwalCounter from "../../components/counters/withdrawal-counter/withdrawal-counter";
+//components
+import { WithdrwalCounter } from "../../components/counters";
+//store
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-import { IncrementActionType, LogActionType } from "../../types/action-types";
 import { SetMessageStateType, SetStatusStateType } from "../../types/set-state-actions";
+//types
+import type { IncrementActionType, LogActionType } from "../../types/action-types";
+import type { GetSettingsWithdrawalCountType } from "../../types/selectors-types";
+//variables and constants
 import { InputStatuses, logNamesType } from "../../variables/variables";
-import { GetSettingsWithdrawalCountType } from "../../types/selectors-types";
 
 interface IWithdrawalCounterPagePropsType {
   counterName: string,

@@ -75,7 +75,7 @@ const SettingsPage = (): JSX.Element => {
         />
       </main>
     </div>
-  )
-}
+  );
+};
 
 export default SettingsPage;

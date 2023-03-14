@@ -2,16 +2,16 @@
 import { ButtonRemove } from '../controls';
 //store
 import { useAppDispatch } from '../../hooks/hooks';
-import { AppThunk } from '../../types/store-types';
 //types
 import type { IItemDataType } from '../../types/data-types';
+import { ClearItemActionType } from '../../types/action-types';
 //styles
 import './log-info.scss';
 
 interface ILogInfoPropsType {
   closeModal: (evt: any) => void,
   currentItem: IItemDataType,
-  clearItemAction: (action: {id: number}) => AppThunk,
+  clearItemAction: ClearItemActionType,
 };
 
 const LogInfo = ({currentItem, closeModal, clearItemAction}: ILogInfoPropsType): JSX.Element => {

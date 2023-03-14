@@ -1,0 +1,29 @@
+@import '../../../variables/variables.scss';
+
+.log-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 5px;
+
+  padding: 10px;
+  border-radius: 15px;
+
+  box-shadow: $standart-box-shadow--medium;
+  background-color: $standart-white;
+}
+
+.log-item__name {
+  font-family: $basic-font;
+  color: $standart-subtext-color;
+  font-size: $standart-subtext-size;
+  font-weight: $main-title-font-weight;
+}
+
+.log-item__value {
+  font-family: $basic-font;
+  color: $standart-text-color;
+  font-size: $standart-title-text-size;
+  font-weight: $standart-title-font-weight;
+}

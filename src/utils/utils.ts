@@ -38,4 +38,4 @@ export const getFullDate = (): string => {
   const fullDate: string = `${day}-${month}-${year}`;
 
   return fullDate;
-}
+};
