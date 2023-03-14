@@ -1,11 +1,15 @@
-//styles
 import { ChangeEvent } from 'react';
-import { useAppDispatch } from '../../../hooks/hooks';
-import { clearStoreAction } from '../../../store/slices/gums-slice';
-import { IGumsSettingsType } from '../../../types/data-types';
-import { ComponentsTexts, GumsSettingsNames } from '../../../variables/variables';
+//components
 import { ButtonRemove } from '../../controls';
-import './gums-settings.scss';
+//store
+import { clearStoreAction } from '../../../store/slices/gums-slice';
+import { useAppDispatch } from '../../../hooks/hooks';
+//types
+import type  { IGumsSettingsType } from '../../../types/data-types';
+//variables and constants
+import { ComponentsTexts, GumsSettingsNames } from '../../../variables/variables';
+//style
+import '../components-settings.scss';
 
 interface IGumsSettingsPropsType {
   inputsHandler: (evt: ChangeEvent<HTMLInputElement>) => void,
@@ -20,15 +24,15 @@ const GumsSettings = ({inputsHandler, value}: IGumsSettingsPropsType): JSX.Eleme
   };
 
   return (
-    <section className='pigments-settings'>
-      <h3 className='pigments-settings__title'>{ComponentsTexts.SETTING_GUMS_TITLE}</h3>
+    <section className='components-settings'>
+      <h3 className='components-settings__title'>{ComponentsTexts.SETTING_GUMS_TITLE}</h3>
 
-      <form className='pigments-settings__form'>
+      <form className='components-settings__form'>
 
-        <label className='pigments-settings__label'>
+        <label className='components-settings__label'>
           {ComponentsTexts.SETTING_GUMS_CARDBOARD_INPUT}
 
-          <input className='pigments-settings__input' type="number"
+          <input className='components-settings__input' type="number"
             value={value.basicCardboardWeight || ''}
             data-input-name={GumsSettingsNames.CARDBOARD_WEIGHT}
             onChange={inputsHandler}
