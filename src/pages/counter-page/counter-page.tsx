@@ -9,18 +9,19 @@ import { useAppSelector } from '../../hooks/hooks';
 //variables and constants
 import { ComponentsTexts } from '../../variables/variables';
 //types
-import type { GetItemSelector, ClearItemSelector } from '../../types/selectors-types';
+import type { GetItemSelectorAction } from '../../types/selectors-types';
+import type { ClearItemActionType } from '../../types/action-types';
 import type { IItemDataType } from '../../types/data-types';
 //styles
 import './counter-page.scss';
 
 interface ICounterPagePropsType {
-  getItemSelector: GetItemSelector,
-  clearItemSelector: ClearItemSelector,
+  getItemSelector: GetItemSelectorAction,
+  clearItemAction: ClearItemActionType,
   counterHeader: React.ReactNode;
 };
 
-const CounterPage = ({getItemSelector, clearItemSelector, counterHeader}: ICounterPagePropsType): JSX.Element => {
+const CounterPage = ({getItemSelector, clearItemAction, counterHeader}: ICounterPagePropsType): JSX.Element => {
   const {UNID = 100} = useParams();
 
   const currentItem: IItemDataType = useAppSelector(getItemSelector(+UNID));
@@ -56,7 +57,7 @@ const CounterPage = ({getItemSelector, clearItemSelector, counterHeader}: ICount
     </main>
 
     {
-      showThingLogsModal ? <LogInfo clearItemAction={clearItemSelector} currentItem={currentItem} closeModal={closeItemLogs}/> : null
+      showThingLogsModal ? <LogInfo clearItemAction={clearItemAction} currentItem={currentItem} closeModal={closeItemLogs}/> : null
     }
 
   </div>
