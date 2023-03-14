@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 10px;
+  gap: 5px;
 
   padding: 10px;
   border-radius: 15px;
@@ -17,7 +17,7 @@
 .log-item__name {
   font-family: $basic-font;
   color: $standart-subtext-color;
-  font-size: $standart-title-text-size;
+  font-size: $standart-subtext-size;
   font-weight: $main-title-font-weight;
 }
 

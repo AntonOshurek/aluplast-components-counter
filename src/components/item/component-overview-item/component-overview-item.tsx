@@ -34,7 +34,7 @@ const ComponentOverviewItem = ({item}: IComponentOverviewItemPropsType): JSX.Ele
       </span>
 
       <button className='components-overview-item__show-logs' type='button' onClick={showLogsButtonHandler}>
-        otwór logi
+        {logsStatus ? 'zamknij logi' : 'otwórz logi'}
       </button>
 
       {
