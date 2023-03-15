@@ -3,20 +3,12 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 import App from './app/App';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 import './index.scss';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
-
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("/aluplast-components-counter/sw.js")
-      .then((reg) => console.log("Service Worker registered.", reg))
-      .catch((err) => console.log("Service Worker registration failed.", err));
-  });
-};
 
 root.render(
   <React.StrictMode>
@@ -25,3 +17,8 @@ root.render(
     </Provider>
   </React.StrictMode>
 );
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://cra.link/PWA
+serviceWorkerRegistration.register();
