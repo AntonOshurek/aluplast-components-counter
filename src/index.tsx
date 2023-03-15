@@ -9,6 +9,15 @@ import './index.scss';
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/aluplast-components-counter/sw.js")
+      .then((reg) => console.log("Service Worker registered.", reg))
+      .catch((err) => console.log("Service Worker registration failed.", err));
+  });
+};
+
 root.render(
   <React.StrictMode>
     <Provider store={store}>
