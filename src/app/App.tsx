@@ -79,6 +79,8 @@ function App() {
             logName={GumsLogsNames.CARDBOARD}
           />}/>
         </Route>
+
+        <Route path={AppRoute.CHEMISTRY_PAGE} element={<Pages.OverviewPage getStateSelector={selectors.SelectorGetChemistryState}/>}/>
       </Routes>
     </BrowserRouter>
   );

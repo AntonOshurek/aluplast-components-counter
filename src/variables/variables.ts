@@ -48,6 +48,8 @@ export enum ComponentsTexts {
   GUMS_COUNTER_CARDBOARD_NAME = 'Kartony',
   GUMS_COUNTER_PAGE_TITLE = 'Licznik uszczelki',
 
+  CHEMISTRY_COUNTER_NAME = 'chemia',
+
   SETTING_PIGMENTS_TITLE = 'Ustawienia pegmenty',
   SETTING_PIGMENTS_VOREK_INPUT = 'Waga jednego worka / KG',
   SETTING_PIGMENTS_CONTAINER_INPUT = 'Waga jednego kontenera / KG',

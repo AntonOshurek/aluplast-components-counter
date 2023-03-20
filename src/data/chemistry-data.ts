@@ -17,7 +17,7 @@ export const basicChemistryData: IDataType = [
     name: 'Solvent',
     itemNumber: '77001-003',
     description: 'Drukarki Leibinger Jet2neo/jet2neos',
-    image: '/aluplast-components-counter/images/gums/uszczelka czarna.jpg',
+    image: '/aluplast-components-counter/images/chemistry/Solvent-770001-00030.jpg',
     color: '',
     logs: {
       [ChemistryLogsNames.COUNTER]: [],
@@ -30,7 +30,7 @@ export const basicChemistryData: IDataType = [
     name: 'Atrament',
     itemNumber: '770000-00030',
     description: 'Drukarki Leibinger Jet2neo/jet2neos',
-    image: '/aluplast-components-counter/images/gums/uszczelka czarna.jpg',
+    image: '/aluplast-components-counter/images/chemistry/Atrament-70000-00030.jpg',
     color: '',
     logs: {
       [ChemistryLogsNames.COUNTER]: [],
@@ -43,7 +43,7 @@ export const basicChemistryData: IDataType = [
     name: 'Solvent',
     itemNumber: 'SJN1700',
     description: 'Drukarki Leibinger Jet2neo/jet2neos',
-    image: '/aluplast-components-counter/images/gums/uszczelka czarna.jpg',
+    image: '/aluplast-components-counter/images/chemistry/Solvent-SJN 1700.jpg',
     color: '',
     logs: {
       [ChemistryLogsNames.COUNTER]: [],
@@ -57,7 +57,7 @@ export const basicChemistryData: IDataType = [
     name: 'Make-up',
     itemNumber: 'VJ706-D',
     description: 'Dotyczy drukarek 1220',
-    image: '/aluplast-components-counter/images/gums/uszczelka czarna.jpg',
+    image: '/aluplast-components-counter/images/chemistry/Make-up-VJ706-D.jpg',
     color: '',
     logs: {
       [ChemistryLogsNames.COUNTER]: [],
@@ -70,7 +70,7 @@ export const basicChemistryData: IDataType = [
     name: 'Atrament',
     itemNumber: 'VJ411-D',
     description: 'Dotyczy drukarek 1220',
-    image: '/aluplast-components-counter/images/gums/uszczelka czarna.jpg',
+    image: '/aluplast-components-counter/images/chemistry/Atrament-VJ411-D.jpg',
     color: '',
     logs: {
       [ChemistryLogsNames.COUNTER]: [],
@@ -84,7 +84,7 @@ export const basicChemistryData: IDataType = [
     name: 'Make-up',
     itemNumber: 'VJ7222-D',
     description: 'Dotyczy drukarek 1580',
-    image: '/aluplast-components-counter/images/gums/uszczelka czarna.jpg',
+    image: '/aluplast-components-counter/images/chemistry/Make-up-VJ7222-D.jpg',
     color: '',
     logs: {
       [ChemistryLogsNames.COUNTER]: [],
@@ -97,7 +97,7 @@ export const basicChemistryData: IDataType = [
     name: 'Atrament',
     itemNumber: 'VJ4262-D',
     description: 'Dotyczy drukarek 1580',
-    image: '/aluplast-components-counter/images/gums/uszczelka czarna.jpg',
+    image: '/aluplast-components-counter/images/chemistry/Atrament-VJ411-D.jpg',
     color: '',
     logs: {
       [ChemistryLogsNames.COUNTER]: [],

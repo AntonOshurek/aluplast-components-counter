@@ -7,6 +7,7 @@ import { AppRoute } from '../../variables/variables';
 //images
 import pigmentsBaner from './all-pigments.jpg';
 import gumBanner from './all-gum.jpg';
+import chemistryBanner from './all-chemia.jpg';
 //styles
 import './root-page.scss';
 
@@ -33,6 +34,12 @@ const RootPage = (): JSX.Element => {
               <Link className='root-page__link' to={AppRoute.GUM_PAGE}>
                 <h3 className='root-page__link-title'>{ComponentsTexts.GUM_COUNTER_NAME}</h3>
                 <img className='root-page__link-image' src={gumBanner} width='150' height='150' alt="czarna uszczelka" />
+              </Link>
+            </li>
+            <li className='root-page__item'>
+              <Link className='root-page__link' to={AppRoute.CHEMISTRY_PAGE}>
+                <h3 className='root-page__link-title'>{ComponentsTexts.CHEMISTRY_COUNTER_NAME}</h3>
+                <img className='root-page__link-image' src={chemistryBanner} width='150' height='150' alt="chemia" />
               </Link>
             </li>
           </ul>
