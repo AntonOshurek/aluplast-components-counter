@@ -6,7 +6,7 @@ import { CounterApi } from '../../api';
 import { useAppDispatch } from '../../hooks/hooks';
 //types
 import type { SetMessageStateType, SetStatusStateType } from '../../types/set-state-actions';
-import type { logNamesType } from '../../variables/variables';
+import type { logNamesType } from '../../types/variables-types';
 import type { IncrementActionType, DecrementActionType, LogActionType } from '../../types/action-types';
 //variables and constans
 import { InputStatuses } from '../../variables/variables';

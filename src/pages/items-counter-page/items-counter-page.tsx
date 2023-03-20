@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 //types
 import type { GetItemVeightSelectorsType } from "../../types/selectors-types";
 import type { IncrementActionType, DecrementActionType, LogActionType } from "../../types/action-types";
-import { logNamesType } from "../../variables/variables";
+import type { logNamesType } from "../../types/variables-types";
 
 interface IItemsCounterPagePropsType {
   counterName: string,

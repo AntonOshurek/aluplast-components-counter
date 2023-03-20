@@ -17,6 +17,8 @@ export const enum AppRoute {
   GUM_PAGE = '/gums',
   GUM_COUNTER = '/gums/:UNID',
   GUM_COUNTER_CARDBOARD = 'cardboard',
+
+  CHEMISTRY_PAGE = '/chemistry',
 };
 
 export enum InputStatuses {
@@ -94,4 +96,6 @@ export enum GumsLogsNames {
   COUNTER = 'licznik',
   CARDBOARD = 'kartony',
 };
-export type logNamesType = PigmentsLogsNames | GumsLogsNames;
+export enum ChemistryLogsNames {
+  COUNTER = 'licznik-chemii',
+};

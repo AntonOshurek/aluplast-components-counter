@@ -10,8 +10,9 @@ import { SetMessageStateType, SetStatusStateType } from "../../types/set-state-a
 //types
 import type { IncrementActionType, LogActionType } from "../../types/action-types";
 import type { GetSettingsWithdrawalCountType } from "../../types/selectors-types";
+import type { logNamesType } from "../../types/variables-types";
 //variables and constants
-import { InputStatuses, logNamesType } from "../../variables/variables";
+import { InputStatuses } from "../../variables/variables";
 
 interface IWithdrawalCounterPagePropsType {
   counterName: string,
