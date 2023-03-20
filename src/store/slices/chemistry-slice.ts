@@ -8,7 +8,7 @@ import type { IItemDataType } from '../../types/data-types';
 //API
 import { chemistryDataApi, chemistryStorageApi} from '../../api';
 
-export const gumsSlice = createSlice({
+export const chemistrySlice = createSlice({
   name: 'chemistry',
   initialState: chemistryState,
 
@@ -35,26 +35,26 @@ export const gumsSlice = createSlice({
   },
 });
 
-export const { clear, log, clearItem } = gumsSlice.actions;
+export const { clear, log, clearItem } = chemistrySlice.actions;
 
 export const incrementAction =
   (action: IIncDecActionParametrsType): AppThunk =>
   (dispatch, getState) => {
-    dispatch(gumsSlice.actions.increment(action));
-    chemistryStorageApi.setItems(getState().gums.items);
+    dispatch(chemistrySlice.actions.increment(action));
+    chemistryStorageApi.setItems(getState().chemistry.items);
   };
 
 export const decrementAction =
   (action: IIncDecActionParametrsType): AppThunk =>
   (dispatch, getState) => {
-    dispatch(gumsSlice.actions.decrement(action));
-    chemistryStorageApi.setItems(getState().gums.items);
+    dispatch(chemistrySlice.actions.decrement(action));
+    chemistryStorageApi.setItems(getState().chemistry.items);
   };
 
 export const clearStoreAction =
   (): AppThunk =>
   (dispatch) => {
-    dispatch(gumsSlice.actions.clear());
+    dispatch(chemistrySlice.actions.clear());
     chemistryStorageApi.setItems(chemistryDataApi.getAdaptedData());
   };
 
@@ -62,16 +62,16 @@ export const clearItemAction =
   (action: {id: number}): AppThunk =>
   (dispatch, getState) => {
     const newDefaultItem = chemistryDataApi.getDataItem(action.id)
-    dispatch(gumsSlice.actions.clearItem(newDefaultItem));
-    chemistryStorageApi.setItems(getState().gums.items);
+    dispatch(chemistrySlice.actions.clearItem(newDefaultItem));
+    chemistryStorageApi.setItems(getState().chemistry.items);
   };
 
 export const logAction =
   (action: ILogActionType): AppThunk =>
   (dispatch, getState) => {
-    dispatch(gumsSlice.actions.log(action));
-    chemistryStorageApi.setItems(getState().gums.items);
+    dispatch(chemistrySlice.actions.log(action));
+    chemistryStorageApi.setItems(getState().chemistry.items);
   };
 
 
-export default gumsSlice.reducer;
+export default chemistrySlice.reducer;
