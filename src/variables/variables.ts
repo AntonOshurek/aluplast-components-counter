@@ -57,6 +57,7 @@ export enum ComponentsTexts {
   SETTING_PIGMENTS_CONTAINER_INPUT = 'Waga jednego kontenera / KG',
   SETTING_GUMS_TITLE = 'Ustawienia uszczelka',
   SETTING_GUMS_CARDBOARD_INPUT = 'Waga jednego kartonu / KG',
+  SETTING_CHEMISTRY_TITLE = 'Ustawienia chemia',
   SETTING_SAVE = 'Zapisz ustawienia',
   SETTING_RESET_COUNTER_DATA = 'Usunąć dane licznika',
 
@@ -97,12 +98,12 @@ export enum ApplicationStorageApiNames {
 //if you added new LOGS variables, you need added this to variables-types.ts!
 //LOGS
 export enum PigmentsLogsNames {
-  CONTAINER = 'container',
+  CONTAINER = 'kontaner',
   VOREK = 'vorek',
-  COUNTER = 'counter',
+  COUNTER = 'licznik-pegmentów',
 };
 export enum GumsLogsNames {
-  COUNTER = 'licznik',
+  COUNTER = 'licznik-gumy',
   CARDBOARD = 'kartony',
 };
 export enum ChemistryLogsNames {

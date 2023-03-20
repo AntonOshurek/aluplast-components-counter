@@ -24,7 +24,16 @@ interface ICounterPagePropsType {
 const CounterPage = ({getItemSelector, clearItemAction, counterHeader}: ICounterPagePropsType): JSX.Element => {
   const {UNID = 100} = useParams();
 
+  let itemAmountName: string;
+
+  if(UNID >= 300 && UNID <= 399) {
+    itemAmountName = 'ilość';
+  } else {
+    itemAmountName = 'kg';
+  };
+
   const currentItem: IItemDataType = useAppSelector(getItemSelector(+UNID));
+  console.log(currentItem)
 
   const [showThingLogsModal, setShowThingLogsModal] = useState<boolean>(false);
 
@@ -48,7 +57,7 @@ const CounterPage = ({getItemSelector, clearItemAction, counterHeader}: ICounter
         <section className='counter-page__counter-info'>
           <h2 className='counter-page__title'>{ComponentsTexts.COUNTER_PAGE_TITLE}</h2>
           <div className='counter-page__item-wrap' onClick={showItemLogs}>
-            <ThingItem item={currentItem} itemAmountName={'kg'}/>
+            <ThingItem item={currentItem} itemAmountName={itemAmountName}/>
           </div>
         </section>
 

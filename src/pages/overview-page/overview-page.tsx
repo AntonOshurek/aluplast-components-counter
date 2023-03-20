@@ -15,9 +15,6 @@ interface IOverviewPagePropsType {
 
 const OverviewPage = ({getStateSelector}: IOverviewPagePropsType): JSX.Element => {
   const data: IAdaptedDataType = useAppSelector(getStateSelector);
-  console.log(getStateSelector)
-
-  console.log(data)
 
   return (
     <div className='overview-page'>
