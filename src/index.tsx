@@ -1,10 +1,13 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
+//store
 import { store } from './store/store';
+//components
 import App from './app/App';
+//service workers
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-
+//styles
 import './index.scss';
 
 const container = document.getElementById('root')!;
