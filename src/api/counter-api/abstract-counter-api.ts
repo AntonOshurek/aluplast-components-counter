@@ -1,6 +1,6 @@
 //variables and consts
 import { InputStatuses } from "../../variables/variables";
-import { logNamesType } from '../../variables/variables';
+import { logNamesType } from "../../types/variables-types";
 //types
 import type { AppDispatchType } from "../../types/store-types";
 import type { IncrementActionType, DecrementActionType, LogActionType } from '../../types/action-types';

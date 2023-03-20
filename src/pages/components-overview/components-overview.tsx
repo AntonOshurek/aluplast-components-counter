@@ -2,7 +2,7 @@
 import Header from '../../components/header/header';
 import ComponentOverviewItem from '../../components/item/component-overview-item/component-overview-item';
 //store
-import { SelectorGetPigmentsState, SelectorGetGumsState } from '../../store/selectors/selectors';
+import { SelectorGetPigmentsState, SelectorGetGumsState, SelectorGetChemistryState } from '../../store/selectors/selectors';
 import { useAppSelector } from '../../hooks/hooks';
 //types
 import type { IAdaptedDataType, IDataType, IItemDataType } from '../../types/data-types';
@@ -12,6 +12,7 @@ import './components-overview.scss';
 const ComponentsOverview = (): JSX.Element => {
   const pigments = useAppSelector(SelectorGetPigmentsState);
   const gums = useAppSelector(SelectorGetGumsState);
+  const chemistry = useAppSelector(SelectorGetChemistryState);
 
   const storeDataToClient = (data: IAdaptedDataType): IDataType => {
     let itemsArray: IDataType = [];
@@ -25,6 +26,7 @@ const ComponentsOverview = (): JSX.Element => {
 
   const pigmentsClientData = storeDataToClient(pigments);
   const gumsClientData = storeDataToClient(gums);
+  const chemistryClientData = storeDataToClient(chemistry);
 
   return (
     <div className='components-overview'>
@@ -54,6 +56,18 @@ const ComponentsOverview = (): JSX.Element => {
           <ul className='components-overview__list'>
             {
               pigmentsClientData.map((item: IItemDataType) => {
+                return <ComponentOverviewItem item={item} key={item.UNID}/>
+              })
+            }
+          </ul>
+        </section>
+
+        <section className='components-overview__component container'>
+          <h3>Chemia</h3>
+
+          <ul className='components-overview__list'>
+            {
+              chemistryClientData.map((item: IItemDataType) => {
                 return <ComponentOverviewItem item={item} key={item.UNID}/>
               })
             }

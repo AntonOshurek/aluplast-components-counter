@@ -1,0 +1,53 @@
+@import '../../../variables/variables.scss';
+
+.chemistry-counter-nav {
+  width: 100%;
+
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+.chemistry-counter-nav__list {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+
+  list-style: none;
+}
+
+.chemistry-counter-nav__item {
+  width: min-content;
+  height: min-content;
+}
+
+.chemistry-counter-nav__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  cursor: pointer;
+
+  background-color: $standart-white;
+  color: $standart-text-color;
+  border-radius: 40px;
+
+  box-shadow: $standart-box-shadow--medium;
+  transition: all .1s ease-in;
+  text-decoration: none;
+
+  &:hover {
+    box-shadow: $standart-hover-box-shadow--medium;
+  }
+
+  &:active {
+    box-shadow: $standart-hover-box-shadow--medium;
+    opacity: 0.8;
+  }
+
+  &--active {
+    box-shadow: $standart-hover-box-shadow--medium;
+    background-color: $main-color;
+    color: $standart-white;
+  }
+}

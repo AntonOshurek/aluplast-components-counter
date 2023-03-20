@@ -12,7 +12,7 @@ class PigmentsDataApi extends AbstractDataApi {
   #basicSettings: IPigmentsSettingsType;
 
   constructor(data: IDataType, settings: IPigmentsSettingsType, storageApi: AbstractStorage) {
-    super(data, storageApi, settings);
+    super(data, storageApi);
     this.#basicSettings = settings;
   };
 

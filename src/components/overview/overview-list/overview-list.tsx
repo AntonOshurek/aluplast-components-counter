@@ -14,15 +14,22 @@ interface OverviewListPropsType {
 
 const OverviewList = ({data}: OverviewListPropsType): JSX.Element => {
   let location: AppRoute;
+  let itemAmountName: string;
 
   //here checked opened page (pigments or guma) and send route for overviewItem component
   //inside overviewComponent generate link for pigmentsCounter or gumaCounter
   switch(useLocation().pathname) {
     case AppRoute.PIGMENTS_PAGE:
       location = AppRoute.PIGMENTS_COUNTER;
+      itemAmountName = 'kg';
       break;
     case AppRoute.GUM_PAGE:
       location = AppRoute.GUM_COUNTER;
+      itemAmountName = 'kg';
+      break;
+    case AppRoute.CHEMISTRY_PAGE:
+      location = AppRoute.CHEMISTRY_COUNTER;
+      itemAmountName = 'ilość';
       break;
     default:
       location = AppRoute.PIGMENTS_PAGE;
@@ -31,7 +38,7 @@ const OverviewList = ({data}: OverviewListPropsType): JSX.Element => {
   const generateItems = ():JSX.Element[] => {
     let itemsArray: JSX.Element[] = [];
     for (let item in data) {
-      itemsArray.push(<OverviewItem item={data[item]} key={data[item].UNID} path={location}/>)
+      itemsArray.push(<OverviewItem item={data[item]} key={data[item].UNID} path={location} itemAmountName={itemAmountName}/>)
     };
     return itemsArray;
   };

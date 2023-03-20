@@ -1,4 +1,4 @@
-import type { PigmentsSettingsNames, GumsSettingsNames } from "../variables/variables";
+import type { PigmentsSettingsNames, GumsSettingsNames, ChemistrySettingsNames } from "../variables/variables";
 
 export interface IPigmentsSettingsType {
   [PigmentsSettingsNames.CONTAINER_WEIGHT]: number,
@@ -7,6 +7,10 @@ export interface IPigmentsSettingsType {
 
 export interface IGumsSettingsType {
   [GumsSettingsNames.CARDBOARD_WEIGHT]: number,
+};
+
+export interface IChemistrySettingsType {
+  [ChemistrySettingsNames.BASIC_CHEMISTRY_AMOUNT]: number,
 };
 
 export type SettingsType = IPigmentsSettingsType | IGumsSettingsType;

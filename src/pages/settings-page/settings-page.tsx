@@ -3,6 +3,7 @@ import { useState, ChangeEvent, useEffect } from 'react';
 import Header from '../../components/header/header';
 import PigmentsSettings from '../../components/settings/pigments-settings/pigments-settings';
 import GumsSettings from '../../components/settings/gums-settings/gums-settings';
+import ChemistrySettings from '../../components/settings/chemistry-settings/chemistry-settings';
 import { ButtonAdd } from '../../components/controls';
 //consts and variables
 import { ComponentsTexts, PigmentsSettingsNames, GumsSettingsNames } from '../../variables/variables';
@@ -57,6 +58,8 @@ const SettingsPage = (): JSX.Element => {
       <Header/>
 
       <main className='settings-page__main container'>
+
+        <ChemistrySettings/>
 
         <PigmentsSettings
           inputsHandler={onSettingsInputsHandler}

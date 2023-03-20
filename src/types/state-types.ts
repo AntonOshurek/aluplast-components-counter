@@ -1,4 +1,8 @@
-import type { IPigmentsSettingsType, IAdaptedDataType, IGumsSettingsType } from "./data-types";
+import type {
+  IPigmentsSettingsType,
+  IAdaptedDataType,
+  IGumsSettingsType,
+} from "./data-types";
 
 export interface IPigmentsStateType {
   items: IAdaptedDataType,
@@ -8,4 +12,8 @@ export interface IPigmentsStateType {
 export interface IGumsStateType {
   items: IAdaptedDataType,
   gumsSettings: IGumsSettingsType,
+};
+
+export interface IChemistryStateType {
+  items: IAdaptedDataType,
 };

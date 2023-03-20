@@ -5,13 +5,16 @@ import * as Pages from '../pages';
 import { PigmentsCounterHeader } from '../components/pigments-counter';
 //Gums components
 import { GumsCounterHeader } from '../components/gums-counter';
+//chemistry components
+import { ChemistryCounterHeader } from '../components/chemistry-counter';
 //consts and utils functions
-import { AppRoute, PigmentsLogsNames, GumsLogsNames, rootBaseName, ComponentsTexts } from '../variables/variables';
+import { AppRoute, PigmentsLogsNames, GumsLogsNames, rootBaseName, ComponentsTexts, ChemistryLogsNames } from '../variables/variables';
 import { setVhVariable } from '../utils/utils';
 //store
 import * as selectors from '../store/selectors/selectors'
 import { clearItemAction as gumsClearItemAction, decrementAction as gumsDec, incrementAction as gumsInc, logAction as gumsLog } from '../store/slices/gums-slice';
 import { incrementAction as pigmentsInc, decrementAction as pigmentsDec, logAction as pigmentsLog, clearItemAction as pigmentsClearItemAction } from '../store/slices/pigments-slice';
+import { clearItemAction as chemistryClearItemAction, decrementAction as chemistryDec, incrementAction as chemistryInc, logAction as chemistryLog } from '../store/slices/chemistry-slice';
 
 function App() {
   setVhVariable(); //variable VH used in styles for set main height
@@ -78,6 +81,21 @@ function App() {
             logAction={gumsLog}
             logName={GumsLogsNames.CARDBOARD}
           />}/>
+        </Route>
+
+        <Route path={AppRoute.CHEMISTRY_PAGE} element={<Pages.OverviewPage getStateSelector={selectors.SelectorGetChemistryState}/>}/>
+        <Route path={AppRoute.CHEMISTRY_COUNTER} element={<Pages.CounterPage
+          getItemSelector={selectors.SelectorGetCurrentChemistry}
+          clearItemAction={chemistryClearItemAction}
+          counterHeader={<ChemistryCounterHeader/>}/>
+        }>
+          <Route index element={<Pages.BasicCounterPage
+            incrementAction={chemistryInc}
+            decrementAction={chemistryDec}
+            logAction={chemistryLog}
+            logName={ChemistryLogsNames.COUNTER}
+          />} />
+
         </Route>
       </Routes>
     </BrowserRouter>

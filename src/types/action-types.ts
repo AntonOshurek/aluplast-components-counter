@@ -1,4 +1,5 @@
-import { PigmentsLogsNames, GumsLogsNames } from "../variables/variables";
+import type { logNamesType } from "./variables-types";
+
 import { AppThunk } from "./store-types";
 
 import { clearItemAction as pigmentsClearItemAction } from "../store/slices/pigments-slice";
@@ -11,7 +12,7 @@ export interface IIncDecActionParametrsType {
 
 export interface ILogActionType {
   UNID: number,
-  logName: PigmentsLogsNames | GumsLogsNames,
+  logName: logNamesType,
   logValue: string,
 };
 

@@ -11,15 +11,16 @@ import './overview-item.scss';
 interface OverviewItemPropsType {
   item: IItemDataType,
   path: AppRoute,
+  itemAmountName: string,
 };
 
-const OverviewItem = ({item, path}: OverviewItemPropsType): JSX.Element => {
+const OverviewItem = ({item, path, itemAmountName}: OverviewItemPropsType): JSX.Element => {
   const UNID = item.UNID.toString();
 
   return (
       <li className='overview-item'>
         <Link to={generatePath(path, {UNID: UNID})} className='overview-item__link'>
-          <ThingItem item={item}/>
+          <ThingItem item={item} itemAmountName={itemAmountName}/>
         </Link>
       </li>
   );

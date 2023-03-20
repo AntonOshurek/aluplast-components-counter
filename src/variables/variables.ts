@@ -17,6 +17,9 @@ export const enum AppRoute {
   GUM_PAGE = '/gums',
   GUM_COUNTER = '/gums/:UNID',
   GUM_COUNTER_CARDBOARD = 'cardboard',
+
+  CHEMISTRY_PAGE = '/chemistry',
+  CHEMISTRY_COUNTER = '/chemistry/:UNID',
 };
 
 export enum InputStatuses {
@@ -46,11 +49,15 @@ export enum ComponentsTexts {
   GUMS_COUNTER_CARDBOARD_NAME = 'Kartony',
   GUMS_COUNTER_PAGE_TITLE = 'Licznik uszczelki',
 
+  CHEMISTRY_COUNTER_NAME = 'chemia',
+  CHEMISTRY_COUNTER_PAGE_TITLE = 'Licznik chemii',
+
   SETTING_PIGMENTS_TITLE = 'Ustawienia pegmenty',
   SETTING_PIGMENTS_VOREK_INPUT = 'Waga jednego worka / KG',
   SETTING_PIGMENTS_CONTAINER_INPUT = 'Waga jednego kontenera / KG',
   SETTING_GUMS_TITLE = 'Ustawienia uszczelka',
   SETTING_GUMS_CARDBOARD_INPUT = 'Waga jednego kartonu / KG',
+  SETTING_CHEMISTRY_TITLE = 'Ustawienia chemia',
   SETTING_SAVE = 'Zapisz ustawienia',
   SETTING_RESET_COUNTER_DATA = 'Usunąć dane licznika',
 
@@ -68,6 +75,7 @@ export enum ComponentsTexts {
 
 //this vars used inside store and settings inputs values! Dont delet or change!\
 
+//if you added new SETTINGS variables, you need added to variables-types.ts!
 //SETTINGS
 export enum PigmentsSettingsNames {
   VOREK_WEIGHT = 'basicVorekWeight',
@@ -76,22 +84,28 @@ export enum PigmentsSettingsNames {
 export enum GumsSettingsNames {
   CARDBOARD_WEIGHT = 'basicCardboardWeight',
 };
-export type SettingsNamesType = PigmentsSettingsNames | GumsSettingsNames;
+export enum ChemistrySettingsNames {
+  BASIC_CHEMISTRY_AMOUNT = 'basicChemistyAmount',
+};
 
 //STORAGE
 export enum ApplicationStorageApiNames {
   PIGMENTS_STORAGE = 'pigments',
   GUMS_STORAGE = 'gums',
+  CHEMISTRY_STORAGE = 'chemistry',
 };
 
+//if you added new LOGS variables, you need added this to variables-types.ts!
 //LOGS
 export enum PigmentsLogsNames {
-  CONTAINER = 'container',
+  CONTAINER = 'kontaner',
   VOREK = 'vorek',
-  COUNTER = 'counter',
+  COUNTER = 'licznik-pegmentów',
 };
 export enum GumsLogsNames {
-  COUNTER = 'licznik',
+  COUNTER = 'licznik-gumy',
   CARDBOARD = 'kartony',
 };
-export type logNamesType = PigmentsLogsNames | GumsLogsNames;
+export enum ChemistryLogsNames {
+  COUNTER = 'licznik-chemii',
+};
