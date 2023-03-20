@@ -8,9 +8,10 @@ import './component-overview-item.scss';
 
 interface IComponentOverviewItemPropsType {
   item: IItemDataType,
+  itemAmountName: string,
 };
 
-const ComponentOverviewItem = ({item}: IComponentOverviewItemPropsType): JSX.Element => {
+const ComponentOverviewItem = ({item, itemAmountName}: IComponentOverviewItemPropsType): JSX.Element => {
 
   const [logsStatus, setLogsStatus] = useState<Boolean>(false);
 
@@ -30,7 +31,7 @@ const ComponentOverviewItem = ({item}: IComponentOverviewItemPropsType): JSX.Ele
       </div>
 
       <span className='components-overview-item__amount'>
-        {item.amount} kg
+        {item.amount} {itemAmountName}
       </span>
 
       <button className='components-overview-item__show-logs' type='button' onClick={showLogsButtonHandler}>
