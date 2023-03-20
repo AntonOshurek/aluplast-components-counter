@@ -4,10 +4,11 @@ import type { IItemDataType } from '../../../types/data-types';
 import './thing-item.scss';
 
 interface ThingItemPropsType {
-  item: IItemDataType
+  item: IItemDataType,
+  itemAmountName: string,
 };
 
-const ThingItem = ({item}: ThingItemPropsType): JSX.Element => {
+const ThingItem = ({item, itemAmountName}: ThingItemPropsType): JSX.Element => {
 
   const color: string = item.color;
   let bottomBorderStyle = {border: ` 4px solid ${color}`};
@@ -29,7 +30,7 @@ const ThingItem = ({item}: ThingItemPropsType): JSX.Element => {
             item.itemNumber ? <p className='thing-item__description'>{item.itemNumber}</p> : null
           }
         </div>
-        <span className='thing-item__amount'>{item.amount} kg</span>
+        <span className='thing-item__amount'>{item.amount} {itemAmountName}</span>
       </article>
     );
   } else {

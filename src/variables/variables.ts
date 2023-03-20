@@ -19,6 +19,7 @@ export const enum AppRoute {
   GUM_COUNTER_CARDBOARD = 'cardboard',
 
   CHEMISTRY_PAGE = '/chemistry',
+  CHEMISTRY_COUNTER = '/chemistry/:UNID',
 };
 
 export enum InputStatuses {
@@ -49,6 +50,7 @@ export enum ComponentsTexts {
   GUMS_COUNTER_PAGE_TITLE = 'Licznik uszczelki',
 
   CHEMISTRY_COUNTER_NAME = 'chemia',
+  CHEMISTRY_COUNTER_PAGE_TITLE = 'Licznik chemii',
 
   SETTING_PIGMENTS_TITLE = 'Ustawienia pegmenty',
   SETTING_PIGMENTS_VOREK_INPUT = 'Waga jednego worka / KG',

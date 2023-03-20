@@ -48,7 +48,7 @@ const CounterPage = ({getItemSelector, clearItemAction, counterHeader}: ICounter
         <section className='counter-page__counter-info'>
           <h2 className='counter-page__title'>{ComponentsTexts.COUNTER_PAGE_TITLE}</h2>
           <div className='counter-page__item-wrap' onClick={showItemLogs}>
-            <ThingItem item={currentItem}/>
+            <ThingItem item={currentItem} itemAmountName={'kg'}/>
           </div>
         </section>
 

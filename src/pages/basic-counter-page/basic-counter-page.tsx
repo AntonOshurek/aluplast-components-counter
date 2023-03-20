@@ -27,7 +27,7 @@ const BasicCounterPage = ({incrementAction, decrementAction, logAction, logName}
 
   const dispatch = useAppDispatch();
 
-  const defaultCounterValue: number = 100;
+  const defaultCounterValue: number = 0;
   const [value, setValue] = useState<number | null>(defaultCounterValue);
   const [message, setMessage]: [string, SetMessageStateType] = useState('');
   const [status, setStatus]: [InputStatuses, SetStatusStateType] = useState<InputStatuses>(InputStatuses.DEFAULT);
