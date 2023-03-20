@@ -1,9 +1,15 @@
 //types
-import type { IDataType } from "../types/data-types";
+import type { IDataType, IChemistrySettingsType } from "../types/data-types";
 //variables and constants
-import { ChemistryLogsNames } from "../variables/variables";
+import { ChemistryLogsNames, ChemistrySettingsNames } from "../variables/variables";
 
-export const chemistryData: IDataType = [
+
+//settings data now is unused...
+export const basicChemistrySettings: IChemistrySettingsType = {
+  [ChemistrySettingsNames.BASIC_CHEMISTRY_AMOUNT]: 1,
+};
+
+export const basicChemistryData: IDataType = [
   {
     UNID: 300,
     amount: 0,

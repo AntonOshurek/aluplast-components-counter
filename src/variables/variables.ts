@@ -70,6 +70,7 @@ export enum ComponentsTexts {
 
 //this vars used inside store and settings inputs values! Dont delet or change!\
 
+//if you added new SETTINGS variables, you need added to variables-types.ts!
 //SETTINGS
 export enum PigmentsSettingsNames {
   VOREK_WEIGHT = 'basicVorekWeight',
@@ -78,14 +79,18 @@ export enum PigmentsSettingsNames {
 export enum GumsSettingsNames {
   CARDBOARD_WEIGHT = 'basicCardboardWeight',
 };
-export type SettingsNamesType = PigmentsSettingsNames | GumsSettingsNames;
+export enum ChemistrySettingsNames {
+  BASIC_CHEMISTRY_AMOUNT = 'basicChemistyAmount',
+};
 
 //STORAGE
 export enum ApplicationStorageApiNames {
   PIGMENTS_STORAGE = 'pigments',
   GUMS_STORAGE = 'gums',
+  CHEMISTRY_STORAGE = 'chemistry',
 };
 
+//if you added new LOGS variables, you need added this to variables-types.ts!
 //LOGS
 export enum PigmentsLogsNames {
   CONTAINER = 'container',
