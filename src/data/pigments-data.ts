@@ -1,7 +1,7 @@
 //types
 import type { IPigmentsSettingsType, IDataType } from "../types/data-types";
 //variables and consts
-import { PigmentsSettingsNames } from "../variables/variables";
+import { PigmentsLogsNames, PigmentsSettingsNames } from "../variables/variables";
 
 export const basicPigmentsSettings: IPigmentsSettingsType = {
   [PigmentsSettingsNames.VOREK_WEIGHT]: 25,
@@ -20,9 +20,9 @@ export const basicPigmentsData: IDataType = [
     description: '',
     image: '/aluplast-components-counter/images/pigments/pigment-cream.jpg',
     logs: {
-      container: [],
-      vorek: [],
-      counter: [],
+      [PigmentsLogsNames.CONTAINER]: [],
+      [PigmentsLogsNames.VOREK]: [],
+      [PigmentsLogsNames.COUNTER]: [],
     },
   },
   {
@@ -35,9 +35,9 @@ export const basicPigmentsData: IDataType = [
     image: '/aluplast-components-counter/images/pigments/pigment-ochra.jpg',
     description: '',
     logs: {
-      container: [],
-      vorek: [],
-      counter: [],
+      [PigmentsLogsNames.CONTAINER]: [],
+      [PigmentsLogsNames.VOREK]: [],
+      [PigmentsLogsNames.COUNTER]: [],
     },
   },
   {
@@ -50,9 +50,9 @@ export const basicPigmentsData: IDataType = [
     image: '/aluplast-components-counter/images/pigments/pigment-braz.jpg',
     description: '',
     logs: {
-      container: [],
-      vorek: [],
-      counter: [],
+      [PigmentsLogsNames.CONTAINER]: [],
+      [PigmentsLogsNames.VOREK]: [],
+      [PigmentsLogsNames.COUNTER]: [],
     },
   },
   {
@@ -65,9 +65,9 @@ export const basicPigmentsData: IDataType = [
     image: '/aluplast-components-counter/images/pigments/pigment-braz.jpg',
     description: '',
     logs: {
-      container: [],
-      vorek: [],
-      counter: [],
+      [PigmentsLogsNames.CONTAINER]: [],
+      [PigmentsLogsNames.VOREK]: [],
+      [PigmentsLogsNames.COUNTER]: [],
     },
   },
   {
@@ -80,9 +80,9 @@ export const basicPigmentsData: IDataType = [
     image: '/aluplast-components-counter/images/pigments/pigment-bialy.jpg',
     description: '',
     logs: {
-      container: [],
-      vorek: [],
-      counter: [],
+      [PigmentsLogsNames.CONTAINER]: [],
+      [PigmentsLogsNames.VOREK]: [],
+      [PigmentsLogsNames.COUNTER]: [],
     },
   },
   {
@@ -95,9 +95,9 @@ export const basicPigmentsData: IDataType = [
     image: '/aluplast-components-counter/images/pigments/pigment-zolty.jpg',
     description: '',
     logs: {
-      container: [],
-      vorek: [],
-      counter: [],
+      [PigmentsLogsNames.CONTAINER]: [],
+      [PigmentsLogsNames.VOREK]: [],
+      [PigmentsLogsNames.COUNTER]: [],
     },
   },
   {
@@ -110,9 +110,9 @@ export const basicPigmentsData: IDataType = [
     image: '/aluplast-components-counter/images/pigments/pigment-shelblue.jpg',
     description: '',
     logs: {
-      container: [],
-      vorek: [],
-      counter: [],
+      [PigmentsLogsNames.CONTAINER]: [],
+      [PigmentsLogsNames.VOREK]: [],
+      [PigmentsLogsNames.COUNTER]: [],
     },
   },
   {
@@ -125,9 +125,9 @@ export const basicPigmentsData: IDataType = [
     image: '/aluplast-components-counter/images/pigments/pigment-shelblue.jpg',
     description: '',
     logs: {
-      container: [],
-      vorek: [],
-      counter: [],
+      [PigmentsLogsNames.CONTAINER]: [],
+      [PigmentsLogsNames.VOREK]: [],
+      [PigmentsLogsNames.COUNTER]: [],
     },
   },
   {
@@ -140,9 +140,9 @@ export const basicPigmentsData: IDataType = [
     image: '/aluplast-components-counter/images/pigments/pigment-antracyt.jpg',
     description: '',
     logs: {
-      container: [],
-      vorek: [],
-      counter: [],
+      [PigmentsLogsNames.CONTAINER]: [],
+      [PigmentsLogsNames.VOREK]: [],
+      [PigmentsLogsNames.COUNTER]: [],
     },
   },
 ];
