@@ -33,7 +33,6 @@ const CounterPage = ({getItemSelector, clearItemAction, counterHeader}: ICounter
   };
 
   const currentItem: IItemDataType = useAppSelector(getItemSelector(+UNID));
-  console.log(currentItem)
 
   const [showThingLogsModal, setShowThingLogsModal] = useState<boolean>(false);
 
