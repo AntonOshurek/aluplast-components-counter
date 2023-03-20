@@ -44,7 +44,7 @@ const ComponentsOverview = (): JSX.Element => {
           <ul className='components-overview__list'>
             {
               gumsClientData.map((item: IItemDataType) => {
-                return <ComponentOverviewItem item={item} key={item.UNID}/>
+                return <ComponentOverviewItem item={item} key={item.UNID} itemAmountName={'kg'}/>
               })
             }
           </ul>
@@ -56,7 +56,7 @@ const ComponentsOverview = (): JSX.Element => {
           <ul className='components-overview__list'>
             {
               pigmentsClientData.map((item: IItemDataType) => {
-                return <ComponentOverviewItem item={item} key={item.UNID}/>
+                return <ComponentOverviewItem item={item} key={item.UNID} itemAmountName={'kg'}/>
               })
             }
           </ul>
@@ -68,7 +68,7 @@ const ComponentsOverview = (): JSX.Element => {
           <ul className='components-overview__list'>
             {
               chemistryClientData.map((item: IItemDataType) => {
-                return <ComponentOverviewItem item={item} key={item.UNID}/>
+                return <ComponentOverviewItem item={item} key={item.UNID} itemAmountName={'ilość'}/>
               })
             }
           </ul>
