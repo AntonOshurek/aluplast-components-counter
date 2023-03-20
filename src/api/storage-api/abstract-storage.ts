@@ -26,7 +26,6 @@ abstract class AbstractStorage {
   };
 
   setItems(items: IAdaptedDataType) {
-    console.log(items)
     localStorage.setItem(this.name, JSON.stringify(items));
   };
 
