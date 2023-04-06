@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/aluplast-components-counter/static/css/main.478f7e8e.css",
-    "main.js": "/aluplast-components-counter/static/js/main.4c49bd17.js",
+    "main.css": "/aluplast-components-counter/static/css/main.1a057ff1.css",
+    "main.js": "/aluplast-components-counter/static/js/main.46edc46b.js",
     "static/media/all-chemia.jpg": "/aluplast-components-counter/static/media/all-chemia.9968c6a09b0df83d3171.jpg",
     "service-worker.js": "/aluplast-components-counter/service-worker.js",
     "static/media/all-pigments.jpg": "/aluplast-components-counter/static/media/all-pigments.790701d455aff4d3f6fc.jpg",
     "static/media/all-gum.jpg": "/aluplast-components-counter/static/media/all-gum.c9e258369506dc64aa75.jpg",
     "index.html": "/aluplast-components-counter/index.html",
     "static/media/trash-icon.svg": "/aluplast-components-counter/static/media/trash-icon.f6b009cc7521eb1ae1a6.svg",
-    "main.478f7e8e.css.map": "/aluplast-components-counter/static/css/main.478f7e8e.css.map",
-    "main.4c49bd17.js.map": "/aluplast-components-counter/static/js/main.4c49bd17.js.map"
+    "main.1a057ff1.css.map": "/aluplast-components-counter/static/css/main.1a057ff1.css.map",
+    "main.46edc46b.js.map": "/aluplast-components-counter/static/js/main.46edc46b.js.map"
   },
   "entrypoints": [
-    "static/css/main.478f7e8e.css",
-    "static/js/main.4c49bd17.js"
+    "static/css/main.1a057ff1.css",
+    "static/js/main.46edc46b.js"
   ]
 }
