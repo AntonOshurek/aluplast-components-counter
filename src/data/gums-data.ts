@@ -86,7 +86,7 @@ export const basicGumsData: IDataType = [
     itemNumber: '794091',
     description: '(kolor etykiety pomarańczowy)',
     image: '/aluplast-components-counter/images/gums/uszczelka szara.jpg',
-    color: '#F4B084',
+    color: '#d0312d',
     logs: {
       [GumsLogsNames.CARDBOARD]: [],
       [GumsLogsNames.COUNTER]: [],
@@ -100,7 +100,7 @@ export const basicGumsData: IDataType = [
     itemNumber: '794096A',
     description: '(kolor etykiety biały)',
     image: '/aluplast-components-counter/images/gums/uszczelka czarna.jpg',
-    color: '#ffffff',
+    color: '#ffff00',
     logs: {
       [GumsLogsNames.CARDBOARD]: [],
       [GumsLogsNames.COUNTER]: [],
