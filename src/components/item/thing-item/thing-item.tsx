@@ -8,12 +8,12 @@ interface ThingItemPropsType {
   itemAmountName: string,
 };
 
-const ThingItem = ({item, itemAmountName}: ThingItemPropsType): JSX.Element => {
+const ThingItem = ({ item, itemAmountName }: ThingItemPropsType): JSX.Element => {
 
   const color: string = item.color;
-  let bottomBorderStyle = {border: ` 4px solid ${color}`};
+  let bottomBorderStyle = { border: ` 4px solid ${color}` };
 
-  if(item) {
+  if (item) {
     return (
       <article className='thing-item' style={color ? bottomBorderStyle : {}}>
         <div className='thing-item__image-wrap'>
@@ -21,6 +21,10 @@ const ThingItem = ({item, itemAmountName}: ThingItemPropsType): JSX.Element => {
         </div>
         <div className='thing-item__info-block'>
           <h3 className='thing-item__name'>{item.name}</h3>
+
+          {
+            item.firm ? <p className='thing-item__main-description'>{item.firm}</p> : null
+          }
 
           {
             item.description ? <p className='thing-item__description'>{item.description}</p> : null
