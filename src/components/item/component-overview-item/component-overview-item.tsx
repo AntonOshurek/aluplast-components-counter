@@ -11,17 +11,20 @@ interface IComponentOverviewItemPropsType {
   itemAmountName: string,
 };
 
-const ComponentOverviewItem = ({item, itemAmountName}: IComponentOverviewItemPropsType): JSX.Element => {
+const ComponentOverviewItem = ({ item, itemAmountName }: IComponentOverviewItemPropsType): JSX.Element => {
 
   const [logsStatus, setLogsStatus] = useState<Boolean>(false);
+
+  const color: string = item.color;
+  let bottomBorderStyle = { border: ` 4px solid ${color}` };
 
   const showLogsButtonHandler = () => {
     logsStatus ? setLogsStatus(false) : setLogsStatus(true);
   };
 
   return (
-    <li className='components-overview-item' key={item.UNID}>
-      <img className='components-overview-item__image' src={item.image} alt="" width={60} height={60}/>
+    <li className='components-overview-item' key={item.UNID} style={color ? bottomBorderStyle : {}}>
+      <img className='components-overview-item__image' src={item.image} alt="" width={60} height={60} />
 
       <h4 className='components-overview-item__title'>{item.name}</h4>
 
@@ -40,7 +43,7 @@ const ComponentOverviewItem = ({item, itemAmountName}: IComponentOverviewItemPro
 
       {
 
-        logsStatus ? <LogsOverview logs={item.logs}/> : null
+        logsStatus ? <LogsOverview logs={item.logs} /> : null
       }
     </li>
   );
