@@ -7,28 +7,28 @@ import type { SetActiveLinkType } from '../../../types/other-types';
 import './gums-counter-nav.scss';
 
 const GumsCounterNav = (): JSX.Element => {
-  const {UNID} = useParams();
+  const { UNID } = useParams();
 
   const activeLinkClass = 'gums-counter-nav__link--active';
   const basicLinkClass = 'gums-counter-nav__link';
 
-  const setActiveLink = ({isActive}: SetActiveLinkType) => isActive ? `${basicLinkClass}  ${activeLinkClass}` : `${basicLinkClass}`;
+  const setActiveLink = ({ isActive }: SetActiveLinkType) => isActive ? `${basicLinkClass}  ${activeLinkClass}` : `${basicLinkClass}`;
 
   return (
     <nav className='gums-counter-nav'>
       <h2 className='visually-hidden'>Gums counter navigation panel</h2>
       <ul className='gums-counter-nav__list'>
         <li className='gums-counter-nav__item'>
-          <NavLink to={generatePath(AppRoute.GUM_COUNTER, {UNID: (UNID ? UNID : '')})}
-           end
-           className={setActiveLink}>
-            {ComponentsTexts.GUMS_COUNTER_BASIC_NAME}
+          <NavLink to={generatePath(AppRoute.GUM_COUNTER, { UNID: (UNID ? UNID : '') })}
+            end
+            className={setActiveLink}>
+            {ComponentsTexts.GUMS_COUNTER_CARDBOARD_NAME}
           </NavLink>
         </li>
         <li className='gums-counter-nav__item'>
-          <NavLink to={AppRoute.GUM_COUNTER_CARDBOARD}
+          <NavLink to={AppRoute.GUM_BASIC_COUNTER}
             className={setActiveLink}>
-            {ComponentsTexts.GUMS_COUNTER_CARDBOARD_NAME}
+            {ComponentsTexts.GUMS_COUNTER_BASIC_NAME}
           </NavLink>
         </li>
       </ul>

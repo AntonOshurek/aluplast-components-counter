@@ -23,17 +23,17 @@ function App() {
     <BrowserRouter basename={rootBaseName}>
       <Routes>
         {/* basic app pages */}
-        <Route path={AppRoute.ROOT} element={<Pages.RootPage/>}/>
-        <Route path={AppRoute.SETTINGS} element={<Pages.SettingsPage/>}/>
-        <Route path={AppRoute.INFORMATION} element={<Pages.InfoPage/>} />
-        <Route path={AppRoute.COMPONENTS_OVERVIEW} element={<Pages.ComponentsOverview/>} />
+        <Route path={AppRoute.ROOT} element={<Pages.RootPage />} />
+        <Route path={AppRoute.SETTINGS} element={<Pages.SettingsPage />} />
+        <Route path={AppRoute.INFORMATION} element={<Pages.InfoPage />} />
+        <Route path={AppRoute.COMPONENTS_OVERVIEW} element={<Pages.ComponentsOverview />} />
 
         {/* pegmenty */}
-        <Route path={AppRoute.PIGMENTS_PAGE} element={<Pages.OverviewPage getStateSelector={selectors.SelectorGetPigmentsState}/>}/>
+        <Route path={AppRoute.PIGMENTS_PAGE} element={<Pages.OverviewPage getStateSelector={selectors.SelectorGetPigmentsState} />} />
         <Route path={AppRoute.PIGMENTS_COUNTER} element={<Pages.CounterPage
           getItemSelector={selectors.SelectorGetCurrentPigments}
           clearItemAction={pigmentsClearItemAction}
-          counterHeader={<PigmentsCounterHeader/>}/>
+          counterHeader={<PigmentsCounterHeader />} />
         }>
           <Route index element={<Pages.BasicCounterPage
             incrementAction={pigmentsInc}
@@ -43,12 +43,12 @@ function App() {
           />} />
 
           <Route path={AppRoute.PIGMENTS_COUNTER_CONTAINER} element={<Pages.WithdrawalCounterPage
-              counterName={ComponentsTexts.PIGMENTS_COUNTER_CONTAINER_NAME}
-              incrementAction={pigmentsInc}
-              logAction={pigmentsLog}
-              logName={PigmentsLogsNames.CONTAINER}
-              getSettingsWithdrawalCount={selectors.SelectorGetPigmentsSettingsContainerWeight}
-          />}/>
+            counterName={ComponentsTexts.PIGMENTS_COUNTER_CONTAINER_NAME}
+            incrementAction={pigmentsInc}
+            logAction={pigmentsLog}
+            logName={PigmentsLogsNames.CONTAINER}
+            getSettingsWithdrawalCount={selectors.SelectorGetPigmentsSettingsContainerWeight}
+          />} />
 
           <Route path={AppRoute.PIGMENTS_COUNTER_VOREK} element={<Pages.ItemsCounterPage
             counterName={ComponentsTexts.PIGMENTS_COUNTER_VOREK_NAME}
@@ -57,37 +57,37 @@ function App() {
             decrementAction={pigmentsDec}
             logAction={pigmentsLog}
             logName={PigmentsLogsNames.VOREK}
-          />}/>
+          />} />
         </Route>
 
         {/* uszczelki */}
-        <Route path={AppRoute.GUM_PAGE} element={<Pages.OverviewPage getStateSelector={selectors.SelectorGetGumsState}/>}/>
+        <Route path={AppRoute.GUM_PAGE} element={<Pages.OverviewPage getStateSelector={selectors.SelectorGetGumsState} />} />
         <Route path={AppRoute.GUM_COUNTER} element={<Pages.CounterPage
           getItemSelector={selectors.SelectorGetCurrentGum}
           clearItemAction={gumsClearItemAction}
-          counterHeader={<GumsCounterHeader/>}/>
+          counterHeader={<GumsCounterHeader />} />
         }>
-          <Route index element={<Pages.BasicCounterPage
-            incrementAction={gumsInc}
-            decrementAction={gumsDec}
-            logAction={gumsLog}
-            logName={GumsLogsNames.COUNTER}
-          />} />
-          <Route path={AppRoute.GUM_COUNTER_CARDBOARD} element={<Pages.ItemsCounterPage
+          <Route index element={<Pages.ItemsCounterPage
             counterName={ComponentsTexts.GUMS_COUNTER_CARDBOARD_NAME}
             getItemWeight={selectors.SelectorGetGumsSettingsCardboardWeight}
             incrementAction={gumsInc}
             decrementAction={gumsDec}
             logAction={gumsLog}
             logName={GumsLogsNames.CARDBOARD}
-          />}/>
+          />} />
+          <Route path={AppRoute.GUM_BASIC_COUNTER} element={<Pages.BasicCounterPage
+            incrementAction={gumsInc}
+            decrementAction={gumsDec}
+            logAction={gumsLog}
+            logName={GumsLogsNames.COUNTER}
+          />} />
         </Route>
 
-        <Route path={AppRoute.CHEMISTRY_PAGE} element={<Pages.OverviewPage getStateSelector={selectors.SelectorGetChemistryState}/>}/>
+        <Route path={AppRoute.CHEMISTRY_PAGE} element={<Pages.OverviewPage getStateSelector={selectors.SelectorGetChemistryState} />} />
         <Route path={AppRoute.CHEMISTRY_COUNTER} element={<Pages.CounterPage
           getItemSelector={selectors.SelectorGetCurrentChemistry}
           clearItemAction={chemistryClearItemAction}
-          counterHeader={<ChemistryCounterHeader/>}/>
+          counterHeader={<ChemistryCounterHeader />} />
         }>
           <Route index element={<Pages.BasicCounterPage
             incrementAction={chemistryInc}
