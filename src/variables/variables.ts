@@ -16,7 +16,8 @@ export const enum AppRoute {
   //gums/uszczelka paths
   GUM_PAGE = '/gums',
   GUM_COUNTER = '/gums/:UNID',
-  GUM_COUNTER_CARDBOARD = 'cardboard',
+  // GUM_COUNTER_CARDBOARD = 'cardboard',
+  GUM_BASIC_COUNTER = 'counter',
 
   CHEMISTRY_PAGE = '/chemistry',
   CHEMISTRY_COUNTER = '/chemistry/:UNID',

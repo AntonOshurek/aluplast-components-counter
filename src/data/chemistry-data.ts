@@ -1,6 +1,6 @@
 //types
 import type { IDataType, IChemistrySettingsType } from "../types/data-types";
-//variables and constants
+//variables and consts
 import { ChemistryLogsNames, ChemistrySettingsNames } from "../variables/variables";
 
 

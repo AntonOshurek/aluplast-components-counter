@@ -18,11 +18,11 @@
 
   cursor: pointer;
   transition: all .4s ease;
-  box-shadow:  $standart-box-shadow--large;
+  box-shadow: $standart-box-shadow--large;
 
   &:hover,
   &:focus-within {
-    box-shadow:  $standart-hover-box-shadow--large;
+    box-shadow: $standart-hover-box-shadow--large;
 
     & .thing-item__image {
       scale: 1.4;
@@ -34,6 +34,7 @@
   width: $thing-item-image-size;
   height: $thing-item-image-size;
   min-width: $thing-item-image-size;
+
   overflow: hidden;
   border-radius: $thing-item-border-radius;
 
@@ -67,6 +68,13 @@
   color: $standart-text-color;
   font-size: $standart-title-text-size;
   font-weight: $standart-title-font-weight;
+}
+
+.thing-item__main-description {
+  font-family: $basic-font;
+  color: $standart-text-color;
+  font-size: $standart-main-subtext-size;
+  font-weight: $standart-main-subtext-weight;
 }
 
 .thing-item__description {

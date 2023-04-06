@@ -1,5 +1,7 @@
 //types
 import type { IItemDataType } from '../../../types/data-types';
+//utils
+import { createBorderForItem } from '../../../utils/utils';
 //styles
 import './thing-item.scss';
 
@@ -8,19 +10,19 @@ interface ThingItemPropsType {
   itemAmountName: string,
 };
 
-const ThingItem = ({item, itemAmountName}: ThingItemPropsType): JSX.Element => {
-
-  const color: string = item.color;
-  let bottomBorderStyle = {border: ` 4px solid ${color}`};
-
-  if(item) {
+const ThingItem = ({ item, itemAmountName }: ThingItemPropsType): JSX.Element => {
+  if (item) {
     return (
-      <article className='thing-item' style={color ? bottomBorderStyle : {}}>
+      <article className='thing-item' style={createBorderForItem(item.color)}>
         <div className='thing-item__image-wrap'>
           <img className='thing-item__image' src={item.image} width='100' height='100' alt="" />
         </div>
         <div className='thing-item__info-block'>
           <h3 className='thing-item__name'>{item.name}</h3>
+
+          {
+            item.firm ? <p className='thing-item__main-description'>{item.firm}</p> : null
+          }
 
           {
             item.description ? <p className='thing-item__description'>{item.description}</p> : null
