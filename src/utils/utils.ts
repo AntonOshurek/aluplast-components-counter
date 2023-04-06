@@ -9,10 +9,10 @@ export const setVhVariable = (): void => {
 }
 
 export const onEscClickHandler = (evt: any, htmlElement: HTMLElement | null = null): void | boolean => {
-  if(evt.keyCode === 13 || evt.keyCode === 'enter') {
+  if (evt.keyCode === 13 || evt.keyCode === 'enter') {
     evt.preventDefault();
 
-    if(htmlElement && htmlElement !== null) {
+    if (htmlElement && htmlElement !== null) {
       htmlElement.blur();
     } else {
       return true;
@@ -38,4 +38,17 @@ export const getFullDate = (): string => {
   const fullDate: string = `${day}-${month}-${year}`;
 
   return fullDate;
+};
+
+interface IBorderStyleType {
+  border: string,
+};
+
+export const createBorderForItem = (color: string | undefined): IBorderStyleType => {
+  if (typeof color === 'string' && color.length > 0) {
+    const borderStyle: IBorderStyleType = { border: ` 4px solid ${color}` };
+    return borderStyle;
+  } else {
+    return { border: `none` };
+  };
 };

@@ -3,6 +3,8 @@ import { useState } from 'react';
 import LogsOverview from '../../logs-overview/logs-overview';
 //types
 import type { IItemDataType } from '../../../types/data-types';
+//utils
+import { createBorderForItem } from '../../../utils/utils';
 //styles
 import './component-overview-item.scss';
 
@@ -15,15 +17,12 @@ const ComponentOverviewItem = ({ item, itemAmountName }: IComponentOverviewItemP
 
   const [logsStatus, setLogsStatus] = useState<Boolean>(false);
 
-  const color: string = item.color;
-  let bottomBorderStyle = { border: ` 4px solid ${color}` };
-
   const showLogsButtonHandler = () => {
     logsStatus ? setLogsStatus(false) : setLogsStatus(true);
   };
 
   return (
-    <li className='components-overview-item' key={item.UNID} style={color ? bottomBorderStyle : {}}>
+    <li className='components-overview-item' key={item.UNID} style={createBorderForItem(item.color)}>
       <img className='components-overview-item__image' src={item.image} alt="" width={60} height={60} />
 
       <h4 className='components-overview-item__title'>{item.name}</h4>
