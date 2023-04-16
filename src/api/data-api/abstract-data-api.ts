@@ -9,7 +9,7 @@ abstract class AbstractDataApi {
   storageApi: AbstractStorage;
 
   constructor(data: IDataType, storageApi: AbstractStorage,) {
-    if(new.target === AbstractDataApi) {
+    if (new.target === AbstractDataApi) {
       throw new Error('can\'t instantiate AbstractStorage, only concrete one.');
     };
 
@@ -34,7 +34,7 @@ abstract class AbstractDataApi {
   getData(): IAdaptedDataType {
     const resultFromStorage: IAdaptedDataType | null = this.getDataFromStorage();
 
-    if(resultFromStorage) {
+    if (resultFromStorage) {
       return resultFromStorage;
     } else {
       return this.getAdaptedData();
