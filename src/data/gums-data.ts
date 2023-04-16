@@ -67,12 +67,12 @@ export const basicGumsData: IDataType = [
   {
     UNID: 204,
     amount: 0,
-    firm: 'INEOS',
+    firm: 'ALFA PVC',
     name: 'Uszczelka szara statyczna do listwy',
     itemNumber: '794091',
     description: '(kolor etykiety pomarańczowy)',
     image: '/aluplast-components-counter/images/gums/uszczelka szara.jpg',
-    color: '#F4B084',
+    color: '#d0312d',
     logs: {
       [GumsLogsNames.CARDBOARD]: [],
       [GumsLogsNames.COUNTER]: [],
@@ -81,12 +81,12 @@ export const basicGumsData: IDataType = [
   {
     UNID: 205,
     amount: 0,
-    firm: 'ALFA PVC',
+    firm: 'INEOS',
     name: 'Uszczelka szara statyczna do listwy',
     itemNumber: '794091',
     description: '(kolor etykiety pomarańczowy)',
     image: '/aluplast-components-counter/images/gums/uszczelka szara.jpg',
-    color: '#d0312d',
+    color: '#F4B084',
     logs: {
       [GumsLogsNames.CARDBOARD]: [],
       [GumsLogsNames.COUNTER]: [],
