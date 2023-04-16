@@ -32,13 +32,21 @@ const CounterPage = ({ getItemSelector, clearItemAction, counterHeader }: ICount
     currentItemUNID = 'udefined';
   };
 
-  let itemAmountName: string = 'ilość';
+  let itemAmountName: string;
 
-  // if(UNID >= 300 && UNID <= 399) {
-  //   itemAmountName = 'ilość';
-  // } else {
-  //   itemAmountName = 'kg';
-  // };
+  switch (true) {
+    case /^gums/.test(currentItemUNID):
+      itemAmountName = 'kg';
+      break;
+    case /^chemistry/.test(currentItemUNID):
+      itemAmountName = 'ilość';
+      break;
+    case /^pigments/.test(currentItemUNID):
+      itemAmountName = 'kg';
+      break;
+    default:
+      itemAmountName = 'kg';
+  };
 
   const currentItem: IItemDataType = useAppSelector(getItemSelector(currentItemUNID));
 

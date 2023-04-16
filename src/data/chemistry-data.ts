@@ -13,7 +13,7 @@ export const basicChemistrySettings: IChemistrySettingsType = {
 
 export const basicChemistryData: IDataType = [
   {
-    UNID: nanoid(),
+    UNID: `chemistry-${nanoid()}`,
     amount: 0,
     firm: '',
     name: 'Solvent 77001-003',
@@ -26,7 +26,7 @@ export const basicChemistryData: IDataType = [
     },
   },
   {
-    UNID: nanoid(),
+    UNID: `chemistry-${nanoid()}`,
     amount: 0,
     firm: '',
     name: 'Atrament 770000-00030',
@@ -39,7 +39,7 @@ export const basicChemistryData: IDataType = [
     },
   },
   {
-    UNID: nanoid(),
+    UNID: `chemistry-${nanoid()}`,
     amount: 0,
     firm: '',
     name: 'Solvent SJN1700',
@@ -53,7 +53,7 @@ export const basicChemistryData: IDataType = [
   },
 
   {
-    UNID: nanoid(),
+    UNID: `chemistry-${nanoid()}`,
     amount: 0,
     firm: '',
     name: 'Make-up VJ706-D',
@@ -66,7 +66,7 @@ export const basicChemistryData: IDataType = [
     },
   },
   {
-    UNID: nanoid(),
+    UNID: `chemistry-${nanoid()}`,
     amount: 0,
     firm: '',
     name: 'Atrament VJ411-D',
@@ -80,7 +80,7 @@ export const basicChemistryData: IDataType = [
   },
 
   {
-    UNID: nanoid(),
+    UNID: `chemistry-${nanoid()}`,
     amount: 0,
     firm: '',
     name: 'Make-up VJ7222-D',
@@ -93,7 +93,7 @@ export const basicChemistryData: IDataType = [
     },
   },
   {
-    UNID: nanoid(),
+    UNID: `chemistry-${nanoid()}`,
     amount: 0,
     firm: '',
     name: 'Atrament VJ4262-D',

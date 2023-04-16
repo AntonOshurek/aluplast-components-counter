@@ -13,7 +13,7 @@ export const basicPigmentsSettings: IPigmentsSettingsType = {
 //pigments
 export const basicPigmentsData: IDataType = [
   {
-    UNID: nanoid(),
+    UNID: `pigments-${nanoid()}`,
     amount: 0,
     firm: '',
     itemNumber: '',
@@ -28,7 +28,7 @@ export const basicPigmentsData: IDataType = [
     },
   },
   {
-    UNID: nanoid(),
+    UNID: `pigments-${nanoid()}`,
     name: 'HEUCOBATCH Ocher brown',
     firm: '',
     itemNumber: '',
@@ -43,7 +43,7 @@ export const basicPigmentsData: IDataType = [
     },
   },
   {
-    UNID: nanoid(),
+    UNID: `pigments-${nanoid()}`,
     name: 'CROMOFIX MARRON/BROWN IQAP',
     firm: '',
     itemNumber: '',
@@ -58,7 +58,7 @@ export const basicPigmentsData: IDataType = [
     },
   },
   {
-    UNID: nanoid(),
+    UNID: `pigments-${nanoid()}`,
     name: 'Sicovinyl Black 02-270795 BASF',
     firm: '',
     itemNumber: '',
@@ -73,7 +73,7 @@ export const basicPigmentsData: IDataType = [
     },
   },
   {
-    UNID: nanoid(),
+    UNID: `pigments-${nanoid()}`,
     name: 'Sicovinyl White 00-9065 BASF',
     firm: '',
     itemNumber: '',
@@ -88,7 +88,7 @@ export const basicPigmentsData: IDataType = [
     },
   },
   {
-    UNID: nanoid(),
+    UNID: `pigments-${nanoid()}`,
     name: 'Sicovinyl Yellow 10-0895 BASF',
     firm: '',
     itemNumber: '',
@@ -103,7 +103,7 @@ export const basicPigmentsData: IDataType = [
     },
   },
   {
-    UNID: nanoid(),
+    UNID: `pigments-${nanoid()}`,
     name: 'Evicom granulat ACF400/5hellblau 5154',
     firm: '',
     itemNumber: '',
@@ -118,7 +118,7 @@ export const basicPigmentsData: IDataType = [
     },
   },
   {
-    UNID: nanoid(),
+    UNID: `pigments-${nanoid()}`,
     name: 'Dryblend chłodzący Colorstab',
     firm: '',
     itemNumber: '',
@@ -133,7 +133,7 @@ export const basicPigmentsData: IDataType = [
     },
   },
   {
-    UNID: nanoid(),
+    UNID: `pigments-${nanoid()}`,
     name: 'B1800055 HEUCOBATCH Dark grey 790 199',
     firm: '',
     itemNumber: '',

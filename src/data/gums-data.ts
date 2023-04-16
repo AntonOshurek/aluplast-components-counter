@@ -11,7 +11,7 @@ export const basicGumsSettings: IGumsSettingsType = {
 
 export const basicGumsData: IDataType = [
   {
-    UNID: nanoid(),
+    UNID: `gums-${nanoid()}`,
     amount: 0,
     firm: 'ALFA PVC',
     name: 'Uszczelka czarna dynamiczna do profili',
@@ -25,7 +25,7 @@ export const basicGumsData: IDataType = [
     },
   },
   {
-    UNID: nanoid(),
+    UNID: `gums-${nanoid()}`,
     amount: 0,
     firm: 'ALFA PVC',
     name: 'Uszczelka czarna dynamicznado profili',
@@ -39,7 +39,7 @@ export const basicGumsData: IDataType = [
     },
   },
   {
-    UNID: nanoid(),
+    UNID: `gums-${nanoid()}`,
     amount: 0,
     firm: 'ALFA PVC',
     name: 'Uszczelka szara dynamiczna do profili',
@@ -53,7 +53,7 @@ export const basicGumsData: IDataType = [
     },
   },
   {
-    UNID: nanoid(),
+    UNID: `gums-${nanoid()}`,
     amount: 0,
     firm: 'ALFA PVC',
     name: 'Uszczelka szara dynamiczna do profili',
@@ -67,7 +67,7 @@ export const basicGumsData: IDataType = [
     },
   },
   {
-    UNID: nanoid(),
+    UNID: `gums-${nanoid()}`,
     amount: 0,
     firm: 'ALFA PVC',
     name: 'Uszczelka szara statyczna do listwy',
@@ -81,7 +81,7 @@ export const basicGumsData: IDataType = [
     },
   },
   {
-    UNID: nanoid(),
+    UNID: `gums-${nanoid()}`,
     amount: 0,
     firm: 'INEOS',
     name: 'Uszczelka szara statyczna do listwy',
@@ -95,7 +95,7 @@ export const basicGumsData: IDataType = [
     },
   },
   {
-    UNID: nanoid(),
+    UNID: `gums-${nanoid()}`,
     amount: 0,
     firm: 'ALFA PVC',
     name: 'Uszczelka czarna statyczna do listwy',
@@ -109,7 +109,7 @@ export const basicGumsData: IDataType = [
     },
   },
   {
-    UNID: nanoid(),
+    UNID: `gums-${nanoid()}`,
     amount: 0,
     firm: 'INEOS',
     name: 'Uszczelka czarna statyczna do listwy',
