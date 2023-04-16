@@ -4,7 +4,7 @@ import AbstractStorage from "../storage-api/abstract-storage";
 //api
 import chemistryStorageApi from "../storage-api/chemistry-storage-api";
 //data
-import { basicChemistryData } from "../../data/chemistry-data";
+import { basicChemistryData } from "../../data/";
 //types
 import type { IDataType } from "../../types/data-types";
 

@@ -4,7 +4,7 @@ import AbstractStorage from "../storage-api/abstract-storage";
 //api
 import gumsStorageApi from "../storage-api/gums-storage-api";
 //data
-import { basicGumsData, basicGumsSettings } from "../../data/gums-data";
+import { basicGumsData, basicGumsSettings } from "../../data/";
 //types
 import type { IDataType, IGumsSettingsType } from "../../types/data-types";
 
@@ -27,7 +27,7 @@ class GumsDataApi extends AbstractDataApi {
   getSettings(): IGumsSettingsType {
     const resultFromStorage: IGumsSettingsType | null = this.getSettingsFromStorage();
 
-    if(resultFromStorage) {
+    if (resultFromStorage) {
       return resultFromStorage;
     } else {
       return this.getDefaultSettings();

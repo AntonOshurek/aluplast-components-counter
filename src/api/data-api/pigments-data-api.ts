@@ -6,7 +6,7 @@ import type { IPigmentsSettingsType, IDataType, } from "../../types/data-types";
 //api
 import pigmentsStorageApi from "../storage-api/pigments-storage-api";
 //data
-import { basicPigmentsData, basicPigmentsSettings } from "../../data/pigments-data";
+import { basicPigmentsData, basicPigmentsSettings } from "../../data/";
 
 class PigmentsDataApi extends AbstractDataApi {
   #basicSettings: IPigmentsSettingsType;

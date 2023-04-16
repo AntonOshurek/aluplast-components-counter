@@ -105,4 +105,4 @@ export const basicChemistryData: IDataType = [
       [ChemistryLogsNames.COUNTER]: [],
     },
   },
-]
+];
