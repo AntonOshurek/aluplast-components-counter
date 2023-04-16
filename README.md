@@ -3,7 +3,9 @@
 
 # Aluplast components counter
 This application created for Aluplast, based in Poznań.
-Working applications for component counting in manufacturing.
+
+Working applications for component counting in manufacturing. 
+This application is used by referents at Aluplast firm in Poznań.
 
 ***[:point_right: Gh-Pages Here](https://antonoshurek.github.io/aluplast-components-counter/):bank:***
 
