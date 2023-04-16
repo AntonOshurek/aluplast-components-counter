@@ -20,7 +20,7 @@ export interface ILogsDataType {
 };
 
 export interface IItemDataType {
-  UNID: number,
+  UNID: string,
   amount: number,
   firm: string,
   name: string,
@@ -34,5 +34,5 @@ export interface IItemDataType {
 export type IDataType = IItemDataType[];
 
 export interface IAdaptedDataType {
-  [propertyName: number]: IItemDataType,
+  [propertyName: string]: IItemDataType,
 };

@@ -2,6 +2,8 @@
 import type { IDataType, IGumsSettingsType } from "../types/data-types";
 //variables and consts
 import { GumsSettingsNames, GumsLogsNames } from "../variables/variables";
+//libs
+import { nanoid } from 'nanoid';
 
 export const basicGumsSettings: IGumsSettingsType = {
   [GumsSettingsNames.CARDBOARD_WEIGHT]: 500,
@@ -9,7 +11,7 @@ export const basicGumsSettings: IGumsSettingsType = {
 
 export const basicGumsData: IDataType = [
   {
-    UNID: 200,
+    UNID: nanoid(),
     amount: 0,
     firm: 'ALFA PVC',
     name: 'Uszczelka czarna dynamiczna do profili',
@@ -23,7 +25,7 @@ export const basicGumsData: IDataType = [
     },
   },
   {
-    UNID: 201,
+    UNID: nanoid(),
     amount: 0,
     firm: 'ALFA PVC',
     name: 'Uszczelka czarna dynamicznado profili',
@@ -37,7 +39,7 @@ export const basicGumsData: IDataType = [
     },
   },
   {
-    UNID: 202,
+    UNID: nanoid(),
     amount: 0,
     firm: 'ALFA PVC',
     name: 'Uszczelka szara dynamiczna do profili',
@@ -51,7 +53,7 @@ export const basicGumsData: IDataType = [
     },
   },
   {
-    UNID: 203,
+    UNID: nanoid(),
     amount: 0,
     firm: 'ALFA PVC',
     name: 'Uszczelka szara dynamiczna do profili',
@@ -65,7 +67,7 @@ export const basicGumsData: IDataType = [
     },
   },
   {
-    UNID: 204,
+    UNID: nanoid(),
     amount: 0,
     firm: 'ALFA PVC',
     name: 'Uszczelka szara statyczna do listwy',
@@ -79,7 +81,7 @@ export const basicGumsData: IDataType = [
     },
   },
   {
-    UNID: 205,
+    UNID: nanoid(),
     amount: 0,
     firm: 'INEOS',
     name: 'Uszczelka szara statyczna do listwy',
@@ -93,7 +95,7 @@ export const basicGumsData: IDataType = [
     },
   },
   {
-    UNID: 206,
+    UNID: nanoid(),
     amount: 0,
     firm: 'ALFA PVC',
     name: 'Uszczelka czarna statyczna do listwy',
@@ -107,7 +109,7 @@ export const basicGumsData: IDataType = [
     },
   },
   {
-    UNID: 207,
+    UNID: nanoid(),
     amount: 0,
     firm: 'INEOS',
     name: 'Uszczelka czarna statyczna do listwy',

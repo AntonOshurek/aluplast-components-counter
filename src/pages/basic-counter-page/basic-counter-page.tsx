@@ -21,9 +21,15 @@ interface IBasicCounterPagePropsType {
   logName: logNamesType,
 };
 
-const BasicCounterPage = ({incrementAction, decrementAction, logAction, logName}: IBasicCounterPagePropsType): JSX.Element => {
-  const {UNID = 100} = useParams();
-  const currentItemUNID = +UNID;
+const BasicCounterPage = ({ incrementAction, decrementAction, logAction, logName }: IBasicCounterPagePropsType): JSX.Element => {
+  const { UNID } = useParams();
+  let currentItemUNID: string;
+
+  if (UNID) {
+    currentItemUNID = UNID.toString();
+  } else {
+    currentItemUNID = 'udefined';
+  };
 
   const dispatch = useAppDispatch();
 
@@ -32,7 +38,7 @@ const BasicCounterPage = ({incrementAction, decrementAction, logAction, logName}
   const [message, setMessage]: [string, SetMessageStateType] = useState('');
   const [status, setStatus]: [InputStatuses, SetStatusStateType] = useState<InputStatuses>(InputStatuses.DEFAULT);
 
-  const counterApi = new CounterApi({dispatch, incrementAction, decrementAction, setMessage, setStatus, logAction});
+  const counterApi = new CounterApi({ dispatch, incrementAction, decrementAction, setMessage, setStatus, logAction });
 
   const onInputValueChangeHandler = (value: number | null): void => {
     setValue(value);

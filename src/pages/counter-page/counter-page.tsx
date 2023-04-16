@@ -21,18 +21,26 @@ interface ICounterPagePropsType {
   counterHeader: React.ReactNode;
 };
 
-const CounterPage = ({getItemSelector, clearItemAction, counterHeader}: ICounterPagePropsType): JSX.Element => {
-  const {UNID = 100} = useParams();
+const CounterPage = ({ getItemSelector, clearItemAction, counterHeader }: ICounterPagePropsType): JSX.Element => {
+  const { UNID } = useParams();
 
-  let itemAmountName: string;
+  let currentItemUNID: string;
 
-  if(UNID >= 300 && UNID <= 399) {
-    itemAmountName = 'ilość';
+  if (UNID) {
+    currentItemUNID = UNID.toString();
   } else {
-    itemAmountName = 'kg';
+    currentItemUNID = 'udefined';
   };
 
-  const currentItem: IItemDataType = useAppSelector(getItemSelector(+UNID));
+  let itemAmountName: string = 'ilość';
+
+  // if(UNID >= 300 && UNID <= 399) {
+  //   itemAmountName = 'ilość';
+  // } else {
+  //   itemAmountName = 'kg';
+  // };
+
+  const currentItem: IItemDataType = useAppSelector(getItemSelector(currentItemUNID));
 
   const [showThingLogsModal, setShowThingLogsModal] = useState<boolean>(false);
 
@@ -41,7 +49,7 @@ const CounterPage = ({getItemSelector, clearItemAction, counterHeader}: ICounter
   };
 
   const closeItemLogs = (evt: any): void => {
-    if(!evt.target.closest('.thing-modal__wrap')) {
+    if (!evt.target.closest('.thing-modal__wrap')) {
       setShowThingLogsModal(false);
     };
   };
@@ -50,25 +58,25 @@ const CounterPage = ({getItemSelector, clearItemAction, counterHeader}: ICounter
     <div className='counter-page'>
       {counterHeader}
 
-    <main className='counter-page__main'>
+      <main className='counter-page__main'>
 
-      <div className='counter-page__wrap container'>
-        <section className='counter-page__counter-info'>
-          <h2 className='counter-page__title'>{ComponentsTexts.COUNTER_PAGE_TITLE}</h2>
-          <div className='counter-page__item-wrap' onClick={showItemLogs}>
-            <ThingItem item={currentItem} itemAmountName={itemAmountName}/>
-          </div>
-        </section>
+        <div className='counter-page__wrap container'>
+          <section className='counter-page__counter-info'>
+            <h2 className='counter-page__title'>{ComponentsTexts.COUNTER_PAGE_TITLE}</h2>
+            <div className='counter-page__item-wrap' onClick={showItemLogs}>
+              <ThingItem item={currentItem} itemAmountName={itemAmountName} />
+            </div>
+          </section>
 
-        <Outlet/>
-      </div>
-    </main>
+          <Outlet />
+        </div>
+      </main>
 
-    {
-      showThingLogsModal ? <LogInfo clearItemAction={clearItemAction} currentItem={currentItem} closeModal={closeItemLogs}/> : null
-    }
+      {
+        showThingLogsModal ? <LogInfo clearItemAction={clearItemAction} currentItem={currentItem} closeModal={closeItemLogs} /> : null
+      }
 
-  </div>
+    </div>
   );
 };
 

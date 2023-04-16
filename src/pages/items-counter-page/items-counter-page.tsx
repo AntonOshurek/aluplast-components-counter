@@ -17,9 +17,17 @@ interface IItemsCounterPagePropsType {
   logName: logNamesType,
 };
 
-const ItemsCounterPage = ({counterName, getItemWeight, incrementAction, decrementAction, logAction, logName}: IItemsCounterPagePropsType): JSX.Element => {
-  const {UNID = 100} = useParams();
-  const currentItemUNID = +UNID;
+const ItemsCounterPage = ({ counterName, getItemWeight, incrementAction, decrementAction, logAction, logName }: IItemsCounterPagePropsType): JSX.Element => {
+  const { UNID } = useParams();
+  // const currentItemUNID = +UNID;
+
+  let currentItemUNID: string;
+
+  if (UNID) {
+    currentItemUNID = UNID.toString();
+  } else {
+    currentItemUNID = 'udefined';
+  };
 
   const dispatch = useAppDispatch();
 
@@ -32,13 +40,13 @@ const ItemsCounterPage = ({counterName, getItemWeight, incrementAction, decremen
 
   const resetAddedAmount = (): void => {
     //before added value + addedAmount whe need reset this to default value
-    if(addedAmount > 1) {
+    if (addedAmount > 1) {
       setAddedAmount(initialAddedAmount);
     };
   };
 
   const onAddedAmountChangeHandler = (evt: ChangeEvent<HTMLInputElement>): void => {
-    if(+evt.target.value < 0) {
+    if (+evt.target.value < 0) {
       //Create push notification about negatiove value!
       console.error('you cant sen negative value!');
     } else {
@@ -50,14 +58,14 @@ const ItemsCounterPage = ({counterName, getItemWeight, incrementAction, decremen
     setValue((prev) => prev + addedAmount);
 
     let recalcValue: number = addedAmount * basicItemWeight;
-    dispatch(incrementAction({UNID: currentItemUNID, value: recalcValue}));
+    dispatch(incrementAction({ UNID: currentItemUNID, value: recalcValue }));
   };
 
   const decrementHandler = (): void => {
     setValue((prev) => prev - addedAmount);
 
     const recalcValue: number = addedAmount * basicItemWeight;
-    dispatch(decrementAction({UNID: currentItemUNID, value: recalcValue}));
+    dispatch(decrementAction({ UNID: currentItemUNID, value: recalcValue }));
   };
 
   const ref = useRef(0);
@@ -70,8 +78,8 @@ const ItemsCounterPage = ({counterName, getItemWeight, incrementAction, decremen
 
   useEffect(() => {
     return () => {
-      if(ref.current !== 0) {
-        dispatch(logAction({UNID: currentItemUNID, logName: logName, logValue: `+${ref.current} `}));
+      if (ref.current !== 0) {
+        dispatch(logAction({ UNID: currentItemUNID, logName: logName, logValue: `+${ref.current} ` }));
       }
     }
   }, []);

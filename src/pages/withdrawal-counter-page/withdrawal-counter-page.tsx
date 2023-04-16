@@ -22,9 +22,17 @@ interface IWithdrawalCounterPagePropsType {
   getSettingsWithdrawalCount: GetSettingsWithdrawalCountType,
 };
 
-const WithdrawalCounterPage = ({counterName, incrementAction, logAction, logName, getSettingsWithdrawalCount}: IWithdrawalCounterPagePropsType): JSX.Element => {
-  const {UNID = 100} = useParams();
-  const currentItemUNID = +UNID;
+const WithdrawalCounterPage = ({ counterName, incrementAction, logAction, logName, getSettingsWithdrawalCount }: IWithdrawalCounterPagePropsType): JSX.Element => {
+  const { UNID } = useParams();
+  // const currentItemUNID = +UNID;
+
+  let currentItemUNID: string;
+
+  if (UNID) {
+    currentItemUNID = UNID.toString();
+  } else {
+    currentItemUNID = 'udefined';
+  };
 
   const dispatch = useAppDispatch();
 
@@ -36,7 +44,7 @@ const WithdrawalCounterPage = ({counterName, incrementAction, logAction, logName
   const [message, setMessage]: [string, SetMessageStateType] = useState('');
   const [status, setStatus]: [InputStatuses, SetStatusStateType] = useState<InputStatuses>(InputStatuses.DEFAULT);
 
-  const counterApi = new CounterApi({dispatch, incrementAction, setMessage, setStatus, logAction});
+  const counterApi = new CounterApi({ dispatch, incrementAction, setMessage, setStatus, logAction });
 
   const onAddedAmountChangeHandler = (evt: ChangeEvent<HTMLInputElement>): void => {
     console.log(`new addedAmount = ${+evt.target.value}`);
@@ -48,7 +56,7 @@ const WithdrawalCounterPage = ({counterName, incrementAction, logAction, logName
   };
 
   const onAddButtonClickHandler = (): void => {
-    if(value) {
+    if (value) {
       const withdrawalValue = value - addedAmount;
       counterApi.incrementHandler(withdrawalValue, currentItemUNID, logName);
     } else {

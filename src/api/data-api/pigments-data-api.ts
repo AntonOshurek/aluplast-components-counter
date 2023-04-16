@@ -2,7 +2,7 @@
 import AbstractDataApi from "./abstract-data-api";
 import AbstractStorage from "../storage-api/abstract-storage";
 //types
-import type { IPigmentsSettingsType, IDataType,} from "../../types/data-types";
+import type { IPigmentsSettingsType, IDataType, } from "../../types/data-types";
 //api
 import pigmentsStorageApi from "../storage-api/pigments-storage-api";
 //data
@@ -27,7 +27,7 @@ class PigmentsDataApi extends AbstractDataApi {
   getSettings(): IPigmentsSettingsType {
     const resultFromStorage: IPigmentsSettingsType | null = this.getSettingsFromStorage();
 
-    if(resultFromStorage) {
+    if (resultFromStorage) {
       return resultFromStorage;
     } else {
       return this.getDefaultSettings();

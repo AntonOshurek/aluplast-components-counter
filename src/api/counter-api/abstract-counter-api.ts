@@ -15,13 +15,13 @@ abstract class AbstractCounterApi {
   private setStatus: SetStatusStateType;
   private logAction: LogActionType;
 
-  constructor (
-      { dispatch, incrementAction, decrementAction, setMessage, setStatus, logAction }: IAbstractCounterApiConstructorType,
-    ) {
+  constructor(
+    { dispatch, incrementAction, decrementAction, setMessage, setStatus, logAction }: IAbstractCounterApiConstructorType,
+  ) {
     this.dispatch = dispatch;
     this.incrementAction = incrementAction;
 
-    if(decrementAction) {
+    if (decrementAction) {
       this.decrementAction = decrementAction;
     };
 
@@ -30,8 +30,8 @@ abstract class AbstractCounterApi {
     this.logAction = logAction;
   };
 
-  incrementHandler(value: number | null, currentItemUNID: number, logName: logNamesType): boolean {
-    if(value === null) {
+  incrementHandler(value: number | null, currentItemUNID: string, logName: logNamesType): boolean {
+    if (value === null) {
       this.setStatus(InputStatuses.ERROR);
       this.setMessage('Nic nie wpisanę w pole!');
       return false;
@@ -40,17 +40,17 @@ abstract class AbstractCounterApi {
       this.setMessage('Nie można dodać/odjąć ZERO!');
       return false;
     } else {
-      this.dispatch(this.incrementAction({UNID: currentItemUNID, value: value}));
-      this.dispatch(this.logAction({UNID: currentItemUNID, logName: logName, logValue: `+${value}kg`}));
+      this.dispatch(this.incrementAction({ UNID: currentItemUNID, value: value }));
+      this.dispatch(this.logAction({ UNID: currentItemUNID, logName: logName, logValue: `+${value}kg` }));
       this.setStatus(InputStatuses.SUCCESS);
       this.setMessage('');
       return true;
     };
   };
 
-  decrementHandler(value: number | null, currentItemUNID: number, logName: logNamesType): boolean {
-    if(this.decrementAction) {
-      if(value === null) {
+  decrementHandler(value: number | null, currentItemUNID: string, logName: logNamesType): boolean {
+    if (this.decrementAction) {
+      if (value === null) {
         this.setStatus(InputStatuses.ERROR);
         this.setMessage('Nic nie wpisanę w pole!');
         return false;
@@ -59,8 +59,8 @@ abstract class AbstractCounterApi {
         this.setMessage('Nie można dodać/odjąć ZERO!');
         return false;
       } else {
-        this.dispatch(this.decrementAction({UNID: currentItemUNID, value: value}));
-        this.dispatch(this.logAction({UNID: currentItemUNID, logName: logName, logValue: `-${value}kg`}));
+        this.dispatch(this.decrementAction({ UNID: currentItemUNID, value: value }));
+        this.dispatch(this.logAction({ UNID: currentItemUNID, logName: logName, logValue: `-${value}kg` }));
         this.setStatus(InputStatuses.SUCCESS);
         this.setMessage('');
         return true;

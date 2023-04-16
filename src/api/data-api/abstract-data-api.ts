@@ -27,7 +27,7 @@ abstract class AbstractDataApi {
     return this.storageApi.getItems();
   };
 
-  getDataItem(id: number): IItemDataType {
+  getDataItem(id: string): IItemDataType {
     return this.#adaptedData[id];
   };
 
