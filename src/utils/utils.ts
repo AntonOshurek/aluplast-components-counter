@@ -5,8 +5,8 @@ export const setVhVariable = (): void => {
   window.addEventListener('resize', () => {
     vh = window.innerHeight;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
-  })
-}
+  });
+};
 
 export const onEscClickHandler = (evt: any, htmlElement: HTMLElement | null = null): void | boolean => {
   if (evt.keyCode === 13 || evt.keyCode === 'enter') {
@@ -16,16 +16,16 @@ export const onEscClickHandler = (evt: any, htmlElement: HTMLElement | null = nu
       htmlElement.blur();
     } else {
       return true;
-    }
-  }
-}
+    };
+  };
+};
 
 export const getZero = (num: number): number | string => {
   if (num >= 0 && num < 10) {
     return `0${num}`;
   } else {
     return num;
-  }
+  };
 };
 
 export const getFullDate = (): string => {

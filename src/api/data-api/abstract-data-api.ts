@@ -1,5 +1,8 @@
 //abstract classes
 import AbstractStorage from "../storage-api/abstract-storage";
+//adapters
+// import { dataAdapter } from '../../adapters/data-adapter';
+import { dataAdapters } from '../../adapters/';
 //types
 import type { IAdaptedDataType, IDataType, IItemDataType } from "../../types/data-types";
 
@@ -27,7 +30,7 @@ abstract class AbstractDataApi {
     return this.storageApi.getItems();
   };
 
-  getDataItem(id: number): IItemDataType {
+  getDataItem(id: string): IItemDataType {
     return this.#adaptedData[id];
   };
 
@@ -42,9 +45,7 @@ abstract class AbstractDataApi {
   };
 
   init() {
-    this.#basicData.map((item: IItemDataType) => {
-      this.#adaptedData[item.UNID] = item;
-    });
+    this.#adaptedData = dataAdapters.adaptStandsrtData(this.#basicData);
   };
 };
 

@@ -2,6 +2,8 @@
 import type { IDataType, IChemistrySettingsType } from "../types/data-types";
 //variables and consts
 import { ChemistryLogsNames, ChemistrySettingsNames } from "../variables/variables";
+//libs
+import { nanoid } from '@reduxjs/toolkit';
 
 
 //settings data now is unused...
@@ -11,7 +13,7 @@ export const basicChemistrySettings: IChemistrySettingsType = {
 
 export const basicChemistryData: IDataType = [
   {
-    UNID: 300,
+    UNID: `chemistry-${nanoid()}`,
     amount: 0,
     firm: '',
     name: 'Solvent 77001-003',
@@ -24,7 +26,7 @@ export const basicChemistryData: IDataType = [
     },
   },
   {
-    UNID: 301,
+    UNID: `chemistry-${nanoid()}`,
     amount: 0,
     firm: '',
     name: 'Atrament 770000-00030',
@@ -37,7 +39,7 @@ export const basicChemistryData: IDataType = [
     },
   },
   {
-    UNID: 302,
+    UNID: `chemistry-${nanoid()}`,
     amount: 0,
     firm: '',
     name: 'Solvent SJN1700',
@@ -51,7 +53,7 @@ export const basicChemistryData: IDataType = [
   },
 
   {
-    UNID: 303,
+    UNID: `chemistry-${nanoid()}`,
     amount: 0,
     firm: '',
     name: 'Make-up VJ706-D',
@@ -64,7 +66,7 @@ export const basicChemistryData: IDataType = [
     },
   },
   {
-    UNID: 304,
+    UNID: `chemistry-${nanoid()}`,
     amount: 0,
     firm: '',
     name: 'Atrament VJ411-D',
@@ -78,7 +80,7 @@ export const basicChemistryData: IDataType = [
   },
 
   {
-    UNID: 305,
+    UNID: `chemistry-${nanoid()}`,
     amount: 0,
     firm: '',
     name: 'Make-up VJ7222-D',
@@ -91,7 +93,7 @@ export const basicChemistryData: IDataType = [
     },
   },
   {
-    UNID: 306,
+    UNID: `chemistry-${nanoid()}`,
     amount: 0,
     firm: '',
     name: 'Atrament VJ4262-D',
@@ -103,4 +105,4 @@ export const basicChemistryData: IDataType = [
       [ChemistryLogsNames.COUNTER]: [],
     },
   },
-]
+];

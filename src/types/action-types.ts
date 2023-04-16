@@ -6,12 +6,12 @@ import { clearItemAction as pigmentsClearItemAction } from "../store/slices/pigm
 import { clearItemAction as clearItemActionGums } from "../store/slices/gums-slice";
 
 export interface IIncDecActionParametrsType {
-  UNID: number,
+  UNID: string,
   value: number,
 };
 
 export interface ILogActionType {
-  UNID: number,
+  UNID: string,
   logName: logNamesType,
   logValue: string,
 };
