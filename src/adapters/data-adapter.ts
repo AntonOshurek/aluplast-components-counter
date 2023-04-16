@@ -1,12 +1,18 @@
 //types
 import type { IAdaptedDataType, IDataType, IItemDataType } from '../types/data-types';
 
-export const dataAdapter = (data: IDataType): IAdaptedDataType => {
-  let adaptedData: IAdaptedDataType = {};
+class DataAdapters {
+  adaptStandsrtData(data: IDataType): IAdaptedDataType {
+    let adaptedData: IAdaptedDataType = {};
 
-  data.map((item: IItemDataType) => {
-    adaptedData[item.UNID] = item;
-  });
+    data.map((item: IItemDataType): void => {
+      adaptedData[item.UNID] = item;
+    });
 
-  return adaptedData;
+    return adaptedData;
+  };
 };
+
+const dataAdapters = new DataAdapters();
+
+export default dataAdapters;

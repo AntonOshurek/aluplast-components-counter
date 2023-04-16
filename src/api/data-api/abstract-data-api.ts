@@ -1,7 +1,8 @@
 //abstract classes
 import AbstractStorage from "../storage-api/abstract-storage";
 //adapters
-import { dataAdapter } from '../../adapters/data-adapter';
+// import { dataAdapter } from '../../adapters/data-adapter';
+import { dataAdapters } from '../../adapters/';
 //types
 import type { IAdaptedDataType, IDataType, IItemDataType } from "../../types/data-types";
 
@@ -44,7 +45,7 @@ abstract class AbstractDataApi {
   };
 
   init() {
-    this.#adaptedData = dataAdapter(this.#basicData);
+    this.#adaptedData = dataAdapters.adaptStandsrtData(this.#basicData);
   };
 };
 
