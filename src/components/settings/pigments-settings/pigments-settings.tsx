@@ -17,7 +17,7 @@ interface IPigmentsSettingsPropsType {
   value: IPigmentsSettingsType
 };
 
-const PigmentsSettings = ({inputsHandler, value}: IPigmentsSettingsPropsType): JSX.Element => {
+const PigmentsSettings = ({ inputsHandler, value }: IPigmentsSettingsPropsType): JSX.Element => {
   const dispatch = useAppDispatch();
 
   const resetCounter = () => {
@@ -51,7 +51,7 @@ const PigmentsSettings = ({inputsHandler, value}: IPigmentsSettingsPropsType): J
 
       </form>
 
-      <ButtonRemove dataToDeleteName={ComponentsTexts.PIGMENTS_COUNTER_NAME} onButtonClickHandler={resetCounter}/>
+      <ButtonRemove buttonName={ComponentsTexts.SETTING_RESET_COUNTER_DATA} dataToDeleteName={ComponentsTexts.PIGMENTS_COUNTER_NAME} onButtonClickHandler={resetCounter} />
     </section>
   );
 };

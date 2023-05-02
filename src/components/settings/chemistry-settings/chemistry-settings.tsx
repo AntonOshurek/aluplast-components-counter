@@ -5,7 +5,7 @@ import { clearStoreAction } from '../../../store/slices/chemistry-slice';
 import { useAppDispatch } from '../../../hooks/hooks';
 
 //variables and constants
-import { ComponentsTexts,  } from '../../../variables/variables';
+import { ComponentsTexts, } from '../../../variables/variables';
 //style
 import '../components-settings.scss';
 
@@ -20,7 +20,7 @@ const ChemistrySettings = (): JSX.Element => {
     <section className='components-settings'>
       <h3 className='components-settings__title'>{ComponentsTexts.SETTING_CHEMISTRY_TITLE}</h3>
 
-      <ButtonRemove dataToDeleteName={ComponentsTexts.CHEMISTRY_COUNTER_NAME} onButtonClickHandler={resetCounter}/>
+      <ButtonRemove buttonName={ComponentsTexts.SETTING_RESET_COUNTER_DATA} dataToDeleteName={ComponentsTexts.CHEMISTRY_COUNTER_NAME} onButtonClickHandler={resetCounter} />
     </section>
   );
 };

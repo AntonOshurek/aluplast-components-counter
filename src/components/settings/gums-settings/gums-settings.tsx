@@ -5,7 +5,7 @@ import { ButtonRemove } from '../../controls';
 import { clearStoreAction } from '../../../store/slices/gums-slice';
 import { useAppDispatch } from '../../../hooks/hooks';
 //types
-import type  { IGumsSettingsType } from '../../../types/data-types';
+import type { IGumsSettingsType } from '../../../types/data-types';
 //variables and constants
 import { ComponentsTexts, GumsSettingsNames } from '../../../variables/variables';
 //style
@@ -16,7 +16,7 @@ interface IGumsSettingsPropsType {
   value: IGumsSettingsType,
 };
 
-const GumsSettings = ({inputsHandler, value}: IGumsSettingsPropsType): JSX.Element => {
+const GumsSettings = ({ inputsHandler, value }: IGumsSettingsPropsType): JSX.Element => {
   const dispatch = useAppDispatch();
 
   const resetCounter = () => {
@@ -41,7 +41,7 @@ const GumsSettings = ({inputsHandler, value}: IGumsSettingsPropsType): JSX.Eleme
 
       </form>
 
-      <ButtonRemove dataToDeleteName={ComponentsTexts.GUM_COUNTER_NAME} onButtonClickHandler={resetCounter}/>
+      <ButtonRemove buttonName={ComponentsTexts.SETTING_RESET_COUNTER_DATA} dataToDeleteName={ComponentsTexts.GUM_COUNTER_NAME} onButtonClickHandler={resetCounter} />
     </section>
   );
 };
