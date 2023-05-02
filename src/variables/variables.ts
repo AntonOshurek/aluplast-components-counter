@@ -61,8 +61,9 @@ export enum ComponentsTexts {
   SETTING_CHEMISTRY_TITLE = 'Ustawienia chemia',
   SETTING_SAVE = 'Zapisz ustawienia',
   SETTING_RESET_COUNTER_DATA = 'Usunąć dane licznika',
+  SETTING_RESET_COUNTERS_DATA = 'Usunąć dane wszystkich liczników',
 
-  INFO_REQUEST_TO_DELETE_DATA = 'Napewno chcesz usunąć dane licznika',
+  INFO_REQUEST_TO_DELETE_DATA = 'Napewno chcesz usunąć dane',
   INFO_DATA_DELETED = 'Wybrane dane zostali usunięci',
 
   COUNTER_ADD_BUTTON = 'Dodaj',
