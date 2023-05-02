@@ -124,7 +124,7 @@ export const basicPigmentsData: IDataType = [
     itemNumber: '799544',
     color: '',
     amount: 0,
-    image: '/aluplast-components-counter/images/pigments/pigment-braz.jpg',
+    image: '/aluplast-components-counter/images/pigments/pigment-antracyt.jpg',
     description: '',
     logs: {
       [PigmentsLogsNames.CONTAINER]: [],
