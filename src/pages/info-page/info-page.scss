@@ -1,20 +1,20 @@
 .info-page {
-  width: 100%;
-  // min-height: var(--vh);
-  min-height: 100vh;
-
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr min-content;
+  width: 100%;
 
-  position: relative;
+  // min-height: var(--vh);
+  min-height: 100vh;
 }
 
 .info-page__main {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: flex-end;
+
   //bottom padding is calculated from menu height
   padding-bottom: 100px;
 }
@@ -22,37 +22,36 @@
 .info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 20px;
-
+  justify-content: center;
   padding: 0 10px;
+  gap: 20px;
 }
 
 .info__title {
   font-family: var(--basic-font-family);
-  color: var(--info-text-color);
-  font-size: var(--info-title-text-font-size);
   font-weight: var(--info-title-text-font-weight);
-  text-transform: capitalize;
+  font-size: var(--info-title-text-font-size);
   text-align: center;
+  text-transform: capitalize;
+  color: var(--info-text-color);
 }
 
 .info__subtitle {
   font-family: var(--basic-font-family);
-  color: var(--info-text-color);
-  font-size: var(--info-subtitle-text-font-size);
   font-weight: var(--info-subtitle-text-font-weight);
-  text-transform: capitalize;
+  font-size: var(--info-subtitle-text-font-size);
   text-align: center;
+  text-transform: capitalize;
+  color: var(--info-text-color);
 }
 
 .info__text {
   font-family: var(--basic-font-family);
-  color: var(--info-text-color);
-  font-size: var(--info-text-font-size);
   font-weight: var(--info-text-font-weight);
+  font-size: var(--info-text-font-size);
   text-align: center;
+  color: var(--info-text-color);
 }
 
 .info__stack {
@@ -65,36 +64,34 @@
 
 .info__stack-list {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  font-family: var(--basic-font-family);
+  font-weight: 600;
+  font-size: var(--info-text-font-size);
+  color: var(--code-text-color);
   gap: 10px;
 
-  font-family: var(--basic-font-family);
-  color: var(--code-text-color);
-  font-size: var(--info-text-font-size);
-  font-weight: 600;
-
-  list-style: none;
-
   & code {
-    font-family: var(--basic-font-family);
-    background-color: var(--info-text-color);
     border-radius: 3px;
-    font-family: courier, monospace;
     padding: 2px 3px;
+    font-family: var(--basic-font-family);
+    font-family: courier, monospace;
+    background-color: var(--info-text-color);
   }
 }
 
 .info__socials {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 20px;
 }
 
 .info__social-link {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }

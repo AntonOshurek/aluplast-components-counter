@@ -1,45 +1,43 @@
-@import '../../variables/variables.scss';
+@import '../../variables/variables';
 
 .button-block {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
   padding-bottom: 20px;
+  width: 100%;
+  gap: 10px;
 }
 
 .standart-button {
-  width: 100%;
-  padding: 20px 40px;
-
-  background-color: $main-color;
   border: none;
   border-radius: 20px;
+  padding: 20px 40px;
+  width: 100%;
   box-shadow: $standart-button-shadow;
+  font-family: $basic-font;
+  font-weight: $standart-title-font-weight;
+  font-size: $standart-title-text-size;
+  color: $standart-white;
+  background-color: $main-color;
   transition: transform .3s ease, box-shadow .1s ease;
   cursor: pointer;
-
-  font-family: $basic-font;
-  font-size: $standart-title-text-size;
-  font-weight: $standart-title-font-weight;
-  color: $standart-white;
 
   &:hover {
     box-shadow: $standart-button-hover-shadow;
   }
 
   &:active {
+    box-shadow: $standart-button-active-shadow;
     transform: translate(0, 10px);
     transition: transform .2s ease, box-shadow .1s ease;
-    box-shadow: $standart-button-active-shadow;
   }
 
   &--second-btn {
     width: min-content;
     white-space: nowrap;
-    background-color: $standart-white;
     color: $standart-text-color;
+    background-color: $standart-white;
     transition: transform .3s ease;
   }
 }

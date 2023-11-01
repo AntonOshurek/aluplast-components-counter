@@ -1,24 +1,22 @@
-@import '../../../variables/variables.scss';
+@import '../../../variables/variables';
 
 .counter-added-amount {
-  width: 100%;
-  padding: 10px 0;
-
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  width: 100%;
 }
 
 .counter-added-amount__label {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 10px;
-
+  justify-content: center;
   font-family: $basic-font;
-  font-size: $standart-title-text-size;
   font-weight: $standart-title-font-weight;
+  font-size: $standart-title-text-size;
   color: $standart-subtext-color;
+  gap: 10px;
 
   &:focus-within {
     color: $standart-text-color;
@@ -26,17 +24,14 @@
 }
 
 .counter-added-amount__input {
-  width: 60px;
-
-  text-align: center;
-
-  padding: 5px 10px;
-  background-color: $standart-white;
-  box-shadow: $standart-box-shadow--medium;
+  appearance: textfield;
   border: none;
   border-radius: 30px;
-
-  -moz-appearance: textfield;
+  padding: 5px 10px;
+  width: 60px;
+  box-shadow: $standart-box-shadow--medium;
+  text-align: center;
+  background-color: $standart-white;
 
   &:hover,
   &:focus {
@@ -45,6 +40,6 @@
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+    appearance: none;
   }
 }

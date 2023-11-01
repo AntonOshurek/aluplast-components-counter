@@ -1,29 +1,27 @@
-@import '../../../variables/variables.scss';
+@import '../../../variables/variables';
 
 .log-item {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: flex-start;
-  gap: 5px;
-
-  padding: 10px;
+  justify-content: space-between;
   border-radius: 15px;
-
+  padding: 10px;
   box-shadow: $standart-box-shadow--medium;
   background-color: $standart-white;
+  gap: 5px;
 }
 
 .log-item__name {
   font-family: $basic-font;
-  color: $standart-subtext-color;
-  font-size: $standart-subtext-size;
   font-weight: $main-title-font-weight;
+  font-size: $standart-subtext-size;
+  color: $standart-subtext-color;
 }
 
 .log-item__value {
   font-family: $basic-font;
-  color: $standart-text-color;
-  font-size: $standart-title-text-size;
   font-weight: $standart-title-font-weight;
+  font-size: $standart-title-text-size;
+  color: $standart-text-color;
 }

@@ -1,27 +1,26 @@
-@import '../../../variables/variables.scss';
+@import '../../../variables/variables';
 
 .overview-header {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .overview-header__title {
   font-family: $basic-font;
-  color: $main-color;
-  font-size: $main-title-text-size;
   font-weight: $main-title-font-weight;
+  font-size: $main-title-text-size;
+  color: $main-color;
 }
 
 .overview-header__date {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 100%;
-
   font-family: $basic-font;
-  color: $main-color;
-  font-size: $standart-subtext-size;
   font-weight: $standart-subtext-font-weight;
+  font-size: $standart-subtext-size;
+  color: $main-color;
 }

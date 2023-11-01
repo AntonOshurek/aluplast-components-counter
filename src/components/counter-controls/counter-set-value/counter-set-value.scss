@@ -1,22 +1,21 @@
-@import '../../../variables/variables.scss';
+@import '../../../variables/variables';
 
 .counter-set-value {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .counter-set-value__label {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 20px;
-
+  justify-content: center;
   font-family: $basic-font;
-  font-size: $standart-title-text-size;
   font-weight: $standart-title-font-weight;
+  font-size: $standart-title-text-size;
   color: $standart-subtext-color;
+  gap: 20px;
 
   &--error .counter-set-value__input {
     border-color: red;
@@ -28,37 +27,32 @@
 }
 
 .counter-set-value__message {
-  color: rgb(170, 5, 5);
+  color: rgb(170 5 5);
 }
 
 .counter-set-value__input {
+  appearance: textfield;
   position: relative;
-  width: 300px;
-  height: 200px;
-
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  border: 4px solid transparent;
 
-  font-size: 70px;
-  font-weight: bold;
-
-  text-align: center;
-
-  padding: 10px;
-  background-color: $standart-white;
-  box-shadow: $standart-button-shadow;
   // border: none;
   border-radius: 30px;
-
-  -moz-appearance: textfield;
-
-  border: 4px solid transparent;
+  padding: 10px;
+  width: 300px;
+  height: 200px;
+  box-shadow: $standart-button-shadow;
+  font-weight: bold;
+  font-size: 70px;
+  text-align: center;
+  background-color: $standart-white;
 
   // transition: all ease-in 0.1s;
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+    appearance: none;
   }
 }

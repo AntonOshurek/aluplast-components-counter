@@ -1,95 +1,84 @@
-@import '../../../variables/variables.scss';
+@import '../../../variables/variables';
 
 .components-overview-item {
   display: grid;
-  grid-template-rows: 1fr 30px;
-  grid-template-columns: 50px 1fr 100px;
   align-items: center;
   grid-column-gap: 20px;
   grid-row-gap: 10px;
-
-  padding: 10px 10px 10px 10px;
+  grid-template-columns: 50px 1fr 100px;
+  grid-template-rows: 1fr 30px;
   list-style: none;
   border-radius: 20px;
-
-  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  background-color: rgb(255 255 255);
 }
 
 .components-overview-item__image {
+  grid-row-end: -1;
+  grid-row-start: 1;
+  border-radius: 20px;
   width: 60px;
   height: 60px;
   object-fit: cover;
-  border-radius: 20px;
-  grid-row-start: 1;
-  grid-row-end: -1;
 }
 
 .components-overview-item__info {
-  user-select: all;
-
   font-family: $basic-font;
+  user-select: all;
 }
 
 .components-overview-item__title {
-  user-select: all;
-
   font-family: $basic-font;
-  font-size: $standart-title-text-size;
   font-weight: $standart-title-font-weight;
+  font-size: $standart-title-text-size;
   color: $standart-text-color;
+  user-select: all;
 }
 
 .components-overview-item__description {
-  user-select: all;
-
   font-family: $basic-font;
-  font-size: $standart-subtext-size;
   font-weight: $standart-subtext-font-weight;
+  font-size: $standart-subtext-size;
   color: $standart-subtext-color;
+  user-select: all;
 }
 
 .components-overview-item__firm {
-  user-select: all;
-
   font-family: $basic-font;
-  font-size: $standart-subtext-size;
   font-weight: $standart-subtext-font-weight;
+  font-size: $standart-subtext-size;
   color: $standart-subtext-color;
+  user-select: all;
 }
 
 .components-overview-item__amount {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  padding-right: 10px;
-
-  grid-row-start: 1;
-  grid-column-start: 3;
+  justify-content: flex-end;
   grid-column-end: 4;
-
-  user-select: all;
-
+  grid-column-start: 3;
+  grid-row-start: 1;
+  padding-right: 10px;
   font-family: $basic-font;
-  font-size: $standart-title-text-size;
   font-weight: $standart-title-font-weight;
+  font-size: $standart-title-text-size;
   color: $standart-text-color;
+  user-select: all;
 }
 
 .components-overview-item__show-logs {
-  height: 100%;
-  grid-row-start: 2;
-  grid-column-start: 3;
   grid-column-end: -1;
-
-  cursor: pointer;
+  grid-column-start: 3;
+  grid-row-start: 2;
   border: none;
-  background-color: transparent;
-
-  background-color: $white-bg-color;
   border-radius: 10px;
+  height: 100%;
+  background-color: transparent;
+  background-color: $white-bg-color;
+  cursor: pointer;
 }
 
 .logs-overview {
-  grid-column-start: 1;
   grid-column-end: -1;
+  grid-column-start: 1;
 }

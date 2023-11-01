@@ -1,66 +1,85 @@
-//fonts
+/* fonts */
 $basic-font: 'Roboto', 'Arial', sans-serif;
 
-//width
+/* width */
 $big-screen: 2000px;
 $desctope-width: 1200px;
 $tablet-width: 900px;
 $mobile-width: 550px;
 
-//PADDINGS's-----------
+/* PADDINGS */
 $standart-section-side-padding: 20px;
 $standart-section-top-padding: 10px;
 
-//SIZES--------------
+/* SIZES */
 $navigation-link-size: 40px;
 $counter-back-link-size: 40px;
 $thing-item-image-size: 100px;
 
-//FONT SIZES-------------
+/* FONT SIZES */
 $main-title-text-size: 28px;
 $standart-title-text-size: 17px;
 $standart-main-subtext-size: 16px;
 $standart-subtext-size: 14px;
 
-//FONT WEIGHT-------------
+/* FONT WEIGHT */
 $main-title-font-weight: 700;
 $standart-title-font-weight: 500;
 $standart-main-subtext-weight: 500;
 $standart-subtext-font-weight: 400;
 
-//FONT COLOR----------------
+/* FONT COLOR */
 $standart-text-color: #020202;
-$standart-subtext-color: #6e6e6e;
+$standart-subtext-color: #6E6E6E;
 
-//COLORS--------------
-$main-color: #3d4584;
-$standart-white: #ffffff;
+/* COLORS */
+$main-color: #3D4584;
+$standart-white: #FFFFFF;
 $standart-black: #000000;
-$white-bg-color: #f0f4fd;
-$error-color: #e74c3c;
+$white-bg-color: #F0F4FD;
+$error-color: #E74C3C;
 $success-color: #008000;
-//navigation icons colors
-$navigation-link-color: #2b2b2b;
+
+/* navigation icons colors */
+$navigation-link-color: #2B2B2B;
 $navigation-link-hover-color: #101010;
 
-//SHADOWS--------------------
-$standart-box-shadow--large: 5px 5px 16px #c7cbeb, -5px -5px 16px #ffffff;
-$standart-hover-box-shadow--large: 9px 9px 25px #abafd1, -9px -9px 25px rgb(231, 237, 250);
+/* SHADOWS */
+$standart-box-shadow--large:
+  5px 5px 16px #C7CBEB,
+  -5px -5px 16px #FFFFFF;
+$standart-hover-box-shadow--large:
+  9px 9px 25px #ABAFD1,
+  -9px -9px 25px rgb(231 237 250);
+$standart-box-shadow--medium:
+  3px 3px 10px #C7CBEB,
+  -3px -3px 10px #FFFFFF;
+$standart-hover-box-shadow--medium:
+  6px 6px 20px #ABAFD1,
+  -6px -6px 20px rgb(231 237 250);
+$error-modal-shadow:
+  7px 7px 50px $error-color,
+  -7px -7px 50px rgb(255 99 71 / 20%);
+$success-modal-shadow:
+  7px 7px 30px rgb(0 128 0 / 90%),
+  -7px -7px 30px rgb(60 179 113 / 50%);
 
-$standart-box-shadow--medium: 3px 3px 10px #c7cbeb, -3px -3px 10px #ffffff;
-$standart-hover-box-shadow--medium: 6px 6px 20px #abafd1, -6px -6px 20px rgb(231, 237, 250);
+/* buttons */
+$standart-button-shadow:
+  5px 5px 16px #C7CBEB,
+  -5px -5px 16px #FFFFFF;
+$standart-button-hover-shadow:
+  9px 9px 25px #ABAFD1,
+  -9px -9px 25px rgb(231 237 250);
+$standart-button-active-shadow:
+  12px 12px 20px #ABAFD1,
+  -9px -9px 25px rgb(231 237 250);
+$error-button-shadow:
+  5px 5px 16px $error-color,
+  -5px -5px 16px $standart-white;
+$error-button-active-shadow:
+  8px 8px 20px $error-color,
+  -5px -5px 30px $standart-white;
 
-$error-modal-shadow: 7px 7px 50px $error-color, -7px -7px 50px rgba(255, 99, 71, 0.2);
-$success-modal-shadow: 7px 7px 30px rgba(0, 128, 0, 0.9), -7px -7px 30px rgba(60, 179, 113, 0.5);
-
-//buttons
-$standart-button-shadow: 5px 5px 16px #c7cbeb, -5px -5px 16px #ffffff;
-$standart-button-hover-shadow: 9px 9px 25px #abafd1, -9px -9px 25px rgb(231, 237, 250);
-$standart-button-active-shadow: 12px 12px 20px #abafd1, -9px -9px 25px rgb(231, 237, 250);
-
-$error-button-shadow: 5px 5px 16px $error-color, -5px -5px 16px $standart-white;
-$error-button-active-shadow: 8px 8px 20px $error-color, -5px -5px 30px $standart-white;
-
-
-//OTHER----------------------
+/* OTHER */
 $thing-item-border-radius: 30px;

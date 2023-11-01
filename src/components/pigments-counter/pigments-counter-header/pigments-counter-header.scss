@@ -1,35 +1,33 @@
-@import '../../../variables/variables.scss';
+@import '../../../variables/variables';
 
 .pigments-counter-header {
-  width: 100%;
   padding: $standart-section-top-padding $standart-section-side-padding;
+  width: 100%;
   background-color: $white-bg-color;
 }
 
 .pigments-counter-header__wrap {
   display: grid;
+  align-items: center;
   grid-template-columns: $counter-back-link-size 1fr;
   grid-template-rows: repeat(2, min-content);
-  align-items: center;
   gap: 10px;
 }
 
 .pigments-counter-header__back-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: $counter-back-link-size;
   height: $counter-back-link-size;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  cursor: pointer;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .pigments-counter-header__title {
   font-family: $basic-font;
-  color: $main-color;
-  font-size: $main-title-text-size;
   font-weight: $main-title-font-weight;
+  font-size: $main-title-text-size;
   text-align: right;
+  color: $main-color;
 }

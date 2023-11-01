@@ -1,19 +1,17 @@
-@import '../../variables/variables.scss';
+@import '../../variables/variables';
 
 .header {
-  width: 100%;
-  padding: $standart-section-top-padding $standart-section-side-padding;
-  background-color: $white-bg-color;
-
-  grid-row-start: 2;
-
   position: fixed;
-  z-index: 1;
   bottom: 0;
+  z-index: 1;
+  grid-row-start: 2;
+  padding: $standart-section-top-padding $standart-section-side-padding;
+  width: 100%;
+  background-color: $white-bg-color;
 }
 
 .header__wrap {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }

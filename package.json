@@ -22,12 +22,17 @@
     "typescript": "^4.9.5",
     "web-vitals": "^3.1.1",
     "workbox-routing": "^6.5.4",
-    "workbox-strategies": "^6.5.4"
+    "workbox-strategies": "^6.5.4",
+    "prettier": "^3.0.3",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard-scss": "^11.0.0",
+    "stylelint-order": "^6.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test-styles": "stylelint \"./src/**/*.scss\" --custom-syntax postcss-scss",
+    "test-styles--fix": "stylelint \"./src/**/*.scss\" --custom-syntax postcss-scss --fix",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
