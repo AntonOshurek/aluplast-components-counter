@@ -20,7 +20,11 @@ export const enum AppRoute {
   GUM_BASIC_COUNTER = 'counter',
 
   CHEMISTRY_PAGE = '/chemistry',
-  CHEMISTRY_COUNTER = '/chemistry/:UNID',
+  CHEMISTRY_VENEER = '/chemistry/veneer', /* okleina */
+  CHEMISTRY_EXTRUSION = '/chemistry/extrusion', /* ekstruzja */
+  CHEMISTRY_VENEER_COUNTER = '/chemistry/veneer/:UNID',
+  CHEMISTRY_EXTRUSION_COUNTER = '/chemistry/extrusion/:UNID',
+  CHEMISTRY_COUNTER = '/chemistry/:UNID', /*OLD*/
 };
 
 export enum InputStatuses {
@@ -51,6 +55,8 @@ export enum ComponentsTexts {
   GUMS_COUNTER_PAGE_TITLE = 'Licznik uszczelki',
 
   CHEMISTRY_COUNTER_NAME = 'chemia',
+  CHEMISTRY_OPTION_VENEER = 'Okleina',
+  CHEMISTRY_OPTION_EXTRUSION = 'Ekstruzja',
   CHEMISTRY_COUNTER_PAGE_TITLE = 'Licznik chemii',
 
   SETTING_PIGMENTS_TITLE = 'Ustawienia pegmenty',

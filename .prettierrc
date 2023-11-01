@@ -3,7 +3,7 @@
   "trailingComma": "all",
   "singleQuote": true,
   "semi": true,
-  "printWidth": 100,
+  "printWidth": 200,
   "htmlWhitespaceSensitivity": "css",
   "endOfLine": "auto",
   "overrides": [
@@ -11,6 +11,12 @@
       "files": "*.scss",
       "options": {
         "parser": "scss"
+      }
+    },
+    {
+      "files": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
+      "options": {
+        "parser": "babel"
       }
     }
   ],

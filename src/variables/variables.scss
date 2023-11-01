@@ -30,32 +30,32 @@ $standart-subtext-font-weight: 400;
 
 /* FONT COLOR */
 $standart-text-color: #020202;
-$standart-subtext-color: #6E6E6E;
+$standart-subtext-color: #6e6e6e;
 
 /* COLORS */
-$main-color: #3D4584;
-$standart-white: #FFFFFF;
+$main-color: #3d4584;
+$standart-white: #ffffff;
 $standart-black: #000000;
-$white-bg-color: #F0F4FD;
-$error-color: #E74C3C;
+$white-bg-color: #f0f4fd;
+$error-color: #e74c3c;
 $success-color: #008000;
 
 /* navigation icons colors */
-$navigation-link-color: #2B2B2B;
+$navigation-link-color: #2b2b2b;
 $navigation-link-hover-color: #101010;
 
 /* SHADOWS */
 $standart-box-shadow--large:
-  5px 5px 16px #C7CBEB,
-  -5px -5px 16px #FFFFFF;
+  5px 5px 16px #c7cbeb,
+  -5px -5px 16px #ffffff;
 $standart-hover-box-shadow--large:
-  9px 9px 25px #ABAFD1,
+  9px 9px 25px #abafd1,
   -9px -9px 25px rgb(231 237 250);
 $standart-box-shadow--medium:
-  3px 3px 10px #C7CBEB,
-  -3px -3px 10px #FFFFFF;
+  3px 3px 10px #c7cbeb,
+  -3px -3px 10px #ffffff;
 $standart-hover-box-shadow--medium:
-  6px 6px 20px #ABAFD1,
+  6px 6px 20px #abafd1,
   -6px -6px 20px rgb(231 237 250);
 $error-modal-shadow:
   7px 7px 50px $error-color,
@@ -66,13 +66,13 @@ $success-modal-shadow:
 
 /* buttons */
 $standart-button-shadow:
-  5px 5px 16px #C7CBEB,
-  -5px -5px 16px #FFFFFF;
+  5px 5px 16px #c7cbeb,
+  -5px -5px 16px #ffffff;
 $standart-button-hover-shadow:
-  9px 9px 25px #ABAFD1,
+  9px 9px 25px #abafd1,
   -9px -9px 25px rgb(231 237 250);
 $standart-button-active-shadow:
-  12px 12px 20px #ABAFD1,
+  12px 12px 20px #abafd1,
   -9px -9px 25px rgb(231 237 250);
 $error-button-shadow:
   5px 5px 16px $error-color,

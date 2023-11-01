@@ -1,30 +1,6 @@
 @import '../../variables/variables';
 
-.root-page {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr min-content;
-  width: 100%;
-  min-height: var(--vh);
-}
-
-.root-page__main {
-  padding: $standart-section-top-padding $standart-section-side-padding;
-  padding-bottom: 100px;
-  width: 100%;
-  height: 100%;
-}
-
-.root-page__wrap {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr min-content;
-  height: 100%;
-  gap: 20px;
-}
-
-.root-page__list {
+.chemistry-options-list {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -32,11 +8,11 @@
   gap: 20px;
 }
 
-.root-page__item {
+.chemistry-options-list__item {
   list-style: none;
 }
 
-.root-page__link {
+.chemistry-options-list__link {
   position: relative;
   display: flex;
   align-items: center;
@@ -49,7 +25,7 @@
   background-color: $standart-white;
 }
 
-.root-page__link-title {
+.chemistry-options-list__link-title {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -59,12 +35,17 @@
   text-transform: capitalize;
   color: $standart-white;
   transform: translate(-50%, -50%);
+  text-shadow:
+    1px 1px 0 #000,
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000;
 }
 
-.root-page__link-image {
+.chemistry-options-list__link-image {
   border-radius: 30px;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: blur(1px);
+  filter: blur(2px);
 }
