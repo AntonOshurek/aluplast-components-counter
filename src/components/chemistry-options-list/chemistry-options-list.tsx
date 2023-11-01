@@ -12,14 +12,14 @@ const ChemistryOptionsList = (): JSX.Element => {
     <ul className='chemistry-options-list'>
       <li className='chemistry-options-list__item'>
         <Link className='chemistry-options-list__link' to={AppRoute.CHEMISTRY_VENEER}>
-          <h3 className='chemistry-options-list__link-title'>{ComponentsTexts.CHEMISTRY_OPTION_EXTRUSION}</h3>
-          <img className='chemistry-options-list__link-image' src={extrusionBanner} width='150' height='150' alt="Ekstruzja" />
+          <h3 className='chemistry-options-list__link-title'>{ComponentsTexts.CHEMISTRY_OPTION_VENEER}</h3>
+          <img className='chemistry-options-list__link-image' src={veneerBanner} width='150' height='150' alt="Okleina" />
         </Link>
       </li>
       <li className='chemistry-options-list__item'>
         <Link className='chemistry-options-list__link' to={AppRoute.CHEMISTRY_EXTRUSION}>
-          <h3 className='chemistry-options-list__link-title'>{ComponentsTexts.CHEMISTRY_OPTION_VENEER}</h3>
-          <img className='chemistry-options-list__link-image' src={veneerBanner} width='150' height='150' alt="Okleina" />
+          <h3 className='chemistry-options-list__link-title'>{ComponentsTexts.CHEMISTRY_OPTION_EXTRUSION}</h3>
+          <img className='chemistry-options-list__link-image' src={extrusionBanner} width='150' height='150' alt="Ekstruzja" />
         </Link>
       </li>
     </ul>
