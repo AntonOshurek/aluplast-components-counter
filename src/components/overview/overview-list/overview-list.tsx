@@ -28,11 +28,11 @@ const OverviewList = ({data}: OverviewListPropsType): JSX.Element => {
       itemAmountName = 'kg';
       break;
     case AppRoute.CHEMISTRY_VENEER:
-      location = AppRoute.CHEMISTRY_COUNTER;
+      location = AppRoute.CHEMISTRY_VENEER_COUNTER;
       itemAmountName = 'ilość';
       break;
     case AppRoute.CHEMISTRY_EXTRUSION:
-      location = AppRoute.CHEMISTRY_COUNTER;
+      location = AppRoute.CHEMISTRY_EXTRUSION_COUNTER;
       itemAmountName = 'ilość';
       break;
     default:

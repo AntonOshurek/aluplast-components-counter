@@ -101,6 +101,8 @@ export enum ApplicationStorageApiNames {
   PIGMENTS_STORAGE = 'pigments',
   GUMS_STORAGE = 'gums',
   CHEMISTRY_STORAGE = 'chemistry',
+  CHEMISTRY_VENEER_STORAGE = 'chemistry-veneer',
+  CHEMISTRY_EXTRUSION_STORAGE = 'chemistry-extrusion',
 };
 
 //if you added new LOGS variables, you need added this to variables-types.ts!
