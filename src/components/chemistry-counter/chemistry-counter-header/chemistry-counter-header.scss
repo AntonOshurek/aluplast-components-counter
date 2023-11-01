@@ -1,12 +1,12 @@
 @import '../../../variables/variables';
 
-.gums-counter-header {
+.chemistry-counter-header {
   padding: $standart-section-top-padding $standart-section-side-padding;
   width: 100%;
   background-color: $white-bg-color;
 }
 
-.gums-counter-header__wrap {
+.chemistry-counter-header__wrap {
   display: grid;
   align-items: center;
   grid-template-columns: $counter-back-link-size 1fr;
@@ -14,7 +14,7 @@
   gap: 10px;
 }
 
-.gums-counter-header__back-link {
+.chemistry-counter-header__back-link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,7 +24,7 @@
   cursor: pointer;
 }
 
-.gums-counter-header__title {
+.chemistry-counter-header__title {
   font-family: $basic-font;
   font-weight: $main-title-font-weight;
   font-size: $main-title-text-size;

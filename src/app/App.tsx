@@ -31,12 +31,24 @@ import {
   logAction as pigmentsLog,
   clearItemAction as pigmentsClearItemAction,
 } from '../store/slices/pigments-slice';
+// import {
+//   clearItemAction as chemistryClearItemAction,
+//   decrementAction as chemistryDec,
+//   incrementAction as chemistryInc,
+//   logAction as chemistryLog,
+// } from '../store/slices/chemistry-slice';
 import {
-  clearItemAction as chemistryClearItemAction,
-  decrementAction as chemistryDec,
-  incrementAction as chemistryInc,
-  logAction as chemistryLog,
-} from '../store/slices/chemistry-slice';
+  clearItemAction as chemistryVeneerClearItemAction,
+  decrementAction as chemistryVeneerDec,
+  incrementAction as chemistryVeneerInc,
+  logAction as chemistryVeneerLog,
+} from '../store/slices/chemistry/chemistry-veneer-slice';
+import {
+  clearItemAction as chemistryExtrusionClearItemAction,
+  decrementAction as chemistryExtrusionDec,
+  incrementAction as chemistryExtrusionInc,
+  logAction as chemistryExtrusionLog,
+} from '../store/slices/chemistry/chemistry-extrusion-slice';
 
 function App() {
   setVhVariable(); //variable VH used in styles for set main height
@@ -146,11 +158,66 @@ function App() {
           />
         </Route>
 
+        {/* Chemia */}
+        {/* okleina / ekstruzja */}
+        <Route path={AppRoute.CHEMISTRY_PAGE} element={<Pages.ChemistryOptionsPage />} />
         <Route
-          path={AppRoute.CHEMISTRY_PAGE}
-          element={<Pages.OverviewPage getStateSelector={selectors.SelectorGetChemistryState} />}
+          path={AppRoute.CHEMISTRY_EXTRUSION}
+          element={
+            <Pages.OverviewPage getStateSelector={selectors.SelectorGetChemistryExtrusionState} />
+          }
         />
         <Route
+          path={AppRoute.CHEMISTRY_VENEER}
+          element={
+            <Pages.OverviewPage getStateSelector={selectors.SelectorGetChemistryVeneerState} />
+          }
+        />
+        <Route
+          path={AppRoute.CHEMISTRY_VENEER_COUNTER}
+          element={
+            <Pages.CounterPage
+              getItemSelector={selectors.SelectorGetCurrentChemistryVeneerItem}
+              clearItemAction={chemistryVeneerClearItemAction}
+              counterHeader={<ChemistryCounterHeader />}
+            />
+          }
+        >
+          <Route
+            index
+            element={
+              <Pages.BasicCounterPage
+                incrementAction={chemistryVeneerInc}
+                decrementAction={chemistryVeneerDec}
+                logAction={chemistryVeneerLog}
+                logName={ChemistryLogsNames.COUNTER}
+              />
+            }
+          />
+        </Route>
+        <Route
+          path={AppRoute.CHEMISTRY_EXTRUSION_COUNTER}
+          element={
+            <Pages.CounterPage
+              getItemSelector={selectors.SelectorGetCurrentChemistryExtrusionItem}
+              clearItemAction={chemistryExtrusionClearItemAction}
+              counterHeader={<ChemistryCounterHeader />}
+            />
+          }
+        >
+          <Route
+            index
+            element={
+              <Pages.BasicCounterPage
+                incrementAction={chemistryExtrusionInc}
+                decrementAction={chemistryExtrusionDec}
+                logAction={chemistryExtrusionLog}
+                logName={ChemistryLogsNames.COUNTER}
+              />
+            }
+          />
+        </Route>
+        {/* <Route
           path={AppRoute.CHEMISTRY_COUNTER}
           element={
             <Pages.CounterPage
@@ -171,7 +238,7 @@ function App() {
               />
             }
           />
-        </Route>
+        </Route> */}
       </Routes>
     </BrowserRouter>
   );

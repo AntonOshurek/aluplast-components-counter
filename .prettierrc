@@ -12,6 +12,12 @@
       "options": {
         "parser": "scss"
       }
+    },
+    {
+      "files": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
+      "options": {
+        "parser": "babel"
+      }
     }
   ],
   "ignore": ["**/node_modules/**"],

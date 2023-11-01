@@ -18,3 +18,9 @@ export const SelectorGetGumsSettingsCardboardWeight = (state: RootState): number
 // CHEMISTRY SELECTORS
 export const SelectorGetChemistryState = (state: RootState): IAdaptedDataType => state.chemistry.items;
 export const SelectorGetCurrentChemistry = (UNID: string) => (state: RootState): IItemDataType => state.chemistry.items[UNID];
+
+export const SelectorGetChemistryExtrusionState = (state: RootState): IAdaptedDataType => state.chemistryExtrusion.items;
+export const SelectorGetCurrentChemistryExtrusionItem = (UNID: string) => (state: RootState): IItemDataType => state.chemistryExtrusion.items[UNID];
+
+export const SelectorGetChemistryVeneerState = (state: RootState): IAdaptedDataType => state.chemistryVeneer.items;
+export const SelectorGetCurrentChemistryVeneerItem = (UNID: string) => (state: RootState): IItemDataType => state.chemistryVeneer.items[UNID];

@@ -27,12 +27,16 @@ const OverviewList = ({data}: OverviewListPropsType): JSX.Element => {
       location = AppRoute.GUM_COUNTER;
       itemAmountName = 'kg';
       break;
-    case AppRoute.CHEMISTRY_PAGE:
-      location = AppRoute.CHEMISTRY_COUNTER;
+    case AppRoute.CHEMISTRY_VENEER:
+      location = AppRoute.CHEMISTRY_VENEER_COUNTER;
+      itemAmountName = 'ilość';
+      break;
+    case AppRoute.CHEMISTRY_EXTRUSION:
+      location = AppRoute.CHEMISTRY_EXTRUSION_COUNTER;
       itemAmountName = 'ilość';
       break;
     default:
-      location = AppRoute.PIGMENTS_PAGE;
+      location = AppRoute.ROOT;
   };
 
   const generateItems = ():JSX.Element[] => {

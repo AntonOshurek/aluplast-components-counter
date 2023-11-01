@@ -1,16 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 //data
-import { chemistryState } from '../state/chemistry-state';
+import { chemistryVeneerState } from '../../state/chemistry-state/chemistry-veneer-state';
 //types
-import type { IIncDecActionParametrsType, ILogActionType } from '../../types/action-types';
-import type { AppThunk } from '../../types/store-types';
-import type { IItemDataType } from '../../types/data-types';
+import type { IIncDecActionParametrsType, ILogActionType } from '../../../types/action-types';
+import type { AppThunk } from '../../../types/store-types';
+import type { IItemDataType } from '../../../types/data-types';
 //API
-import { chemistryDataApi, chemistryStorageApi } from '../../api';
+import { chemistryVeneerDataApi, chemistryVeneerStorageApi } from '../../../api';
 
-export const chemistrySlice = createSlice({
-  name: 'chemistry',
-  initialState: chemistryState,
+export const chemistryVennerSlice = createSlice({
+  name: 'chemistry-veneer',
+  initialState: chemistryVeneerState,
 
   reducers: {
     increment: (state, action: PayloadAction<IIncDecActionParametrsType>) => {
@@ -30,48 +30,48 @@ export const chemistrySlice = createSlice({
       state.items[UNID] = action.payload;
     },
     clear: (state) => {
-      state.items = chemistryDataApi.getAdaptedData();
+      state.items = chemistryVeneerDataApi.getAdaptedData();
     },
   },
 });
 
-export const { clear, log, clearItem } = chemistrySlice.actions;
+export const { clear, log, clearItem } = chemistryVennerSlice.actions;
 
 export const incrementAction =
   (action: IIncDecActionParametrsType): AppThunk =>
     (dispatch, getState) => {
-      dispatch(chemistrySlice.actions.increment(action));
-      chemistryStorageApi.setItems(getState().chemistry.items);
+      dispatch(chemistryVennerSlice.actions.increment(action));
+      chemistryVeneerStorageApi.setItems(getState().chemistry.items);
     };
 
 export const decrementAction =
   (action: IIncDecActionParametrsType): AppThunk =>
     (dispatch, getState) => {
-      dispatch(chemistrySlice.actions.decrement(action));
-      chemistryStorageApi.setItems(getState().chemistry.items);
+      dispatch(chemistryVennerSlice.actions.decrement(action));
+      chemistryVeneerStorageApi.setItems(getState().chemistry.items);
     };
 
 export const clearStoreAction =
   (): AppThunk =>
     (dispatch) => {
-      dispatch(chemistrySlice.actions.clear());
-      chemistryStorageApi.setItems(chemistryDataApi.getAdaptedData());
+      dispatch(chemistryVennerSlice.actions.clear());
+      chemistryVeneerStorageApi.setItems(chemistryVeneerDataApi.getAdaptedData());
     };
 
 export const clearItemAction =
   (action: { id: string }): AppThunk =>
     (dispatch, getState) => {
-      const newDefaultItem = chemistryDataApi.getDataItem(action.id);
-      dispatch(chemistrySlice.actions.clearItem(newDefaultItem));
-      chemistryStorageApi.setItems(getState().chemistry.items);
+      const newDefaultItem = chemistryVeneerDataApi.getDataItem(action.id);
+      dispatch(chemistryVennerSlice.actions.clearItem(newDefaultItem));
+      chemistryVeneerStorageApi.setItems(getState().chemistry.items);
     };
 
 export const logAction =
   (action: ILogActionType): AppThunk =>
     (dispatch, getState) => {
-      dispatch(chemistrySlice.actions.log(action));
-      chemistryStorageApi.setItems(getState().chemistry.items);
+      dispatch(chemistryVennerSlice.actions.log(action));
+      chemistryVeneerStorageApi.setItems(getState().chemistry.items);
     };
 
 
-export default chemistrySlice.reducer;
+export default chemistryVennerSlice.reducer;
