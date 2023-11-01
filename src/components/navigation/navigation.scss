@@ -1,4 +1,4 @@
-@import '../../variables/variables.scss';
+@import '../../variables/variables';
 
 .navigation {
   width: 100%;
@@ -7,8 +7,8 @@
 
 .navigation__list {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
 }
 
@@ -19,25 +19,24 @@
 .navigation__link {
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
-
+  justify-content: center;
+  border: none;
   width: $navigation-link-size;
   height: $navigation-link-size;
-
-  cursor: pointer;
   text-decoration: none;
   background-color: transparent;
-  border: none;
   transition: all .1s ease-in-out;
+  cursor: pointer;
 
   & path {
-    transition: all .1s ease-in-out;
     fill: $navigation-link-color;
+    transition: all .1s ease-in-out;
   }
 
   &:hover {
     opacity: 1;
+
     & path {
       fill: $navigation-link-hover-color;
     }

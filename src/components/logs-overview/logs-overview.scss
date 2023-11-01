@@ -1,10 +1,10 @@
-@import '../../variables/variables.scss';
+@import '../../variables/variables';
 
 .logs-overview {
-  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
 
   @media (max-width: $mobile-width) {
     grid-template-columns: 1fr;

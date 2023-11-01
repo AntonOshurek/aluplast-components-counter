@@ -1,69 +1,64 @@
-@import '../../variables/variables.scss';
+@import '../../variables/variables';
 
 .components-settings {
+  appearance: textfield;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  border-radius: 30px;
+  padding: 20px 10px;
   width: 100%;
   height: min-content;
+  box-shadow: $standart-box-shadow--large;
+  background-color: $standart-white;
+
   // padding: 20px;
   gap: 20px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 20px 10px;
-
-  background-color: $standart-white;
-  box-shadow: $standart-box-shadow--large;
-  border: none;
-  border-radius: 30px;
-
-  -moz-appearance: textfield;
+  &:focus-within,
+  &:hover {
+    box-shadow: $standart-hover-box-shadow--large;
+    transition: all .2s ease;
+  }
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-  }
-
-  &:focus-within,
-  &:hover {
-    transition: all .2s ease;
-    box-shadow: $standart-hover-box-shadow--large;
+    appearance: none;
   }
 }
 
 .components-settings__title {
   display: flex;
   font-family: $basic-font;
-  font-size: $main-title-text-size;
   font-weight: $main-title-font-weight;
-  color: $standart-text-color;
+  font-size: $main-title-text-size;
   text-align: center;
+  color: $standart-text-color;
 }
 
 .components-settings__form {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items:stretch;
+  justify-content: center;
+  width: 100%;
   gap: 10px;
 }
 
 .components-settings__label {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  text-align: left;
-
+  justify-content: space-between;
+  width: 100%;
   font-family: $basic-font;
-  font-size: $standart-title-text-size;
   font-weight: $standart-title-font-weight;
+  font-size: $standart-title-text-size;
+  text-align: left;
   color: $standart-text-color;
-
   cursor: pointer;
+  gap: 10px;
 
   &:focus-within {
     // coś trzeba zrobić tu :)
@@ -71,17 +66,14 @@
 }
 
 .components-settings__input {
-  width: 60px;
-
-  text-align: center;
-
-  padding: 5px 10px;
-  background-color: $standart-white;
-  box-shadow: $standart-box-shadow--medium;
+  appearance: textfield;
   border: none;
   border-radius: 30px;
-
-  -moz-appearance: textfield;
+  padding: 5px 10px;
+  width: 60px;
+  box-shadow: $standart-box-shadow--medium;
+  text-align: center;
+  background-color: $standart-white;
 
   &:hover,
   &:focus {
@@ -90,6 +82,6 @@
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+    appearance: none;
   }
 }
