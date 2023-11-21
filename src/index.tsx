@@ -13,6 +13,8 @@ import './index.scss';
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 
+//version 21.11.2023
+
 root.render(
   <React.StrictMode>
     <Provider store={store}>
