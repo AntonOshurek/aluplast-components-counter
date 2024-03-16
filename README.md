@@ -1,11 +1,11 @@
 ![commits](https://img.shields.io/github/last-commit/AntonOshurek/aluplast-components-counter?style=plastic)
 ![lang](https://img.shields.io/github/languages/top/AntonOshurek/aluplast-components-counter)
 
-# Aluplast components counter
-This application created for Aluplast, based in Poznań.
+# Beta components counter
+This application created for one manufacturer, based in Poznań.
 
 Working applications for component counting in manufacturing. 
-This application is used by referents at Aluplast firm in Poznań.
+This application is used by referents at manufacturer firm in Poznań.
 
 ***[:point_right: Gh-Pages Here](https://antonoshurek.github.io/aluplast-components-counter/):bank:***
 
